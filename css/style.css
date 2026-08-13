@@ -150,14 +150,27 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .brand {
   display: flex;
   flex-direction: column;
   line-height: 1;
 }
+
+/* Configuração do Logotipo em Imagem */
+.brand-logo {
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+.footer-logo {
+  max-width: 130px;
+  margin-bottom: 4px;
+}
+
 .brand-name {
   font-family: var(--font-display);
   font-size: 20px;
@@ -503,16 +516,4 @@ button { font-family: inherit; cursor: pointer; }
 .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
-}
-/* Ajuste do logo */
-.brand-logo {
-  max-width: 160px; /* Ajuste este valor conforme desejar o tamanho */
-  height: auto;
-  display: block;
-}
-
-/* Opcional: Ajuste o espaço no header se necessário */
-.header-inner {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
