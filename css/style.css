@@ -504,3 +504,15 @@ button { font-family: inherit; cursor: pointer; }
   opacity: 1;
   transform: translateY(0);
 }
+/* Ajuste do logo */
+.brand-logo {
+  max-width: 160px; /* Ajuste este valor conforme desejar o tamanho */
+  height: auto;
+  display: block;
+}
+
+/* Opcional: Ajuste o espaço no header se necessário */
+.header-inner {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
