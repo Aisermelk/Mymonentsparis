@@ -1,7 +1,7 @@
 /* =========================================================
    MOMENTS PARIS
    LANDING PAGE
-   CSS PRINCIPAL
+   CSS PRINCIPAL — V2
 ========================================================= */
 
 
@@ -17,7 +17,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 85px;
 }
 
 body {
@@ -26,6 +26,8 @@ body {
     color: #222222;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 img {
@@ -50,6 +52,11 @@ button {
     cursor: pointer;
 }
 
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 
 /* =========================================================
    02. VARIÁVEIS
@@ -72,7 +79,11 @@ button {
     --light-2: #fafafa;
 
     --white: #ffffff;
+
     --border: #e8e8e8;
+
+    --whatsapp: #25d366;
+    --whatsapp-dark: #1ebe5d;
 
     --max-width: 1150px;
 
@@ -114,13 +125,20 @@ button {
 
     width: 100%;
 
-    z-index: 9999;
+    z-index: 9990;
 
-    background: rgba(255, 255, 255, 0.97);
+    background:
+        rgba(255, 255, 255, 0.97);
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom:
+        1px solid
+        rgba(0, 0, 0, 0.07);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
 }
 
 .header-container {
@@ -148,7 +166,8 @@ button {
 
     white-space: nowrap;
 
-    transition: var(--transition);
+    transition:
+        var(--transition);
 }
 
 .logo:hover {
@@ -167,11 +186,16 @@ button {
 
     padding: 11px 22px;
 
-    background: var(--primary);
+    background:
+        var(--primary);
 
-    color: var(--white);
+    color:
+        var(--white);
 
     border-radius: 4px;
+
+    border: 1px solid
+        var(--primary);
 
     font-size: 12px;
 
@@ -179,17 +203,30 @@ button {
 
     letter-spacing: 0.8px;
 
-    transition: var(--transition);
+    text-transform: uppercase;
+
+    transition:
+        var(--transition);
 }
 
 .header-button:hover {
 
-    background: var(--primary-dark);
+    background:
+        var(--primary-dark);
 
-    transform: translateY(-2px);
+    border-color:
+        var(--primary-dark);
+
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 8px 20px rgba(176, 138, 69, 0.25);
+        0 8px 20px
+        rgba(176, 138, 69, 0.25);
+}
+
+.header-button:active {
+    transform: translateY(0);
 }
 
 
@@ -210,13 +247,17 @@ button {
 
     padding: 14px 30px;
 
-    border: none;
+    border:
+        1px solid
+        var(--primary);
 
     border-radius: 4px;
 
-    background: var(--primary);
+    background:
+        var(--primary);
 
-    color: var(--white);
+    color:
+        var(--white);
 
     font-size: 13px;
 
@@ -226,24 +267,47 @@ button {
 
     text-transform: uppercase;
 
-    transition: var(--transition);
+    transition:
+        var(--transition);
 }
 
 .primary-button:hover,
 .submit-button:hover {
 
-    background: var(--primary-dark);
+    background:
+        var(--primary-dark);
 
-    transform: translateY(-3px);
+    border-color:
+        var(--primary-dark);
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 10px 25px rgba(176, 138, 69, 0.25);
+        0 10px 25px
+        rgba(176, 138, 69, 0.25);
 }
 
 .primary-button:active,
 .submit-button:active {
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
+}
+
+.primary-button:disabled,
+.submit-button:disabled {
+
+    opacity: 0.65;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
 }
 
 
@@ -286,7 +350,10 @@ button {
 
     border-radius: 50%;
 
-    background: rgba(176, 138, 69, 0.07);
+    background:
+        rgba(176, 138, 69, 0.07);
+
+    pointer-events: none;
 }
 
 .hero-container {
@@ -325,7 +392,8 @@ button {
 
     margin-bottom: 15px;
 
-    color: var(--primary);
+    color:
+        var(--primary);
 
     font-size: 12px;
 
@@ -340,7 +408,8 @@ button {
 
     margin-bottom: 25px;
 
-    color: var(--dark);
+    color:
+        var(--dark);
 
     font-size:
         clamp(
@@ -360,7 +429,8 @@ button {
 
     font-weight: 700;
 
-    color: var(--primary);
+    color:
+        var(--primary);
 }
 
 .hero p {
@@ -369,7 +439,8 @@ button {
 
     margin-bottom: 32px;
 
-    color: var(--text-light);
+    color:
+        var(--text-light);
 
     font-size: 18px;
 
@@ -402,7 +473,8 @@ button {
             rgba(0, 0, 0, 0.10)
         );
 
-    transition: transform 0.5s ease;
+    transition:
+        transform 0.5s ease;
 }
 
 .hero-image:hover img {
@@ -414,7 +486,7 @@ button {
 
 
 /* =========================================================
-   07. TÍTULOS DAS SEÇÕES
+   07. TÍTULOS
 ========================================================= */
 
 .section-header {
@@ -431,7 +503,8 @@ button {
 
     margin-bottom: 18px;
 
-    color: var(--dark);
+    color:
+        var(--dark);
 
     font-size:
         clamp(
@@ -449,7 +522,8 @@ button {
 
 .section-header p {
 
-    color: var(--text-light);
+    color:
+        var(--text-light);
 
     font-size: 17px;
 
@@ -466,33 +540,39 @@ button {
     padding:
         105px 0;
 
-    background: var(--white);
+    background:
+        var(--white);
 }
 
 .about-content {
 
     max-width: 800px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
     padding:
         30px;
 
     border-left:
-        3px solid var(--primary);
+        3px solid
+        var(--primary);
 
     background:
         var(--light);
 
-    color: var(--text-light);
+    color:
+        var(--text-light);
 
     font-size: 17px;
 
     text-align: center;
 
     border-radius:
-        0 var(--radius)
-        var(--radius) 0;
+        0
+        var(--radius)
+        var(--radius)
+        0;
 }
 
 
@@ -505,7 +585,8 @@ button {
     padding:
         105px 0;
 
-    background: var(--light);
+    background:
+        var(--light);
 }
 
 .benefits-grid {
@@ -529,7 +610,8 @@ button {
         var(--white);
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     border-radius:
         var(--radius);
@@ -582,7 +664,8 @@ button {
 
     margin-bottom: 13px;
 
-    color: var(--dark);
+    color:
+        var(--dark);
 
     font-size: 22px;
 }
@@ -629,7 +712,8 @@ button {
         var(--white);
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     border-radius:
         var(--radius);
@@ -904,6 +988,8 @@ button {
     border:
         1px solid
         rgba(176, 138, 69, 0.2);
+
+    pointer-events: none;
 }
 
 .capture-container {
@@ -1043,14 +1129,14 @@ button {
     font-weight: 600;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea,
+.form-group select {
 
     width: 100%;
 
-    height: 53px;
-
     padding:
-        0 15px;
+        12px 15px;
 
     border:
         1px solid
@@ -1071,13 +1157,29 @@ button {
         var(--transition);
 }
 
-.form-group input::placeholder {
+.form-group input {
+
+    height: 53px;
+}
+
+.form-group textarea {
+
+    min-height: 120px;
+
+    resize:
+        vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
 
     color:
         #aaaaaa;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
 
     border-color:
         var(--primary);
@@ -1128,7 +1230,8 @@ button {
 
     max-width: 750px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 }
 
 .final-cta-content h2 {
@@ -1254,7 +1357,7 @@ button {
 
 
 /* =========================================================
-   17. WHATSAPP
+   17. WHATSAPP FLUTUANTE
 ========================================================= */
 
 .whatsapp-button {
@@ -1265,25 +1368,31 @@ button {
 
     bottom: 22px;
 
-    z-index: 9998;
+    z-index: 99999;
 
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
 
     justify-content: center;
 
+    gap: 8px;
+
     min-width: 58px;
 
-    height: 58px;
+    min-height: 58px;
 
     padding:
         0 18px;
 
-    border-radius: 50px;
+    border:
+        0;
+
+    border-radius:
+        50px;
 
     background:
-        #25d366;
+        var(--whatsapp);
 
     color:
         #ffffff;
@@ -1296,11 +1405,26 @@ button {
 
     font-weight: 700;
 
+    line-height: 1;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
     transition:
-        var(--transition);
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .whatsapp-button:hover {
+
+    background:
+        var(--whatsapp-dark);
 
     transform:
         translateY(-4px)
@@ -1311,14 +1435,53 @@ button {
         rgba(0, 0, 0, 0.25);
 }
 
+.whatsapp-button:active {
+
+    transform:
+        translateY(-1px)
+        scale(0.98);
+}
+
+.whatsapp-button:focus-visible {
+
+    outline:
+        3px solid
+        rgba(37, 211, 102, 0.40);
+
+    outline-offset: 4px;
+}
+
+.whatsapp-button span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.whatsapp-button .whatsapp-icon {
+
+    width: 23px;
+
+    height: 23px;
+
+    flex:
+        0 0 23px;
+
+    font-size: 23px;
+
+    line-height: 1;
+}
+
+/*
+   Caso o HTML possua apenas texto,
+   não usamos mais o antigo "●".
+*/
+
 .whatsapp-button::before {
 
-    content:
-        "●";
-
-    margin-right: 7px;
-
-    font-size: 16px;
+    content: none;
 }
 
 
@@ -1376,7 +1539,8 @@ button {
         grid-template-columns:
             1fr 0.9fr;
 
-        gap: 35px;
+        gap:
+            35px;
     }
 
     .hero h1 {
@@ -1394,7 +1558,8 @@ button {
         grid-template-columns:
             repeat(3, 1fr);
 
-        gap: 15px;
+        gap:
+            15px;
     }
 
     .products-grid {
@@ -1411,7 +1576,8 @@ button {
 
     .opportunity-container {
 
-        gap: 45px;
+        gap:
+            45px;
     }
 
     .capture-container {
@@ -1419,12 +1585,14 @@ button {
         grid-template-columns:
             1fr 0.9fr;
 
-        gap: 45px;
+        gap:
+            45px;
     }
 
     .lead-form {
 
-        padding: 30px;
+        padding:
+            30px;
     }
 
     .footer-container {
@@ -1432,12 +1600,14 @@ button {
         grid-template-columns:
             1fr;
 
-        text-align: center;
+        text-align:
+            center;
     }
 
     .footer-copy {
 
-        text-align: center;
+        text-align:
+            center;
     }
 }
 
@@ -1450,12 +1620,14 @@ button {
 
     .header-container {
 
-        min-height: 68px;
+        min-height:
+            68px;
     }
 
     .hero {
 
-        min-height: auto;
+        min-height:
+            auto;
     }
 
     .hero-container {
@@ -1463,35 +1635,44 @@ button {
         grid-template-columns:
             1fr;
 
-        padding-top: 65px;
+        padding-top:
+            65px;
 
-        padding-bottom: 65px;
+        padding-bottom:
+            65px;
 
-        text-align: center;
+        text-align:
+            center;
     }
 
     .hero-content {
 
-        max-width: 700px;
+        max-width:
+            700px;
 
-        margin: 0 auto;
+        margin:
+            0 auto;
     }
 
     .hero p {
 
-        margin-left: auto;
+        margin-left:
+            auto;
 
-        margin-right: auto;
+        margin-right:
+            auto;
     }
 
     .hero-image {
 
-        order: 2;
+        order:
+            2;
     }
 
     .hero-image img {
 
-        max-width: 500px;
+        max-width:
+            500px;
     }
 
     .benefits-grid {
@@ -1499,9 +1680,11 @@ button {
         grid-template-columns:
             1fr;
 
-        max-width: 600px;
+        max-width:
+            600px;
 
-        margin: 0 auto;
+        margin:
+            0 auto;
     }
 
     .opportunity-container {
@@ -1509,21 +1692,26 @@ button {
         grid-template-columns:
             1fr;
 
-        text-align: center;
+        text-align:
+            center;
     }
 
     .opportunity-image {
 
-        order: 1;
+        order:
+            1;
     }
 
     .opportunity-content {
 
-        order: 2;
+        order:
+            2;
 
-        max-width: 700px;
+        max-width:
+            700px;
 
-        margin: 0 auto;
+        margin:
+            0 auto;
     }
 
     .capture-container {
@@ -1531,21 +1719,26 @@ button {
         grid-template-columns:
             1fr;
 
-        max-width: 700px;
+        max-width:
+            700px;
     }
 
     .capture-content {
 
-        max-width: 650px;
+        max-width:
+            650px;
 
-        margin: 0 auto;
+        margin:
+            0 auto;
 
-        text-align: center;
+        text-align:
+            center;
     }
 
     .capture-highlight {
 
-        text-align: left;
+        text-align:
+            left;
     }
 }
 
@@ -1567,66 +1760,84 @@ button {
 
     .header-container {
 
-        min-height: 64px;
+        min-height:
+            64px;
 
-        gap: 10px;
+        gap:
+            10px;
     }
 
     .logo {
 
-        font-size: 16px;
+        font-size:
+            16px;
 
-        letter-spacing: 2px;
+        letter-spacing:
+            2px;
     }
 
     .header-button {
 
-        min-height: 40px;
+        min-height:
+            40px;
 
         padding:
             9px 12px;
 
-        font-size: 10px;
+        font-size:
+            10px;
 
-        letter-spacing: 0.4px;
+        letter-spacing:
+            0.4px;
     }
 
     .hero-container {
 
-        padding-top: 50px;
+        padding-top:
+            50px;
 
-        padding-bottom: 55px;
+        padding-bottom:
+            55px;
 
-        gap: 35px;
+        gap:
+            35px;
     }
 
     .hero h1 {
 
-        margin-bottom: 20px;
+        margin-bottom:
+            20px;
 
-        font-size: 38px;
+        font-size:
+            38px;
 
-        letter-spacing: -0.8px;
+        letter-spacing:
+            -0.8px;
     }
 
     .hero p {
 
-        font-size: 16px;
+        font-size:
+            16px;
 
-        line-height: 1.65;
+        line-height:
+            1.65;
     }
 
     .hero-label,
     .section-label {
 
-        font-size: 10px;
+        font-size:
+            10px;
 
-        letter-spacing: 2px;
+        letter-spacing:
+            2px;
     }
 
     .primary-button {
 
-        width: 100%;
+        width:
+            100%;
     }
 
     .about,
@@ -1643,26 +1854,32 @@ button {
 
     .section-header {
 
-        margin-bottom: 38px;
+        margin-bottom:
+            38px;
     }
 
     .section-header h2 {
 
-        font-size: 31px;
+        font-size:
+            31px;
 
-        letter-spacing: -0.4px;
+        letter-spacing:
+            -0.4px;
     }
 
     .section-header p {
 
-        font-size: 15px;
+        font-size:
+            15px;
     }
 
     .about-content {
 
-        padding: 22px;
+        padding:
+            22px;
 
-        font-size: 15px;
+        font-size:
+            15px;
     }
 
     .benefit-card {
@@ -1676,12 +1893,14 @@ button {
         grid-template-columns:
             repeat(2, 1fr);
 
-        gap: 12px;
+        gap:
+            12px;
     }
 
     .product-card h3 {
 
-        font-size: 14px;
+        font-size:
+            14px;
     }
 
     .product-info {
@@ -1692,17 +1911,20 @@ button {
 
     .products-cta {
 
-        margin-top: 35px;
+        margin-top:
+            35px;
     }
 
     .opportunity-content h2 {
 
-        font-size: 32px;
+        font-size:
+            32px;
     }
 
     .opportunity-content p {
 
-        font-size: 15px;
+        font-size:
+            15px;
     }
 
     .team-grid {
@@ -1710,17 +1932,20 @@ button {
         grid-template-columns:
             repeat(2, 1fr);
 
-        gap: 12px;
+        gap:
+            12px;
     }
 
     .capture-content h2 {
 
-        font-size: 38px;
+        font-size:
+            38px;
     }
 
     .capture-content > p {
 
-        font-size: 16px;
+        font-size:
+            16px;
     }
 
     .lead-form {
@@ -1728,38 +1953,44 @@ button {
         padding:
             25px 20px;
 
-        border-radius: 8px;
+        border-radius:
+            8px;
     }
 
     .form-group input {
 
-        height: 50px;
+        height:
+            50px;
     }
 
     .submit-button {
 
-        min-height: 52px;
+        min-height:
+            52px;
 
         padding:
             12px 15px;
 
-        font-size: 12px;
+        font-size:
+            12px;
     }
 
     .final-cta-content h2 {
 
-        font-size: 34px;
+        font-size:
+            34px;
     }
 
     .final-cta-content p {
 
-        font-size: 15px;
+        font-size:
+            15px;
     }
 
     .footer {
 
         padding:
-            35px 0 80px;
+            35px 0 90px;
     }
 
     .footer-links {
@@ -1770,18 +2001,50 @@ button {
 
     .whatsapp-button {
 
-        right: 15px;
+        right:
+            15px;
 
-        bottom: 15px;
+        bottom:
+            15px;
 
-        min-width: 52px;
+        min-width:
+            54px;
 
-        height: 52px;
+        width:
+            54px;
+
+        height:
+            54px;
+
+        min-height:
+            54px;
 
         padding:
-            0 15px;
+            0;
 
-        font-size: 11px;
+        border-radius:
+            50%;
+
+        gap:
+            0;
+    }
+
+    .whatsapp-button span:not(.whatsapp-icon) {
+
+        display:
+            none;
+    }
+
+    .whatsapp-button .whatsapp-icon {
+
+        width:
+            24px;
+
+        height:
+            24px;
+
+        font-size:
+            24px;
     }
 }
 
@@ -1794,7 +2057,8 @@ button {
 
     .logo {
 
-        font-size: 14px;
+        font-size:
+            14px;
     }
 
     .header-button {
@@ -1802,12 +2066,14 @@ button {
         padding:
             8px 9px;
 
-        font-size: 9px;
+        font-size:
+            9px;
     }
 
     .hero h1 {
 
-        font-size: 33px;
+        font-size:
+            33px;
     }
 
     .products-grid {
@@ -1815,12 +2081,14 @@ button {
         grid-template-columns:
             1fr 1fr;
 
-        gap: 8px;
+        gap:
+            8px;
     }
 
     .team-grid {
 
-        gap: 8px;
+        gap:
+            8px;
     }
 
     .lead-form {
@@ -1831,23 +2099,35 @@ button {
 
     .whatsapp-button {
 
-        width: 50px;
+        right:
+            12px;
 
-        min-width: 50px;
+        bottom:
+            12px;
 
-        padding: 0;
+        width:
+            50px;
 
-        border-radius: 50%;
+        min-width:
+            50px;
+
+        height:
+            50px;
+
+        min-height:
+            50px;
     }
 
-    .whatsapp-button span {
+    .whatsapp-button .whatsapp-icon {
 
-        display: none;
-    }
+        width:
+            21px;
 
-    .whatsapp-button::before {
+        height:
+            21px;
 
-        margin: 0;
+        font-size:
+            21px;
     }
 }
 
@@ -1858,24 +2138,42 @@ button {
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
 
     outline:
         3px solid
         rgba(176, 138, 69, 0.45);
 
-    outline-offset: 3px;
+    outline-offset:
+        3px;
 }
 
 
 /* =========================================================
-   24. REDUÇÃO DE MOVIMENTO
+   24. SELEÇÃO DE TEXTO
+========================================================= */
+
+::selection {
+
+    background:
+        var(--primary);
+
+    color:
+        var(--white);
+}
+
+
+/* =========================================================
+   25. REDUÇÃO DE MOVIMENTO
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     html {
-        scroll-behavior: auto;
+        scroll-behavior:
+            auto;
     }
 
     *,
@@ -1892,3 +2190,25 @@ input:focus-visible {
             0.01ms !important;
     }
 }
+
+
+/* =========================================================
+   26. SEGURANÇA DO WHATSAPP
+========================================================= */
+
+.whatsapp-button,
+.whatsapp-button * {
+
+    pointer-events:
+        auto;
+}
+
+.whatsapp-button {
+    touch-action:
+        manipulation;
+}
+
+
+/* =========================================================
+   FIM DO CSS
+========================================================= */
