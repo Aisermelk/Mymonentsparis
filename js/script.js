@@ -1,38 +1,52 @@
 /* =========================================================
-   MOMENTS PARIS
-   JAVASCRIPT PRINCIPAL
+   MY MOMENTS PARIS
+   script.js
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       1. ROLAGEM SUAVE
+       ANO AUTOMÁTICO DO RODAPÉ
     ====================================================== */
 
-    const links = document.querySelectorAll('a[href^="#"]');
+    const ano = document.getElementById("ano");
 
-    links.forEach(link => {
+    if (ano) {
+        ano.textContent = new Date().getFullYear();
+    }
 
-        link.addEventListener("click", event => {
 
-            const targetId = link.getAttribute("href");
+    /* =====================================================
+       ROLAGEM SUAVE DOS LINKS INTERNOS
+    ====================================================== */
+
+    const linksInternos = document.querySelectorAll(
+        'a[href^="#"]'
+    );
+
+    linksInternos.forEach((link) => {
+
+        link.addEventListener("click", (event) => {
+
+            const destino = link.getAttribute("href");
 
             if (
-                !targetId ||
-                targetId === "#"
+                !destino ||
+                destino === "#" ||
+                destino.length <= 1
             ) {
                 return;
             }
 
-            const target = document.querySelector(targetId);
+            const elemento = document.querySelector(destino);
 
-            if (!target) {
+            if (!elemento) {
                 return;
             }
 
             event.preventDefault();
 
-            target.scrollIntoView({
+            elemento.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
@@ -43,41 +57,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       2. MÁSCARA DE WHATSAPP
+       MÁSCARA DE WHATSAPP
     ====================================================== */
 
-    const whatsappInput =
-        document.querySelector("#whatsapp");
+    const campoWhatsApp = document.getElementById("whatsapp");
 
-    if (whatsappInput) {
+    if (campoWhatsApp) {
 
-        whatsappInput.addEventListener("input", event => {
+        campoWhatsApp.addEventListener("input", (event) => {
 
-            let value = event.target.value;
+            let valor = event.target.value;
 
-            value = value.replace(/\D/g, "");
+            valor = valor.replace(/\D/g, "");
 
-            if (value.length > 11) {
-                value = value.substring(0, 11);
+            if (valor.length > 11) {
+                valor = valor.substring(0, 11);
             }
 
-            if (value.length <= 10) {
 
-                value = value.replace(
-                    /^(\d{2})(\d{4})(\d{0,4}).*/,
-                    "($1) $2-$3"
+            if (valor.length <= 10) {
+
+                valor = valor.replace(
+                    /^(\d{2})(\d)/,
+                    "($1) $2"
+                );
+
+                valor = valor.replace(
+                    /(\d{4})(\d)/,
+                    "$1-$2"
                 );
 
             } else {
 
-                value = value.replace(
-                    /^(\d{2})(\d{5})(\d{0,4}).*/,
-                    "($1) $2-$3"
+                valor = valor.replace(
+                    /^(\d{2})(\d)/,
+                    "($1) $2"
+                );
+
+                valor = valor.replace(
+                    /(\d{5})(\d)/,
+                    "$1-$2"
                 );
 
             }
 
-            event.target.value = value;
+            event.target.value = valor;
 
         });
 
@@ -85,120 +109,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       3. FORMULÁRIO
+       FORMULÁRIO
+       
+       IMPORTANTE:
+       O formulário continua sendo enviado diretamente
+       para o Formspree.
+       
+       Não vamos interceptar o submit.
     ====================================================== */
 
-    const form =
-        document.querySelector(".lead-form");
+    const formulario = document.querySelector(".lead-form");
 
-    if (form) {
+    if (formulario) {
 
-        form.addEventListener("submit", event => {
+        formulario.addEventListener("submit", () => {
 
-            const name =
-                document.querySelector("#nome");
+            const botao = formulario.querySelector(
+                'button[type="submit"]'
+            );
 
-            const whatsapp =
-                document.querySelector("#whatsapp");
+            if (botao) {
 
-            const email =
-                document.querySelector("#email");
+                botao.disabled = true;
 
+                botao.dataset.textoOriginal =
+                    botao.textContent;
 
-            /* ---------------------------------------------
-               VERIFICA NOME
-            --------------------------------------------- */
-
-            if (
-                !name ||
-                name.value.trim().length < 2
-            ) {
-
-                event.preventDefault();
-
-                alert(
-                    "Por favor, informe seu nome."
-                );
-
-                if (name) {
-                    name.focus();
-                }
-
-                return;
-            }
-
-
-            /* ---------------------------------------------
-               VERIFICA WHATSAPP
-            --------------------------------------------- */
-
-            if (whatsapp) {
-
-                const phoneNumbers =
-                    whatsapp.value.replace(/\D/g, "");
-
-                if (
-                    phoneNumbers.length < 10
-                ) {
-
-                    event.preventDefault();
-
-                    alert(
-                        "Informe um número de WhatsApp válido."
-                    );
-
-                    whatsapp.focus();
-
-                    return;
-                }
-
-            }
-
-
-            /* ---------------------------------------------
-               VERIFICA E-MAIL
-            --------------------------------------------- */
-
-            if (email) {
-
-                const emailValue =
-                    email.value.trim();
-
-                const emailRegex =
-                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (
-                    !emailRegex.test(emailValue)
-                ) {
-
-                    event.preventDefault();
-
-                    alert(
-                        "Informe um e-mail válido."
-                    );
-
-                    email.focus();
-
-                    return;
-                }
-
-            }
-
-
-            /* ---------------------------------------------
-               EVITA CLIQUES DUPLICADOS
-            --------------------------------------------- */
-
-            const submitButton =
-                form.querySelector(
-                    'button[type="submit"]'
-                );
-
-            if (submitButton) {
-
-                submitButton.disabled = true;
-
-                submitButton.textContent =
+                botao.textContent =
                     "ENVIANDO...";
 
             }
@@ -209,55 +146,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       4. ANIMAÇÃO DOS ELEMENTOS AO ENTRAR NA TELA
+       ANIMAÇÃO DOS ELEMENTOS AO ENTRAREM NA TELA
     ====================================================== */
 
-    const animatedElements =
-        document.querySelectorAll(
-            ".benefit-card, .product-card, .team-card"
-        );
+    const elementosAnimados = document.querySelectorAll(
+        ".benefit-card, " +
+        ".product-card, " +
+        ".team-card, " +
+        ".section-header, " +
+        ".about-content, " +
+        ".opportunity-content"
+    );
+
 
     if (
         "IntersectionObserver" in window &&
-        animatedElements.length > 0
+        elementosAnimados.length > 0
     ) {
 
-        const observer =
-            new IntersectionObserver(
-                entries => {
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
 
-                    entries.forEach(entry => {
+                entries.forEach((entry) => {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                    if (entry.isIntersecting) {
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
+                        entry.target.classList.add(
+                            "is-visible"
+                        );
 
-                            observer.unobserve(
-                                entry.target
-                            );
+                        observer.unobserve(
+                            entry.target
+                        );
 
-                        }
+                    }
 
-                    });
+                });
 
-                },
-                {
-                    threshold: 0.12
-                }
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        elementosAnimados.forEach((elemento) => {
+
+            elemento.classList.add(
+                "animate-on-scroll"
             );
 
-
-        animatedElements.forEach(element => {
-
-            element.classList.add(
-                "js-animation"
-            );
-
-            observer.observe(element);
+            observer.observe(elemento);
 
         });
 
@@ -265,89 +204,130 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       5. ANO AUTOMÁTICO DO FOOTER
+       HEADER AO ROLAR A PÁGINA
     ====================================================== */
 
-    const footerText =
-        document.querySelector(".footer-copy p");
+    const header = document.querySelector(".header");
 
-    if (footerText) {
+    if (header) {
 
-        footerText.innerHTML =
-            `© ${new Date().getFullYear()} Moments Paris.
-            Todos os direitos reservados.`;
+        const atualizarHeader = () => {
+
+            if (window.scrollY > 50) {
+
+                header.classList.add(
+                    "header-scrolled"
+                );
+
+            } else {
+
+                header.classList.remove(
+                    "header-scrolled"
+                );
+
+            }
+
+        };
+
+
+        window.addEventListener(
+            "scroll",
+            atualizarHeader,
+            {
+                passive: true
+            }
+        );
+
+
+        atualizarHeader();
 
     }
 
 
     /* =====================================================
-       6. BOTÃO WHATSAPP
+       BOTÃO WHATSAPP FLUTUANTE
        
-       Por enquanto ele leva para o formulário.
-       Depois podemos colocar o número real.
+       NÃO ALTERAMOS O HREF.
+       NÃO INTERCEPTAMOS O CLIQUE.
+       
+       O próprio HTML abre:
+       
+       https://wa.me/554992756194
     ====================================================== */
 
-    const whatsappButton =
-        document.querySelector(".whatsapp-button");
+    const whatsappButton = document.querySelector(
+        ".whatsapp-button"
+    );
 
     if (whatsappButton) {
 
-        whatsappButton.addEventListener(
-            "click",
-            event => {
+        whatsappButton.setAttribute(
+            "target",
+            "_blank"
+        );
 
-                const capture =
-                    document.querySelector("#captura");
-
-                if (capture) {
-
-                    event.preventDefault();
-
-                    capture.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                }
-
-            }
+        whatsappButton.setAttribute(
+            "rel",
+            "noopener noreferrer"
         );
 
     }
 
 
     /* =====================================================
-       7. PROTEÇÃO CONTRA ERROS DE IMAGEM
+       BOTÕES EXTERNOS DE CADASTRO
+       
+       Não bloqueamos os links do patrocinador.
     ====================================================== */
 
-    const images =
-        document.querySelectorAll("img");
+    const linksCadastro = document.querySelectorAll(
+        'a[href*="office.momentsparis.com.br"]'
+    );
 
-    images.forEach(image => {
+    linksCadastro.forEach((link) => {
 
-        image.addEventListener(
-            "error",
-            () => {
+        link.setAttribute(
+            "target",
+            "_blank"
+        );
 
-                console.warn(
-                    "Imagem não encontrada:",
-                    image.src
-                );
-
-                image.style.opacity = "0.4";
-
-            }
+        link.setAttribute(
+            "rel",
+            "noopener noreferrer"
         );
 
     });
 
 
     /* =====================================================
-       8. LOG DE TESTE
+       PROTEÇÃO CONTRA CLIQUE DUPLO NO FORMULÁRIO
+    ====================================================== */
+
+    if (formulario) {
+
+        formulario.addEventListener(
+            "submit",
+            () => {
+
+                formulario.classList.add(
+                    "form-sending"
+                );
+
+            },
+            {
+                once: false
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FINALIZAÇÃO
     ====================================================== */
 
     console.log(
-        "Moments Paris - página carregada corretamente."
+        "My Moments Paris - JavaScript carregado."
     );
 
 });
