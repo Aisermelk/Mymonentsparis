@@ -1,13 +1,13 @@
 /* =========================================================
    MY MOMENTS PARIS
-   script.js
+   JAVASCRIPT PRINCIPAL
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       ANO AUTOMÁTICO DO RODAPÉ
-    ====================================================== */
+       01. ANO AUTOMÁTICO
+    ===================================================== */
 
     const ano = document.getElementById("ano");
 
@@ -17,24 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ROLAGEM SUAVE DOS LINKS INTERNOS
-    ====================================================== */
+       02. ROLAGEM SUAVE
+    ===================================================== */
 
-    const linksInternos = document.querySelectorAll(
-        'a[href^="#"]'
-    );
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    linksInternos.forEach((link) => {
+        link.addEventListener("click", function (event) {
 
-        link.addEventListener("click", (event) => {
+            const destino = this.getAttribute("href");
 
-            const destino = link.getAttribute("href");
-
-            if (
-                !destino ||
-                destino === "#" ||
-                destino.length <= 1
-            ) {
+            if (!destino || destino === "#") {
                 return;
             }
 
@@ -57,23 +49,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       MÁSCARA DE WHATSAPP
-    ====================================================== */
+       03. MÁSCARA WHATSAPP
+    ===================================================== */
 
-    const campoWhatsApp = document.getElementById("whatsapp");
+    const whatsapp = document.getElementById("whatsapp");
 
-    if (campoWhatsApp) {
+    if (whatsapp) {
 
-        campoWhatsApp.addEventListener("input", (event) => {
+        whatsapp.addEventListener("input", function () {
 
-            let valor = event.target.value;
-
-            valor = valor.replace(/\D/g, "");
+            let valor = this.value.replace(/\D/g, "");
 
             if (valor.length > 11) {
                 valor = valor.substring(0, 11);
             }
-
 
             if (valor.length <= 10) {
 
@@ -101,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-            event.target.value = valor;
+            this.value = valor;
 
         });
 
@@ -109,24 +98,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       FORMULÁRIO
-       
-       IMPORTANTE:
-       O formulário continua sendo enviado diretamente
-       para o Formspree.
-       
-       Não vamos interceptar o submit.
-    ====================================================== */
+       04. FORMULÁRIO
+    ===================================================== */
 
-    const formulario = document.querySelector(".lead-form");
+    const form = document.querySelector(".lead-form");
 
-    if (formulario) {
+    if (form) {
 
-        formulario.addEventListener("submit", () => {
+        form.addEventListener("submit", async function (event) {
 
-            const botao = formulario.querySelector(
+            event.preventDefault();
+
+
+            const botao = form.querySelector(
                 'button[type="submit"]'
             );
+
+
+            const nome = document.getElementById("nome");
+            const telefone = document.getElementById("whatsapp");
+            const email = document.getElementById("email");
+
+
+            /* =============================================
+               VALIDAÇÃO
+            ============================================= */
+
+            if (!nome || !telefone || !email) {
+                mostrarMensagem(
+                    "Não foi possível localizar todos os campos do formulário.",
+                    "erro"
+                );
+                return;
+            }
+
+
+            if (nome.value.trim().length < 2) {
+
+                mostrarMensagem(
+                    "Digite seu nome completo.",
+                    "erro"
+                );
+
+                nome.focus();
+
+                return;
+            }
+
+
+            const telefoneNumeros =
+                telefone.value.replace(/\D/g, "");
+
+
+            if (telefoneNumeros.length < 10) {
+
+                mostrarMensagem(
+                    "Digite um WhatsApp válido.",
+                    "erro"
+                );
+
+                telefone.focus();
+
+                return;
+            }
+
+
+            if (!email.validity.valid) {
+
+                mostrarMensagem(
+                    "Digite um e-mail válido.",
+                    "erro"
+                );
+
+                email.focus();
+
+                return;
+            }
+
+
+            /* =============================================
+               BLOQUEIA DUPLO ENVIO
+            ============================================= */
 
             if (botao) {
 
@@ -140,60 +192,265 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
+
+            /* =============================================
+               ENVIO FORMSPREE
+            ============================================= */
+
+            try {
+
+                const dados = new FormData(form);
+
+                const resposta = await fetch(
+                    form.action,
+                    {
+                        method: "POST",
+                        body: dados,
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    }
+                );
+
+
+                if (resposta.ok) {
+
+                    mostrarObrigado();
+
+                    form.reset();
+
+                } else {
+
+                    let mensagem =
+                        "Não foi possível enviar seus dados.";
+
+                    try {
+
+                        const resultado =
+                            await resposta.json();
+
+                        if (
+                            resultado &&
+                            resultado.errors &&
+                            resultado.errors.length
+                        ) {
+
+                            mensagem =
+                                resultado.errors
+                                    .map(error => error.message)
+                                    .join(" ");
+
+                        }
+
+                    } catch (erro) {
+                        /* resposta sem JSON */
+                    }
+
+
+                    mostrarMensagem(
+                        mensagem,
+                        "erro"
+                    );
+
+                }
+
+            } catch (erro) {
+
+                console.error(
+                    "Erro ao enviar formulário:",
+                    erro
+                );
+
+                mostrarMensagem(
+                    "Verifique sua conexão com a internet e tente novamente.",
+                    "erro"
+                );
+
+            }
+
+
+            /* =============================================
+               RESTAURA BOTÃO
+            ============================================= */
+
+            if (botao) {
+
+                botao.disabled = false;
+
+                botao.textContent =
+                    botao.dataset.textoOriginal ||
+                    "QUERO RECEBER INFORMAÇÕES";
+
+            }
+
         });
 
     }
 
 
     /* =====================================================
-       ANIMAÇÃO DOS ELEMENTOS AO ENTRAREM NA TELA
-    ====================================================== */
+       05. MENSAGEM DE ERRO / AVISO
+    ===================================================== */
 
-    const elementosAnimados = document.querySelectorAll(
-        ".benefit-card, " +
-        ".product-card, " +
-        ".team-card, " +
-        ".section-header, " +
-        ".about-content, " +
-        ".opportunity-content"
-    );
+    function mostrarMensagem(texto, tipo = "erro") {
+
+        let mensagem =
+            document.getElementById("form-message");
+
+
+        if (!mensagem) {
+
+            mensagem =
+                document.createElement("div");
+
+            mensagem.id =
+                "form-message";
+
+            mensagem.setAttribute(
+                "role",
+                "alert"
+            );
+
+            if (form) {
+                form.prepend(mensagem);
+            }
+
+        }
+
+
+        mensagem.className =
+            `form-message ${tipo}`;
+
+        mensagem.textContent =
+            texto;
+
+
+        mensagem.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }
+
+
+    /* =====================================================
+       06. TELA DE OBRIGADO
+    ===================================================== */
+
+    function mostrarObrigado() {
+
+        const captura =
+            document.getElementById("captura");
+
+
+        if (!captura) {
+            return;
+        }
+
+
+        const container =
+            captura.querySelector(
+                ".capture-container"
+            );
+
+
+        if (!container) {
+            return;
+        }
+
+
+        container.innerHTML = `
+
+            <div class="thank-you-message">
+
+                <div class="thank-you-icon">
+                    ✓
+                </div>
+
+                <span class="section-label">
+                    MY MOMENTS PARIS
+                </span>
+
+                <h2>
+                    Obrigado!
+                </h2>
+
+                <p>
+                    Seus dados foram enviados
+                    com sucesso.
+                </p>
+
+                <p>
+                    Em breve entraremos em contato
+                    com você pelo WhatsApp.
+                </p>
+
+                <a
+                    href="#inicio"
+                    class="primary-button"
+                >
+                    VOLTAR AO INÍCIO
+                </a>
+
+            </div>
+
+        `;
+
+
+        captura.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+
+    /* =====================================================
+       07. ANIMAÇÃO AO ENTRAR NA TELA
+    ===================================================== */
+
+    const elementosAnimados =
+        document.querySelectorAll(
+            ".benefit-card, .product-card, .team-card"
+        );
 
 
     if (
         "IntersectionObserver" in window &&
-        elementosAnimados.length > 0
+        elementosAnimados.length
     ) {
 
-        const observer = new IntersectionObserver(
-            (entries, observer) => {
+        const observer =
+            new IntersectionObserver(
+                (entradas, observador) => {
 
-                entries.forEach((entry) => {
+                    entradas.forEach(entrada => {
 
-                    if (entry.isIntersecting) {
+                        if (entrada.isIntersecting) {
 
-                        entry.target.classList.add(
-                            "is-visible"
-                        );
+                            entrada.target.classList.add(
+                                "visible"
+                            );
 
-                        observer.unobserve(
-                            entry.target
-                        );
+                            observador.unobserve(
+                                entrada.target
+                            );
 
-                    }
+                        }
 
-                });
+                    });
 
-            },
-            {
-                threshold: 0.12
-            }
-        );
+                },
+                {
+                    threshold: 0.12
+                }
+            );
 
 
-        elementosAnimados.forEach((elemento) => {
+        elementosAnimados.forEach(elemento => {
 
             elemento.classList.add(
-                "animate-on-scroll"
+                "scroll-animation"
             );
 
             observer.observe(elemento);
@@ -204,118 +461,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       HEADER AO ROLAR A PÁGINA
-    ====================================================== */
+       08. LOGO
+    ===================================================== */
 
-    const header = document.querySelector(".header");
-
-    if (header) {
-
-        const atualizarHeader = () => {
-
-            if (window.scrollY > 50) {
-
-                header.classList.add(
-                    "header-scrolled"
-                );
-
-            } else {
-
-                header.classList.remove(
-                    "header-scrolled"
-                );
-
-            }
-
-        };
+    const logo =
+        document.querySelector(".logo");
 
 
-        window.addEventListener(
-            "scroll",
-            atualizarHeader,
-            {
-                passive: true
+    if (logo) {
+
+        logo.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
             }
         );
-
-
-        atualizarHeader();
 
     }
 
 
     /* =====================================================
-       BOTÃO WHATSAPP FLUTUANTE
-       
-       NÃO ALTERAMOS O HREF.
-       NÃO INTERCEPTAMOS O CLIQUE.
-       
-       O próprio HTML abre:
-       
-       https://wa.me/554992756194
-    ====================================================== */
+       09. PREVENÇÃO DE ERRO NO WHATSAPP
+    ===================================================== */
 
-    const whatsappButton = document.querySelector(
-        ".whatsapp-button"
-    );
+    const whatsappButton =
+        document.querySelector(
+            ".whatsapp-button"
+        );
+
 
     if (whatsappButton) {
 
-        whatsappButton.setAttribute(
-            "target",
-            "_blank"
-        );
-
-        whatsappButton.setAttribute(
-            "rel",
-            "noopener noreferrer"
-        );
-
-    }
-
-
-    /* =====================================================
-       BOTÕES EXTERNOS DE CADASTRO
-       
-       Não bloqueamos os links do patrocinador.
-    ====================================================== */
-
-    const linksCadastro = document.querySelectorAll(
-        'a[href*="office.momentsparis.com.br"]'
-    );
-
-    linksCadastro.forEach((link) => {
-
-        link.setAttribute(
-            "target",
-            "_blank"
-        );
-
-        link.setAttribute(
-            "rel",
-            "noopener noreferrer"
-        );
-
-    });
-
-
-    /* =====================================================
-       PROTEÇÃO CONTRA CLIQUE DUPLO NO FORMULÁRIO
-    ====================================================== */
-
-    if (formulario) {
-
-        formulario.addEventListener(
-            "submit",
+        whatsappButton.addEventListener(
+            "click",
             () => {
 
-                formulario.classList.add(
-                    "form-sending"
+                console.log(
+                    "WhatsApp aberto."
                 );
 
-            },
-            {
-                once: false
             }
         );
 
@@ -323,11 +512,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       FINALIZAÇÃO
-    ====================================================== */
+       10. CONSOLE
+    ===================================================== */
 
     console.log(
-        "My Moments Paris - JavaScript carregado."
+        "My Moments Paris carregado com sucesso."
     );
 
 });
