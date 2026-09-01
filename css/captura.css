@@ -20,82 +20,185 @@
   --container: 1180px;
 }
 
-
 * {
   box-sizing: border-box;
 }
-
 
 html {
   scroll-behavior: smooth;
 }
 
-
 body.luxury-capture {
   margin: 0;
-
   background: var(--black);
   color: var(--white);
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
-
 
 .luxury-capture a {
   color: inherit;
 }
 
-
 .luxury-container {
-  width: min(
-    var(--container),
-    calc(100% - 64px)
-  );
-
+  width: min(var(--container), calc(100% - 64px));
   margin: 0 auto;
 }
 
-
 .luxury-label {
   display: inline-block;
-
   color: var(--gold-light);
-
   font-size: 10px;
   font-weight: 700;
-
   letter-spacing: 3px;
 }
 
 
 /* =========================================================
-   HEADER
+   BARRA SUPERIOR FLUTUANTE
    ========================================================= */
 
 .luxury-header {
-  position: absolute;
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
 
-  top: 0;
-  left: 0;
+  width: min(1160px, calc(100% - 40px));
 
-  width: 100%;
+  padding: 11px 16px;
 
-  padding: 28px 42px;
+  z-index: 1000;
 
-  z-index: 20;
+  background: rgba(5, 5, 5, .82);
+
+  border: 1px solid rgba(198, 161, 91, .22);
+
+  border-radius: 50px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, .35);
+}
+
+.luxury-header-inner {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
 }
 
 
+/* WhatsApp */
+
+.luxury-header-whatsapp {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #d8d3ca !important;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: .5px;
+
+  white-space: nowrap;
+
+  transition: color .2s ease;
+}
+
+.luxury-header-whatsapp:hover {
+  color: var(--gold-light) !important;
+}
+
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(198, 161, 91, .55);
+
+  border-radius: 50%;
+
+  color: var(--gold-light);
+
+  font-size: 9px;
+}
+
+
+/* Logo */
+
+.luxury-logo {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
 .luxury-logo img {
-  width: 130px;
+  width: 115px;
   height: auto;
 
   display: block;
+}
+
+
+/* Menu */
+
+.luxury-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.luxury-nav a {
+  color: #aaa59b !important;
+
+  text-decoration: none;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  transition: color .2s ease;
+}
+
+.luxury-nav a:hover {
+  color: var(--gold-light) !important;
+}
+
+.luxury-nav a:last-child {
+  padding: 11px 17px;
+
+  background: var(--gold);
+
+  color: #080808 !important;
+
+  border-radius: 2px;
+}
+
+.luxury-nav a:last-child:hover {
+  background: var(--gold-light);
 }
 
 
@@ -109,125 +212,129 @@ body.luxury-capture {
   min-height: 100svh;
 
   display: flex;
+
   align-items: center;
+  justify-content: center;
 
   overflow: hidden;
 
   background: #030303;
-}
 
+  text-align: center;
+}
 
 .luxury-hero-image {
   position: absolute;
 
-  top: 0;
-  right: 0;
+  inset: 0;
 
-  width: 62%;
+  width: 100%;
   height: 100%;
 }
-
 
 .luxury-hero-image img {
   width: 100%;
   height: 100%;
 
   object-fit: cover;
+
   object-position: center;
 
   display: block;
 
   filter:
-    brightness(.72)
-    contrast(1.06)
-    saturate(.8);
+    brightness(.52)
+    contrast(1.08)
+    saturate(.78);
 }
 
 
+/* Escurecimento da imagem */
+
 .luxury-hero-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
     linear-gradient(
-      90deg,
-      #030303 0%,
-      rgba(3,3,3,.96) 28%,
-      rgba(3,3,3,.72) 48%,
-      rgba(3,3,3,.08) 78%,
-      rgba(3,3,3,.25) 100%
+      180deg,
+      rgba(3,3,3,.55) 0%,
+      rgba(3,3,3,.35) 35%,
+      rgba(3,3,3,.58) 65%,
+      rgba(3,3,3,.93) 100%
     );
 }
-
 
 .luxury-hero-overlay::after {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
     radial-gradient(
-      circle at 75% 50%,
+      circle at center,
       rgba(198,161,91,.12),
-      transparent 30%
+      transparent 38%
     );
 }
 
 
+/* CONTEÚDO CENTRAL */
+
 .luxury-hero-content {
   position: relative;
+
   z-index: 5;
 
-  width: min(
-    600px,
-    calc(100% - 64px)
-  );
+  width: min(900px, calc(100% - 40px));
 
-  margin-left: max(
-    32px,
-    calc((100% - var(--container)) / 2)
-  );
+  margin: 0 auto;
 
-  padding-top: 40px;
+  padding-top: 70px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
 }
 
-
 .luxury-hero h1 {
-  max-width: 650px;
+  width: 100%;
 
-  margin: 22px 0 26px;
+  max-width: 850px;
+
+  margin: 22px auto 26px;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: clamp(
-    44px,
-    5.5vw,
-    76px
-  );
+  font-size: clamp(48px, 6vw, 82px);
 
   font-weight: 400;
 
   line-height: .98;
 
-  letter-spacing: -2.8px;
+  letter-spacing: -3px;
 }
 
-
 .luxury-hero h1 strong {
-  display: block;
+  display: inline;
 
   color: var(--gold-light);
 
   font-weight: 400;
 }
 
-
 .luxury-hero-content > p {
-  margin: 0 0 34px;
+  margin: 0 auto 34px;
 
   color: #ded9cf;
 
@@ -241,11 +348,9 @@ body.luxury-capture {
   line-height: 1.4;
 }
 
-
 .luxury-hero-content > p span {
   color: var(--gold-light);
 }
-
 
 .luxury-button {
   display: inline-flex;
@@ -255,9 +360,9 @@ body.luxury-capture {
 
   gap: 20px;
 
-  min-height: 54px;
+  min-height: 56px;
 
-  padding: 0 28px;
+  padding: 0 32px;
 
   background: var(--gold);
 
@@ -275,29 +380,29 @@ body.luxury-capture {
     transform .25s ease;
 }
 
-
 .luxury-button:hover {
   background: var(--gold-light);
 
   transform: translateY(-2px);
 }
 
-
 .luxury-button b {
   font-size: 17px;
+
   font-weight: 400;
 }
-
 
 .luxury-scroll {
   position: absolute;
 
   left: 50%;
+
   bottom: 24px;
 
   z-index: 5;
 
   width: 1px;
+
   height: 45px;
 
   background:
@@ -320,7 +425,6 @@ body.luxury-capture {
   text-align: center;
 }
 
-
 .luxury-intro h2 {
   margin: 22px auto 30px;
 
@@ -329,11 +433,7 @@ body.luxury-capture {
     "Times New Roman",
     serif;
 
-  font-size: clamp(
-    45px,
-    6vw,
-    76px
-  );
+  font-size: clamp(45px, 6vw, 76px);
 
   font-weight: 400;
 
@@ -341,7 +441,6 @@ body.luxury-capture {
 
   letter-spacing: -2px;
 }
-
 
 .luxury-intro p {
   width: min(540px, 100%);
@@ -366,7 +465,6 @@ body.luxury-capture {
   background: var(--black);
 }
 
-
 .luxury-points .luxury-container {
   display: grid;
 
@@ -376,7 +474,6 @@ body.luxury-capture {
   border-top:
     1px solid rgba(255,255,255,.09);
 }
-
 
 .luxury-point {
   display: flex;
@@ -389,11 +486,9 @@ body.luxury-capture {
     1px solid rgba(255,255,255,.09);
 }
 
-
 .luxury-point:last-child {
   border-right: 0;
 }
-
 
 .luxury-point > span {
   color: var(--gold);
@@ -403,7 +498,6 @@ body.luxury-capture {
 
   letter-spacing: 1px;
 }
-
 
 .luxury-point h3 {
   margin: 0 0 9px;
@@ -417,7 +511,6 @@ body.luxury-capture {
 
   font-weight: 400;
 }
-
 
 .luxury-point p {
   margin: 0;
@@ -446,18 +539,13 @@ body.luxury-capture {
     var(--black-soft);
 }
 
-
 .luxury-form-intro {
-  width: min(
-    600px,
-    100%
-  );
+  width: min(600px, 100%);
 
   margin: 0 auto 60px;
 
   text-align: center;
 }
-
 
 .luxury-form-intro h2 {
   margin: 20px 0 16px;
@@ -467,15 +555,10 @@ body.luxury-capture {
     "Times New Roman",
     serif;
 
-  font-size: clamp(
-    45px,
-    5vw,
-    65px
-  );
+  font-size: clamp(45px, 5vw, 65px);
 
   font-weight: 400;
 }
-
 
 .luxury-form-intro p {
   margin: 0;
@@ -485,21 +568,15 @@ body.luxury-capture {
   font-size: 14px;
 }
 
-
 .luxury-form {
-  width: min(
-    580px,
-    100%
-  );
+  width: min(580px, 100%);
 
   margin: auto;
 }
 
-
 .luxury-field {
   margin-bottom: 25px;
 }
-
 
 .luxury-field label {
   display: block;
@@ -514,16 +591,16 @@ body.luxury-capture {
   letter-spacing: 1px;
 }
 
-
 .luxury-field input,
 .luxury-field select {
   width: 100%;
 
   height: 50px;
 
-  padding: 0 0;
+  padding: 0;
 
   border: 0;
+
   border-bottom:
     1px solid #30302d;
 
@@ -541,28 +618,24 @@ body.luxury-capture {
     border-color .2s ease;
 }
 
-
 .luxury-field input::placeholder {
   color: #55534e;
 }
-
 
 .luxury-field input:focus,
 .luxury-field select:focus {
   border-bottom-color: var(--gold);
 }
 
-
 .luxury-field select {
   cursor: pointer;
 }
 
-
 .luxury-field select option {
   background: #111;
+
   color: #fff;
 }
-
 
 .luxury-consent {
   display: flex;
@@ -580,13 +653,11 @@ body.luxury-capture {
   cursor: pointer;
 }
 
-
 .luxury-consent input {
   margin-top: 1px;
 
   accent-color: var(--gold);
 }
-
 
 .luxury-submit {
   width: 100%;
@@ -611,13 +682,11 @@ body.luxury-capture {
     transform .25s ease;
 }
 
-
 .luxury-submit:hover {
   background: var(--gold-light);
 
   transform: translateY(-2px);
 }
-
 
 .luxury-submit span {
   margin-left: 15px;
@@ -636,6 +705,7 @@ body.luxury-capture {
   min-height: 700px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -652,7 +722,6 @@ body.luxury-capture {
   text-align: center;
 }
 
-
 .luxury-register::before,
 .luxury-register::after {
   content: "";
@@ -660,6 +729,7 @@ body.luxury-capture {
   position: absolute;
 
   width: 1px;
+
   height: 100px;
 
   background:
@@ -670,24 +740,17 @@ body.luxury-capture {
     );
 }
 
-
 .luxury-register::before {
   top: 0;
 }
-
 
 .luxury-register::after {
   bottom: 0;
 }
 
-
 .luxury-register-inner {
-  width: min(
-    720px,
-    100%
-  );
+  width: min(720px, 100%);
 }
-
 
 .luxury-register h2 {
   margin: 22px 0;
@@ -697,11 +760,7 @@ body.luxury-capture {
     "Times New Roman",
     serif;
 
-  font-size: clamp(
-    50px,
-    7vw,
-    82px
-  );
+  font-size: clamp(50px, 7vw, 82px);
 
   font-weight: 400;
 
@@ -710,7 +769,6 @@ body.luxury-capture {
   letter-spacing: -2px;
 }
 
-
 .luxury-register-inner > p {
   margin: 0 auto 40px;
 
@@ -718,7 +776,6 @@ body.luxury-capture {
 
   font-size: 14px;
 }
-
 
 .luxury-register-button {
   display: inline-flex;
@@ -729,6 +786,7 @@ body.luxury-capture {
   gap: 20px;
 
   min-width: 310px;
+
   min-height: 58px;
 
   padding: 0 28px;
@@ -749,18 +807,15 @@ body.luxury-capture {
     transform .25s ease;
 }
 
-
 .luxury-register-button:hover {
   background: var(--gold-light);
 
   transform: translateY(-2px);
 }
 
-
 .luxury-register-button span {
   font-size: 17px;
 }
-
 
 .luxury-register-inner small {
   display: block;
@@ -785,7 +840,6 @@ body.luxury-capture {
   text-align: center;
 }
 
-
 .luxury-final p {
   margin: 16px 0 22px;
 
@@ -793,7 +847,6 @@ body.luxury-capture {
 
   font-size: 12px;
 }
-
 
 .luxury-final a {
   color: var(--gold-light);
@@ -830,13 +883,11 @@ body.luxury-capture {
     1px solid rgba(255,255,255,.05);
 }
 
-
 .luxury-footer img {
   width: 95px;
 
   opacity: .65;
 }
-
 
 .luxury-footer span {
   color: #44413d;
@@ -846,7 +897,7 @@ body.luxury-capture {
 
 
 /* =========================================================
-   WHATSAPP
+   WHATSAPP FLUTUANTE
    ========================================================= */
 
 .luxury-whatsapp {
@@ -861,6 +912,7 @@ body.luxury-capture {
   height: 52px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -885,7 +937,6 @@ body.luxury-capture {
     background .25s ease;
 }
 
-
 .luxury-whatsapp:hover {
   transform: translateY(-3px);
 
@@ -902,104 +953,149 @@ body.luxury-capture {
 @media (max-width: 800px) {
 
   .luxury-container {
-    width: min(
-      100% - 40px,
-      600px
-    );
+    width: min(100% - 40px, 600px);
   }
 
+
+  /* Barra */
 
   .luxury-header {
-    padding: 22px 20px;
+    top: 10px;
+
+    width: calc(100% - 20px);
+
+    padding: 9px 12px;
+
+    border-radius: 22px;
   }
 
+  .luxury-header-inner {
+    min-height: 46px;
+  }
+
+  .luxury-header-whatsapp span:last-child {
+    display: none;
+  }
+
+  .luxury-header-whatsapp {
+    width: 36px;
+    height: 36px;
+
+    justify-content: center;
+  }
+
+  .whatsapp-icon {
+    width: 30px;
+    height: 30px;
+  }
 
   .luxury-logo img {
-    width: 110px;
+    width: 95px;
   }
 
+  .luxury-nav {
+    gap: 8px;
+  }
+
+  .luxury-nav a {
+    display: none;
+  }
+
+  .luxury-nav a:last-child {
+    display: inline-flex;
+
+    padding: 10px 12px;
+
+    font-size: 8px;
+  }
+
+
+  /* Hero */
 
   .luxury-hero {
     min-height: 100svh;
 
-    align-items: flex-end;
+    align-items: center;
   }
-
 
   .luxury-hero-image {
     width: 100%;
     height: 100%;
   }
 
-
   .luxury-hero-overlay {
     background:
       linear-gradient(
         180deg,
-        rgba(3,3,3,.15) 0%,
-        rgba(3,3,3,.35) 30%,
-        rgba(3,3,3,.93) 70%,
+        rgba(3,3,3,.45) 0%,
+        rgba(3,3,3,.30) 28%,
+        rgba(3,3,3,.68) 60%,
         #030303 100%
       );
   }
 
-
   .luxury-hero-content {
-    width: calc(100% - 40px);
+    width: calc(100% - 36px);
 
-    margin: 0 20px;
+    margin: 0 auto;
 
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 30px;
 
     text-align: center;
   }
 
-
   .luxury-hero h1 {
-    font-size: clamp(
-      40px,
-      11vw,
-      57px
-    );
+    max-width: 500px;
+
+    margin: 20px auto 24px;
+
+    font-size: clamp(39px, 11vw, 57px);
+
+    line-height: .99;
 
     letter-spacing: -1.8px;
   }
 
+  .luxury-hero h1 strong {
+    display: block;
+  }
 
   .luxury-hero-content > p {
     font-size: 20px;
-  }
 
+    margin-bottom: 30px;
+  }
 
   .luxury-button {
-    width: 100%;
+    width: min(100%, 360px);
   }
-
 
   .luxury-scroll {
     display: none;
   }
 
 
+  /* Intro */
+
   .luxury-intro {
     padding: 100px 0;
   }
-
 
   .luxury-intro h2 {
     font-size: 49px;
   }
 
 
+  /* Pontos */
+
   .luxury-points {
     padding-bottom: 90px;
   }
 
-
   .luxury-points .luxury-container {
     grid-template-columns: 1fr;
   }
-
 
   .luxury-point {
     border-right: 0;
@@ -1007,31 +1103,35 @@ body.luxury-capture {
     border-bottom:
       1px solid rgba(255,255,255,.09);
 
-    padding:
-      28px 0;
+    padding: 28px 0;
   }
-
 
   .luxury-point:last-child {
     border-bottom: 0;
   }
 
 
+  /* Form */
+
   .luxury-form-section {
     padding: 100px 0;
   }
 
 
+  /* Cadastro */
+
   .luxury-register {
     min-height: 620px;
   }
 
-
   .luxury-register-button {
     width: 100%;
+
     min-width: 0;
   }
 
+
+  /* Footer */
 
   .luxury-footer {
     padding: 25px 20px;
@@ -1052,11 +1152,9 @@ body.luxury-capture {
     font-size: 39px;
   }
 
-
   .luxury-intro h2 {
     font-size: 43px;
   }
-
 
   .luxury-register h2 {
     font-size: 51px;
