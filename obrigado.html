@@ -1,0 +1,662 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>Obrigado | Moments Paris</title>
+
+    <meta
+        name="description"
+        content="Obrigado pelo seu cadastro na Moments Paris."
+    >
+
+    <!-- =====================================================
+         GOOGLE TAG MANAGER
+         COLOCAR O ID REAL AQUI DEPOIS
+    ====================================================== -->
+
+    <!-- Google Tag Manager -->
+
+    <!--
+    <script>
+        (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({
+                'gtm.start':
+                new Date().getTime(),
+                event:'gtm.js'
+            });
+
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),
+                dl=l!='dataLayer'
+                    ? '&l='+l
+                    : '';
+
+            j.async=true;
+
+            j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+
+            f.parentNode.insertBefore(j,f);
+
+        })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
+    -->
+
+    <!-- =====================================================
+         META PIXEL
+         COLOCAR O ID REAL AQUI DEPOIS
+    ====================================================== -->
+
+    <!--
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {
+            if(f.fbq)return;
+
+            n=f.fbq=function(){
+                n.callMethod ?
+                n.callMethod.apply(n,arguments) :
+                n.queue.push(arguments)
+            };
+
+            if(!f._fbq)f._fbq=n;
+
+            n.push=n;
+            n.loaded=!0;
+            n.version='2.0';
+            n.queue=[];
+
+            t=b.createElement(e);
+            t.async=!0;
+
+            t.src=v;
+
+            s=b.getElementsByTagName(e)[0];
+
+            s.parentNode.insertBefore(t,s);
+
+        }(
+            window,
+            document,
+            'script',
+            'https://connect.facebook.net/en_US/fbevents.js'
+        );
+
+        fbq(
+            'init',
+            'SEU_META_PIXEL_ID'
+        );
+
+        fbq(
+            'track',
+            'PageView'
+        );
+
+        fbq(
+            'track',
+            'Lead'
+        );
+    </script>
+    -->
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS 4
+         COLOCAR O ID REAL AQUI DEPOIS
+    ====================================================== -->
+
+    <!--
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">
+    </script>
+
+    <script>
+
+        window.dataLayer =
+            window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag(
+            'js',
+            new Date()
+        );
+
+        gtag(
+            'config',
+            'G-XXXXXXXXXX'
+        );
+
+        gtag(
+            'event',
+            'generate_lead'
+        );
+
+    </script>
+    -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 25px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f7f4ef 0%,
+                    #ffffff 55%,
+                    #f3eee5 100%
+                );
+
+            color: #222;
+
+        }
+
+        .thank-you {
+
+            width: 100%;
+
+            max-width: 620px;
+
+            padding: 55px 45px;
+
+            text-align: center;
+
+            background: #ffffff;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0, 0, 0, 0.10);
+
+        }
+
+        .icon {
+
+            width: 78px;
+
+            height: 78px;
+
+            margin:
+                0 auto 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(176, 138, 69, 0.12);
+
+            color:
+                #b08a45;
+
+            font-size: 38px;
+
+            font-weight: bold;
+
+        }
+
+        .label {
+
+            display: block;
+
+            margin-bottom: 12px;
+
+            color:
+                #b08a45;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+        }
+
+        h1 {
+
+            margin-bottom: 18px;
+
+            color: #171717;
+
+            font-size:
+                clamp(
+                    34px,
+                    6vw,
+                    52px
+                );
+
+            line-height: 1.1;
+
+            font-weight: 600;
+
+        }
+
+        .description {
+
+            margin-bottom: 30px;
+
+            color: #666666;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+        .next-step {
+
+            margin-bottom: 30px;
+
+            padding: 20px;
+
+            border-left:
+                3px solid
+                #b08a45;
+
+            background:
+                #f7f4ef;
+
+            color: #555555;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            text-align: left;
+
+            border-radius:
+                0 7px 7px 0;
+
+        }
+
+        .next-step strong {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #222222;
+
+        }
+
+        .whatsapp-button {
+
+            width: 100%;
+
+            min-height: 54px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 15px 25px;
+
+            border-radius: 5px;
+
+            background:
+                #25d366;
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            text-decoration: none;
+
+            transition:
+                all 0.3s ease;
+
+        }
+
+        .whatsapp-button:hover {
+
+            background:
+                #1ebe5d;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(37, 211, 102, 0.25);
+
+        }
+
+        .back-button {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color:
+                #888888;
+
+            font-size: 13px;
+
+            text-decoration: none;
+
+            transition:
+                color 0.3s ease;
+
+        }
+
+        .back-button:hover {
+
+            color:
+                #b08a45;
+
+        }
+
+        .footer {
+
+            margin-top: 30px;
+
+            color:
+                #aaaaaa;
+
+            font-size: 11px;
+
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .thank-you {
+
+                padding:
+                    40px 25px;
+
+                border-radius:
+                    10px;
+            }
+
+            .icon {
+
+                width: 68px;
+
+                height: 68px;
+
+                font-size: 32px;
+            }
+
+            .description {
+
+                font-size: 15px;
+            }
+
+            .next-step {
+
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         GOOGLE TAG MANAGER NOSCRIPT
+    ====================================================== -->
+
+    <!--
+    <noscript>
+
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            height="0"
+            width="0"
+            style="
+                display:none;
+                visibility:hidden
+            ">
+        </iframe>
+
+    </noscript>
+    -->
+
+
+    <main class="thank-you">
+
+        <div class="icon">
+            ✓
+        </div>
+
+
+        <span class="label">
+            Moments Paris
+        </span>
+
+
+        <h1>
+            Obrigado!
+        </h1>
+
+
+        <p class="description">
+
+            Seu cadastro foi recebido
+            com sucesso.
+
+            Em breve nossa equipe
+            entrará em contato com você.
+
+        </p>
+
+
+        <div class="next-step">
+
+            <strong>
+                Próximo passo
+            </strong>
+
+            Se quiser agilizar seu atendimento,
+            fale agora com nossa equipe pelo
+            WhatsApp.
+
+        </div>
+
+
+        <!-- =================================================
+             WHATSAPP
+             O NÚMERO SERÁ CONFIGURADO NO SCRIPT
+        ================================================== -->
+
+        <a
+            href="#"
+            class="whatsapp-button"
+            id="whatsappButton"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Falar com a Moments Paris pelo WhatsApp"
+        >
+
+            <span
+                aria-hidden="true"
+            >
+                💬
+            </span>
+
+            Falar pelo WhatsApp
+
+        </a>
+
+
+        <a
+            href="/"
+            class="back-button"
+        >
+            Voltar para o site
+        </a>
+
+
+        <div class="footer">
+
+            © 2026 Moments Paris.
+            Todos os direitos reservados.
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         CONFIGURAÇÃO WHATSAPP
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const whatsappButton =
+                    document.getElementById(
+                        "whatsappButton"
+                    );
+
+                if (!whatsappButton) {
+                    return;
+                }
+
+                /*
+                 * O número será configurado aqui.
+                 *
+                 * Formato:
+                 * código do país + DDD + número
+                 *
+                 * Exemplo:
+                 * 5511999999999
+                 */
+
+                const whatsappNumber =
+                    "SEU_NUMERO_AQUI";
+
+                const message =
+                    "Olá! Acabei de realizar meu cadastro na Moments Paris e gostaria de saber mais.";
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(message);
+
+                whatsappButton.href =
+                    whatsappURL;
+
+
+                /* =============================================
+                   EVENTO DE CLIQUE
+                ============================================== */
+
+                whatsappButton.addEventListener(
+                    "click",
+                    function () {
+
+                        if (
+                            typeof fbq === "function"
+                        ) {
+
+                            fbq(
+                                "track",
+                                "Contact"
+                            );
+
+                        }
+
+                        if (
+                            typeof gtag === "function"
+                        ) {
+
+                            gtag(
+                                "event",
+                                "whatsapp_click",
+                                {
+                                    event_category:
+                                        "engagement",
+
+                                    event_label:
+                                        "WhatsApp"
+                                }
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
+```
