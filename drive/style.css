@@ -1,1517 +1,1534 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================================================
+   MOMENTS DRIVER
+   Replica visual da Landing Page de referência
+   ========================================================= */
+
+.drive-page {
+    --black: #050505;
+    --black-soft: #0b0b0b;
+    --black-light: #111111;
+
+    --white: #ffffff;
+    --white-soft: #f5f5f5;
+    --gray: #b5b5b5;
+    --gray-dark: #777777;
+    --line: rgba(255,255,255,.12);
+
+    --container: 1240px;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--black);
+    color: var(--white);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.drive-page *,
+.drive-page *::before,
+.drive-page *::after {
+    box-sizing: border-box;
+}
+
+.drive-page html {
+    scroll-behavior: smooth;
+}
+
+.drive-page body {
+    margin: 0;
+    padding: 0;
+    background: var(--black);
+}
+
+.drive-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.drive-page a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+.drive-page button,
+.drive-page input,
+.drive-page textarea {
+    font-family: inherit;
+}
 
-    <title>Moments Driver | Enquanto você dirige, seu carro vende.</title>
+.drive-page button {
+    cursor: pointer;
+}
 
-    <meta
-        name="description"
-        content="Transforme suas corridas em uma fonte de renda extra real com a Moments Driver."
-    >
+/* =========================================================
+   CONTAINER
+   ========================================================= */
 
-    <meta name="theme-color" content="#050505">
+.drive-page .container {
+    width: min(var(--container), calc(100% - 80px));
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+.drive-page .site-header {
+    position: absolute;
+    z-index: 100;
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
+    top: 0;
+    left: 0;
 
-    <!-- CSS DA PÁGINA -->
-    <link rel="stylesheet" href="./style.css">
+    width: 100%;
+    height: 90px;
 
-    <!-- V8 ADMIN UNIVERSAL -->
-    <script
-        src="/js/v8-loader.js"
-        data-project-id="8ae3fee2-b4f4-487c-96c8-3833395b51c2"
-    ></script>
-</head>
+    display: flex;
+    align-items: center;
 
-<body class="drive-page">
+    background: transparent;
+}
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+.drive-page .header-inner {
+    width: min(var(--container), calc(100% - 80px));
+    height: 100%;
 
-<header class="drive-header">
+    margin: 0 auto;
 
-    <div class="drive-container drive-header-inner">
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        <a href="#top" class="drive-logo-link" aria-label="Moments Driver">
-            <img
-                src="./assets/logo_driver.webp"
-                alt="Moments Driver"
-                class="drive-logo"
-            >
-        </a>
+.drive-page .logo {
+    display: flex;
+    align-items: center;
+}
 
-        <nav class="drive-nav" aria-label="Navegação principal">
+.drive-page .logo img {
+    width: 155px;
+    height: auto;
+}
 
-            <a href="#como-funciona">
-                Como funciona
-            </a>
+.drive-page .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
 
-            <a href="#beneficios">
-                Benefícios
-            </a>
+.drive-page .main-nav a {
+    position: relative;
 
-            <a href="#depoimentos">
-                Depoimentos
-            </a>
+    color: rgba(255,255,255,.9);
 
-            <a href="#sobre">
-                Sobre a Moments
-            </a>
+    font-size: 10px;
+    font-weight: 500;
 
-            <a href="#duvidas">
-                Dúvidas frequentes
-            </a>
+    letter-spacing: .035em;
 
-        </nav>
+    transition:
+        color .25s ease,
+        opacity .25s ease;
+}
 
-        <a
-            href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
-            class="drive-btn drive-btn-header checkout-link"
-        >
-            QUERO TRANSFORMAR MEU CARRO
-        </a>
+.drive-page .main-nav a:hover {
+    color: #fff;
+}
 
-        <button
-            class="drive-menu-button"
-            type="button"
-            aria-label="Abrir menu"
-            aria-expanded="false"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+.drive-page .header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    </div>
+    min-height: 44px;
+    padding: 0 22px;
 
-</header>
+    background: #fff;
+    color: #050505;
 
+    border: 1px solid #fff;
+    border-radius: 2px;
 
-<main id="top">
+    font-size: 10px;
+    font-weight: 700;
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+    letter-spacing: .04em;
+    text-transform: uppercase;
 
-<section class="drive-hero">
+    transition:
+        background .25s ease,
+        color .25s ease;
+}
 
-    <div class="drive-hero-background">
+.drive-page .header-cta:hover {
+    background: transparent;
+    color: #fff;
+}
 
-        <img
-            src="./assets/expositor.webp"
-            alt=""
-            aria-hidden="true"
-        >
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
 
-    </div>
+.drive-page .menu-toggle {
+    display: none;
 
-    <div class="drive-hero-overlay"></div>
+    width: 40px;
+    height: 40px;
 
-    <div class="drive-container drive-hero-content">
+    padding: 0;
 
-        <div class="drive-hero-copy">
+    border: 0;
+    background: transparent;
+}
 
-            <span class="drive-eyebrow">
-                MOTORISTA DE APLICATIVO
-            </span>
+.drive-page .menu-toggle span {
+    display: block;
 
-            <h1>
-                Enquanto você dirige
-                <strong>SEU CARRO VENDE.</strong>
-            </h1>
+    width: 22px;
+    height: 1px;
 
-            <p class="drive-hero-description">
-                Transforme suas corridas em uma fonte de renda extra real.
-            </p>
+    margin: 5px auto;
 
-            <p class="drive-hero-highlight">
-                Mais de 10.000 motoristas já cadastrados por todo o Brasil.
-            </p>
+    background: #fff;
+}
 
-            <a
-                href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
-                class="drive-btn drive-btn-primary checkout-link"
-            >
-                QUERO TRANSFORMAR MEU CARRO
-            </a>
+/* =========================================================
+   HERO
+   ========================================================= */
 
-        </div>
+.drive-page .hero {
+    position: relative;
 
-    </div>
+    min-height: 860px;
 
-</section>
+    display: flex;
+    align-items: center;
 
+    overflow: hidden;
 
-<!-- =========================================================
-     BENEFÍCIOS
-========================================================= -->
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.94) 0%,
+            rgba(0,0,0,.82) 32%,
+            rgba(0,0,0,.48) 62%,
+            rgba(0,0,0,.35) 100%
+        ),
+        url("./assets/expositor.webp") center center / cover no-repeat;
+}
 
-<section
-    class="drive-section drive-benefits"
-    id="beneficios"
->
+.drive-page .hero::after {
+    content: "";
 
-    <div class="drive-container">
+    position: absolute;
 
-        <div class="drive-benefits-grid">
+    inset: 0;
 
-            <article class="drive-benefit-card">
-
-                <div class="drive-icon">
-                    01
-                </div>
-
-                <h3>
-                    Fácil de começar
-                </h3>
-
-                <p>
-                    O passageiro vê, pergunta e compra. Você só dirige.
-                </p>
-
-            </article>
-
-
-            <article class="drive-benefit-card">
-
-                <div class="drive-icon">
-                    02
-                </div>
-
-                <h3>
-                    Sem complicação
-                </h3>
-
-                <p>
-                    Perfumes com 8 a 12 horas de fixação. Os passageiros adoram.
-                </p>
-
-            </article>
-
-
-            <article class="drive-benefit-card">
-
-                <div class="drive-icon">
-                    03
-                </div>
-
-                <h3>
-                    Renda extra
-                </h3>
-
-                <p>
-                    Uma corrida de R$10 pode virar R$60. Sem esforço. Sem mudar sua rotina.
-                </p>
-
-            </article>
-
-
-            <article class="drive-benefit-card">
-
-                <div class="drive-icon">
-                    04
-                </div>
-
-                <h3>
-                    Suporte completo
-                </h3>
-
-                <p>
-                    A Moments Paris cuida de tudo. Você só dirige.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     REALIDADE DO MOTORISTA
-========================================================= -->
-
-<section class="drive-section drive-reality">
-
-    <div class="drive-container">
-
-        <div class="drive-reality-grid">
-
-            <div class="drive-reality-copy">
-
-                <span class="drive-eyebrow">
-                    A realidade do motorista
-                </span>
-
-                <h2>
-                    Os custos sobem.
-                    <span>A margem aperta.</span>
-                </h2>
-
-                <h3>
-                    Mas a oportunidade está com você.
-                </h3>
-
-                <p>
-                    Combustível, manutenção, taxa do app, seguro…
-                    tudo pesa no fim do mês.
-                </p>
-
-                <p>
-                    A loja não muda sua rotina. Ela muda o resultado
-                    da sua rotina. Enquanto você dirige, seu carro vende.
-                </p>
-
-                <p>
-                    Da dificuldade fora do carro, nasce a oportunidade
-                    dentro dele.
-                </p>
-
-            </div>
-
-
-            <div class="drive-reality-image">
-
-                <img
-                    src="./assets/display.webp"
-                    alt="Display Moments Driver instalado no banco traseiro"
-                    loading="lazy"
-                >
-
-                <span>
-                    Tudo pronto para instalar no banco traseiro do seu carro.
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     COMO FUNCIONA
-========================================================= -->
-
-<section
-    class="drive-section drive-how"
-    id="como-funciona"
->
-
-    <div class="drive-container">
-
-        <div class="drive-section-heading">
-
-            <span class="drive-eyebrow">
-                Como funciona
-            </span>
-
-            <h2>
-                Simples. Rápido. Lucrativo.
-            </h2>
-
-        </div>
-
-
-        <div class="drive-steps-grid">
-
-            <article class="drive-step">
-
-                <span class="drive-step-number">
-                    1
-                </span>
-
-                <h3>
-                    Recebe o kit e o display
-                </h3>
-
-                <p>
-                    Você recebe os perfumes e o expositor prontos para usar.
-                </p>
-
-            </article>
-
-
-            <article class="drive-step">
-
-                <span class="drive-step-number">
-                    2
-                </span>
-
-                <h3>
-                    Instala no seu carro
-                </h3>
-
-                <p>
-                    Fixe-o de forma segura atrás do banco do passageiro.
-                </p>
-
-            </article>
-
-
-            <article class="drive-step">
-
-                <span class="drive-step-number">
-                    3
-                </span>
-
-                <h3>
-                    Passageiro vê e se interessa
-                </h3>
-
-                <p>
-                    O display chama atenção naturalmente durante a corrida.
-                </p>
-
-            </article>
-
-
-            <article class="drive-step">
-
-                <span class="drive-step-number">
-                    4
-                </span>
-
-                <h3>
-                    Você vende e repõe
-                </h3>
-
-                <p>
-                    O lucro fica no seu bolso; depois basta repor.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     POR QUE FUNCIONA
-========================================================= -->
-
-<section class="drive-section drive-opportunity">
-
-    <div class="drive-container">
-
-        <div class="drive-section-heading">
-
-            <span class="drive-eyebrow">
-                Por que funciona?
-            </span>
-
-            <h2>
-                Uma oportunidade que faz sentido.
-            </h2>
-
-        </div>
-
-
-        <div class="drive-opportunity-grid">
-
-            <article class="drive-opportunity-card">
-
-                <span class="drive-card-number">
-                    01
-                </span>
-
-                <h3>
-                    O mercado já existe
-                </h3>
-
-                <p>
-                    O Brasil é o 2º maior mercado de perfumaria do mundo.
-                    Produto de qualidade, com até 12 horas de fixação,
-                    por um preço que o passageiro não vai encontrar em
-                    outro lugar. A venda se justifica sozinha.
-                </p>
-
-            </article>
-
-
-            <article class="drive-opportunity-card">
-
-                <span class="drive-card-number">
-                    02
-                </span>
-
-                <h3>
-                    Dezenas de clientes todo dia
-                </h3>
-
-                <p>
-                    De 20 a 40 pessoas entram no seu carro todo dia.
-                    Muitas vão a festas, eventos, encontros — e querem
-                    estar perfumadas ou levar um presente.
-                    A oportunidade já está dentro do seu carro.
-                </p>
-
-            </article>
-
-
-            <article class="drive-opportunity-card">
-
-                <span class="drive-card-number">
-                    03
-                </span>
-
-                <h3>
-                    As fragrâncias mais vendidas do Brasil
-                </h3>
-
-                <p>
-                    Borrifou. Cheirou. Vendeu. A loja faz o trabalho
-                    por você. Fácil de instalar e pronto para vender
-                    no mesmo dia. Seu carro vende enquanto você dirige.
-                </p>
-
-            </article>
-
-
-            <article class="drive-opportunity-card">
-
-                <span class="drive-card-number">
-                    04
-                </span>
-
-                <h3>
-                    Produto chama atenção
-                </h3>
-
-                <p>
-                    A Moments Paris já selecionou as fragrâncias
-                    preferidas dos brasileiros. Você recebe tudo pronto.
-                    Só instalar e começar a vender.
-                </p>
-
-            </article>
-
-
-            <article class="drive-opportunity-card drive-opportunity-featured">
-
-                <span class="drive-card-number">
-                    05
-                </span>
-
-                <h3>
-                    Uma corrida de R$10 pode virar R$60
-                </h3>
-
-                <p>
-                    Tem motorista que vendeu 13 perfumes na primeira noite.
-                    Comece você também. Sem esforço. Sem mudar sua rotina.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     DEPOIMENTOS
-========================================================= -->
-
-<section
-    class="drive-section drive-testimonials"
-    id="depoimentos"
->
-
-    <div class="drive-container">
-
-        <div class="drive-section-heading">
-
-            <span class="drive-eyebrow">
-                Depoimentos
-            </span>
-
-            <h2>
-                Histórias de quem já faz
-            </h2>
-
-            <p>
-                Motoristas que já transformaram suas corridas.
-            </p>
-
-        </div>
-
-
-        <div class="drive-testimonials-grid">
-
-            <article class="drive-testimonial">
-
-                <div class="drive-stars">
-                    ★★★★★
-                </div>
-
-                <h3>
-                    Pedro
-                </h3>
-
-                <span class="drive-location">
-                    São Paulo/SP
-                </span>
-
-                <p>
-                    “Estava morando de aluguel, sem perspectiva.
-                    Coloquei a loja no carro e continuei fazendo minhas
-                    corridas normalmente. Com o resultado das vendas
-                    organizei minha vida financeira, comprei meu
-                    apartamento e troquei de carro.”
-                </p>
-
-                <strong>
-                    “Tudo isso sem parar de dirigir.”
-                </strong>
-
-            </article>
-
-
-            <article class="drive-testimonial">
-
-                <div class="drive-stars">
-                    ★★★★★
-                </div>
-
-                <h3>
-                    Belina
-                </h3>
-
-                <span class="drive-location">
-                    Curitiba/PR
-                </span>
-
-                <p>
-                    “Meu negócio fechou na pandemia e fiquei dois anos
-                    pagando dívidas. Comecei a dirigir para o aplicativo
-                    e conheci a loja da Moments. Em poucos meses
-                    transformei completamente minha situação financeira
-                    e quitei todas as dívidas que a pandemia deixou.”
-                </p>
-
-                <strong>
-                    “Não precisei mudar minha rotina. Só mudei o que
-                    levava no banco de trás.”
-                </strong>
-
-            </article>
-
-
-            <article class="drive-testimonial">
-
-                <div class="drive-stars">
-                    ★★★★★
-                </div>
-
-                <h3>
-                    Motorista anônimo
-                </h3>
-
-                <span class="drive-location">
-                    Rio de Janeiro/RJ
-                </span>
-
-                <p>
-                    “Fui juntando o lucro das vendas durante as corridas.
-                    Sem perceber, tinha dez mil reais guardados. Usei
-                    para fazer a lua de mel em resort com minha esposa.
-                    Algo que eu achava que levaria anos para acontecer.”
-                </p>
-
-                <strong>
-                    “Tudo dentro do carro, durante as corridas normais.”
-                </strong>
-
-            </article>
-
-
-            <article class="drive-testimonial">
-
-                <div class="drive-stars">
-                    ★★★★★
-                </div>
-
-                <h3>
-                    Carlos
-                </h3>
-
-                <span class="drive-location">
-                    Rio de Janeiro/RJ
-                </span>
-
-                <p>
-                    “Sempre trabalhei muito e nunca conseguia tirar férias
-                    em janeiro. Com o dinheiro que fui juntando das vendas
-                    na lojinha, consegui pela primeira vez descansar com
-                    a família em janeiro.”
-                </p>
-
-                <strong>
-                    “A lojinha pagou as férias que o aplicativo nunca conseguiu.”
-                </strong>
-
-            </article>
-
-
-            <article class="drive-testimonial">
-
-                <div class="drive-stars">
-                    ★★★★★
-                </div>
-
-                <h3>
-                    Rodrigo
-                </h3>
-
-                <span class="drive-location">
-                    Rio de Janeiro/RJ
-                </span>
-
-                <p>
-                    “Queria um carro melhor para trabalhar mas a parcela
-                    pesava. Comecei a usar o dinheiro da lojinha para
-                    pagar boa parte da parcela todo mês. Em poucos meses
-                    estava com o carro que eu queria, fazendo corridas
-                    melhores e ganhando mais.”
-                </p>
-
-                <strong>
-                    “Não acreditava que a lojinha ia me ajudar tanto.”
-                </strong>
-
-            </article>
-
-        </div>
-
-
-        <div class="drive-centered-button">
-
-            <a
-                href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
-                class="drive-btn drive-btn-primary checkout-link"
-            >
-                QUERO FAZER PARTE
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     SOBRE
-========================================================= -->
-
-<section
-    class="drive-section drive-about"
-    id="sobre"
->
-
-    <div class="drive-container">
-
-        <div class="drive-about-logos">
-
-            <img
-                src="./assets/moments_branco.webp"
-                alt="Moments Paris"
-                loading="lazy"
-            >
-
-            <img
-                src="./assets/bandeiras-br-ur.png.webp"
-                alt="Brasil e Uruguai"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="drive-about-grid">
-
-            <div>
-
-                <span class="drive-eyebrow">
-                    Sobre a Moments Paris
-                </span>
-
-                <h2>
-                    Moments Paris é a empresa.
-                </h2>
-
-                <p>
-                    A Moments Paris é uma empresa 100% brasileira de
-                    perfumes e cosméticos, com presença também no Uruguai.
-                    Por trás de cada produto, existe o compromisso com
-                    qualidade real — fragrâncias com até 12 horas de
-                    fixação, desenvolvidas para quem quer se sentir bem
-                    sem gastar uma fortuna.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h2>
-                    Moments Driver é a oportunidade.
-                </h2>
-
-                <p>
-                    O Moments Driver é o movimento criado pela Moments
-                    Paris especificamente para motoristas de aplicativo —
-                    unindo a força da empresa com a oportunidade única
-                    de ter um canal de vendas dentro do próprio carro.
-                    Um movimento criado para trazer mais dignidade,
-                    mais liberdade e mais dinheiro no bolso de quem já
-                    está na estrada todos os dias.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="drive-facts-grid">
-
-            <div class="drive-fact">
-                <strong>
-                    +10.000
-                </strong>
-
-                <span>
-                    motoristas de aplicativo já cadastrados aumentando sua renda.
-                </span>
-            </div>
-
-
-            <div class="drive-fact">
-
-                <strong>
-                    12h
-                </strong>
-
-                <span>
-                    Fragrâncias com até 12 horas de fixação — qualidade
-                    que o passageiro sente e quer repetir
-                </span>
-
-            </div>
-
-
-            <div class="drive-fact">
-
-                <strong>
-                    2º
-                </strong>
-
-                <span>
-                    maior mercado de perfumaria do mundo — o Brasil
-                </span>
-
-            </div>
-
-
-            <div class="drive-fact">
-
-                <strong>
-                    #1
-                </strong>
-
-                <span>
-                    Ganhadora do prêmio de melhor perfume da América Latina
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     FAQ
-========================================================= -->
-
-<section
-    class="drive-section drive-faq"
-    id="duvidas"
->
-
-    <div class="drive-container drive-faq-container">
-
-        <div class="drive-section-heading">
-
-            <span class="drive-eyebrow">
-                Dúvidas frequentes
-            </span>
-
-            <h2>
-                Perguntas frequentes
-            </h2>
-
-        </div>
-
-
-        <div class="drive-faq-list">
-
-            <details>
-
-                <summary>
-                    <span>
-                        Preciso ter experiência em vendas?
-                    </span>
-
-                    <i>+</i>
-                </summary>
-
-                <div class="drive-faq-answer">
-
-                    <p>
-                        Não. O display atrai a atenção sozinho.
-                        O passageiro entra, vê os perfumes e pergunta.
-                        Sente o cheiro e compra. Quem decide é o cliente.
-                        Você só precisa dirigir.
-                    </p>
-
-                </div>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    <span>
-                        Como faço a reposição dos perfumes?
-                    </span>
-
-                    <i>+</i>
-                </summary>
-
-                <div class="drive-faq-answer">
-
-                    <p>
-                        Quando o estoque acabar, você repõe diretamente
-                        pela estrutura oficial da Moments Paris.
-                        E não está sozinho nessa jornada. Nossa equipe
-                        acompanha você em cada etapa, desde a instalação
-                        até as reposições. Todo o suporte que você
-                        precisar está disponível.
-                    </p>
-
-                </div>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    <span>
-                        O display atrapalha a corrida?
-                    </span>
-
-                    <i>+</i>
-                </summary>
-
-                <div class="drive-faq-answer">
-
-                    <p>
-                        Não. O display é pensado especificamente para
-                        o banco traseiro do carro. Instalação simples
-                        e segura. Muitos motoristas relatam que os
-                        passageiros elogiam a lojinha assim que entram
-                        no carro. Ela não atrapalha, ela chama atenção
-                        do jeito certo.
-                    </p>
-
-                </div>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    <span>
-                        E se eu não vender nada?
-                    </span>
-
-                    <i>+</i>
-                </summary>
-
-                <div class="drive-faq-answer">
-
-                    <p>
-                        A Moments Paris oferece garantia incondicional
-                        de 7 dias. Se por qualquer motivo você achar
-                        que não é para você, devolvemos 100% do seu
-                        dinheiro. Sem perguntas, sem burocracia.
-                        E entre nós: nunca aconteceu de alguém devolver
-                        a lojinha. O risco é todo nosso.
-                    </p>
-
-                </div>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    <span>
-                        Funciona com carro alugado?
-                    </span>
-
-                    <i>+</i>
-                </summary>
-
-                <div class="drive-faq-answer">
-
-                    <p>
-                        Sim. O display é removível e não danifica
-                        o veículo. Você instala, usa e retira quando
-                        precisar. Não importa se o carro é próprio
-                        ou alugado.
-                    </p>
-
-                </div>
-
-            </details>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     OFERTA
-========================================================= -->
-
-<section class="drive-section drive-offer">
-
-    <div class="drive-container">
-
-        <div class="drive-section-heading">
-
-            <span class="drive-eyebrow">
-                Proposta de valor do kit
-            </span>
-
-            <h2>
-                Tudo que você precisa para começar sua loja no carro.
-            </h2>
-
-            <p>
-                Um kit completo para você começar hoje.
-                Sem complicação. Sem precisar saber vender.
-            </p>
-
-        </div>
-
-
-        <div class="drive-offer-grid">
-
-            <div class="drive-offer-main">
-
-                <div class="drive-price">
-
-                    <strong>
-                        12x de R$99,99
-                    </strong>
-
-                    <span>
-                        por mês
-                    </span>
-
-                    <small>
-                        ou R$999 à vista
-                    </small>
-
-                </div>
-
-
-                <ul class="drive-offer-list">
-
-                    <li>
-                        <span>✓</span>
-                        45 perfumes premium
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        09 amostras para seu passageiro borrifar,
-                        cheirar e comprar
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Lojinha exclusiva com display para o banco
-                        traseiro do carro com adesivo informativo — Grátis
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Aromatizante de carro e fita olfativa — Grátis
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Adesivo Moments Driver — Grátis
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Frete grátis
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Receba R$2.000 em produtos — pague apenas metade
-                    </li>
-
-                    <li>
-                        <span>✓</span>
-                        Garantia incondicional de 7 dias —
-                        100% do dinheiro de volta sem perguntas
-                    </li>
-
-                </ul>
-
-
-                <a
-                    href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
-                    class="drive-btn drive-btn-primary drive-btn-large checkout-link"
-                >
-                    QUERO TRANSFORMAR MEU CARRO
-                </a>
-
-            </div>
-
-
-            <aside class="drive-guarantee">
-
-                <img
-                    src="./assets/7dias.webp"
-                    alt="Garantia incondicional de 7 dias"
-                    loading="lazy"
-                >
-
-                <h3>
-                    GARANTIA INCONDICIONAL DE 7 DIAS
-                </h3>
-
-                <p>
-                    Experimente por 7 dias completos.
-                    Se por qualquer motivo você achar que não é para você,
-                    devolvemos 100% do seu dinheiro.
-                </p>
-
-            </aside>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     KIT
-========================================================= -->
-
-<section class="drive-section drive-product">
-
-    <div class="drive-container">
-
-        <div class="drive-product-grid">
-
-            <div class="drive-product-image">
-
-                <img
-                    src="./assets/kit_driver.webp"
-                    alt="Kit Moments Driver"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="drive-product-copy">
-
-                <span class="drive-eyebrow">
-                    Seu kit
-                </span>
-
-                <h2>
-                    45 perfumes premium
-                </h2>
-
-                <p>
-                    05 unidades de cada fragrância.
-                </p>
-
-                <p>
-                    Sendo 09 amostras para seu passageiro borrifar,
-                    cheirar e comprar.
-                </p>
-
-
-                <h3>
-                    Itens Grátis
-                </h3>
-
-
-                <ul class="drive-free-list">
-
-                    <li>
-                        Display para os perfumes com adesivo informativo
-                    </li>
-
-                    <li>
-                        Aromatizante de carro
-                    </li>
-
-                    <li>
-                        Fita Olfativa
-                    </li>
-
-                    <li>
-                        Adesivo Moments Driver
-                    </li>
-
-                    <li>
-                        Frete grátis
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     CTA FINAL
-========================================================= -->
-
-<section class="drive-final-cta">
-
-    <div class="drive-container">
-
-        <span class="drive-eyebrow">
-            Chegou a sua vez
-        </span>
-
-        <h2>
-            Enquanto você dirige,
-            <span>seu carro vende.</span>
-        </h2>
-
-        <p>
-            Garanta seu kit Moments Driver agora
-            e comece ainda essa semana.
-        </p>
-
-        <a
-            href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
-            class="drive-btn drive-btn-primary drive-btn-large checkout-link"
-        >
-            QUERO TRANSFORMAR MEU CARRO
-        </a>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer class="drive-footer">
-
-    <div class="drive-container">
-
-        <div class="drive-footer-logos">
-
-            <img
-                src="./assets/moments_branco.webp"
-                alt="Moments Paris"
-                loading="lazy"
-            >
-
-            <img
-                src="./assets/bandeiras-br-ur.png.webp"
-                alt="Brasil e Uruguai"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <p>
-            Moments Paris Cosméticos Ltda · CNPJ 49.551.383/0001-85
-        </p>
-
-        <p>
-            © 2026 Moments Paris. Todos os direitos reservados.
-        </p>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================================
-     SCRIPTS
-========================================================= -->
-
-<script>
-(function () {
-
-    "use strict";
-
-    /*
-     * =========================================================
-     * REFERÊNCIA DO CHECKOUT
-     *
-     * Exemplo:
-     * /drive/?reference=arianeoliveira87
-     *
-     * O valor será automaticamente enviado ao checkout.
-     * =========================================================
-     */
-
-    const params = new URLSearchParams(window.location.search);
-
-    const reference =
-        params.get("reference") ||
-        "momentsmundial";
-
-
-    /*
-     * Atualiza todos os botões de checkout
-     */
-
-    document.querySelectorAll(".checkout-link").forEach(function (link) {
-
-        try {
-
-            const url = new URL(link.href);
-
-            url.searchParams.set(
-                "reference",
-                reference
-            );
-
-            link.href = url.toString();
-
-        } catch (error) {
-
-            console.warn(
-                "Não foi possível atualizar o checkout:",
-                error
-            );
-
-        }
-
-    });
-
-
-    /*
-     * =========================================================
-     * MENU MOBILE
-     * =========================================================
-     */
-
-    const menuButton =
-        document.querySelector(".drive-menu-button");
-
-    const navigation =
-        document.querySelector(".drive-nav");
-
-
-    if (menuButton && navigation) {
-
-        menuButton.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    navigation.classList.toggle(
-                        "is-open"
-                    );
-
-                menuButton.classList.toggle(
-                    "is-open",
-                    isOpen
-                );
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-            }
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.35),
+            transparent 25%,
+            transparent 75%,
+            rgba(0,0,0,.75)
         );
 
+    pointer-events: none;
+}
 
-        /*
-         * Fecha o menu ao clicar em um link
-         */
+.drive-page .hero-content {
+    position: relative;
+    z-index: 2;
 
-        navigation
-            .querySelectorAll("a")
-            .forEach(function (link) {
+    width: min(760px, 100%);
 
-                link.addEventListener(
-                    "click",
-                    function () {
+    padding-top: 90px;
+}
 
-                        navigation.classList.remove(
-                            "is-open"
-                        );
+.drive-page .hero-eyebrow {
+    margin: 0 0 26px;
 
-                        menuButton.classList.remove(
-                            "is-open"
-                        );
+    color: rgba(255,255,255,.8);
 
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
+    font-size: 11px;
+    font-weight: 600;
 
-                    }
-                );
+    letter-spacing: .23em;
+    text-transform: uppercase;
+}
 
-            });
+.drive-page .hero h1 {
+    margin: 0;
 
+    color: #fff;
+
+    font-size: clamp(52px, 6vw, 82px);
+    font-weight: 500;
+
+    line-height: .98;
+    letter-spacing: -.055em;
+}
+
+.drive-page .hero h1 strong {
+    display: block;
+
+    font-weight: 800;
+}
+
+.drive-page .hero-description {
+    max-width: 570px;
+
+    margin: 34px 0 0;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.75;
+}
+
+.drive-page .hero-proof {
+    margin-top: 20px;
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: .02em;
+}
+
+.drive-page .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 38px;
+}
+
+.drive-page .btn-primary,
+.drive-page .btn-secondary {
+    min-height: 52px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 28px;
+
+    border-radius: 2px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+
+    transition: .25s ease;
+}
+
+.drive-page .btn-primary {
+    background: #fff;
+    color: #050505;
+    border: 1px solid #fff;
+}
+
+.drive-page .btn-primary:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.drive-page .btn-secondary {
+    border: 1px solid rgba(255,255,255,.45);
+    color: #fff;
+    background: transparent;
+}
+
+.drive-page .btn-secondary:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,.08);
+}
+
+/* =========================================================
+   SECTION BASE
+   ========================================================= */
+
+.drive-page section {
+    position: relative;
+}
+
+.drive-page .section {
+    padding: 125px 0;
+}
+
+.drive-page .section-header {
+    max-width: 760px;
+
+    margin-bottom: 65px;
+}
+
+.drive-page .section-label {
+    margin: 0 0 18px;
+
+    color: #999;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.drive-page .section-title {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 500;
+
+    line-height: 1.03;
+    letter-spacing: -.045em;
+}
+
+.drive-page .section-title strong {
+    font-weight: 800;
+}
+
+.drive-page .section-description {
+    max-width: 650px;
+
+    margin: 25px 0 0;
+
+    color: #999;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.drive-page .benefits {
+    background: #fff;
+    color: #050505;
+}
+
+.drive-page .benefits .section-label {
+    color: #777;
+}
+
+.drive-page .benefits .section-title {
+    color: #050505;
+}
+
+.drive-page .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.drive-page .benefit-card {
+    min-height: 290px;
+
+    padding: 40px 32px;
+
+    border-right: 1px solid #dcdcdc;
+}
+
+.drive-page .benefit-card:last-child {
+    border-right: 0;
+}
+
+.drive-page .benefit-number {
+    display: block;
+
+    margin-bottom: 70px;
+
+    color: #999;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: .15em;
+}
+
+.drive-page .benefit-card h3 {
+    margin: 0 0 15px;
+
+    color: #050505;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    letter-spacing: -.02em;
+}
+
+.drive-page .benefit-card p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   REALIDADE
+   ========================================================= */
+
+.drive-page .reality {
+    background: #090909;
+}
+
+.drive-page .reality-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.drive-page .reality-image {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.drive-page .reality-image img {
+    width: 100%;
+    height: 570px;
+
+    object-fit: cover;
+}
+
+.drive-page .reality-text h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(38px, 4vw, 60px);
+    font-weight: 500;
+
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+
+.drive-page .reality-text h2 strong {
+    font-weight: 800;
+}
+
+.drive-page .reality-text p {
+    margin: 0 0 22px;
+
+    color: #999;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.drive-page .reality-highlight {
+    margin-top: 38px;
+    padding-left: 25px;
+
+    border-left: 1px solid #fff;
+}
+
+.drive-page .reality-highlight p {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   HOW IT WORKS
+   ========================================================= */
+
+.drive-page .how-it-works {
+    background: #fff;
+    color: #050505;
+}
+
+.drive-page .how-it-works .section-label {
+    color: #777;
+}
+
+.drive-page .how-it-works .section-title {
+    color: #050505;
+}
+
+.drive-page .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #d7d7d7;
+}
+
+.drive-page .step {
+    padding: 45px 30px 30px;
+
+    min-height: 300px;
+
+    border-right: 1px solid #d7d7d7;
+}
+
+.drive-page .step:last-child {
+    border-right: 0;
+}
+
+.drive-page .step-number {
+    margin-bottom: 80px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .12em;
+}
+
+.drive-page .step h3 {
+    margin: 0 0 15px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: -.02em;
+}
+
+.drive-page .step p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   POR QUE FUNCIONA
+   ========================================================= */
+
+.drive-page .why {
+    background: #050505;
+}
+
+.drive-page .why-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid var(--line);
+}
+
+.drive-page .why-card {
+    min-height: 330px;
+
+    padding: 42px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.drive-page .why-card:nth-child(odd) {
+    border-right: 1px solid var(--line);
+}
+
+.drive-page .why-number {
+    display: block;
+
+    margin-bottom: 65px;
+
+    color: #666;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: .15em;
+}
+
+.drive-page .why-card h3 {
+    margin: 0 0 18px;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    letter-spacing: -.035em;
+}
+
+.drive-page .why-card p {
+    max-width: 500px;
+
+    margin: 0;
+
+    color: #8e8e8e;
+
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* =========================================================
+   TESTEMUNHOS
+   ========================================================= */
+
+.drive-page .testimonials {
+    background: #111;
+}
+
+.drive-page .testimonials-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: var(--line);
+
+    border: 1px solid var(--line);
+}
+
+.drive-page .testimonial {
+    min-height: 300px;
+
+    padding: 38px;
+
+    background: #111;
+}
+
+.drive-page .testimonial-stars {
+    margin-bottom: 32px;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.drive-page .testimonial p {
+    margin: 0;
+
+    color: #ddd;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.drive-page .testimonial-author {
+    margin-top: 35px;
+}
+
+.drive-page .testimonial-author strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.drive-page .testimonial-author span {
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+
+.drive-page .about {
+    background: #fff;
+    color: #050505;
+}
+
+.drive-page .about .section-label {
+    color: #777;
+}
+
+.drive-page .about .section-title {
+    color: #050505;
+}
+
+.drive-page .about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+.drive-page .about-copy p {
+    margin: 0 0 24px;
+
+    color: #555;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.drive-page .about-copy strong {
+    color: #050505;
+}
+
+.drive-page .facts {
+    border-top: 1px solid #d7d7d7;
+}
+
+.drive-page .fact {
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    padding: 24px 0;
+
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.drive-page .fact-number {
+    color: #999;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.drive-page .fact p {
+    margin: 0;
+
+    color: #333;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.drive-page .faq {
+    background: #090909;
+}
+
+.drive-page .faq-list {
+    border-top: 1px solid var(--line);
+}
+
+.drive-page .faq-item {
+    border-bottom: 1px solid var(--line);
+}
+
+.drive-page .faq-question {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 27px 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #fff;
+
+    text-align: left;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.drive-page .faq-icon {
+    position: relative;
+
+    width: 20px;
+    height: 20px;
+
+    flex: 0 0 20px;
+}
+
+.drive-page .faq-icon::before,
+.drive-page .faq-icon::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 14px;
+    height: 1px;
+
+    background: #fff;
+
+    transform: translate(-50%, -50%);
+}
+
+.drive-page .faq-icon::after {
+    transform:
+        translate(-50%, -50%)
+        rotate(90deg);
+
+    transition: transform .25s ease;
+}
+
+.drive-page .faq-item.active .faq-icon::after {
+    transform:
+        translate(-50%, -50%)
+        rotate(0deg);
+}
+
+.drive-page .faq-answer {
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows .3s ease;
+}
+
+.drive-page .faq-answer-inner {
+    overflow: hidden;
+}
+
+.drive-page .faq-answer p {
+    max-width: 850px;
+
+    margin: 0;
+    padding: 0 50px 0 0;
+
+    color: #858585;
+
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.drive-page .faq-item.active .faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.drive-page .faq-item.active .faq-answer p {
+    padding-bottom: 28px;
+}
+
+/* =========================================================
+   OFERTA
+   ========================================================= */
+
+.drive-page .offer {
+    background: #fff;
+    color: #050505;
+}
+
+.drive-page .offer .section-label {
+    color: #777;
+}
+
+.drive-page .offer .section-title {
+    color: #050505;
+}
+
+.drive-page .offer-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.drive-page .offer-image img {
+    width: 100%;
+    max-height: 650px;
+
+    object-fit: contain;
+}
+
+.drive-page .offer-content {
+    padding: 20px 0;
+}
+
+.drive-page .offer-subtitle {
+    margin: 0 0 35px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.drive-page .offer-price {
+    padding: 28px 0;
+
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.drive-page .offer-installments {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.drive-page .offer-installments strong {
+    font-size: 48px;
+    font-weight: 800;
+
+    letter-spacing: -.05em;
+}
+
+.drive-page .offer-cash {
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+.drive-page .offer-features {
+    margin: 30px 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.drive-page .offer-features li {
+    position: relative;
+
+    padding: 13px 0 13px 22px;
+
+    border-bottom: 1px solid #e2e2e2;
+
+    color: #333;
+
+    font-size: 12px;
+}
+
+.drive-page .offer-features li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    font-weight: 700;
+}
+
+.drive-page .offer-badge {
+    display: inline-flex;
+
+    margin-top: 28px;
+    padding: 10px 13px;
+
+    background: #050505;
+    color: #fff;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.drive-page .offer .btn-primary {
+    margin-top: 28px;
+
+    background: #050505;
+    color: #fff;
+    border-color: #050505;
+}
+
+.drive-page .offer .btn-primary:hover {
+    background: transparent;
+    color: #050505;
+}
+
+/* =========================================================
+   GARANTIA
+   ========================================================= */
+
+.drive-page .guarantee {
+    background: #050505;
+}
+
+.drive-page .guarantee-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.drive-page .guarantee-image img {
+    width: 100%;
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.drive-page .guarantee-copy h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(38px, 4vw, 60px);
+    font-weight: 500;
+
+    line-height: 1.03;
+    letter-spacing: -.045em;
+}
+
+.drive-page .guarantee-copy h2 strong {
+    font-weight: 800;
+}
+
+.drive-page .guarantee-copy p {
+    max-width: 550px;
+
+    margin: 0;
+
+    color: #888;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+.drive-page .final-cta {
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.96),
+            rgba(0,0,0,.58),
+            rgba(0,0,0,.82)
+        ),
+        url("./assets/display.webp") center / cover no-repeat;
+}
+
+.drive-page .final-cta-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+.drive-page .final-cta h2 {
+    margin: 0;
+
+    font-size: clamp(48px, 6vw, 78px);
+    font-weight: 500;
+
+    line-height: .98;
+    letter-spacing: -.055em;
+}
+
+.drive-page .final-cta h2 strong {
+    display: block;
+
+    font-weight: 800;
+}
+
+.drive-page .final-cta p {
+    max-width: 580px;
+
+    margin: 30px 0 0;
+
+    color: #aaa;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.drive-page .final-cta .btn-primary {
+    margin-top: 35px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.drive-page .site-footer {
+    padding: 60px 0 35px;
+
+    background: #050505;
+
+    border-top: 1px solid var(--line);
+}
+
+.drive-page .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 45px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.drive-page .footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.drive-page .footer-logos img {
+    max-width: 145px;
+    max-height: 45px;
+
+    object-fit: contain;
+}
+
+.drive-page .footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.drive-page .footer-links a {
+    color: #777;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    transition: color .2s ease;
+}
+
+.drive-page .footer-links a:hover {
+    color: #fff;
+}
+
+.drive-page .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 25px;
+}
+
+.drive-page .footer-bottom p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .drive-page .main-nav {
+        gap: 18px;
     }
 
+    .drive-page .header-cta {
+        padding: 0 16px;
+    }
 
-    /*
-     * =========================================================
-     * SCROLL SUAVE
-     * =========================================================
-     */
+    .drive-page .benefits-grid,
+    .drive-page .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(function (link) {
+    .drive-page .benefit-card:nth-child(2) {
+        border-right: 0;
+    }
 
-            link.addEventListener(
-                "click",
-                function (event) {
+    .drive-page .benefit-card:nth-child(-n+2) {
+        border-bottom: 1px solid #dcdcdc;
+    }
 
-                    const targetId =
-                        link.getAttribute("href");
+    .drive-page .step:nth-child(2) {
+        border-right: 0;
+    }
 
-                    if (
-                        !targetId ||
-                        targetId === "#"
-                    ) {
-                        return;
-                    }
+    .drive-page .step:nth-child(-n+2) {
+        border-bottom: 1px solid #d7d7d7;
+    }
 
-                    const target =
-                        document.querySelector(targetId);
+    .drive-page .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-                    if (!target) {
-                        return;
-                    }
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-                    event.preventDefault();
+@media (max-width: 800px) {
 
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
+    .drive-page .container,
+    .drive-page .header-inner {
+        width: min(100% - 40px, var(--container));
+    }
 
-                }
-            );
+    .drive-page .site-header {
+        height: 76px;
+    }
 
-        });
+    .drive-page .logo img {
+        width: 130px;
+    }
 
+    .drive-page .main-nav,
+    .drive-page .header-cta {
+        display: none;
+    }
 
-    /*
-     * =========================================================
-     * FAQ
-     *
-     * Mantém apenas uma pergunta aberta por vez.
-     * =========================================================
-     */
+    .drive-page .menu-toggle {
+        display: block;
+    }
 
-    const faqItems =
-        document.querySelectorAll(
-            ".drive-faq-list details"
-        );
+    .drive-page .hero {
+        min-height: 760px;
 
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.94),
+                rgba(0,0,0,.65)
+            ),
+            url("./assets/expositor.webp") center / cover no-repeat;
+    }
 
-    faqItems.forEach(function (item) {
+    .drive-page .hero-content {
+        padding-top: 60px;
+    }
 
-        item.addEventListener(
-            "toggle",
-            function () {
+    .drive-page .hero h1 {
+        font-size: clamp(46px, 10vw, 70px);
+    }
 
-                if (!item.open) {
-                    return;
-                }
+    .drive-page .section {
+        padding: 90px 0;
+    }
 
-                faqItems.forEach(function (other) {
+    .drive-page .reality-grid,
+    .drive-page .about-grid,
+    .drive-page .offer-grid,
+    .drive-page .guarantee-grid {
+        grid-template-columns: 1fr;
 
-                    if (other !== item) {
-                        other.removeAttribute(
-                            "open"
-                        );
-                    }
+        gap: 55px;
+    }
 
-                });
+    .drive-page .reality-image {
+        order: 2;
+    }
 
-            }
-        );
+    .drive-page .reality-image img {
+        height: 450px;
+    }
 
-    });
+    .drive-page .why-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .drive-page .why-card:nth-child(odd) {
+        border-right: 0;
+    }
 
-})();
-</script>
+    .drive-page .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
 
-</body>
-</html>
+    .drive-page .footer-top,
+    .drive-page .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 30px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .drive-page .container,
+    .drive-page .header-inner {
+        width: calc(100% - 32px);
+    }
+
+    .drive-page .hero {
+        min-height: 720px;
+    }
+
+    .drive-page .hero-eyebrow {
+        font-size: 9px;
+
+        letter-spacing: .17em;
+    }
+
+    .drive-page .hero h1 {
+        font-size: 47px;
+
+        letter-spacing: -.055em;
+    }
+
+    .drive-page .hero-description {
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+    .drive-page .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .drive-page .btn-primary,
+    .drive-page .btn-secondary {
+        width: 100%;
+    }
+
+    .drive-page .section {
+        padding: 75px 0;
+    }
+
+    .drive-page .section-header {
+        margin-bottom: 45px;
+    }
+
+    .drive-page .section-title {
+        font-size: 40px;
+    }
+
+    .drive-page .benefits-grid,
+    .drive-page .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .benefit-card {
+        min-height: auto;
+
+        padding: 32px 24px;
+
+        border-right: 0;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .drive-page .benefit-card:last-child {
+        border-bottom: 0;
+    }
+
+    .drive-page .benefit-number,
+    .drive-page .step-number {
+        margin-bottom: 40px;
+    }
+
+    .drive-page .step {
+        min-height: auto;
+
+        padding: 32px 24px;
+
+        border-right: 0;
+        border-bottom: 1px solid #d7d7d7;
+    }
+
+    .drive-page .step:last-child {
+        border-bottom: 0;
+    }
+
+    .drive-page .reality-image img {
+        height: 350px;
+    }
+
+    .drive-page .reality-text h2,
+    .drive-page .guarantee-copy h2 {
+        font-size: 40px;
+    }
+
+    .drive-page .why-card {
+        min-height: auto;
+
+        padding: 32px 0;
+    }
+
+    .drive-page .why-number {
+        margin-bottom: 35px;
+    }
+
+    .drive-page .testimonial {
+        min-height: auto;
+
+        padding: 30px 24px;
+    }
+
+    .drive-page .fact {
+        grid-template-columns: 55px 1fr;
+    }
+
+    .drive-page .faq-question {
+        gap: 20px;
+
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .drive-page .faq-answer p {
+        padding-right: 10px;
+
+        font-size: 11px;
+    }
+
+    .drive-page .offer-installments strong {
+        font-size: 42px;
+    }
+
+    .drive-page .final-cta {
+        min-height: 620px;
+    }
+
+    .drive-page .final-cta h2 {
+        font-size: 48px;
+    }
+
+    .drive-page .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .drive-page .footer-logos {
+        flex-wrap: wrap;
+    }
+}
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .drive-page *,
+    .drive-page *::before,
+    .drive-page *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
