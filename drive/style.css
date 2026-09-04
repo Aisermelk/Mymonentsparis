@@ -1,54 +1,41 @@
 /* =========================================================
    MOMENTS DRIVER
-   PREMIUM LANDING PAGE
-   Escopo exclusivo: .drive-page
-========================================================= */
+   STYLE.CSS — PREMIUM / FIEL À REFERÊNCIA
+   ========================================================= */
 
-.drive-page {
-    --black: #050505;
-    --black-2: #080808;
-    --black-3: #0d0d0d;
-    --black-4: #121212;
+/* =========================================================
+   01. RESET
+   ========================================================= */
 
-    --white: #ffffff;
-    --white-soft: #eeeeee;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-    --gray: #a3a3a3;
-    --gray-light: #c8c8c8;
-    --gray-dark: #707070;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 82px;
+}
 
-    --gold: #c9a45d;
-    --gold-light: #dfc27b;
-    --gold-dark: #9d7635;
-
-    --gold-rgb: 201, 164, 93;
-
-    --border: rgba(255, 255, 255, 0.075);
-    --border-gold: rgba(201, 164, 93, 0.28);
-
-    --container: 1180px;
-
+body.drive-page {
     margin: 0;
     padding: 0;
 
-    background: var(--black);
-    color: var(--white);
+    background: #050505;
+    color: #f4f4f4;
 
     font-family: "Montserrat", sans-serif;
-
     font-size: 16px;
-    line-height: 1.7;
+    font-weight: 400;
 
-    overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
 
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
+    -moz-osx-font-smoothing: grayscale;
 
-.drive-page *,
-.drive-page *::before,
-.drive-page *::after {
-    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .drive-page img {
@@ -67,13 +54,60 @@
     font: inherit;
 }
 
-.drive-page p,
-.drive-page h1,
-.drive-page h2,
-.drive-page h3,
-.drive-page ul {
-    margin-top: 0;
+.drive-page button {
+    border: 0;
 }
+
+.drive-page ul,
+.drive-page ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* =========================================================
+   02. VARIABLES
+   ========================================================= */
+
+.drive-page {
+    --black: #000000;
+    --bg: #050505;
+    --bg-soft: #080808;
+    --bg-section: #0a0a0a;
+    --surface: #101010;
+    --surface-2: #141414;
+
+    --white: #ffffff;
+    --text: #f3f3f3;
+    --text-soft: #c8c8c8;
+    --text-muted: #919191;
+
+    --gold: #c8a45d;
+    --gold-light: #dfc27b;
+    --gold-dark: #98712e;
+
+    --gold-rgb: 200, 164, 93;
+
+    --border: rgba(255, 255, 255, 0.075);
+    --border-light: rgba(255, 255, 255, 0.11);
+
+    --container: 1180px;
+    --header-height: 82px;
+
+    --radius-sm: 8px;
+    --radius: 14px;
+    --radius-lg: 18px;
+
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   03. CONTAINER
+   ========================================================= */
 
 .drive-page .container {
     width: min(
@@ -86,53 +120,200 @@
 
 
 /* =========================================================
-   HEADER
-========================================================= */
+   04. TYPOGRAPHY
+   ========================================================= */
+
+.drive-page h1,
+.drive-page h2,
+.drive-page h3,
+.drive-page h4 {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+    color: var(--white);
+
+    text-wrap: balance;
+}
+
+.drive-page h1 {
+    font-size: clamp(3.5rem, 7vw, 6.6rem);
+    line-height: 0.93;
+
+    font-weight: 900;
+
+    letter-spacing: -0.055em;
+}
+
+.drive-page h2 {
+    font-size: clamp(2.45rem, 5vw, 4.3rem);
+    line-height: 0.98;
+
+    font-weight: 800;
+
+    letter-spacing: -0.045em;
+}
+
+.drive-page h3 {
+    font-size: 1.15rem;
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    letter-spacing: -0.025em;
+}
+
+.drive-page p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.98rem;
+    line-height: 1.72;
+
+    font-weight: 400;
+    letter-spacing: -0.005em;
+}
+
+.drive-page strong {
+    font-weight: 700;
+    color: var(--white);
+}
+
+
+/* =========================================================
+   05. GENERIC SECTION
+   ========================================================= */
+
+.drive-page section {
+    position: relative;
+}
+
+.drive-page .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-size: 0.72rem;
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.drive-page .section-label::before {
+    content: "";
+
+    width: 24px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.drive-page .section-header {
+    max-width: 760px;
+    margin-bottom: 60px;
+}
+
+.drive-page .section-header p {
+    max-width: 620px;
+    margin-top: 22px;
+
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   06. ICON SYSTEM
+   ========================================================= */
+
+.drive-page .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.drive-page .icon svg {
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.drive-page .benefit-icon svg,
+.drive-page .step-icon svg,
+.drive-page .why-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.drive-page .feature-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================================================
+   07. HEADER
+   ========================================================= */
 
 .drive-page .site-header {
-    position: absolute;
-    z-index: 100;
-
+    position: sticky;
     top: 0;
-    left: 0;
+    z-index: 1000;
 
-    width: 100%;
+    height: var(--header-height);
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.78),
-            rgba(0, 0, 0, 0)
-        );
+    background: rgba(0, 0, 0, 0.88);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 .drive-page .header-inner {
-    min-height: 86px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 28px;
-
     width: min(
         calc(100% - 48px),
         1280px
     );
 
+    height: 100%;
     margin-inline: auto;
-}
-
-.drive-page .logo {
-    flex: 0 0 auto;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.drive-page .logo {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
 }
 
 .drive-page .logo img {
-    width: 150px;
-    height: auto;
+    width: auto;
+    height: 40px;
 }
 
 .drive-page .main-nav {
@@ -140,7 +321,7 @@
     align-items: center;
     justify-content: center;
 
-    gap: 26px;
+    gap: 32px;
 
     margin-left: auto;
 }
@@ -148,15 +329,16 @@
 .drive-page .main-nav a {
     position: relative;
 
-    color: rgba(255, 255, 255, 0.76);
+    color: rgba(255, 255, 255, 0.68);
 
-    font-size: 11px;
+    font-size: 0.72rem;
     font-weight: 600;
 
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
 
     transition:
-        color 0.25s ease;
+        color 0.25s ease,
+        opacity 0.25s ease;
 }
 
 .drive-page .main-nav a::after {
@@ -172,8 +354,7 @@
 
     background: var(--gold);
 
-    transition:
-        width 0.25s ease;
+    transition: width 0.3s var(--ease);
 }
 
 .drive-page .main-nav a:hover {
@@ -184,35 +365,44 @@
     width: 100%;
 }
 
-.drive-page .header-cta {
-    flex: 0 0 auto;
-
+.drive-page .header-cta,
+.drive-page .hero-actions .checkout-link,
+.drive-page .final-cta .checkout-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    min-height: 42px;
+    min-height: 48px;
 
-    padding: 0 18px;
+    padding: 0 24px;
 
-    border: 1px solid var(--gold);
+    border-radius: 5px;
 
-    color: var(--white);
+    background: var(--gold);
 
-    font-size: 9px;
+    color: #080808;
+
+    font-size: 0.72rem;
     font-weight: 800;
 
     letter-spacing: 0.08em;
+    text-transform: uppercase;
 
     transition:
+        transform 0.25s var(--ease),
         background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
+        box-shadow 0.25s ease;
 }
 
-.drive-page .header-cta:hover {
-    background: var(--gold);
-    color: #050505;
+.drive-page .header-cta:hover,
+.drive-page .hero-actions .checkout-link:hover,
+.drive-page .final-cta .checkout-link:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(var(--gold-rgb), 0.18);
 }
 
 .drive-page .menu-toggle {
@@ -221,39 +411,30 @@
     width: 42px;
     height: 42px;
 
-    padding: 0;
+    align-items: center;
+    justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
 
-    background: rgba(0, 0, 0, 0.45);
+    color: var(--white);
 
     cursor: pointer;
 }
 
-.drive-page .menu-toggle span {
-    display: block;
-
-    width: 19px;
-    height: 1px;
-
-    margin: 4px auto;
-
-    background: var(--white);
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
+.drive-page .menu-toggle svg {
+    width: 23px;
+    height: 23px;
 }
 
 
 /* =========================================================
-   HERO
-========================================================= */
+   08. HERO
+   ========================================================= */
 
 .drive-page .hero {
     position: relative;
 
-    min-height: 780px;
+    min-height: calc(100vh - var(--header-height));
 
     display: flex;
     align-items: center;
@@ -263,194 +444,64 @@
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.97) 0%,
-            rgba(0, 0, 0, 0.87) 34%,
-            rgba(0, 0, 0, 0.42) 63%,
-            rgba(0, 0, 0, 0.08) 100%
+            rgba(0, 0, 0, 0.96) 0%,
+            rgba(0, 0, 0, 0.82) 38%,
+            rgba(0, 0, 0, 0.48) 72%,
+            rgba(0, 0, 0, 0.72) 100%
         ),
         linear-gradient(
             180deg,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.45)
-        );
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("./assets/display.webp");
 
-    isolation: isolate;
-}
-
-.drive-page .hero::before {
-    content: "";
-
-    position: absolute;
-    z-index: -2;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 74% 52%,
-            rgba(var(--gold-rgb), 0.08),
-            transparent 30%
-        );
+    background-size: cover;
+    background-position: center;
 }
 
 .drive-page .hero::after {
     content: "";
 
     position: absolute;
-    z-index: -1;
 
-    right: -10%;
-    bottom: -35%;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-    width: 65vw;
-    height: 65vw;
-
-    border-radius: 50%;
+    height: 160px;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.035),
-            transparent 68%
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--bg)
         );
+
+    pointer-events: none;
+}
+
+.drive-page .hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .drive-page .hero-content {
     width: min(720px, 100%);
 
-    padding-top: 80px;
+    padding: 100px 0 120px;
 }
 
 .drive-page .hero-eyebrow {
-    margin-bottom: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 
-    color: var(--gold);
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 0.22em;
-}
-
-.drive-page .hero h1 {
-    max-width: 760px;
-
-    margin-bottom: 28px;
-
-    color: var(--white);
-
-    font-size: clamp(
-        48px,
-        6vw,
-        82px
-    );
-
-    font-weight: 400;
-
-    line-height: 0.98;
-
-    letter-spacing: -0.055em;
-}
-
-.drive-page .hero h1 strong {
-    display: block;
-
-    margin-top: 8px;
-
-    color: var(--white);
-
-    font-weight: 800;
-}
-
-.drive-page .hero-description {
-    max-width: 590px;
-
-    margin-bottom: 15px;
-
-    color: var(--white-soft);
-
-    font-size: 18px;
-    font-weight: 400;
-
-    line-height: 1.6;
-}
-
-.drive-page .hero-proof {
-    margin-bottom: 34px;
+    margin-bottom: 24px;
 
     color: var(--gold-light);
 
-    font-size: 12px;
-    font-weight: 600;
-
-    letter-spacing: 0.025em;
-}
-
-.drive-page .hero-actions {
-    display: flex;
-    align-items: center;
-}
-
-.drive-page .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 52px;
-
-    padding: 0 27px;
-
-    border: 1px solid var(--gold);
-
-    background: var(--gold);
-
-    color: #080808;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 0.105em;
-
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.drive-page .btn-primary:hover {
-    transform: translateY(-2px);
-
-    background: var(--gold-light);
-
-    box-shadow:
-        0 12px 35px
-        rgba(var(--gold-rgb), 0.18);
-}
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
-
-.drive-page .section {
-    position: relative;
-
-    padding: 115px 0;
-}
-
-.drive-page .section-header {
-    max-width: 720px;
-
-    margin-bottom: 58px;
-}
-
-.drive-page .section-label {
-    margin-bottom: 14px;
-
-    color: var(--gold);
-
-    font-size: 10px;
+    font-size: 0.72rem;
     font-weight: 700;
 
     letter-spacing: 0.2em;
@@ -458,53 +509,95 @@
     text-transform: uppercase;
 }
 
-.drive-page .section-title {
-    margin-bottom: 0;
+.drive-page .hero-eyebrow::before {
+    content: "";
 
-    color: var(--white);
+    width: 28px;
+    height: 1px;
 
-    font-size: clamp(
-        34px,
-        4vw,
-        56px
-    );
+    background: var(--gold);
+}
+
+.drive-page .hero h1 {
+    max-width: 760px;
+}
+
+.drive-page .hero h1 strong,
+.drive-page .hero h1 .gold {
+    color: var(--gold-light);
+}
+
+.drive-page .hero-description {
+    max-width: 610px;
+
+    margin-top: 30px;
+
+    color: rgba(255, 255, 255, 0.74);
+
+    font-size: 1.08rem;
+    line-height: 1.7;
 
     font-weight: 400;
-
-    line-height: 1.05;
-
-    letter-spacing: -0.045em;
 }
 
-.drive-page .section-title strong {
-    font-weight: 800;
+.drive-page .hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 27px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    letter-spacing: 0.01em;
 }
 
-.drive-page .section-description {
-    max-width: 620px;
+.drive-page .hero-proof::before {
+    content: "";
 
-    margin-top: 20px;
-    margin-bottom: 0;
+    width: 7px;
+    height: 7px;
 
-    color: var(--gray);
+    border-radius: 50%;
 
-    font-size: 15px;
+    background: var(--gold);
+
+    box-shadow:
+        0 0 0 5px rgba(var(--gold-rgb), 0.08);
+}
+
+.drive-page .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 34px;
+}
+
+.drive-page .hero-actions .checkout-link {
+    min-height: 54px;
+
+    padding: 0 30px;
 }
 
 
 /* =========================================================
-   BENEFÍCIOS
-========================================================= */
+   09. BENEFITS
+   ========================================================= */
 
 .drive-page .benefits {
-    background: var(--black);
+    padding: 125px 0;
+
+    background: var(--bg);
 }
 
 .drive-page .benefits-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 14px;
 }
@@ -512,12 +605,12 @@
 .drive-page .benefit-card {
     position: relative;
 
-    min-height: 270px;
+    min-height: 245px;
 
-    padding: 32px 28px;
+    padding: 30px 27px;
 
-    border:
-        1px solid var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
     background:
         linear-gradient(
@@ -527,101 +620,68 @@
         );
 
     transition:
-        border-color 0.3s ease,
-        transform 0.3s ease,
-        background 0.3s ease;
-}
-
-.drive-page .benefit-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 28px;
-
-    width: 34px;
-    height: 1px;
-
-    background: var(--gold);
+        transform 0.35s var(--ease),
+        border-color 0.35s ease,
+        background 0.35s ease;
 }
 
 .drive-page .benefit-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 
     border-color:
-        var(--border-gold);
+        rgba(var(--gold-rgb), 0.3);
 
     background:
         linear-gradient(
             145deg,
-            rgba(var(--gold-rgb), 0.065),
-            rgba(255, 255, 255, 0.012)
+            rgba(var(--gold-rgb), 0.075),
+            rgba(255, 255, 255, 0.015)
         );
 }
 
-.drive-page .benefit-icon {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.drive-page .benefit-icon,
+.drive-page .step-icon,
+.drive-page .why-icon {
+    width: 54px;
+    height: 54px;
 
     margin-bottom: 28px;
 
-    border:
-        1px solid
-        rgba(var(--gold-rgb), 0.28);
+    border: 1px solid
+        rgba(var(--gold-rgb), 0.3);
 
-    background:
-        rgba(var(--gold-rgb), 0.055);
+    border-radius: 50%;
 
     color: var(--gold);
-}
 
-.drive-page .benefit-icon svg {
-    width: 21px;
-    height: 21px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.5;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    background:
+        rgba(var(--gold-rgb), 0.06);
 }
 
 .drive-page .benefit-card h3 {
-    margin-bottom: 13px;
-
-    color: var(--white);
-
-    font-size: 17px;
-    font-weight: 700;
-
-    line-height: 1.25;
+    margin-bottom: 12px;
 }
 
 .drive-page .benefit-card p {
-    margin-bottom: 0;
+    color: var(--text-muted);
 
-    color: var(--gray);
-
-    font-size: 13px;
-
-    line-height: 1.75;
+    font-size: 0.88rem;
 }
 
 
 /* =========================================================
-   REALIDADE
-========================================================= */
+   10. REALITY
+   ========================================================= */
 
 .drive-page .reality {
-    background: var(--black-2);
+    padding: 125px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #080808,
+            #050505
+        );
 }
 
 .drive-page .reality-grid {
@@ -631,342 +691,235 @@
         minmax(0, 0.88fr)
         minmax(0, 1.12fr);
 
-    gap: 80px;
+    gap: 90px;
 
     align-items: center;
+}
+
+.drive-page .reality-text .section-label {
+    margin-bottom: 20px;
 }
 
 .drive-page .reality-text h2 {
-    max-width: 610px;
-
-    margin-bottom: 22px;
-
-    color: var(--white);
-
-    font-size: clamp(
-        36px,
-        4.2vw,
-        58px
-    );
-
-    font-weight: 400;
-
-    line-height: 1.02;
-
-    letter-spacing: -0.045em;
+    max-width: 600px;
 }
 
-.drive-page .reality-text h2 strong {
-    display: block;
+.drive-page .reality-text > p {
+    max-width: 570px;
 
-    font-weight: 800;
-}
-
-.drive-page .reality-text > p:not(.section-label) {
-    max-width: 580px;
-
-    color: var(--gray);
-
-    font-size: 14px;
-}
-
-.drive-page .reality-text .reality-intro {
-    margin-bottom: 14px;
-
-    color: var(--white);
-
-    font-size: 17px;
-    font-weight: 600;
+    margin-top: 26px;
 }
 
 .drive-page .reality-highlight {
-    display: flex;
-    align-items: center;
-
-    gap: 16px;
+    position: relative;
 
     margin-top: 32px;
-    padding: 20px 22px;
 
-    border-left:
-        2px solid var(--gold);
+    padding: 24px 26px 24px 28px;
+
+    border-left: 2px solid var(--gold);
 
     background:
-        rgba(var(--gold-rgb), 0.045);
+        linear-gradient(
+            90deg,
+            rgba(var(--gold-rgb), 0.075),
+            transparent
+        );
 }
 
 .drive-page .reality-highlight p {
-    margin: 0;
-
-    color: var(--white-soft);
-
-    font-size: 13px;
-    font-weight: 500;
-
-    line-height: 1.6;
+    color: var(--text);
+    font-size: 1rem;
 }
 
-.drive-page .highlight-icon {
-    flex: 0 0 auto;
-
-    width: 34px;
-    height: 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: var(--gold);
-}
-
-.drive-page .highlight-icon svg {
-    width: 23px;
-    height: 23px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.5;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
+.drive-page .reality-highlight strong {
+    color: var(--gold-light);
 }
 
 .drive-page .reality-image {
     position: relative;
-}
 
-.drive-page .reality-image::after {
-    content: "";
+    overflow: hidden;
 
-    position: absolute;
+    border-radius: var(--radius-lg);
 
-    inset: 12px -12px -12px 12px;
+    border: 1px solid var(--border);
 
-    z-index: -1;
+    background: var(--surface);
 
-    border: 1px solid
-        rgba(var(--gold-rgb), 0.18);
+    box-shadow: var(--shadow);
 }
 
 .drive-page .reality-image img {
     width: 100%;
 
+    aspect-ratio: 1.12 / 1;
+
     object-fit: cover;
 
-    filter:
-        saturate(0.9)
-        contrast(1.04);
+    transition:
+        transform 0.7s var(--ease);
+}
+
+.drive-page .reality-image:hover img {
+    transform: scale(1.025);
 }
 
 .drive-page .image-caption {
-    margin-top: 18px;
+    padding: 18px 22px;
 
-    color: var(--gray-dark);
+    color: var(--text-soft);
 
-    font-size: 10px;
+    background: #0b0b0b;
 
-    letter-spacing: 0.04em;
+    font-size: 0.78rem;
+    font-weight: 600;
 
-    text-align: right;
+    letter-spacing: 0.01em;
 }
 
 
 /* =========================================================
-   COMO FUNCIONA
-========================================================= */
+   11. HOW IT WORKS
+   ========================================================= */
 
 .drive-page .how-it-works {
-    background: var(--black);
+    padding: 125px 0;
+
+    background: #080808;
 }
 
 .drive-page .steps {
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 0;
-
-    border-top:
-        1px solid var(--border);
-
-    border-bottom:
-        1px solid var(--border);
 }
 
 .drive-page .step {
     position: relative;
 
-    min-height: 260px;
-
-    padding: 38px 30px;
-
-    border-right:
-        1px solid var(--border);
+    padding: 0 34px 0 0;
 }
 
-.drive-page .step:last-child {
-    border-right: 0;
+.drive-page .step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 27px;
+    right: 34px;
+
+    width: calc(100% - 100px);
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--gold-rgb), 0.38),
+            transparent
+        );
+
+    transform: translateX(50%);
 }
 
 .drive-page .step-icon {
-    width: 46px;
-    height: 46px;
+    position: relative;
+    z-index: 2;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 25px;
 
-    margin-bottom: 30px;
-
-    color: var(--gold);
-}
-
-.drive-page .step-icon svg {
-    width: 30px;
-    height: 30px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.35;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    background: #080808;
 }
 
 .drive-page .step h3 {
     margin-bottom: 12px;
-
-    color: var(--white);
-
-    font-size: 16px;
-    font-weight: 700;
-
-    line-height: 1.35;
 }
 
 .drive-page .step p {
-    margin-bottom: 0;
+    max-width: 230px;
 
-    color: var(--gray);
+    color: var(--text-muted);
 
-    font-size: 12px;
-
-    line-height: 1.75;
+    font-size: 0.86rem;
 }
 
 
 /* =========================================================
-   POR QUE FUNCIONA
-========================================================= */
+   12. WHY
+   ========================================================= */
 
 .drive-page .why {
-    background: var(--black-2);
+    padding: 125px 0;
+
+    background: var(--bg);
 }
 
 .drive-page .why-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 14px;
 }
 
 .drive-page .why-card {
-    min-height: 300px;
+    min-height: 285px;
 
-    padding: 31px 29px;
+    padding: 30px;
 
-    border:
-        1px solid var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
-    background:
-        rgba(255, 255, 255, 0.018);
+    background: var(--surface);
 
     transition:
-        border-color 0.3s ease,
-        background 0.3s ease;
+        transform 0.35s var(--ease),
+        border-color 0.35s ease;
 }
 
 .drive-page .why-card:hover {
-    border-color:
-        var(--border-gold);
+    transform: translateY(-5px);
 
-    background:
-        rgba(var(--gold-rgb), 0.035);
+    border-color:
+        rgba(var(--gold-rgb), 0.25);
+}
+
+.drive-page .why-card:nth-child(4),
+.drive-page .why-card:nth-child(5) {
+    grid-column: span 1;
 }
 
 .drive-page .why-icon {
-    width: 40px;
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 27px;
-
-    color: var(--gold);
-}
-
-.drive-page .why-icon svg {
-    width: 25px;
-    height: 25px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.35;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    margin-bottom: 24px;
 }
 
 .drive-page .why-card h3 {
     margin-bottom: 13px;
-
-    color: var(--white);
-
-    font-size: 16px;
-    font-weight: 700;
-
-    line-height: 1.35;
 }
 
 .drive-page .why-card p {
-    margin-bottom: 0;
+    color: var(--text-muted);
 
-    color: var(--gray);
-
-    font-size: 12px;
-
-    line-height: 1.75;
-}
-
-.drive-page .why-card:last-child {
-    grid-column: span 1;
+    font-size: 0.87rem;
 }
 
 
 /* =========================================================
-   DEPOIMENTOS
-========================================================= */
+   13. TESTIMONIALS
+   ========================================================= */
 
 .drive-page .testimonials {
-    background: var(--black);
+    padding: 125px 0;
+
+    background: #080808;
 }
 
 .drive-page .testimonials-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 14px;
 }
@@ -974,107 +927,94 @@
 .drive-page .testimonial {
     position: relative;
 
-    padding: 32px;
+    display: flex;
+    flex-direction: column;
 
-    border:
-        1px solid var(--border);
+    min-height: 310px;
+
+    padding: 31px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
     background:
         linear-gradient(
             145deg,
-            rgba(255, 255, 255, 0.032),
-            rgba(255, 255, 255, 0.012)
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.01)
         );
 }
 
 .drive-page .testimonial-stars {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 
     color: var(--gold);
 
-    font-size: 13px;
+    font-size: 0.9rem;
 
-    letter-spacing: 0.15em;
-}
-
-.drive-page .testimonial > p:not(.testimonial-highlight) {
-    margin-bottom: 20px;
-
-    color: var(--gray-light);
-
-    font-size: 13px;
-
-    line-height: 1.85;
+    letter-spacing: 0.16em;
 }
 
 .drive-page .testimonial-highlight {
-    margin-bottom: 25px;
+    margin-bottom: 16px;
 
-    color: var(--gold-light);
+    color: var(--white);
 
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.42;
 
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+}
+
+.drive-page .testimonial > p:not(.testimonial-highlight) {
+    color: var(--text-muted);
+
+    font-size: 0.86rem;
     line-height: 1.65;
 }
 
 .drive-page .testimonial-author {
-    display: flex;
-    align-items: center;
+    margin-top: auto;
+    padding-top: 25px;
 
-    gap: 12px;
+    color: var(--text-soft);
 
-    padding-top: 18px;
-
-    border-top:
-        1px solid var(--border);
-}
-
-.drive-page .testimonial-author strong {
-    color: var(--white);
-
-    font-size: 12px;
+    font-size: 0.74rem;
+    font-weight: 600;
 }
 
 .drive-page .testimonial-author span {
-    color: var(--gray-dark);
+    color: var(--text-muted);
 
-    font-size: 10px;
-}
-
-.drive-page .section-cta {
-    display: flex;
-    justify-content: center;
-
-    margin-top: 48px;
+    font-weight: 400;
 }
 
 
 /* =========================================================
-   SOBRE
-========================================================= */
+   14. ABOUT
+   ========================================================= */
 
 .drive-page .about {
-    background: var(--black-2);
+    padding: 125px 0;
+
+    background: var(--bg);
 }
 
 .drive-page .about-logos {
     display: flex;
     align-items: center;
+    gap: 20px;
 
-    gap: 25px;
-
-    margin-bottom: 58px;
+    margin-bottom: 30px;
 }
 
-.drive-page .about-logos img:first-child {
-    width: 140px;
-    height: auto;
-}
-
-.drive-page .about-logos img:last-child {
-    width: 82px;
-    height: auto;
+.drive-page .about-logos img {
+    width: auto;
+    max-width: 145px;
+    max-height: 48px;
+    object-fit: contain;
 }
 
 .drive-page .about-grid {
@@ -1082,105 +1022,87 @@
 
     grid-template-columns:
         minmax(0, 1fr)
-        minmax(0, 0.85fr);
+        minmax(340px, 0.72fr);
 
-    gap: 90px;
+    gap: 100px;
 
     align-items: start;
 }
 
-.drive-page .about-copy > p {
+.drive-page .about-copy h2 {
+    max-width: 700px;
+}
+
+.drive-page .about-copy p {
     max-width: 650px;
 
-    color: var(--gray);
-
-    font-size: 14px;
-
-    line-height: 1.9;
+    margin-top: 24px;
 }
 
-.drive-page .about-copy h2 {
-    margin-top: 52px;
-    margin-bottom: 18px;
-
-    color: var(--white);
-
-    font-size: 30px;
-    font-weight: 400;
-
-    line-height: 1.15;
-
-    letter-spacing: -0.035em;
-}
-
-.drive-page .about-copy h2 strong {
-    font-weight: 800;
+.drive-page .about-copy p + p {
+    margin-top: 17px;
 }
 
 .drive-page .facts {
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
-    border-top:
-        1px solid var(--border);
+    gap: 10px;
 }
 
 .drive-page .fact {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
-    gap: 20px;
+    gap: 18px;
 
-    padding: 22px 0;
+    padding: 19px 0;
 
-    border-bottom:
-        1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.drive-page .fact:first-child {
+    border-top: 1px solid var(--border);
 }
 
 .drive-page .fact-icon {
-    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
 
-    width: 34px;
-    height: 34px;
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    border: 1px solid
+        rgba(var(--gold-rgb), 0.25);
+
+    border-radius: 50%;
+
     color: var(--gold);
 }
 
 .drive-page .fact-icon svg {
-    width: 22px;
-    height: 22px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.35;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    width: 20px;
+    height: 20px;
 }
 
 .drive-page .fact p {
-    margin: 0;
+    color: var(--text-soft);
 
-    color: var(--gray-light);
-
-    font-size: 12px;
-
-    line-height: 1.7;
+    font-size: 0.82rem;
+    line-height: 1.5;
 }
 
 
 /* =========================================================
-   FAQ
-========================================================= */
+   15. FAQ
+   ========================================================= */
 
 .drive-page .faq {
-    background: var(--black);
+    padding: 125px 0;
+
+    background: #080808;
 }
 
 .drive-page .faq-list {
@@ -1188,29 +1110,23 @@
 
     margin-inline: auto;
 
-    border-top:
-        1px solid var(--border);
+    border-top: 1px solid var(--border);
 }
 
 .drive-page .faq-item {
-    border-bottom:
-        1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .drive-page .faq-question {
     width: 100%;
 
-    min-height: 78px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 25px;
 
-    padding: 0;
-
-    border: 0;
+    padding: 27px 0;
 
     background: transparent;
 
@@ -1218,54 +1134,55 @@
 
     text-align: left;
 
+    font-size: 0.97rem;
+    line-height: 1.4;
+
+    font-weight: 600;
+
     cursor: pointer;
 }
 
-.drive-page .faq-question > span:first-child {
-    font-size: 14px;
-    font-weight: 600;
+.drive-page .faq-question:hover {
+    color: var(--gold-light);
 }
 
 .drive-page .faq-icon {
-    position: relative;
+    width: 30px;
+    height: 30px;
 
-    flex: 0 0 auto;
+    flex-shrink: 0;
 
-    width: 25px;
-    height: 25px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.drive-page .faq-icon::before,
-.drive-page .faq-icon::after {
-    content: "";
+    border: 1px solid
+        rgba(var(--gold-rgb), 0.35);
 
-    position: absolute;
+    border-radius: 50%;
 
-    top: 50%;
-    left: 50%;
-
-    width: 13px;
-    height: 1px;
-
-    background: var(--gold);
-
-    transform:
-        translate(-50%, -50%);
+    color: var(--gold);
 
     transition:
-        transform 0.25s ease;
+        transform 0.35s var(--ease),
+        background 0.35s ease;
 }
 
-.drive-page .faq-icon::after {
-    transform:
-        translate(-50%, -50%)
-        rotate(90deg);
+.drive-page .faq-icon svg {
+    width: 15px;
+    height: 15px;
+
+    transition:
+        transform 0.35s var(--ease);
 }
 
-.drive-page .faq-item.active .faq-icon::after {
-    transform:
-        translate(-50%, -50%)
-        rotate(0);
+.drive-page .faq-item.active .faq-icon {
+    background:
+        rgba(var(--gold-rgb), 0.1);
+}
+
+.drive-page .faq-item.active .faq-icon svg {
+    transform: rotate(45deg);
 }
 
 .drive-page .faq-answer {
@@ -1274,7 +1191,7 @@
     grid-template-rows: 0fr;
 
     transition:
-        grid-template-rows 0.3s ease;
+        grid-template-rows 0.4s var(--ease);
 }
 
 .drive-page .faq-item.active .faq-answer {
@@ -1282,196 +1199,39 @@
 }
 
 .drive-page .faq-answer-inner {
+    min-height: 0;
     overflow: hidden;
 }
 
-.drive-page .faq-answer p {
+.drive-page .faq-answer-inner p {
     max-width: 800px;
 
-    margin: 0;
+    padding: 0 70px 28px 0;
 
-    padding:
-        0 50px 27px 0;
+    color: var(--text-muted);
 
-    color: var(--gray);
-
-    font-size: 13px;
-
-    line-height: 1.8;
+    font-size: 0.88rem;
+    line-height: 1.72;
 }
 
 
 /* =========================================================
-   OFERTA
-========================================================= */
+   16. OFFER
+   ========================================================= */
 
 .drive-page .offer {
-    background:
-        linear-gradient(
-            180deg,
-            var(--black-2),
-            var(--black-3)
-        );
-}
-
-.drive-page .offer-grid {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 0.9fr)
-        minmax(0, 1.1fr);
-
-    gap: 80px;
-
-    align-items: center;
-}
-
-.drive-page .offer-image {
-    position: relative;
-}
-
-.drive-page .offer-image::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 10%;
+    padding: 125px 0;
 
     background:
         radial-gradient(
-            circle,
-            rgba(var(--gold-rgb), 0.09),
-            transparent 67%
-        );
-
-    filter: blur(25px);
-
-    z-index: 0;
+            circle at 80% 20%,
+            rgba(var(--gold-rgb), 0.055),
+            transparent 35%
+        ),
+        #050505;
 }
 
-.drive-page .offer-image img {
-    position: relative;
-    z-index: 1;
-
-    width: 100%;
-}
-
-.drive-page .offer-content {
-    max-width: 570px;
-}
-
-.drive-page .offer-price {
-    margin-bottom: 30px;
-
-    padding: 25px 26px;
-
-    border:
-        1px solid
-        rgba(var(--gold-rgb), 0.3);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(var(--gold-rgb), 0.085),
-            rgba(255, 255, 255, 0.018)
-        );
-}
-
-.drive-page .offer-installments {
-    margin-bottom: 6px;
-
-    color: var(--white);
-
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.drive-page .offer-installments strong {
-    color: var(--gold-light);
-
-    font-size: 37px;
-    font-weight: 800;
-
-    letter-spacing: -0.04em;
-}
-
-.drive-page .offer-cash {
-    margin-bottom: 0;
-
-    color: var(--gray);
-
-    font-size: 12px;
-}
-
-.drive-page .offer-features {
-    display: flex;
-    flex-direction: column;
-
-    gap: 0;
-
-    margin: 0 0 32px;
-    padding: 0;
-
-    list-style: none;
-}
-
-.drive-page .offer-features li {
-    display: flex;
-    align-items: flex-start;
-
-    gap: 13px;
-
-    padding: 12px 0;
-
-    border-bottom:
-        1px solid var(--border);
-
-    color: var(--gray-light);
-
-    font-size: 12px;
-
-    line-height: 1.65;
-}
-
-.drive-page .list-icon {
-    flex: 0 0 auto;
-
-    width: 18px;
-    height: 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 1px;
-
-    color: var(--gold);
-}
-
-.drive-page .list-icon svg {
-    width: 17px;
-    height: 17px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 2;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-
-/* =========================================================
-   GARANTIA
-========================================================= */
-
-.drive-page .guarantee {
-    background: var(--black);
-}
-
-.drive-page .guarantee-grid {
+.drive-page .offer-grid {
     display: grid;
 
     grid-template-columns:
@@ -1483,59 +1243,174 @@
     align-items: center;
 }
 
-.drive-page .guarantee-image img {
-    width: min(100%, 440px);
+.drive-page .offer-image {
+    overflow: hidden;
 
-    margin-inline: auto;
+    border-radius: var(--radius-lg);
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow);
 }
 
-.drive-page .guarantee-copy {
-    max-width: 580px;
+.drive-page .offer-image img {
+    width: 100%;
+
+    transition:
+        transform 0.6s var(--ease);
 }
 
-.drive-page .guarantee-copy h2 {
-    margin-bottom: 23px;
+.drive-page .offer-image:hover img {
+    transform: scale(1.025);
+}
 
+.drive-page .offer-content .section-label {
+    margin-bottom: 17px;
+}
+
+.drive-page .offer-content h2 {
+    max-width: 620px;
+}
+
+.drive-page .offer-content > p {
+    max-width: 600px;
+
+    margin-top: 21px;
+}
+
+.drive-page .offer-price {
+    margin-top: 35px;
+    padding: 28px;
+
+    border: 1px solid
+        rgba(var(--gold-rgb), 0.27);
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(var(--gold-rgb), 0.11),
+            rgba(var(--gold-rgb), 0.025)
+        );
+}
+
+.drive-page .offer-installments {
     color: var(--white);
 
-    font-size: clamp(
-        35px,
-        4vw,
-        56px
-    );
-
-    font-weight: 400;
-
+    font-size: clamp(2.3rem, 4vw, 3.7rem);
     line-height: 1;
 
-    letter-spacing: -0.045em;
-}
-
-.drive-page .guarantee-copy h2 strong {
-    display: block;
-
-    color: var(--gold-light);
-
     font-weight: 800;
+
+    letter-spacing: -0.05em;
 }
 
-.drive-page .guarantee-copy > p:last-child {
-    margin-bottom: 0;
+.drive-page .offer-installments span {
+    color: var(--gold-light);
+}
 
-    color: var(--gray);
+.drive-page .offer-cash {
+    margin-top: 10px;
 
-    font-size: 14px;
+    color: var(--text-muted);
 
-    line-height: 1.85;
+    font-size: 0.82rem;
+}
+
+.drive-page .offer-cash strong {
+    color: var(--text-soft);
+}
+
+.drive-page .offer-features {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px 20px;
+
+    margin-top: 28px;
+}
+
+.drive-page .offer-features li,
+.drive-page .kit-details-content li {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: var(--text-soft);
+
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.drive-page .feature-icon {
+    margin-top: 1px;
+
+    color: var(--gold);
 }
 
 
 /* =========================================================
-   DETALHES DO KIT
-========================================================= */
+   17. GUARANTEE
+   ========================================================= */
+
+.drive-page .guarantee {
+    padding: 85px 0;
+
+    background: #0a0a0a;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.drive-page .guarantee-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, 0.45fr)
+        minmax(0, 1fr);
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.drive-page .guarantee-image img {
+    width: 100%;
+    max-width: 260px;
+
+    margin-inline: auto;
+}
+
+.drive-page .guarantee-copy .section-label {
+    margin-bottom: 16px;
+}
+
+.drive-page .guarantee-copy h2 {
+    max-width: 680px;
+
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+.drive-page .guarantee-copy p {
+    max-width: 690px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   18. KIT DETAILS
+   ========================================================= */
 
 .drive-page .kit-details {
-    background: var(--black-2);
+    padding: 125px 0;
+
+    background: var(--bg);
 }
 
 .drive-page .kit-details-grid {
@@ -1543,188 +1418,149 @@
 
     grid-template-columns:
         minmax(0, 1fr)
-        minmax(0, 0.9fr);
+        minmax(0, 1fr);
 
     gap: 90px;
 
     align-items: center;
 }
 
+.drive-page .kit-details-image {
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+}
+
 .drive-page .kit-details-image img {
     width: 100%;
+
+    transition:
+        transform 0.6s var(--ease);
 }
 
-.drive-page .kit-details-content {
-    max-width: 560px;
+.drive-page .kit-details-image:hover img {
+    transform: scale(1.025);
 }
 
-.drive-page .kit-details-content .section-title {
-    margin-bottom: 22px;
+.drive-page .kit-details-content .section-label {
+    margin-bottom: 17px;
 }
 
-.drive-page .kit-details-content > p:not(.section-label) {
-    color: var(--gray);
-
-    font-size: 13px;
-
-    line-height: 1.8;
+.drive-page .kit-details-content h2 {
+    max-width: 600px;
 }
 
-.drive-page .kit-details-content h3 {
-    margin-top: 38px;
-    margin-bottom: 16px;
+.drive-page .kit-details-content > p {
+    max-width: 590px;
 
-    color: var(--white);
-
-    font-size: 15px;
+    margin-top: 22px;
 }
 
 .drive-page .kit-details-content ul {
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
-    gap: 10px;
+    gap: 13px;
 
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
+    margin-top: 28px;
 }
 
 .drive-page .kit-details-content li {
-    display: flex;
-    align-items: flex-start;
-
-    gap: 11px;
-
-    color: var(--gray-light);
-
-    font-size: 12px;
-
-    line-height: 1.65;
+    font-size: 0.86rem;
 }
 
 
 /* =========================================================
-   CTA FINAL
-========================================================= */
+   19. FINAL CTA
+   ========================================================= */
 
 .drive-page .final-cta {
     position: relative;
 
-    min-height: 540px;
-
-    display: flex;
-    align-items: center;
+    padding: 145px 0;
 
     overflow: hidden;
 
+    text-align: center;
+
     background:
-        radial-gradient(
-            circle at center,
-            rgba(var(--gold-rgb), 0.08),
-            transparent 35%
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.93),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.93)
         ),
-        var(--black);
+        url("./assets/display.webp");
+
+    background-size: cover;
+    background-position: center;
 }
 
 .drive-page .final-cta::before {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.98),
-            rgba(0, 0, 0, 0.74),
-            rgba(0, 0, 0, 0.94)
-        );
-}
-
-.drive-page .final-cta::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 0;
-
-    width: 1px;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(var(--gold-rgb), 0.12),
-            transparent
+        radial-gradient(
+            circle at center,
+            rgba(var(--gold-rgb), 0.11),
+            transparent 45%
         );
 }
 
 .drive-page .final-cta-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
-    max-width: 800px;
+    max-width: 850px;
 
     margin-inline: auto;
-
-    text-align: center;
 }
 
-.drive-page .final-cta-content .section-label {
-    margin-bottom: 20px;
+.drive-page .final-cta .section-label {
+    justify-content: center;
 }
 
-.drive-page .final-cta-content h2 {
-    margin-bottom: 23px;
-
-    color: var(--white);
-
-    font-size: clamp(
-        42px,
-        5.5vw,
-        72px
-    );
-
-    font-weight: 400;
-
-    line-height: 0.98;
-
-    letter-spacing: -0.055em;
+.drive-page .final-cta h2 {
+    font-size: clamp(3rem, 6vw, 5.4rem);
 }
 
-.drive-page .final-cta-content h2 strong {
-    display: block;
-
+.drive-page .final-cta h2 span {
     color: var(--gold-light);
-
-    font-weight: 800;
 }
 
-.drive-page .final-cta-content > p:not(.section-label) {
-    margin-bottom: 32px;
+.drive-page .final-cta p {
+    max-width: 620px;
 
-    color: var(--gray-light);
+    margin: 25px auto 0;
 
-    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.drive-page .final-cta .checkout-link {
+    margin-top: 34px;
+
+    min-height: 56px;
+
+    padding-inline: 34px;
 }
 
 
 /* =========================================================
-   FOOTER
-========================================================= */
+   20. FOOTER
+   ========================================================= */
 
 .drive-page .site-footer {
-    padding: 55px 0 28px;
+    padding: 60px 0 25px;
 
-    border-top:
-        1px solid var(--border);
+    background: #000000;
 
-    background: #030303;
+    border-top: 1px solid var(--border);
 }
 
 .drive-page .footer-top {
@@ -1734,10 +1570,7 @@
 
     gap: 40px;
 
-    padding-bottom: 35px;
-
-    border-bottom:
-        1px solid var(--border);
+    padding-bottom: 45px;
 }
 
 .drive-page .footer-logos {
@@ -1747,108 +1580,127 @@
     gap: 20px;
 }
 
-.drive-page .footer-logos img:first-child {
-    width: 130px;
-}
+.drive-page .footer-logos img {
+    width: auto;
 
-.drive-page .footer-logos img:last-child {
-    width: 72px;
+    max-width: 135px;
+    max-height: 42px;
+
+    object-fit: contain;
 }
 
 .drive-page .footer-links {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
 
-    justify-content: flex-end;
-
-    gap: 20px;
+    gap: 25px;
 }
 
 .drive-page .footer-links a {
-    color: var(--gray-dark);
+    color: var(--text-muted);
 
-    font-size: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
 
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .drive-page .footer-links a:hover {
-    color: var(--gold);
+    color: var(--white);
 }
 
 .drive-page .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding-top: 22px;
 
-    gap: 20px;
+    border-top: 1px solid var(--border);
 
-    padding-top: 24px;
-}
+    color: #606060;
 
-.drive-page .footer-bottom p {
-    margin: 0;
-
-    color: #555;
-
-    font-size: 9px;
-
-    line-height: 1.5;
+    font-size: 0.68rem;
+    line-height: 1.6;
 }
 
 
 /* =========================================================
-   TABLET
-========================================================= */
+   21. CHECKOUT BUTTON — UNIVERSAL
+   ========================================================= */
+
+.drive-page a.checkout-link {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   22. SELECTION
+   ========================================================= */
+
+.drive-page ::selection {
+    background: var(--gold);
+    color: #000;
+}
+
+
+/* =========================================================
+   23. SCROLLBAR
+   ========================================================= */
+
+.drive-page ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.drive-page ::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+.drive-page ::-webkit-scrollbar-thumb {
+    background: #292929;
+
+    border-radius: 10px;
+}
+
+.drive-page ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+}
+
+
+/* =========================================================
+   24. TABLET
+   ========================================================= */
 
 @media (max-width: 1050px) {
 
     .drive-page .main-nav {
-        gap: 16px;
+        gap: 20px;
     }
 
     .drive-page .main-nav a {
-        font-size: 10px;
-    }
-
-    .drive-page .header-cta {
-        padding: 0 13px;
-
-        font-size: 8px;
+        font-size: 0.66rem;
     }
 
     .drive-page .benefits-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .drive-page .steps {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .drive-page .step:nth-child(2) {
-        border-right: 0;
-    }
-
-    .drive-page .step:nth-child(-n + 2) {
-        border-bottom:
-            1px solid var(--border);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .drive-page .why-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .drive-page .why-card:last-child {
-        grid-column: 1 / -1;
+    .drive-page .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .drive-page .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 30px;
+    }
+
+    .drive-page .step:not(:last-child)::after {
+        display: none;
     }
 
     .drive-page .about-grid,
     .drive-page .offer-grid,
-    .drive-page .guarantee-grid,
+    .drive-page .reality-grid,
     .drive-page .kit-details-grid {
         gap: 55px;
     }
@@ -1856,70 +1708,64 @@
 
 
 /* =========================================================
-   MOBILE
-========================================================= */
+   25. MOBILE NAV
+   ========================================================= */
 
 @media (max-width: 820px) {
 
-    .drive-page .container {
+    .drive-page .header-inner {
         width: min(
-            calc(100% - 36px),
+            calc(100% - 34px),
             var(--container)
         );
-    }
-
-    .drive-page .header-inner {
-        width: calc(100% - 36px);
-
-        min-height: 72px;
-    }
-
-    .drive-page .logo img {
-        width: 125px;
     }
 
     .drive-page .main-nav {
         position: absolute;
 
-        top: 72px;
-        left: 18px;
-        right: 18px;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
 
-        display: none;
-
+        display: flex;
         flex-direction: column;
         align-items: stretch;
 
         gap: 0;
 
-        padding: 8px;
+        padding: 10px 24px 22px;
 
-        border:
-            1px solid var(--border);
+        background: rgba(5, 5, 5, 0.98);
 
-        background:
-            rgba(5, 5, 5, 0.98);
+        border-bottom: 1px solid var(--border);
 
-        box-shadow:
-            0 20px 60px
-            rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(18px);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
     }
 
     .drive-page .main-nav.active {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .drive-page .main-nav a {
-        padding: 14px 12px;
+        display: block;
 
-        border-bottom:
-            1px solid var(--border);
+        padding: 15px 0;
 
-        font-size: 11px;
-    }
+        border-bottom: 1px solid var(--border);
 
-    .drive-page .main-nav a:last-child {
-        border-bottom: 0;
+        font-size: 0.72rem;
     }
 
     .drive-page .main-nav a::after {
@@ -1931,228 +1777,317 @@
     }
 
     .drive-page .menu-toggle {
-        display: block;
+        display: inline-flex;
     }
 
     .drive-page .hero {
-        min-height: 680px;
+        min-height: auto;
+
+        background-position:
+            65% center;
     }
 
     .drive-page .hero-content {
-        padding-top: 60px;
+        padding: 95px 0 115px;
     }
 
-    .drive-page .hero h1 {
-        font-size: clamp(
-            42px,
-            11vw,
-            62px
-        );
-    }
-
-    .drive-page .hero-description {
-        font-size: 15px;
-    }
-
-    .drive-page .section {
-        padding: 82px 0;
-    }
-
-    .drive-page .section-header {
-        margin-bottom: 42px;
-    }
-
-    .drive-page .section-title {
-        font-size: 38px;
-    }
-
-    .drive-page .reality-grid,
     .drive-page .about-grid,
     .drive-page .offer-grid,
-    .drive-page .guarantee-grid,
-    .drive-page .kit-details-grid {
+    .drive-page .reality-grid,
+    .drive-page .kit-details-grid,
+    .drive-page .guarantee-grid {
         grid-template-columns: 1fr;
+    }
+
+    .drive-page .about-grid {
+        gap: 60px;
+    }
+
+    .drive-page .offer-grid {
+        gap: 50px;
     }
 
     .drive-page .reality-grid {
-        gap: 48px;
+        gap: 50px;
     }
 
-    .drive-page .reality-image {
-        order: 2;
-    }
-
-    .drive-page .about-grid,
-    .drive-page .offer-grid,
-    .drive-page .guarantee-grid,
     .drive-page .kit-details-grid {
-        gap: 48px;
+        gap: 50px;
     }
 
-    .drive-page .offer-content,
-    .drive-page .guarantee-copy,
-    .drive-page .kit-details-content {
-        max-width: none;
+    .drive-page .guarantee-grid {
+        gap: 40px;
+        text-align: center;
     }
 
-    .drive-page .testimonials-grid {
-        grid-template-columns: 1fr;
+    .drive-page .guarantee-copy .section-label {
+        justify-content: center;
     }
 
-    .drive-page .footer-top,
-    .drive-page .footer-bottom {
-        align-items: flex-start;
+    .drive-page .guarantee-copy p {
+        margin-inline: auto;
+    }
 
+    .drive-page .footer-top {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .drive-page .footer-links {
-        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 }
 
 
 /* =========================================================
-   MOBILE SMALL
-========================================================= */
+   26. MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
 
-    .drive-page .benefits-grid,
-    .drive-page .why-grid {
-        grid-template-columns: 1fr;
+    .drive-page .container {
+        width: min(
+            calc(100% - 34px),
+            var(--container)
+        );
     }
 
-    .drive-page .why-card:last-child {
-        grid-column: auto;
+    .drive-page h1 {
+        font-size: clamp(
+            3rem,
+            15vw,
+            4.5rem
+        );
+
+        letter-spacing: -0.06em;
+    }
+
+    .drive-page h2 {
+        font-size: clamp(
+            2.35rem,
+            11vw,
+            3.4rem
+        );
+    }
+
+    .drive-page h3 {
+        font-size: 1.08rem;
+    }
+
+    .drive-page p {
+        font-size: 0.9rem;
+    }
+
+    .drive-page .site-header {
+        height: 72px;
+    }
+
+    .drive-page {
+        --header-height: 72px;
+    }
+
+    .drive-page .logo img {
+        height: 34px;
+    }
+
+    .drive-page .hero {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.76) 0%,
+                rgba(0, 0, 0, 0.88) 60%,
+                rgba(0, 0, 0, 0.98) 100%
+            ),
+            url("./assets/display.webp");
+
+        background-position: 62% center;
+    }
+
+    .drive-page .hero-content {
+        padding: 80px 0 95px;
+    }
+
+    .drive-page .hero-eyebrow {
+        font-size: 0.62rem;
+
+        letter-spacing: 0.15em;
+    }
+
+    .drive-page .hero-description {
+        margin-top: 23px;
+
+        font-size: 0.95rem;
+    }
+
+    .drive-page .hero-proof {
+        font-size: 0.7rem;
+        line-height: 1.45;
+    }
+
+    .drive-page .hero-actions {
+        display: block;
+
+        margin-top: 28px;
+    }
+
+    .drive-page .hero-actions .checkout-link {
+        width: 100%;
+    }
+
+    .drive-page .benefits,
+    .drive-page .reality,
+    .drive-page .how-it-works,
+    .drive-page .why,
+    .drive-page .testimonials,
+    .drive-page .about,
+    .drive-page .faq,
+    .drive-page .offer,
+    .drive-page .kit-details {
+        padding: 85px 0;
+    }
+
+    .drive-page .section-header {
+        margin-bottom: 40px;
+    }
+
+    .drive-page .section-header p {
+        margin-top: 17px;
+    }
+
+    .drive-page .benefits-grid,
+    .drive-page .why-grid,
+    .drive-page .testimonials-grid {
+        grid-template-columns: 1fr;
     }
 
     .drive-page .benefit-card {
         min-height: auto;
 
-        padding: 28px 24px;
+        padding: 27px;
     }
 
     .drive-page .steps {
         grid-template-columns: 1fr;
 
-        border-bottom: 0;
+        gap: 35px;
     }
 
     .drive-page .step {
-        min-height: auto;
-
-        padding: 30px 4px;
-
-        border-right: 0;
-
-        border-bottom:
-            1px solid var(--border);
+        padding-right: 0;
     }
 
-    .drive-page .step:last-child {
-        border-bottom:
-            1px solid var(--border);
+    .drive-page .step-icon {
+        margin-bottom: 18px;
     }
 
-    .drive-page .step:nth-child(2) {
-        border-right: 0;
-    }
-
-    .drive-page .step:nth-child(-n + 2) {
-        border-bottom:
-            1px solid var(--border);
+    .drive-page .step p {
+        max-width: none;
     }
 
     .drive-page .why-card {
         min-height: auto;
 
-        padding: 28px 24px;
+        padding: 27px;
     }
 
     .drive-page .testimonial {
-        padding: 27px 23px;
+        min-height: 280px;
+
+        padding: 27px;
     }
 
     .drive-page .about-logos {
-        margin-bottom: 42px;
+        flex-wrap: wrap;
     }
 
-    .drive-page .faq-question {
-        min-height: 72px;
+    .drive-page .about-logos img {
+        max-width: 120px;
     }
 
-    .drive-page .faq-question > span:first-child {
-        font-size: 13px;
-    }
-
-    .drive-page .faq-answer p {
-        padding-right: 20px;
+    .drive-page .offer-features {
+        grid-template-columns: 1fr;
     }
 
     .drive-page .offer-price {
-        padding: 21px;
+        padding: 23px;
     }
 
-    .drive-page .offer-installments strong {
-        font-size: 31px;
+    .drive-page .offer-installments {
+        font-size: 2.5rem;
+    }
+
+    .drive-page .faq-question {
+        padding: 22px 0;
+
+        font-size: 0.88rem;
+    }
+
+    .drive-page .faq-answer-inner p {
+        padding:
+            0 40px 24px 0;
+
+        font-size: 0.82rem;
+    }
+
+    .drive-page .guarantee {
+        padding: 70px 0;
     }
 
     .drive-page .final-cta {
-        min-height: 500px;
+        padding: 105px 0;
     }
 
-    .drive-page .final-cta-content h2 {
-        font-size: 43px;
+    .drive-page .final-cta h2 {
+        font-size: clamp(
+            2.8rem,
+            14vw,
+            4rem
+        );
+    }
+
+    .drive-page .final-cta .checkout-link {
+        width: 100%;
     }
 
     .drive-page .footer-links {
-        flex-direction: column;
-
-        gap: 12px;
+        gap: 15px;
     }
 }
 
 
 /* =========================================================
-   EXTRA SMALL
-========================================================= */
+   27. SMALL MOBILE
+   ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
 
     .drive-page .container {
         width: calc(100% - 28px);
     }
 
-    .drive-page .header-inner {
-        width: calc(100% - 28px);
+    .drive-page h1 {
+        font-size: 2.8rem;
     }
 
-    .drive-page .hero h1 {
-        font-size: 39px;
+    .drive-page h2 {
+        font-size: 2.2rem;
     }
 
-    .drive-page .section-title {
-        font-size: 33px;
+    .drive-page .hero-content {
+        padding-top: 70px;
     }
 
-    .drive-page .btn-primary {
-        width: 100%;
-
-        padding-inline: 18px;
-
-        font-size: 9px;
-    }
-
-    .drive-page .hero-actions {
-        width: 100%;
+    .drive-page .benefit-card,
+    .drive-page .why-card,
+    .drive-page .testimonial {
+        padding: 23px;
     }
 }
 
 
 /* =========================================================
-   REDUÇÃO DE MOVIMENTO
-========================================================= */
+   28. REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
