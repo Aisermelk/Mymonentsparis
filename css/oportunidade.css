@@ -314,19 +314,39 @@ a {
 
 .luxury-form-section {
   padding: 140px 30px;
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 100px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: var(--black-soft);
+  text-align: center;
 }
 
 .luxury-form-intro {
-  max-width: 500px;
+  width: min(700px, 100%);
+  max-width: 700px;
+  margin: 0 auto 55px;
 }
 
 .luxury-form-intro h2 {
   margin-bottom: 28px;
+}
+
+.luxury-form-intro p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.luxury-form {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  text-align: left;
 }
 
 .luxury-form-intro p {
