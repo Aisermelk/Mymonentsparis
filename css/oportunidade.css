@@ -132,7 +132,10 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: background .3s ease, color .3s ease, border-color .3s ease;
+  transition:
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease;
 }
 
 .luxury-header-whatsapp:hover {
@@ -231,7 +234,10 @@ a {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background .3s ease, color .3s ease, transform .3s ease;
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
 }
 
 .luxury-button:hover {
@@ -366,7 +372,9 @@ a {
   color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  transition: border-color .3s ease, background .3s ease;
+  transition:
+    border-color .3s ease,
+    background .3s ease;
 }
 
 .luxury-field select {
@@ -437,6 +445,34 @@ a {
 
 .luxury-register-buttons .luxury-button {
   min-width: 210px;
+}
+
+.luxury-register-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 50px;
+  margin: 16px auto 0;
+  padding: 0 28px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
+}
+
+.luxury-register-whatsapp:hover {
+  background: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
 }
 
 .luxury-final {
@@ -511,7 +547,9 @@ a {
   text-decoration: none;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: transform .3s ease, background .3s ease;
+  transition:
+    transform .3s ease,
+    background .3s ease;
 }
 
 .luxury-whatsapp:hover {
@@ -532,6 +570,7 @@ a {
 }
 
 @media (max-width: 1000px) {
+
   .luxury-header {
     grid-template-columns: auto auto;
     justify-content: space-between;
@@ -555,9 +594,11 @@ a {
     max-width: 600px;
     gap: 35px;
   }
+
 }
 
 @media (max-width: 800px) {
+
   .luxury-header {
     top: 10px;
     width: calc(100% - 24px);
@@ -641,13 +682,21 @@ a {
     max-width: 360px;
   }
 
+  .luxury-register-whatsapp {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 12px;
+  }
+
   .luxury-final {
     padding-top: 120px;
     padding-bottom: 120px;
   }
+
 }
 
 @media (max-width: 430px) {
+
   .luxury-header {
     width: calc(100% - 16px);
   }
@@ -684,6 +733,7 @@ a {
     width: 56px;
     height: 56px;
   }
+
 }
 
 :focus-visible {
@@ -692,6 +742,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -702,4 +753,5 @@ a {
     transition: none !important;
     animation: none !important;
   }
+
 }
