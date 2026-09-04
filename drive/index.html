@@ -1,86 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>
-        Moments Driver — Enquanto você dirige, seu carro vende.
-    </title>
+    <title>Moments Driver | Enquanto você dirige, seu carro vende.</title>
 
-    <meta name="description"
-        content="Transforme suas corridas em uma fonte de renda extra com o Moments Driver.">
+    <meta
+        name="description"
+        content="Transforme suas corridas em uma fonte de renda extra real com a Moments Driver."
+    >
 
-    <meta name="robots"
-        content="index, follow">
+    <meta name="theme-color" content="#050505">
 
-    <meta name="theme-color"
-        content="#080808">
-
-    <!-- =====================================================
-         FONTES
-    ====================================================== -->
-
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
-
-    <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    >
 
+    <!-- CSS DA PÁGINA -->
+    <link rel="stylesheet" href="./style.css">
 
-    <!-- =====================================================
-         CSS DA PÁGINA
-    ====================================================== -->
-
-    <link rel="stylesheet"
-        href="style.css">
-
+    <!-- V8 ADMIN UNIVERSAL -->
+    <script
+        src="/js/v8-loader.js"
+        data-project-id="8ae3fee2-b4f4-487c-96c8-3833395b51c2"
+    ></script>
 </head>
-
 
 <body class="drive-page">
 
-
 <!-- =========================================================
      HEADER
-========================================================== -->
+========================================================= -->
 
-<header class="header">
+<header class="drive-header">
 
-    <div class="container header-container">
+    <div class="drive-container drive-header-inner">
 
-
-        <a href="#"
-            class="brand"
-            aria-label="Moments Driver">
-
+        <a href="#top" class="drive-logo-link" aria-label="Moments Driver">
             <img
-                src="assets/logo_driver.webp"
-                alt="Moments Driver">
-
+                src="./assets/logo_driver.webp"
+                alt="Moments Driver"
+                class="drive-logo"
+            >
         </a>
 
-
-        <nav class="nav"
-            id="mainNav">
+        <nav class="drive-nav" aria-label="Navegação principal">
 
             <a href="#como-funciona">
                 Como funciona
@@ -104,91 +78,75 @@
 
         </nav>
 
-
         <a
-            href="https://checkout.mania.software/?sku=KTMPDR&reference="
-            class="btn btn-primary checkout-link">
-
+            href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
+            class="drive-btn drive-btn-header checkout-link"
+        >
             QUERO TRANSFORMAR MEU CARRO
-
         </a>
+
+        <button
+            class="drive-menu-button"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
     </div>
 
 </header>
 
 
-
-<main>
-
+<main id="top">
 
 <!-- =========================================================
      HERO
-========================================================== -->
+========================================================= -->
 
-<section class="hero">
+<section class="drive-hero">
 
-    <div class="hero-background">
+    <div class="drive-hero-background">
 
         <img
-            src="assets/expositor.webp"
-            alt="Expositor Moments Driver">
+            src="./assets/expositor.webp"
+            alt=""
+            aria-hidden="true"
+        >
 
     </div>
 
+    <div class="drive-hero-overlay"></div>
 
-    <div class="hero-overlay"></div>
+    <div class="drive-container drive-hero-content">
 
+        <div class="drive-hero-copy">
 
-    <div class="container hero-container">
-
-        <div class="hero-content">
-
-
-            <span class="section-label">
-
+            <span class="drive-eyebrow">
                 MOTORISTA DE APLICATIVO
-
             </span>
 
-
             <h1>
-
                 Enquanto você dirige
-
+                <strong>SEU CARRO VENDE.</strong>
             </h1>
 
-
-            <h2>
-
-                SEU CARRO
-                <span>VENDE.</span>
-
-            </h2>
-
-
-            <p class="hero-description">
-
-                Transforme suas corridas em uma fonte
-                de renda extra real.
-
+            <p class="drive-hero-description">
+                Transforme suas corridas em uma fonte de renda extra real.
             </p>
 
-
-            <p class="hero-highlight">
-
-                Mais de 10.000 motoristas já cadastrados
-                por todo o Brasil.
-
+            <p class="drive-hero-highlight">
+                Mais de 10.000 motoristas já cadastrados por todo o Brasil.
             </p>
-
 
             <a
-                href="https://checkout.mania.software/?sku=KTMPDR&reference="
-                class="btn btn-primary checkout-link">
-
+                href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
+                class="drive-btn drive-btn-primary checkout-link"
+            >
                 QUERO TRANSFORMAR MEU CARRO
-
             </a>
 
         </div>
@@ -198,27 +156,23 @@
 </section>
 
 
-
 <!-- =========================================================
      BENEFÍCIOS
-========================================================== -->
+========================================================= -->
 
 <section
-    class="section benefits-section"
-    id="beneficios">
+    class="drive-section drive-benefits"
+    id="beneficios"
+>
 
-    <div class="container">
+    <div class="drive-container">
 
+        <div class="drive-benefits-grid">
 
-        <div class="benefits-grid">
+            <article class="drive-benefit-card">
 
-
-            <article class="benefit-card">
-
-                <div class="card-icon">
-
-                    <i class="fa-solid fa-bolt"></i>
-
+                <div class="drive-icon">
+                    01
                 </div>
 
                 <h3>
@@ -226,20 +180,16 @@
                 </h3>
 
                 <p>
-                    O passageiro vê, pergunta e compra.
-                    Você só dirige.
+                    O passageiro vê, pergunta e compra. Você só dirige.
                 </p>
 
             </article>
 
 
+            <article class="drive-benefit-card">
 
-            <article class="benefit-card">
-
-                <div class="card-icon">
-
-                    <i class="fa-solid fa-shield-halved"></i>
-
+                <div class="drive-icon">
+                    02
                 </div>
 
                 <h3>
@@ -247,20 +197,16 @@
                 </h3>
 
                 <p>
-                    Perfumes com 8 a 12 horas de fixação.
-                    Os passageiros adoram.
+                    Perfumes com 8 a 12 horas de fixação. Os passageiros adoram.
                 </p>
 
             </article>
 
 
+            <article class="drive-benefit-card">
 
-            <article class="benefit-card">
-
-                <div class="card-icon">
-
-                    <i class="fa-solid fa-sack-dollar"></i>
-
+                <div class="drive-icon">
+                    03
                 </div>
 
                 <h3>
@@ -268,20 +214,16 @@
                 </h3>
 
                 <p>
-                    Uma corrida de R$10 pode virar R$60.
-                    Sem esforço. Sem mudar sua rotina.
+                    Uma corrida de R$10 pode virar R$60. Sem esforço. Sem mudar sua rotina.
                 </p>
 
             </article>
 
 
+            <article class="drive-benefit-card">
 
-            <article class="benefit-card">
-
-                <div class="card-icon">
-
-                    <i class="fa-solid fa-headset"></i>
-
+                <div class="drive-icon">
+                    04
                 </div>
 
                 <h3>
@@ -289,124 +231,97 @@
                 </h3>
 
                 <p>
-                    A Moments Paris cuida de tudo.
-                    Você só dirige.
+                    A Moments Paris cuida de tudo. Você só dirige.
                 </p>
 
             </article>
 
-
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- =========================================================
      REALIDADE DO MOTORISTA
-========================================================== -->
+========================================================= -->
 
-<section class="section reality-section">
+<section class="drive-section drive-reality">
 
-    <div class="container two-columns">
+    <div class="drive-container">
 
+        <div class="drive-reality-grid">
 
-        <div class="section-content">
+            <div class="drive-reality-copy">
 
-            <span class="section-label">
+                <span class="drive-eyebrow">
+                    A realidade do motorista
+                </span>
 
-                A REALIDADE DO MOTORISTA
+                <h2>
+                    Os custos sobem.
+                    <span>A margem aperta.</span>
+                </h2>
 
-            </span>
+                <h3>
+                    Mas a oportunidade está com você.
+                </h3>
 
+                <p>
+                    Combustível, manutenção, taxa do app, seguro…
+                    tudo pesa no fim do mês.
+                </p>
 
-            <h2>
+                <p>
+                    A loja não muda sua rotina. Ela muda o resultado
+                    da sua rotina. Enquanto você dirige, seu carro vende.
+                </p>
 
-                Os custos sobem.
-                <span>A margem aperta.</span>
+                <p>
+                    Da dificuldade fora do carro, nasce a oportunidade
+                    dentro dele.
+                </p>
 
-            </h2>
-
-
-            <p class="lead">
-
-                Mas a oportunidade está com você.
-
-            </p>
-
-
-            <p>
-
-                Combustível, manutenção, taxa do app,
-                seguro… tudo pesa no fim do mês.
-
-            </p>
-
-
-            <p>
-
-                A loja não muda sua rotina.
-                Ela muda o resultado da sua rotina.
-
-                <strong>
-                    Enquanto você dirige,
-                    seu carro vende.
-                </strong>
-
-            </p>
+            </div>
 
 
-            <p class="strong">
+            <div class="drive-reality-image">
 
-                Da dificuldade fora do carro,
-                nasce a oportunidade dentro dele.
+                <img
+                    src="./assets/display.webp"
+                    alt="Display Moments Driver instalado no banco traseiro"
+                    loading="lazy"
+                >
 
-            </p>
+                <span>
+                    Tudo pronto para instalar no banco traseiro do seu carro.
+                </span>
+
+            </div>
 
         </div>
-
-
-
-        <div class="image-card">
-
-            <img
-                src="assets/display.webp"
-                alt="Display Moments Driver">
-
-        </div>
-
-
-    </div>
-
-
-    <div class="container reality-caption">
-
-        Tudo pronto para instalar
-        no banco traseiro do seu carro.
 
     </div>
 
 </section>
 
 
-
 <!-- =========================================================
      COMO FUNCIONA
-========================================================== -->
+========================================================= -->
 
 <section
-    class="section how-section"
-    id="como-funciona">
+    class="drive-section drive-how"
+    id="como-funciona"
+>
 
-    <div class="container">
+    <div class="drive-container">
 
+        <div class="drive-section-heading">
 
-        <div class="section-heading">
-
-            <span class="section-label">
-                COMO FUNCIONA
+            <span class="drive-eyebrow">
+                Como funciona
             </span>
 
             <h2>
@@ -416,108 +331,74 @@
         </div>
 
 
+        <div class="drive-steps-grid">
 
-        <div class="steps-grid">
+            <article class="drive-step">
 
-
-            <article class="step-card">
-
-                <span class="step-number">
+                <span class="drive-step-number">
                     1
                 </span>
-
-                <div class="step-icon">
-
-                    <i class="fa-solid fa-box-open"></i>
-
-                </div>
 
                 <h3>
                     Recebe o kit e o display
                 </h3>
 
                 <p>
-                    Você recebe os perfumes e o expositor
-                    prontos para usar.
+                    Você recebe os perfumes e o expositor prontos para usar.
                 </p>
 
             </article>
 
 
+            <article class="drive-step">
 
-            <article class="step-card">
-
-                <span class="step-number">
+                <span class="drive-step-number">
                     2
                 </span>
-
-                <div class="step-icon">
-
-                    <i class="fa-solid fa-car"></i>
-
-                </div>
 
                 <h3>
                     Instala no seu carro
                 </h3>
 
                 <p>
-                    Fixe-o de forma segura atrás
-                    do banco do passageiro.
+                    Fixe-o de forma segura atrás do banco do passageiro.
                 </p>
 
             </article>
 
 
+            <article class="drive-step">
 
-            <article class="step-card">
-
-                <span class="step-number">
+                <span class="drive-step-number">
                     3
                 </span>
-
-                <div class="step-icon">
-
-                    <i class="fa-solid fa-eye"></i>
-
-                </div>
 
                 <h3>
                     Passageiro vê e se interessa
                 </h3>
 
                 <p>
-                    O display chama atenção naturalmente
-                    durante a corrida.
+                    O display chama atenção naturalmente durante a corrida.
                 </p>
 
             </article>
 
 
+            <article class="drive-step">
 
-            <article class="step-card">
-
-                <span class="step-number">
+                <span class="drive-step-number">
                     4
                 </span>
-
-                <div class="step-icon">
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                </div>
 
                 <h3>
                     Você vende e repõe
                 </h3>
 
                 <p>
-                    O lucro fica no seu bolso;
-                    depois basta repor.
+                    O lucro fica no seu bolso; depois basta repor.
                 </p>
 
             </article>
-
 
         </div>
 
@@ -526,20 +407,18 @@
 </section>
 
 
-
 <!-- =========================================================
      POR QUE FUNCIONA
-========================================================== -->
+========================================================= -->
 
-<section class="section opportunity-section">
+<section class="drive-section drive-opportunity">
 
-    <div class="container">
+    <div class="drive-container">
 
+        <div class="drive-section-heading">
 
-        <div class="section-heading">
-
-            <span class="section-label">
-                POR QUE FUNCIONA?
+            <span class="drive-eyebrow">
+                Por que funciona?
             </span>
 
             <h2>
@@ -549,125 +428,102 @@
         </div>
 
 
+        <div class="drive-opportunity-grid">
 
-        <div class="reasons-grid">
+            <article class="drive-opportunity-card">
 
-
-            <article class="reason-card">
-
-                <div class="reason-icon">
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                </div>
+                <span class="drive-card-number">
+                    01
+                </span>
 
                 <h3>
                     O mercado já existe
                 </h3>
 
                 <p>
-                    O Brasil é o 2º maior mercado de
-                    perfumaria do mundo. Produto de qualidade,
-                    com até 12 horas de fixação, por um preço
-                    que o passageiro não vai encontrar em
+                    O Brasil é o 2º maior mercado de perfumaria do mundo.
+                    Produto de qualidade, com até 12 horas de fixação,
+                    por um preço que o passageiro não vai encontrar em
                     outro lugar. A venda se justifica sozinha.
                 </p>
 
             </article>
 
 
+            <article class="drive-opportunity-card">
 
-            <article class="reason-card">
-
-                <div class="reason-icon">
-
-                    <i class="fa-solid fa-users"></i>
-
-                </div>
+                <span class="drive-card-number">
+                    02
+                </span>
 
                 <h3>
                     Dezenas de clientes todo dia
                 </h3>
 
                 <p>
-                    De 20 a 40 pessoas entram no seu carro
-                    todo dia. Muitas vão a festas, eventos,
-                    encontros — e querem estar perfumadas
-                    ou levar um presente. A oportunidade já
-                    está dentro do seu carro.
+                    De 20 a 40 pessoas entram no seu carro todo dia.
+                    Muitas vão a festas, eventos, encontros — e querem
+                    estar perfumadas ou levar um presente.
+                    A oportunidade já está dentro do seu carro.
                 </p>
 
             </article>
 
 
+            <article class="drive-opportunity-card">
 
-            <article class="reason-card">
-
-                <div class="reason-icon">
-
-                    <i class="fa-solid fa-spray-can-sparkles"></i>
-
-                </div>
+                <span class="drive-card-number">
+                    03
+                </span>
 
                 <h3>
                     As fragrâncias mais vendidas do Brasil
                 </h3>
 
                 <p>
-                    Borrifou. Cheirou. Vendeu.
-                    A loja faz o trabalho por você.
-                    Fácil de instalar e pronto para vender
-                    no mesmo dia. Seu carro vende enquanto
-                    você dirige.
+                    Borrifou. Cheirou. Vendeu. A loja faz o trabalho
+                    por você. Fácil de instalar e pronto para vender
+                    no mesmo dia. Seu carro vende enquanto você dirige.
                 </p>
 
             </article>
 
 
+            <article class="drive-opportunity-card">
 
-            <article class="reason-card">
-
-                <div class="reason-icon">
-
-                    <i class="fa-solid fa-star"></i>
-
-                </div>
+                <span class="drive-card-number">
+                    04
+                </span>
 
                 <h3>
                     Produto chama atenção
                 </h3>
 
                 <p>
-                    A Moments Paris já selecionou as
-                    fragrâncias preferidas dos brasileiros.
-                    Você recebe tudo pronto. Só instalar
-                    e começar a vender.
+                    A Moments Paris já selecionou as fragrâncias
+                    preferidas dos brasileiros. Você recebe tudo pronto.
+                    Só instalar e começar a vender.
                 </p>
 
             </article>
 
 
+            <article class="drive-opportunity-card drive-opportunity-featured">
 
-            <article class="reason-card">
-
-                <div class="reason-icon">
-
-                    <i class="fa-solid fa-money-bill-wave"></i>
-
-                </div>
+                <span class="drive-card-number">
+                    05
+                </span>
 
                 <h3>
                     Uma corrida de R$10 pode virar R$60
                 </h3>
 
                 <p>
-                    Tem motorista que vendeu 13 perfumes
-                    na primeira noite. Comece você também.
-                    Sem esforço. Sem mudar sua rotina.
+                    Tem motorista que vendeu 13 perfumes na primeira noite.
+                    Comece você também. Sem esforço. Sem mudar sua rotina.
                 </p>
 
             </article>
-
 
         </div>
 
@@ -676,22 +532,21 @@
 </section>
 
 
-
 <!-- =========================================================
      DEPOIMENTOS
-========================================================== -->
+========================================================= -->
 
 <section
-    class="section testimonials-section"
-    id="depoimentos">
+    class="drive-section drive-testimonials"
+    id="depoimentos"
+>
 
-    <div class="container">
+    <div class="drive-container">
 
+        <div class="drive-section-heading">
 
-        <div class="section-heading">
-
-            <span class="section-label">
-                DEPOIMENTOS
+            <span class="drive-eyebrow">
+                Depoimentos
             </span>
 
             <h2>
@@ -705,26 +560,28 @@
         </div>
 
 
+        <div class="drive-testimonials-grid">
 
-        <div class="testimonials-grid">
+            <article class="drive-testimonial">
 
-
-            <article class="testimonial-card">
-
-                <h3>
-                    Pedro, São Paulo/SP
-                </h3>
-
-                <div class="stars">
+                <div class="drive-stars">
                     ★★★★★
                 </div>
 
+                <h3>
+                    Pedro
+                </h3>
+
+                <span class="drive-location">
+                    São Paulo/SP
+                </span>
+
                 <p>
                     “Estava morando de aluguel, sem perspectiva.
-                    Coloquei a loja no carro e continuei fazendo
-                    minhas corridas normalmente. Com o resultado
-                    das vendas organizei minha vida financeira,
-                    comprei meu apartamento e troquei de carro.”
+                    Coloquei a loja no carro e continuei fazendo minhas
+                    corridas normalmente. Com o resultado das vendas
+                    organizei minha vida financeira, comprei meu
+                    apartamento e troquei de carro.”
                 </p>
 
                 <strong>
@@ -734,128 +591,130 @@
             </article>
 
 
+            <article class="drive-testimonial">
 
-            <article class="testimonial-card">
-
-                <h3>
-                    Belina, Curitiba/PR
-                </h3>
-
-                <div class="stars">
+                <div class="drive-stars">
                     ★★★★★
                 </div>
 
+                <h3>
+                    Belina
+                </h3>
+
+                <span class="drive-location">
+                    Curitiba/PR
+                </span>
+
                 <p>
-                    “Meu negócio fechou na pandemia e fiquei
-                    dois anos pagando dívidas. Comecei a dirigir
-                    para o aplicativo e conheci a loja da Moments.
-                    Em poucos meses transformei completamente
-                    minha situação financeira e quitei todas
-                    as dívidas que a pandemia deixou.”
+                    “Meu negócio fechou na pandemia e fiquei dois anos
+                    pagando dívidas. Comecei a dirigir para o aplicativo
+                    e conheci a loja da Moments. Em poucos meses
+                    transformei completamente minha situação financeira
+                    e quitei todas as dívidas que a pandemia deixou.”
                 </p>
 
                 <strong>
-                    “Não precisei mudar minha rotina.
-                    Só mudei o que levava no banco de trás.”
+                    “Não precisei mudar minha rotina. Só mudei o que
+                    levava no banco de trás.”
                 </strong>
 
             </article>
 
 
+            <article class="drive-testimonial">
 
-            <article class="testimonial-card">
-
-                <h3>
-                    Motorista anônimo, Rio de Janeiro/RJ
-                </h3>
-
-                <div class="stars">
+                <div class="drive-stars">
                     ★★★★★
                 </div>
 
+                <h3>
+                    Motorista anônimo
+                </h3>
+
+                <span class="drive-location">
+                    Rio de Janeiro/RJ
+                </span>
+
                 <p>
-                    “Fui juntando o lucro das vendas durante
-                    as corridas. Sem perceber, tinha dez mil
-                    reais guardados. Usei para fazer a lua de
-                    mel em resort com minha esposa. Algo que
-                    eu achava que levaria anos para acontecer.”
+                    “Fui juntando o lucro das vendas durante as corridas.
+                    Sem perceber, tinha dez mil reais guardados. Usei
+                    para fazer a lua de mel em resort com minha esposa.
+                    Algo que eu achava que levaria anos para acontecer.”
                 </p>
 
                 <strong>
-                    “Tudo dentro do carro,
-                    durante as corridas normais.”
+                    “Tudo dentro do carro, durante as corridas normais.”
                 </strong>
 
             </article>
 
 
+            <article class="drive-testimonial">
 
-            <article class="testimonial-card">
-
-                <h3>
-                    Carlos, Rio de Janeiro/RJ
-                </h3>
-
-                <div class="stars">
+                <div class="drive-stars">
                     ★★★★★
                 </div>
 
+                <h3>
+                    Carlos
+                </h3>
+
+                <span class="drive-location">
+                    Rio de Janeiro/RJ
+                </span>
+
                 <p>
-                    “Sempre trabalhei muito e nunca conseguia
-                    tirar férias em janeiro. Com o dinheiro que
-                    fui juntando das vendas na lojinha, consegui
-                    pela primeira vez descansar com a família
-                    em janeiro.”
+                    “Sempre trabalhei muito e nunca conseguia tirar férias
+                    em janeiro. Com o dinheiro que fui juntando das vendas
+                    na lojinha, consegui pela primeira vez descansar com
+                    a família em janeiro.”
                 </p>
 
                 <strong>
-                    “A lojinha pagou as férias
-                    que o aplicativo nunca conseguiu.”
+                    “A lojinha pagou as férias que o aplicativo nunca conseguiu.”
                 </strong>
 
             </article>
 
 
+            <article class="drive-testimonial">
 
-            <article class="testimonial-card">
-
-                <h3>
-                    Rodrigo, Rio de Janeiro/RJ
-                </h3>
-
-                <div class="stars">
+                <div class="drive-stars">
                     ★★★★★
                 </div>
 
+                <h3>
+                    Rodrigo
+                </h3>
+
+                <span class="drive-location">
+                    Rio de Janeiro/RJ
+                </span>
+
                 <p>
-                    “Queria um carro melhor para trabalhar
-                    mas a parcela pesava. Comecei a usar o
-                    dinheiro da lojinha para pagar boa parte
-                    da parcela todo mês. Em poucos meses estava
-                    com o carro que eu queria, fazendo corridas
+                    “Queria um carro melhor para trabalhar mas a parcela
+                    pesava. Comecei a usar o dinheiro da lojinha para
+                    pagar boa parte da parcela todo mês. Em poucos meses
+                    estava com o carro que eu queria, fazendo corridas
                     melhores e ganhando mais.”
                 </p>
 
                 <strong>
-                    “Não acreditava que a lojinha
-                    ia me ajudar tanto.”
+                    “Não acreditava que a lojinha ia me ajudar tanto.”
                 </strong>
 
             </article>
 
-
         </div>
 
 
-
-        <div class="section-cta">
+        <div class="drive-centered-button">
 
             <a
-                href="https://checkout.mania.software/?sku=KTMPDR&reference="
-                class="btn btn-primary checkout-link">
-
+                href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
+                class="drive-btn drive-btn-primary checkout-link"
+            >
                 QUERO FAZER PARTE
-
             </a>
 
         </div>
@@ -865,116 +724,130 @@
 </section>
 
 
-
 <!-- =========================================================
-     SOBRE A MOMENTS PARIS
-========================================================== -->
+     SOBRE
+========================================================= -->
 
 <section
-    class="section about-section"
-    id="sobre">
+    class="drive-section drive-about"
+    id="sobre"
+>
 
-    <div class="container">
+    <div class="drive-container">
 
-
-        <div class="about-logos">
-
-            <img
-                src="assets/moments_branco.webp"
-                alt="Moments Paris">
+        <div class="drive-about-logos">
 
             <img
-                src="assets/bandeiras-br-ur.png.webp"
-                alt="Brasil e Uruguai">
+                src="./assets/moments_branco.webp"
+                alt="Moments Paris"
+                loading="lazy"
+            >
+
+            <img
+                src="./assets/bandeiras-br-ur.png.webp"
+                alt="Brasil e Uruguai"
+                loading="lazy"
+            >
 
         </div>
 
 
+        <div class="drive-about-grid">
 
-        <div class="section-heading">
+            <div>
 
-            <span class="section-label">
-                SOBRE A MOMENTS PARIS
-            </span>
-
-        </div>
-
-
-
-        <div class="about-content">
-
-
-            <div class="about-company">
+                <span class="drive-eyebrow">
+                    Sobre a Moments Paris
+                </span>
 
                 <h2>
                     Moments Paris é a empresa.
                 </h2>
 
                 <p>
-                    A Moments Paris é uma empresa 100% brasileira
-                    de perfumes e cosméticos, com presença também
-                    no Uruguai. Por trás de cada produto, existe
-                    o compromisso com qualidade real — fragrâncias
-                    com até 12 horas de fixação, desenvolvidas
-                    para quem quer se sentir bem sem gastar uma fortuna.
+                    A Moments Paris é uma empresa 100% brasileira de
+                    perfumes e cosméticos, com presença também no Uruguai.
+                    Por trás de cada produto, existe o compromisso com
+                    qualidade real — fragrâncias com até 12 horas de
+                    fixação, desenvolvidas para quem quer se sentir bem
+                    sem gastar uma fortuna.
                 </p>
 
             </div>
 
 
-
-            <div class="about-driver">
+            <div>
 
                 <h2>
-                    Moments Driver
-                    <span>é a oportunidade.</span>
+                    Moments Driver é a oportunidade.
                 </h2>
 
                 <p>
-                    O Moments Driver é o movimento criado pela
-                    Moments Paris especificamente para motoristas
-                    de aplicativo — unindo a força da empresa
-                    com a oportunidade única de ter um canal de
-                    vendas dentro do próprio carro.
-                </p>
-
-                <p>
+                    O Moments Driver é o movimento criado pela Moments
+                    Paris especificamente para motoristas de aplicativo —
+                    unindo a força da empresa com a oportunidade única
+                    de ter um canal de vendas dentro do próprio carro.
                     Um movimento criado para trazer mais dignidade,
-                    mais liberdade e mais dinheiro no bolso de quem
-                    já está na estrada todos os dias.
+                    mais liberdade e mais dinheiro no bolso de quem já
+                    está na estrada todos os dias.
                 </p>
-
-
-                <div class="facts">
-
-                    <p>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Mais de 10.000 motoristas de aplicativo
-                        já cadastrados aumentando sua renda.
-                    </p>
-
-                    <p>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Fragrâncias com até 12 horas de fixação —
-                        qualidade que o passageiro sente e quer repetir.
-                    </p>
-
-                    <p>
-                        <i class="fa-solid fa-circle-check"></i>
-                        2º maior mercado de perfumaria do mundo —
-                        o Brasil.
-                    </p>
-
-                    <p>
-                        <i class="fa-solid fa-circle-check"></i>
-                        Ganhadora do prêmio de melhor perfume
-                        da América Latina.
-                    </p>
-
-                </div>
 
             </div>
 
+        </div>
+
+
+        <div class="drive-facts-grid">
+
+            <div class="drive-fact">
+                <strong>
+                    +10.000
+                </strong>
+
+                <span>
+                    motoristas de aplicativo já cadastrados aumentando sua renda.
+                </span>
+            </div>
+
+
+            <div class="drive-fact">
+
+                <strong>
+                    12h
+                </strong>
+
+                <span>
+                    Fragrâncias com até 12 horas de fixação — qualidade
+                    que o passageiro sente e quer repetir
+                </span>
+
+            </div>
+
+
+            <div class="drive-fact">
+
+                <strong>
+                    2º
+                </strong>
+
+                <span>
+                    maior mercado de perfumaria do mundo — o Brasil
+                </span>
+
+            </div>
+
+
+            <div class="drive-fact">
+
+                <strong>
+                    #1
+                </strong>
+
+                <span>
+                    Ganhadora do prêmio de melhor perfume da América Latina
+                </span>
+
+            </div>
 
         </div>
 
@@ -983,22 +856,21 @@
 </section>
 
 
-
 <!-- =========================================================
      FAQ
-========================================================== -->
+========================================================= -->
 
 <section
-    class="section faq-section"
-    id="duvidas">
+    class="drive-section drive-faq"
+    id="duvidas"
+>
 
-    <div class="container faq-container">
+    <div class="drive-container drive-faq-container">
 
+        <div class="drive-section-heading">
 
-        <div class="section-heading">
-
-            <span class="section-label">
-                DÚVIDAS FREQUENTES
+            <span class="drive-eyebrow">
+                Dúvidas frequentes
             </span>
 
             <h2>
@@ -1008,521 +880,638 @@
         </div>
 
 
+        <div class="drive-faq-list">
 
-        <div class="faq-list">
-
-
-            <details class="faq-item">
+            <details>
 
                 <summary>
-                    Preciso ter experiência em vendas?
+                    <span>
+                        Preciso ter experiência em vendas?
+                    </span>
+
+                    <i>+</i>
                 </summary>
 
-                <p>
-                    Não. O display atrai a atenção sozinho.
-                    O passageiro entra, vê os perfumes e pergunta.
-                    Sente o cheiro e compra. Quem decide é o cliente.
-                    Você só precisa dirigir.
-                </p>
-
-            </details>
-
-
-
-            <details class="faq-item">
-
-                <summary>
-                    Como faço a reposição dos perfumes?
-                </summary>
-
-                <p>
-                    Quando o estoque acabar, você repõe diretamente
-                    pela estrutura oficial da Moments Paris.
-                    E não está sozinho nessa jornada. Nossa equipe
-                    acompanha você em cada etapa, desde a instalação
-                    até as reposições. Todo o suporte que você
-                    precisar está disponível.
-                </p>
-
-            </details>
-
-
-
-            <details class="faq-item">
-
-                <summary>
-                    O display atrapalha a corrida?
-                </summary>
-
-                <p>
-                    Não. O display é pensado especificamente para
-                    o banco traseiro do carro. Instalação simples
-                    e segura. Muitos motoristas relatam que os
-                    passageiros elogiam a lojinha assim que entram
-                    no carro. Ela não atrapalha, ela chama atenção
-                    do jeito certo.
-                </p>
-
-            </details>
-
-
-
-            <details class="faq-item">
-
-                <summary>
-                    E se eu não vender nada?
-                </summary>
-
-                <p>
-                    A Moments Paris oferece garantia incondicional
-                    de 7 dias. Se por qualquer motivo você achar
-                    que não é para você, devolvemos 100% do seu dinheiro.
-                    Sem perguntas, sem burocracia. E entre nós:
-                    nunca aconteceu de alguém devolver a lojinha.
-                    O risco é todo nosso.
-                </p>
-
-            </details>
-
-
-
-            <details class="faq-item">
-
-                <summary>
-                    Funciona com carro alugado?
-                </summary>
-
-                <p>
-                    Sim. O display é removível e não danifica
-                    o veículo. Você instala, usa e retira quando
-                    precisar. Não importa se o carro é próprio
-                    ou alugado.
-                </p>
-
-            </details>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     OFERTA / KIT
-========================================================== -->
-
-<section
-    class="section offer-section"
-    id="kit">
-
-    <div class="container offer-grid">
-
-
-        <!-- =================================================
-             INFORMAÇÕES DA OFERTA
-        ================================================== -->
-
-        <div class="offer-content">
-
-
-            <span class="section-label">
-                PROPOSTA DE VALOR DO KIT
-            </span>
-
-
-            <h2>
-                Tudo que você precisa para começar
-                sua loja no carro.
-            </h2>
-
-
-            <p class="offer-description">
-
-                Um kit completo para você começar hoje.
-                Sem complicação. Sem precisar saber vender.
-
-            </p>
-
-
-            <div class="price">
-
-                <strong>
-                    12x de R$99,99
-                </strong>
-
-                <span>
-                    por mês
-                </span>
-
-            </div>
-
-
-            <p class="cash-price">
-                ou R$999 à vista
-            </p>
-
-
-
-            <div class="kit-features">
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    45 perfumes premium
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    09 amostras para seu passageiro
-                    borrifar, cheirar e comprar
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Lojinha exclusiva com display para
-                    o banco traseiro do carro com
-                    adesivo informativo — Grátis
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Aromatizante de carro e fita
-                    olfativa — Grátis
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Adesivo Moments Driver — Grátis
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Frete grátis
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Receba R$2.000 em produtos —
-                    pague apenas metade
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Garantia incondicional de 7 dias —
-                    100% do dinheiro de volta sem perguntas
-                </p>
-
-
-            </div>
-
-
-
-            <!-- =============================================
-                 GARANTIA
-            ============================================== -->
-
-            <div class="guarantee">
-
-
-                <img
-                    src="assets/7dias.webp"
-                    alt="Garantia incondicional de 7 dias">
-
-
-                <div>
-
-                    <strong>
-                        GARANTIA INCONDICIONAL DE 7 DIAS
-                    </strong>
+                <div class="drive-faq-answer">
 
                     <p>
-                        Experimente por 7 dias completos.
-                        Se por qualquer motivo você achar
-                        que não é para você, devolvemos
-                        100% do seu dinheiro.
+                        Não. O display atrai a atenção sozinho.
+                        O passageiro entra, vê os perfumes e pergunta.
+                        Sente o cheiro e compra. Quem decide é o cliente.
+                        Você só precisa dirigir.
                     </p>
 
                 </div>
 
-
-            </div>
-
-
-        </div>
+            </details>
 
 
+            <details>
 
-        <!-- =================================================
-             PRODUTO
-        ================================================== -->
+                <summary>
+                    <span>
+                        Como faço a reposição dos perfumes?
+                    </span>
 
-        <div class="product-card">
+                    <i>+</i>
+                </summary>
 
+                <div class="drive-faq-answer">
 
-            <img
-                src="assets/kit_driver.webp"
-                alt="Kit Moments Driver"
-                class="kit-image">
+                    <p>
+                        Quando o estoque acabar, você repõe diretamente
+                        pela estrutura oficial da Moments Paris.
+                        E não está sozinho nessa jornada. Nossa equipe
+                        acompanha você em cada etapa, desde a instalação
+                        até as reposições. Todo o suporte que você
+                        precisar está disponível.
+                    </p>
 
+                </div>
 
-            <div class="product-description">
-
-                <strong>
-                    45 perfumes premium
-                </strong>
-
-                <h3>
-                    05 unidades de cada fragrância.
-                </h3>
-
-                <p>
-                    Sendo 09 amostras para seu passageiro
-                    borrifar, cheirar e comprar.
-                </p>
-
-            </div>
+            </details>
 
 
+            <details>
 
-            <h3 class="free-title">
-                Itens Grátis
-            </h3>
+                <summary>
+                    <span>
+                        O display atrapalha a corrida?
+                    </span>
 
+                    <i>+</i>
+                </summary>
 
+                <div class="drive-faq-answer">
 
-            <div class="kit-features free-features">
+                    <p>
+                        Não. O display é pensado especificamente para
+                        o banco traseiro do carro. Instalação simples
+                        e segura. Muitos motoristas relatam que os
+                        passageiros elogiam a lojinha assim que entram
+                        no carro. Ela não atrapalha, ela chama atenção
+                        do jeito certo.
+                    </p>
 
+                </div>
 
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Display para os perfumes
-                    com adesivo informativo
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Aromatizante de carro
-                </p>
-
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Fita Olfativa
-                </p>
+            </details>
 
 
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Adesivo Moments Driver
-                </p>
+            <details>
+
+                <summary>
+                    <span>
+                        E se eu não vender nada?
+                    </span>
+
+                    <i>+</i>
+                </summary>
+
+                <div class="drive-faq-answer">
+
+                    <p>
+                        A Moments Paris oferece garantia incondicional
+                        de 7 dias. Se por qualquer motivo você achar
+                        que não é para você, devolvemos 100% do seu
+                        dinheiro. Sem perguntas, sem burocracia.
+                        E entre nós: nunca aconteceu de alguém devolver
+                        a lojinha. O risco é todo nosso.
+                    </p>
+
+                </div>
+
+            </details>
 
 
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Frete grátis
-                </p>
+            <details>
 
+                <summary>
+                    <span>
+                        Funciona com carro alugado?
+                    </span>
 
-            </div>
+                    <i>+</i>
+                </summary>
 
+                <div class="drive-faq-answer">
 
+                    <p>
+                        Sim. O display é removível e não danifica
+                        o veículo. Você instala, usa e retira quando
+                        precisar. Não importa se o carro é próprio
+                        ou alugado.
+                    </p>
 
-            <!-- =============================================
-                 CTA FINAL
-            ============================================== -->
+                </div>
 
-            <div class="offer-cta">
-
-
-                <span class="section-label">
-                    CHEGOU A SUA VEZ
-                </span>
-
-
-                <h2>
-                    Enquanto você dirige,
-                    <span>seu carro vende.</span>
-                </h2>
-
-
-                <p>
-                    Garanta seu kit Moments Driver agora
-                    e comece ainda essa semana.
-                </p>
-
-
-                <a
-                    href="https://checkout.mania.software/?sku=KTMPDR&reference="
-                    class="btn btn-primary checkout-link">
-
-                    QUERO TRANSFORMAR MEU CARRO
-
-                </a>
-
-
-            </div>
-
+            </details>
 
         </div>
-
 
     </div>
 
 </section>
 
 
-</main>
-
-
-
 <!-- =========================================================
-     FOOTER
-========================================================== -->
+     OFERTA
+========================================================= -->
 
-<footer class="footer">
+<section class="drive-section drive-offer">
 
-    <div class="container footer-container">
+    <div class="drive-container">
 
+        <div class="drive-section-heading">
 
-        <div class="footer-logos">
+            <span class="drive-eyebrow">
+                Proposta de valor do kit
+            </span>
 
+            <h2>
+                Tudo que você precisa para começar sua loja no carro.
+            </h2>
 
-            <img
-                src="assets/logo_driver.webp"
-                alt="Moments Driver">
-
-
-            <img
-                src="assets/moments_branco.webp"
-                alt="Moments Paris">
-
-
-            <img
-                src="assets/bandeiras-br-ur.png.webp"
-                alt="Brasil e Uruguai">
-
+            <p>
+                Um kit completo para você começar hoje.
+                Sem complicação. Sem precisar saber vender.
+            </p>
 
         </div>
 
 
+        <div class="drive-offer-grid">
 
-        <p class="footer-company">
+            <div class="drive-offer-main">
 
-            Moments Paris Cosméticos Ltda ·
-            CNPJ 49.551.383/0001-85
+                <div class="drive-price">
 
+                    <strong>
+                        12x de R$99,99
+                    </strong>
+
+                    <span>
+                        por mês
+                    </span>
+
+                    <small>
+                        ou R$999 à vista
+                    </small>
+
+                </div>
+
+
+                <ul class="drive-offer-list">
+
+                    <li>
+                        <span>✓</span>
+                        45 perfumes premium
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        09 amostras para seu passageiro borrifar,
+                        cheirar e comprar
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Lojinha exclusiva com display para o banco
+                        traseiro do carro com adesivo informativo — Grátis
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Aromatizante de carro e fita olfativa — Grátis
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Adesivo Moments Driver — Grátis
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Frete grátis
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Receba R$2.000 em produtos — pague apenas metade
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Garantia incondicional de 7 dias —
+                        100% do dinheiro de volta sem perguntas
+                    </li>
+
+                </ul>
+
+
+                <a
+                    href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
+                    class="drive-btn drive-btn-primary drive-btn-large checkout-link"
+                >
+                    QUERO TRANSFORMAR MEU CARRO
+                </a>
+
+            </div>
+
+
+            <aside class="drive-guarantee">
+
+                <img
+                    src="./assets/7dias.webp"
+                    alt="Garantia incondicional de 7 dias"
+                    loading="lazy"
+                >
+
+                <h3>
+                    GARANTIA INCONDICIONAL DE 7 DIAS
+                </h3>
+
+                <p>
+                    Experimente por 7 dias completos.
+                    Se por qualquer motivo você achar que não é para você,
+                    devolvemos 100% do seu dinheiro.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     KIT
+========================================================= -->
+
+<section class="drive-section drive-product">
+
+    <div class="drive-container">
+
+        <div class="drive-product-grid">
+
+            <div class="drive-product-image">
+
+                <img
+                    src="./assets/kit_driver.webp"
+                    alt="Kit Moments Driver"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="drive-product-copy">
+
+                <span class="drive-eyebrow">
+                    Seu kit
+                </span>
+
+                <h2>
+                    45 perfumes premium
+                </h2>
+
+                <p>
+                    05 unidades de cada fragrância.
+                </p>
+
+                <p>
+                    Sendo 09 amostras para seu passageiro borrifar,
+                    cheirar e comprar.
+                </p>
+
+
+                <h3>
+                    Itens Grátis
+                </h3>
+
+
+                <ul class="drive-free-list">
+
+                    <li>
+                        Display para os perfumes com adesivo informativo
+                    </li>
+
+                    <li>
+                        Aromatizante de carro
+                    </li>
+
+                    <li>
+                        Fita Olfativa
+                    </li>
+
+                    <li>
+                        Adesivo Moments Driver
+                    </li>
+
+                    <li>
+                        Frete grátis
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA FINAL
+========================================================= -->
+
+<section class="drive-final-cta">
+
+    <div class="drive-container">
+
+        <span class="drive-eyebrow">
+            Chegou a sua vez
+        </span>
+
+        <h2>
+            Enquanto você dirige,
+            <span>seu carro vende.</span>
+        </h2>
+
+        <p>
+            Garanta seu kit Moments Driver agora
+            e comece ainda essa semana.
         </p>
 
+        <a
+            href="https://checkout.mania.software/?sku=KTMPDR&reference=momentsmundial"
+            class="drive-btn drive-btn-primary drive-btn-large checkout-link"
+        >
+            QUERO TRANSFORMAR MEU CARRO
+        </a>
+
+    </div>
+
+</section>
+
+</main>
 
 
-        <p class="footer-copy">
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-            © 2026 Moments Paris.
-            Todos os direitos reservados.
+<footer class="drive-footer">
 
+    <div class="drive-container">
+
+        <div class="drive-footer-logos">
+
+            <img
+                src="./assets/moments_branco.webp"
+                alt="Moments Paris"
+                loading="lazy"
+            >
+
+            <img
+                src="./assets/bandeiras-br-ur.png.webp"
+                alt="Brasil e Uruguai"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <p>
+            Moments Paris Cosméticos Ltda · CNPJ 49.551.383/0001-85
         </p>
 
+        <p>
+            © 2026 Moments Paris. Todos os direitos reservados.
+        </p>
 
     </div>
 
 </footer>
 
 
-
 <!-- =========================================================
-     SCRIPT — REFERENCE DO CHECKOUT
-========================================================== -->
+     SCRIPTS
+========================================================= -->
 
 <script>
-
 (function () {
 
-    const params =
-        new URLSearchParams(
-            window.location.search
-        );
+    "use strict";
 
+    /*
+     * =========================================================
+     * REFERÊNCIA DO CHECKOUT
+     *
+     * Exemplo:
+     * /drive/?reference=arianeoliveira87
+     *
+     * O valor será automaticamente enviado ao checkout.
+     * =========================================================
+     */
 
-    let reference =
-        params.get("reference");
+    const params = new URLSearchParams(window.location.search);
+
+    const reference =
+        params.get("reference") ||
+        "momentsmundial";
 
 
     /*
-     * Se a URL não possuir reference,
-     * utiliza o padrão da página original.
+     * Atualiza todos os botões de checkout
      */
 
-    if (!reference) {
+    document.querySelectorAll(".checkout-link").forEach(function (link) {
 
-        reference = "momentsmundial";
+        try {
+
+            const url = new URL(link.href);
+
+            url.searchParams.set(
+                "reference",
+                reference
+            );
+
+            link.href = url.toString();
+
+        } catch (error) {
+
+            console.warn(
+                "Não foi possível atualizar o checkout:",
+                error
+            );
+
+        }
+
+    });
+
+
+    /*
+     * =========================================================
+     * MENU MOBILE
+     * =========================================================
+     */
+
+    const menuButton =
+        document.querySelector(".drive-menu-button");
+
+    const navigation =
+        document.querySelector(".drive-nav");
+
+
+    if (menuButton && navigation) {
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    navigation.classList.toggle(
+                        "is-open"
+                    );
+
+                menuButton.classList.toggle(
+                    "is-open",
+                    isOpen
+                );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+            }
+        );
+
+
+        /*
+         * Fecha o menu ao clicar em um link
+         */
+
+        navigation
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navigation.classList.remove(
+                            "is-open"
+                        );
+
+                        menuButton.classList.remove(
+                            "is-open"
+                        );
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            });
 
     }
 
 
     /*
-     * Atualiza todos os links
-     * que levam ao checkout.
+     * =========================================================
+     * SCROLL SUAVE
+     * =========================================================
      */
 
     document
-        .querySelectorAll(".checkout-link")
+        .querySelectorAll('a[href^="#"]')
         .forEach(function (link) {
 
-            try {
+            link.addEventListener(
+                "click",
+                function (event) {
 
-                const url =
-                    new URL(link.href);
+                    const targetId =
+                        link.getAttribute("href");
 
-                url.searchParams.set(
-                    "reference",
-                    reference
-                );
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+                        return;
+                    }
 
-                link.href =
-                    url.toString();
+                    const target =
+                        document.querySelector(targetId);
 
-            } catch (error) {
+                    if (!target) {
+                        return;
+                    }
 
-                console.warn(
-                    "Não foi possível atualizar o checkout.",
-                    error
-                );
+                    event.preventDefault();
 
-            }
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
 
         });
 
 
+    /*
+     * =========================================================
+     * FAQ
+     *
+     * Mantém apenas uma pergunta aberta por vez.
+     * =========================================================
+     */
+
+    const faqItems =
+        document.querySelectorAll(
+            ".drive-faq-list details"
+        );
+
+
+    faqItems.forEach(function (item) {
+
+        item.addEventListener(
+            "toggle",
+            function () {
+
+                if (!item.open) {
+                    return;
+                }
+
+                faqItems.forEach(function (other) {
+
+                    if (other !== item) {
+                        other.removeAttribute(
+                            "open"
+                        );
+                    }
+
+                });
+
+            }
+        );
+
+    });
+
+
 })();
-
 </script>
-
-
-
-<!-- =========================================================
-     V8 LOADER
-     
-     ATENÇÃO:
-     Substitua SEU_PROJECT_ID pelo ID real do projeto
-     criado no V8 Admin Universal.
-========================================================== -->
-
-<script
-    src="/js/v8-loader.js"
-    data-project-id="SEU_PROJECT_ID">
-</script>
-
 
 </body>
 </html>
