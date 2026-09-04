@@ -1,10 +1,730 @@
-/* =========================================
-   ÍCONES DOURADOS
-========================================= */
+/* =========================================================
+   MOMENTS DRIVER
+   STYLE.CSS — VERSÃO FIEL À REFERÊNCIA
+   Escopo exclusivo: .drive-page
+========================================================= */
 
-.benefit-icon {
-    width: 54px;
-    height: 54px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+.drive-page {
+    --black: #050505;
+    --black-2: #080808;
+    --black-3: #0c0c0c;
+    --black-4: #111111;
+
+    --white: #ffffff;
+    --white-soft: #ededed;
+    --gray: #a6a6a6;
+    --gray-dark: #777777;
+
+    /* DOURADO MOMENTS */
+    --gold: #c8a45d;
+    --gold-light: #dfc27b;
+    --gold-dark: #98712e;
+
+    --gold-rgb: 200,164,93;
+
+    --border: rgba(255,255,255,.09);
+    --border-light: rgba(255,255,255,.06);
+
+    --container: 1180px;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+
+    background: var(--black);
+    color: var(--white);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.drive-page *,
+.drive-page *::before,
+.drive-page *::after {
+    box-sizing: border-box;
+}
+
+.drive-page h1,
+.drive-page h2,
+.drive-page h3,
+.drive-page h4,
+.drive-page p {
+    margin-top: 0;
+}
+
+.drive-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.drive-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.drive-page button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.drive-page .container {
+    width: calc(100% - 48px);
+    max-width: var(--container);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   TIPOGRAFIA
+========================================================= */
+
+.drive-page h1,
+.drive-page h2,
+.drive-page h3,
+.drive-page h4 {
+    letter-spacing: -0.8px;
+}
+
+.drive-page strong {
+    font-weight: 800;
+}
+
+.drive-page .gold {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.drive-page .site-header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.72),
+            rgba(0,0,0,0)
+        );
+}
+
+.drive-page .header-inner {
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+.drive-page .header-logo img {
+    width: 155px;
+    max-height: 55px;
+
+    object-fit: contain;
+}
+
+.drive-page .main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.drive-page .main-nav a {
+    position: relative;
+
+    color: rgba(255,255,255,.76);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: color .25s ease;
+}
+
+.drive-page .main-nav a:hover {
+    color: var(--white);
+}
+
+.drive-page .main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width .25s ease;
+}
+
+.drive-page .main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.drive-page .btn {
+    min-height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 25px;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.drive-page .btn-primary {
+    color: #080808;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold),
+            var(--gold-dark)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(var(--gold-rgb), .12);
+}
+
+.drive-page .btn-primary:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 35px rgba(var(--gold-rgb), .24);
+}
+
+
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
+.drive-page .mobile-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: rgba(0,0,0,.5);
+
+    color: var(--white);
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.drive-page .hero {
+    position: relative;
+
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.94) 0%,
+            rgba(0,0,0,.84) 30%,
+            rgba(0,0,0,.56) 60%,
+            rgba(0,0,0,.38) 100%
+        ),
+        url("./assets/expositor.webp")
+        center center / cover no-repeat;
+}
+
+.drive-page .hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.05),
+            transparent 55%,
+            #050505 100%
+        );
+}
+
+.drive-page .hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 650px;
+
+    padding-top: 65px;
+}
+
+.drive-page .hero-eyebrow {
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2.8px;
+
+    text-transform: uppercase;
+}
+
+.drive-page .hero h1 {
+    margin-bottom: 23px;
+
+    color: var(--white);
+
+    font-size: clamp(
+        48px,
+        6vw,
+        78px
+    );
+
+    font-weight: 800;
+
+    line-height: .98;
+
+    letter-spacing: -3.5px;
+}
+
+.drive-page .hero h1 span {
+    display: block;
+}
+
+.drive-page .hero h1 .gold {
+    color: var(--gold);
+}
+
+.drive-page .hero-description {
+    max-width: 530px;
+
+    margin-bottom: 13px;
+
+    color: #d0d0d0;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.drive-page .hero-proof {
+    margin-bottom: 30px;
+
+    color: #969696;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.drive-page .section {
+    position: relative;
+
+    padding: 105px 0;
+}
+
+.drive-page .section-dark {
+    background: var(--black);
+}
+
+.drive-page .section-alt {
+    background: var(--black-2);
+}
+
+.drive-page .section-heading {
+    max-width: 720px;
+
+    margin:
+        0 auto 58px;
+
+    text-align: center;
+}
+
+.drive-page .section-label {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2.8px;
+
+    text-transform: uppercase;
+}
+
+.drive-page .section-title {
+    margin-bottom: 17px;
+
+    color: var(--white);
+
+    font-size: clamp(
+        32px,
+        4vw,
+        48px
+    );
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.7px;
+}
+
+.drive-page .section-title strong {
+    color: var(--gold);
+}
+
+.drive-page .section-subtitle {
+    max-width: 620px;
+
+    margin:
+        0 auto;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BENEFÍCIOS
+========================================================= */
+
+.drive-page .benefits {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: -40px;
+}
+
+.drive-page .benefits-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+.drive-page .benefit-card {
+    min-height: 235px;
+
+    padding: 30px 27px;
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.018)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.20);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.drive-page .benefit-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(var(--gold-rgb), .30);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--gold-rgb), .075),
+            rgba(255,255,255,.015)
+        );
+}
+
+
+/* =========================================================
+   ÍCONES SVG
+========================================================= */
+
+.drive-page .benefit-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 21px;
+
+    border:
+        1px solid rgba(var(--gold-rgb), .35);
+
+    border-radius: 11px;
+
+    background:
+        rgba(var(--gold-rgb), .055);
+
+    transition:
+        border-color .3s ease,
+        background .3s ease,
+        transform .3s ease;
+}
+
+.drive-page .benefit-card:hover .benefit-icon {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(var(--gold-rgb), .65);
+
+    background:
+        rgba(var(--gold-rgb), .11);
+}
+
+.drive-page .benefit-icon svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+
+    stroke:
+        var(--gold);
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.drive-page .benefit-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--white);
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.drive-page .benefit-card p {
+    margin: 0;
+
+    color: #8f8f8f;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   REALIDADE
+========================================================= */
+
+.drive-page .reality {
+    padding-top: 125px;
+}
+
+.drive-page .reality-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 75px;
+
+    align-items: center;
+}
+
+.drive-page .reality-content {
+    max-width: 545px;
+}
+
+.drive-page .reality-content .section-label {
+    text-align: left;
+}
+
+.drive-page .reality-content h2 {
+    margin-bottom: 14px;
+
+    font-size: clamp(
+        33px,
+        4vw,
+        50px
+    );
+
+    font-weight: 800;
+}
+
+.drive-page .reality-highlight {
+    margin-bottom: 25px;
+
+    color: var(--gold);
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.drive-page .reality-content p {
+    margin-bottom: 14px;
+
+    color: #a0a0a0;
+
+    font-size: 13px;
+
+    line-height: 1.85;
+}
+
+.drive-page .reality-image {
+    position: relative;
+}
+
+.drive-page .reality-image img {
+    width: 100%;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.42);
+}
+
+.drive-page .image-caption {
+    margin-top: 14px;
+
+    color: #777;
+
+    text-align: center;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.drive-page .steps-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+.drive-page .step-card {
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 29px 27px;
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.018);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.drive-page .step-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(var(--gold-rgb), .28);
+
+    background:
+        rgba(var(--gold-rgb), .025);
+}
+
+.drive-page .step-number {
+    width: 43px;
+    height: 43px;
 
     display: flex;
     align-items: center;
@@ -12,48 +732,1230 @@
 
     margin-bottom: 22px;
 
-    border: 1px solid rgba(196, 160, 82, 0.35);
+    border:
+        1px solid rgba(var(--gold-rgb), .38);
+
+    border-radius: 10px;
+
+    color: var(--gold);
+
+    background:
+        rgba(var(--gold-rgb), .055);
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.drive-page .step-card h3 {
+    margin-bottom: 11px;
+
+    color: var(--white);
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.drive-page .step-card p {
+    margin: 0;
+
+    color: #898989;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   POR QUE FUNCIONA
+========================================================= */
+
+.drive-page .why-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.drive-page .why-card {
+    position: relative;
+
+    min-height: 220px;
+
+    padding: 30px;
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
     border-radius: 14px;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(196, 160, 82, 0.12),
-            rgba(196, 160, 82, 0.025)
-        );
+        rgba(255,255,255,.018);
 
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.04),
-        0 8px 30px rgba(0,0,0,.18);
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
 }
 
-.benefit-icon svg {
-    width: 25px;
-    height: 25px;
+.drive-page .why-card:hover {
+    transform: translateY(-4px);
 
-    fill: none;
-    stroke: #c9a45c;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    border-color:
+        rgba(var(--gold-rgb), .28);
 }
 
-.benefit-card:hover .benefit-icon {
-    border-color: rgba(210, 174, 95, 0.65);
+.drive-page .why-number {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.drive-page .why-card h3 {
+    margin-bottom: 12px;
+
+    color: var(--white);
+
+    font-size: 17px;
+}
+
+.drive-page .why-card p {
+    margin: 0;
+
+    color: #8d8d8d;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DEPOIMENTOS
+========================================================= */
+
+.drive-page .testimonials-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.drive-page .testimonial-card {
+    padding: 29px;
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.018);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.drive-page .testimonial-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(var(--gold-rgb), .25);
+}
+
+.drive-page .stars {
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+.drive-page .testimonial-card p {
+    color: #a0a0a0;
+
+    font-size: 12px;
+
+    line-height: 1.85;
+}
+
+.drive-page .testimonial-card .quote-highlight {
+    margin-top: 15px;
+
+    color: var(--gold);
+
+    font-weight: 600;
+}
+
+.drive-page .testimonial-author {
+    margin-top: 20px;
+    margin-bottom: 3px;
+
+    color: var(--white);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.drive-page .testimonial-location {
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.drive-page .center-cta {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 42px;
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.drive-page .about-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 32px;
+
+    margin-bottom: 45px;
+}
+
+.drive-page .about-logos img {
+    width: auto;
+
+    max-width: 175px;
+    max-height: 60px;
+
+    object-fit: contain;
+}
+
+.drive-page .about-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 30px;
+}
+
+.drive-page .about-card {
+    padding: 31px;
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.018);
+}
+
+.drive-page .about-card h2 {
+    margin-bottom: 16px;
+
+    color: var(--white);
+
+    font-size: 24px;
+}
+
+.drive-page .about-card p {
+    margin: 0;
+
+    color: #8f8f8f;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   FATOS
+========================================================= */
+
+.drive-page .facts-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    border:
+        1px solid rgba(var(--gold-rgb), .16);
+
+    background:
+        rgba(var(--gold-rgb), .16);
+}
+
+.drive-page .fact {
+    min-height: 110px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        #0b0b0b;
+
+    text-align: center;
+}
+
+.drive-page .fact strong {
+    margin-bottom: 7px;
+
+    color: var(--gold);
+
+    font-size: 15px;
+}
+
+.drive-page .fact span {
+    color: #808080;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.drive-page .faq {
+    max-width: 850px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.drive-page .faq-item {
+    overflow: hidden;
+
+    margin-bottom: 10px;
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.018);
+
+    transition:
+        border-color .25s ease,
+        background .25s ease;
+}
+
+.drive-page .faq-item.active {
+    border-color:
+        rgba(var(--gold-rgb), .28);
+
+    background:
+        rgba(var(--gold-rgb), .025);
+}
+
+.drive-page .faq-question {
+    width: 100%;
+
+    min-height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 22px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--white);
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.drive-page .faq-icon {
+    width: 27px;
+    height: 27px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--gold);
+
+    font-size: 20px;
+    font-weight: 300;
+
+    transition:
+        transform .3s ease;
+}
+
+.drive-page .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.drive-page .faq-answer {
+    display: none;
+
+    padding:
+        0 22px 22px;
+
+    color: #858585;
+
+    font-size: 12px;
+
+    line-height: 1.85;
+}
+
+.drive-page .faq-item.active .faq-answer {
+    display: block;
+}
+
+
+/* =========================================================
+   OFERTA
+========================================================= */
+
+.drive-page .offer-section {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(var(--gold-rgb), .065),
+            transparent 42%
+        ),
+        #080808;
+}
+
+.drive-page .offer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.drive-page .offer-content {
+    max-width: 520px;
+}
+
+.drive-page .offer-content .section-label {
+    text-align: left;
+}
+
+.drive-page .offer-content h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(
+        31px,
+        4vw,
+        46px
+    );
+
+    font-weight: 800;
+}
+
+.drive-page .offer-description {
+    margin-bottom: 27px;
+
+    color: #898989;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PREÇO
+========================================================= */
+
+.drive-page .price-box {
+    margin-bottom: 25px;
+
+    padding: 24px 25px;
+
+    border:
+        1px solid rgba(var(--gold-rgb), .32);
+
+    border-radius: 13px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(196, 160, 82, 0.20),
-            rgba(196, 160, 82, 0.05)
+            rgba(var(--gold-rgb), .075),
+            rgba(var(--gold-rgb), .018)
         );
-
-    transform: translateY(-2px);
 }
 
-.benefit-icon {
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        background .3s ease;
+.drive-page .price {
+    margin-bottom: 4px;
+
+    color: var(--gold);
+
+    font-size: 36px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.drive-page .price-sub {
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.drive-page .offer-list {
+    display: grid;
+
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.drive-page .offer-list li {
+    position: relative;
+
+    padding-left: 24px;
+
+    color: #a0a0a0;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+.drive-page .offer-list li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    color: var(--gold);
+
+    font-weight: 800;
+}
+
+.drive-page .offer-list strong {
+    color: var(--white);
+}
+
+
+/* =========================================================
+   KIT
+========================================================= */
+
+.drive-page .kit-image {
+    position: relative;
+
+    padding: 20px;
+}
+
+.drive-page .kit-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 75%;
+    height: 75%;
+
+    left: 12.5%;
+    top: 12.5%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--gold-rgb), .12),
+            transparent 65%
+        );
+
+    filter: blur(25px);
+}
+
+.drive-page .kit-image img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-height: 570px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 30px 45px rgba(0,0,0,.45)
+        );
+}
+
+
+/* =========================================================
+   GARANTIA
+========================================================= */
+
+.drive-page .guarantee {
+    display: grid;
+
+    grid-template-columns:
+        155px 1fr;
+
+    gap: 30px;
+
+    align-items: center;
+
+    margin-top: 45px;
+
+    padding: 27px;
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.018);
+}
+
+.drive-page .guarantee-image img {
+    width: 100%;
+
+    max-height: 130px;
+
+    object-fit: contain;
+}
+
+.drive-page .guarantee-content h3 {
+    margin-bottom: 8px;
+
+    color: var(--gold);
+
+    font-size: 15px;
+}
+
+.drive-page .guarantee-content p {
+    margin: 0;
+
+    color: #858585;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ITENS GRÁTIS
+========================================================= */
+
+.drive-page .free-items {
+    margin-top: 40px;
+}
+
+.drive-page .free-items h3 {
+    margin-bottom: 20px;
+
+    color: var(--white);
+
+    font-size: 20px;
+}
+
+.drive-page .free-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 9px;
+}
+
+.drive-page .free-item {
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    border:
+        1px solid rgba(255,255,255,.065);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.018);
+
+    color: #909090;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   CTA FINAL
+========================================================= */
+
+.drive-page .final-cta {
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.91),
+            rgba(0,0,0,.58),
+            rgba(0,0,0,.88)
+        ),
+        url("./assets/display.webp")
+        center center / cover no-repeat;
+}
+
+.drive-page .final-cta::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #080808 0%,
+            transparent 23%,
+            transparent 78%,
+            #080808 100%
+        );
+}
+
+.drive-page .final-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+}
+
+.drive-page .final-content h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(
+        38px,
+        5vw,
+        62px
+    );
+
+    font-weight: 800;
+
+    letter-spacing: -2.5px;
+}
+
+.drive-page .final-content p {
+    max-width: 580px;
+
+    margin:
+        0 auto 27px;
+
+    color: #b0b0b0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.drive-page .site-footer {
+    padding:
+        48px 0 27px;
+
+    border-top:
+        1px solid rgba(255,255,255,.065);
+
+    background:
+        #050505;
+}
+
+.drive-page .footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.drive-page .footer-logos img {
+    max-width: 145px;
+    max-height: 50px;
+
+    object-fit: contain;
+}
+
+.drive-page .footer-company {
+    margin-bottom: 5px;
+
+    color: #858585;
+
+    text-align: center;
+
+    font-size: 10px;
+}
+
+.drive-page .footer-copy {
+    margin: 0;
+
+    color: #555;
+
+    text-align: center;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   LINHA DOURADA
+========================================================= */
+
+.drive-page .gold-line {
+    width: 55px;
+    height: 1px;
+
+    margin:
+        0 auto 23px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   RESPONSIVO — TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .drive-page .main-nav {
+        gap: 17px;
+    }
+
+    .drive-page .main-nav a {
+        font-size: 9px;
+    }
+
+    .drive-page .benefits-grid,
+    .drive-page .steps-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .drive-page .testimonials-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .drive-page .free-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVO — MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .drive-page .container {
+        width: calc(100% - 30px);
+    }
+
+
+    /* HEADER */
+
+    .drive-page .header-inner {
+        min-height: 72px;
+    }
+
+    .drive-page .header-logo img {
+        width: 125px;
+    }
+
+    .drive-page .mobile-toggle {
+        display: flex;
+    }
+
+    .drive-page .header-inner > .btn {
+        display: none;
+    }
+
+    .drive-page .main-nav {
+        position: absolute;
+
+        top: 72px;
+        left: 15px;
+        right: 15px;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px;
+
+        border:
+            1px solid rgba(255,255,255,.08);
+
+        border-radius: 12px;
+
+        background:
+            rgba(7,7,7,.97);
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.45);
+
+        backdrop-filter:
+            blur(15px);
+    }
+
+    .drive-page .main-nav.active {
+        display: flex;
+    }
+
+    .drive-page .main-nav a {
+        padding: 13px 10px;
+
+        font-size: 11px;
+    }
+
+    .drive-page .main-nav a::after {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .drive-page .hero {
+        min-height: 680px;
+
+        background-position:
+            64% center;
+    }
+
+    .drive-page .hero-content {
+        width: 100%;
+
+        padding-top: 55px;
+    }
+
+    .drive-page .hero h1 {
+        font-size:
+            clamp(41px, 12vw, 58px);
+
+        letter-spacing: -2.5px;
+    }
+
+    .drive-page .hero-description {
+        font-size: 14px;
+    }
+
+
+    /* SEÇÕES */
+
+    .drive-page .section {
+        padding: 78px 0;
+    }
+
+    .drive-page .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .drive-page .section-title {
+        font-size: 32px;
+    }
+
+
+    /* BENEFÍCIOS */
+
+    .drive-page .benefits {
+        margin-top: -25px;
+    }
+
+    .drive-page .benefits-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .drive-page .benefit-card {
+        min-height: auto;
+
+        padding: 25px;
+    }
+
+
+    /* REALIDADE */
+
+    .drive-page .reality {
+        padding-top: 90px;
+    }
+
+    .drive-page .reality-grid {
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+    }
+
+
+    /* STEPS */
+
+    .drive-page .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .step-card {
+        min-height: auto;
+    }
+
+
+    /* WHY */
+
+    .drive-page .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* DEPOIMENTOS */
+
+    .drive-page .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* SOBRE */
+
+    .drive-page .about-logos {
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .drive-page .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .facts-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* FAQ */
+
+    .drive-page .faq-question {
+        min-height: 60px;
+
+        padding: 17px;
+
+        font-size: 12px;
+    }
+
+    .drive-page .faq-answer {
+        padding:
+            0 17px 20px;
+    }
+
+
+    /* OFERTA */
+
+    .drive-page .offer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .drive-page .price {
+        font-size: 32px;
+    }
+
+
+    /* GARANTIA */
+
+    .drive-page .guarantee {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        text-align: center;
+    }
+
+    .drive-page .guarantee-image img {
+        max-height: 125px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* FREE */
+
+    .drive-page .free-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* FINAL */
+
+    .drive-page .final-cta {
+        min-height: 530px;
+    }
+
+    .drive-page .final-content h2 {
+        font-size: 39px;
+    }
+
+    .drive-page .final-content p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .drive-page .hero {
+        min-height: 650px;
+    }
+
+    .drive-page .hero h1 {
+        font-size: 39px;
+    }
+
+    .drive-page .hero-description {
+        font-size: 13px;
+    }
+
+    .drive-page .btn {
+        width: 100%;
+    }
+
+    .drive-page .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .free-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .final-content h2 {
+        font-size: 34px;
+    }
+
+    .drive-page .footer-logos {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+.drive-page a:focus-visible,
+.drive-page button:focus-visible {
+    outline:
+        2px solid var(--gold);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   SELEÇÃO
+========================================================= */
+
+.drive-page ::selection {
+    color: #050505;
+
+    background:
+        var(--gold);
 }
