@@ -1,0 +1,988 @@
+/* =========================================================
+   MOMENTS DRIVER — LANDING PAGE
+   CSS isolado para /moments-driver/
+   ========================================================= */
+
+.moments-driver-page {
+    --md-black: #080808;
+    --md-dark: #101010;
+    --md-dark-2: #151515;
+    --md-white: #ffffff;
+    --md-text: #f5f5f5;
+    --md-text-soft: #b8b8b8;
+    --md-text-muted: #858585;
+    --md-border: rgba(255, 255, 255, 0.10);
+    --md-accent: #ffffff;
+    --md-accent-dark: #d8d8d8;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--md-black);
+    color: var(--md-text);
+
+    font-family:
+        "Poppins",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+.moments-driver-page *,
+.moments-driver-page *::before,
+.moments-driver-page *::after {
+    box-sizing: border-box;
+}
+
+.moments-driver-page img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.moments-driver-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.moments-driver-page button,
+.moments-driver-page input,
+.moments-driver-page textarea,
+.moments-driver-page select {
+    font: inherit;
+}
+
+.moments-driver-page button {
+    border: 0;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.moments-driver-page .md-container {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.moments-driver-page .md-header {
+    position: relative;
+    z-index: 20;
+
+    width: 100%;
+
+    background: rgba(8, 8, 8, 0.94);
+    border-bottom: 1px solid var(--md-border);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.moments-driver-page .md-header-inner {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.moments-driver-page .md-logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.moments-driver-page .md-logo img {
+    width: auto;
+    max-width: 180px;
+    max-height: 48px;
+    object-fit: contain;
+}
+
+.moments-driver-page .md-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.moments-driver-page .md-nav a {
+    position: relative;
+
+    color: var(--md-text-soft);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.moments-driver-page .md-nav a:hover {
+    color: var(--md-white);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.moments-driver-page .md-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 0 26px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.moments-driver-page .md-btn:hover {
+    transform: translateY(-2px);
+}
+
+.moments-driver-page .md-btn-primary {
+    background: var(--md-white);
+    color: var(--md-black);
+}
+
+.moments-driver-page .md-btn-primary:hover {
+    background: #e9e9e9;
+}
+
+.moments-driver-page .md-btn-outline {
+    background: transparent;
+    color: var(--md-white);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.moments-driver-page .md-btn-outline:hover {
+    border-color: var(--md-white);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.moments-driver-page .md-hero {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(255, 255, 255, 0.07),
+            transparent 35%
+        ),
+        var(--md-black);
+}
+
+.moments-driver-page .md-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 8, 8, 1) 0%,
+            rgba(8, 8, 8, 0.92) 40%,
+            rgba(8, 8, 8, 0.35) 75%,
+            rgba(8, 8, 8, 0.80) 100%
+        );
+}
+
+.moments-driver-page .md-hero-inner {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 60px;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.moments-driver-page .md-hero-content {
+    max-width: 610px;
+}
+
+.moments-driver-page .md-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    color: var(--md-text-soft);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.moments-driver-page .md-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: var(--md-white);
+}
+
+.moments-driver-page .md-hero h1 {
+    margin: 0 0 24px;
+
+    color: var(--md-white);
+
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1.02;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.moments-driver-page .md-hero h1 strong {
+    font-weight: 700;
+}
+
+.moments-driver-page .md-hero-text {
+    max-width: 550px;
+
+    margin: 0 0 32px;
+
+    color: var(--md-text-soft);
+
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.moments-driver-page .md-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.moments-driver-page .md-hero-image {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moments-driver-page .md-hero-image img {
+    width: 100%;
+    max-width: 560px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.moments-driver-page .md-section {
+    position: relative;
+
+    padding: 100px 0;
+}
+
+.moments-driver-page .md-section-dark {
+    background: var(--md-dark);
+}
+
+.moments-driver-page .md-section-black {
+    background: var(--md-black);
+}
+
+.moments-driver-page .md-section-header {
+    max-width: 720px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.moments-driver-page .md-section-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--md-text-muted);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.moments-driver-page .md-section h2 {
+    margin: 0 0 18px;
+
+    color: var(--md-white);
+
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.moments-driver-page .md-section-header p {
+    margin: 0;
+
+    color: var(--md-text-soft);
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.moments-driver-page .md-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.moments-driver-page .md-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.moments-driver-page .md-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.moments-driver-page .md-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.moments-driver-page .md-card {
+    padding: 30px;
+
+    background: var(--md-dark-2);
+
+    border: 1px solid var(--md-border);
+    border-radius: 12px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.moments-driver-page .md-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(255, 255, 255, 0.20);
+
+    background: #191919;
+}
+
+.moments-driver-page .md-card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border: 1px solid var(--md-border);
+    border-radius: 8px;
+}
+
+.moments-driver-page .md-card h3 {
+    margin: 0 0 10px;
+
+    color: var(--md-white);
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.moments-driver-page .md-card p {
+    margin: 0;
+
+    color: var(--md-text-soft);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRODUCT / KIT
+   ========================================================= */
+
+.moments-driver-page .md-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 70px;
+}
+
+.moments-driver-page .md-product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moments-driver-page .md-product-image img {
+    width: 100%;
+    max-width: 560px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 25px 50px rgba(0, 0, 0, 0.45));
+}
+
+.moments-driver-page .md-product-content {
+    max-width: 540px;
+}
+
+.moments-driver-page .md-product-content h2 {
+    text-align: left;
+}
+
+.moments-driver-page .md-product-content p {
+    color: var(--md-text-soft);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.moments-driver-page .md-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    margin: 28px 0 32px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.moments-driver-page .md-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    color: var(--md-text-soft);
+
+    font-size: 14px;
+}
+
+.moments-driver-page .md-list li::before {
+    content: "✓";
+
+    flex-shrink: 0;
+
+    color: var(--md-white);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PRICING
+   ========================================================= */
+
+.moments-driver-page .md-pricing {
+    max-width: 520px;
+
+    margin-inline: auto;
+
+    padding: 38px;
+
+    background: var(--md-dark-2);
+
+    border: 1px solid var(--md-border);
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.moments-driver-page .md-price-label {
+    margin-bottom: 8px;
+
+    color: var(--md-text-muted);
+
+    font-size: 13px;
+}
+
+.moments-driver-page .md-price {
+    margin: 0;
+
+    color: var(--md-white);
+
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.moments-driver-page .md-price small {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.moments-driver-page .md-price-description {
+    margin: 14px 0 28px;
+
+    color: var(--md-text-soft);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.moments-driver-page .md-cta {
+    position: relative;
+    overflow: hidden;
+
+    padding: 90px 0;
+
+    background: var(--md-white);
+    color: var(--md-black);
+
+    text-align: center;
+}
+
+.moments-driver-page .md-cta-inner {
+    position: relative;
+    z-index: 2;
+
+    max-width: 760px;
+    margin-inline: auto;
+}
+
+.moments-driver-page .md-cta h2 {
+    margin: 0 0 18px;
+
+    color: var(--md-black);
+
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
+
+.moments-driver-page .md-cta p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: #555;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.moments-driver-page .md-cta .md-btn-primary {
+    background: var(--md-black);
+    color: var(--md-white);
+}
+
+.moments-driver-page .md-cta .md-btn-primary:hover {
+    background: #222;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.moments-driver-page .md-form {
+    width: 100%;
+    max-width: 700px;
+
+    margin-inline: auto;
+}
+
+.moments-driver-page .md-form-group {
+    margin-bottom: 18px;
+}
+
+.moments-driver-page .md-form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--md-text-soft);
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.moments-driver-page .md-form input,
+.moments-driver-page .md-form textarea,
+.moments-driver-page .md-form select {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background: #111;
+
+    color: var(--md-white);
+
+    border: 1px solid var(--md-border);
+    border-radius: 7px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.moments-driver-page .md-form input:focus,
+.moments-driver-page .md-form textarea:focus,
+.moments-driver-page .md-form select:focus {
+    border-color: rgba(255, 255, 255, 0.45);
+    background: #151515;
+}
+
+.moments-driver-page .md-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.moments-driver-page .md-footer {
+    padding: 50px 0;
+
+    background: #050505;
+
+    border-top: 1px solid var(--md-border);
+}
+
+.moments-driver-page .md-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.moments-driver-page .md-footer-logo img {
+    width: auto;
+    max-width: 150px;
+    max-height: 42px;
+}
+
+.moments-driver-page .md-footer-copy {
+    color: var(--md-text-muted);
+
+    font-size: 12px;
+}
+
+.moments-driver-page .md-footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.moments-driver-page .md-footer-links a {
+    color: var(--md-text-muted);
+
+    font-size: 13px;
+
+    transition: color 0.2s ease;
+}
+
+.moments-driver-page .md-footer-links a:hover {
+    color: var(--md-white);
+}
+
+
+/* =========================================================
+   WHATSAPP / FLOATING BUTTON
+   ========================================================= */
+
+.moments-driver-page .md-whatsapp {
+    position: fixed;
+    z-index: 100;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #25d366;
+    color: #fff;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.moments-driver-page .md-whatsapp:hover {
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .moments-driver-page .md-container {
+        width: min(100% - 32px, 700px);
+    }
+
+    .moments-driver-page .md-nav {
+        display: none;
+    }
+
+    .moments-driver-page .md-hero {
+        min-height: auto;
+    }
+
+    .moments-driver-page .md-hero-inner {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding-top: 70px;
+        padding-bottom: 70px;
+
+        text-align: center;
+    }
+
+    .moments-driver-page .md-hero-content {
+        max-width: 700px;
+        margin-inline: auto;
+    }
+
+    .moments-driver-page .md-eyebrow {
+        justify-content: center;
+    }
+
+    .moments-driver-page .md-hero-text {
+        margin-inline: auto;
+    }
+
+    .moments-driver-page .md-hero-actions {
+        justify-content: center;
+    }
+
+    .moments-driver-page .md-hero-image img {
+        max-width: 500px;
+    }
+
+    .moments-driver-page .md-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .moments-driver-page .md-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .moments-driver-page .md-product {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .moments-driver-page .md-product-content {
+        max-width: 700px;
+    }
+
+    .moments-driver-page .md-product-content h2 {
+        text-align: center;
+    }
+
+    .moments-driver-page .md-footer-inner {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .moments-driver-page .md-container {
+        width: calc(100% - 28px);
+    }
+
+    .moments-driver-page .md-header-inner {
+        min-height: 68px;
+    }
+
+    .moments-driver-page .md-logo img {
+        max-width: 145px;
+        max-height: 40px;
+    }
+
+    .moments-driver-page .md-hero-inner {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .moments-driver-page .md-hero h1 {
+        font-size: clamp(36px, 11vw, 52px);
+    }
+
+    .moments-driver-page .md-hero-text {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .moments-driver-page .md-hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .moments-driver-page .md-hero-actions .md-btn {
+        width: 100%;
+    }
+
+    .moments-driver-page .md-section {
+        padding: 70px 0;
+    }
+
+    .moments-driver-page .md-section-header {
+        margin-bottom: 35px;
+    }
+
+    .moments-driver-page .md-section h2 {
+        font-size: 32px;
+    }
+
+    .moments-driver-page .md-grid-2,
+    .moments-driver-page .md-grid-3,
+    .moments-driver-page .md-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .moments-driver-page .md-card {
+        padding: 24px;
+    }
+
+    .moments-driver-page .md-product {
+        gap: 30px;
+    }
+
+    .moments-driver-page .md-product-content h2 {
+        font-size: 31px;
+    }
+
+    .moments-driver-page .md-pricing {
+        padding: 30px 20px;
+    }
+
+    .moments-driver-page .md-cta {
+        padding: 70px 0;
+    }
+
+    .moments-driver-page .md-cta h2 {
+        font-size: 34px;
+    }
+
+    .moments-driver-page .md-whatsapp {
+        right: 16px;
+        bottom: 16px;
+
+        width: 54px;
+        height: 54px;
+    }
+
+    .moments-driver-page .md-footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .moments-driver-page *,
+    .moments-driver-page *::before,
+    .moments-driver-page *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
