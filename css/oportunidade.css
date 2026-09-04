@@ -1,4 +1,3 @@
-```css
 :root {
   --black: #050505;
   --black-soft: #0b0b0b;
@@ -27,13 +26,7 @@ body {
   background: var(--black);
   color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
   overflow-x: hidden;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 img {
@@ -41,15 +34,8 @@ img {
   max-width: 100%;
 }
 
-button,
-input,
-select {
-  font: inherit;
-}
-
-.luxury-container {
-  width: min(var(--container), calc(100% - 40px));
-  margin: 0 auto;
+a {
+  color: inherit;
 }
 
 .luxury-header {
@@ -59,83 +45,100 @@ select {
   left: 50%;
   transform: translateX(-50%);
   width: min(var(--container), calc(100% - 40px));
-  background: rgba(5, 5, 5, .86);
+  min-height: 72px;
+  padding: 8px 12px 8px 22px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+  background: rgba(5, 5, 5, .78);
   border: 1px solid var(--border-soft);
   border-radius: 50px;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
 
-.luxury-header-inner {
-  min-height: 70px;
-  padding: 8px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
 .luxury-brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .luxury-brand img {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
 }
 
 .luxury-brand span {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
   color: var(--white);
-  white-space: nowrap;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
 .luxury-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 34px;
 }
 
 .luxury-nav a {
+  position: relative;
   color: var(--text);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2px;
+  text-decoration: none;
   text-transform: uppercase;
   transition: color .3s ease;
+}
+
+.luxury-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width .3s ease;
 }
 
 .luxury-nav a:hover {
   color: var(--gold-light);
 }
 
-.luxury-header-whatsapp {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--gold-light);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  white-space: nowrap;
+.luxury-nav a:hover::after {
+  width: 100%;
 }
 
-.whatsapp-icon {
-  width: 34px;
-  height: 34px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
+.luxury-header-whatsapp {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  min-height: 42px;
+  padding: 0 20px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  background: transparent;
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background .3s ease, color .3s ease, border-color .3s ease;
+}
+
+.luxury-header-whatsapp:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
 }
 
 .luxury-hero {
@@ -147,8 +150,7 @@ select {
   overflow: hidden;
 }
 
-.luxury-hero-image,
-.luxury-hero-overlay {
+.luxury-hero-image {
   position: absolute;
   inset: 0;
 }
@@ -157,16 +159,19 @@ select {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   filter: brightness(.52) contrast(1.08) saturate(.78);
 }
 
 .luxury-hero-overlay {
+  position: absolute;
+  inset: 0;
   background:
     linear-gradient(
       180deg,
-      rgba(5, 5, 5, .62) 0%,
-      rgba(5, 5, 5, .28) 45%,
-      rgba(5, 5, 5, .82) 100%
+      rgba(5, 5, 5, .68) 0%,
+      rgba(5, 5, 5, .20) 35%,
+      rgba(5, 5, 5, .58) 100%
     );
 }
 
@@ -174,29 +179,29 @@ select {
   position: relative;
   z-index: 2;
   width: min(900px, calc(100% - 40px));
+  padding-top: 90px;
   text-align: center;
-  padding-top: 80px;
 }
 
-.luxury-eyebrow,
-.luxury-section-label {
+.luxury-eyebrow {
   display: block;
+  margin-bottom: 24px;
   color: var(--gold-light);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 4px;
-  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .luxury-hero h1 {
-  margin-top: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--white);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(48px, 6vw, 82px);
   font-weight: 400;
   line-height: .98;
   letter-spacing: -3px;
-  color: var(--white);
 }
 
 .luxury-hero h1 strong {
@@ -205,141 +210,130 @@ select {
 }
 
 .luxury-hero-content > p {
-  margin-top: 28px;
+  margin: 30px auto 36px;
+  color: var(--text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 23px;
-  color: var(--text);
+  line-height: 1.5;
 }
 
 .luxury-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  margin-top: 35px;
-  padding: 0 28px;
+  min-height: 54px;
+  padding: 0 30px;
   border: 1px solid var(--gold);
-  background: rgba(5, 5, 5, .25);
+  background: rgba(5, 5, 5, .28);
   color: var(--gold-light);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
+  text-decoration: none;
   text-transform: uppercase;
-  transition:
-    background .3s ease,
-    color .3s ease,
-    border-color .3s ease,
-    transform .3s ease;
+  transition: background .3s ease, color .3s ease, transform .3s ease;
 }
 
 .luxury-button:hover {
   background: var(--gold);
-  border-color: var(--gold);
   color: var(--black);
   transform: translateY(-2px);
 }
 
-.luxury-button-full {
-  width: 100%;
-  cursor: pointer;
-}
-
 .luxury-intro {
-  padding: 150px 0 130px;
+  padding: 150px 30px 130px;
   background: var(--black);
   text-align: center;
+}
+
+.luxury-intro > p {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.8;
 }
 
 .luxury-intro h2,
 .luxury-form-intro h2,
 .luxury-register h2,
 .luxury-final h2 {
-  margin-top: 24px;
+  color: var(--white);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(40px, 5vw, 66px);
+  font-size: clamp(38px, 5vw, 64px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -2px;
-  color: var(--white);
 }
 
-.luxury-intro p {
-  max-width: 700px;
-  margin: 32px auto 0;
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.9;
+.luxury-intro h2 {
+  margin-bottom: 32px;
 }
 
 .luxury-points {
-  padding: 0 0 150px;
-  background: var(--black);
-}
-
-.luxury-points-grid {
+  width: min(1000px, 100%);
+  margin: 90px auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--border-soft);
+  gap: 50px;
 }
 
-.luxury-point {
-  padding: 55px 45px;
-  border-right: 1px solid var(--border-soft);
+.luxury-points article {
+  padding: 10px 25px;
+  border-top: 1px solid var(--border);
 }
 
-.luxury-point:last-child {
-  border-right: 0;
-}
-
-.luxury-point-number {
+.luxury-points article > span {
+  display: block;
+  margin: 25px 0 20px;
   color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
+  font-size: 11px;
+  letter-spacing: 3px;
 }
 
-.luxury-point h3 {
-  margin-top: 22px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 28px;
-  font-weight: 400;
+.luxury-points h3 {
+  margin-bottom: 16px;
   color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 400;
 }
 
-.luxury-point p {
-  margin-top: 18px;
-  color: var(--text);
+.luxury-points p {
+  color: var(--muted);
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .luxury-form-section {
-  padding: 140px 0;
-  background: var(--black-soft);
-}
-
-.luxury-form-wrapper {
+  padding: 140px 30px;
   display: grid;
   grid-template-columns: .85fr 1.15fr;
   gap: 100px;
   align-items: start;
+  background: var(--black-soft);
 }
 
 .luxury-form-intro {
-  position: sticky;
-  top: 120px;
+  max-width: 500px;
+}
+
+.luxury-form-intro h2 {
+  margin-bottom: 28px;
 }
 
 .luxury-form-intro p {
-  max-width: 460px;
-  margin-top: 28px;
   color: var(--text);
-  font-size: 15px;
-  line-height: 1.9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 .luxury-form {
   display: grid;
-  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
 .luxury-field {
@@ -348,82 +342,88 @@ select {
   gap: 9px;
 }
 
+.luxury-field-full {
+  grid-column: 1 / -1;
+}
+
 .luxury-field label {
-  color: var(--text);
+  color: var(--muted);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .luxury-field input,
-.luxury-field select {
+.luxury-field select,
+.luxury-field textarea {
   width: 100%;
-  height: 52px;
+  min-height: 52px;
   padding: 0 16px;
   border: 1px solid var(--border-soft);
   outline: none;
-  background: rgba(255, 255, 255, .025);
+  background: rgba(255, 255, 255, .035);
   color: var(--white);
-  border-radius: 0;
-  transition:
-    border-color .3s ease,
-    background .3s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  transition: border-color .3s ease, background .3s ease;
 }
 
 .luxury-field select {
-  appearance: auto;
-}
-
-.luxury-field input::placeholder {
-  color: var(--muted);
-}
-
-.luxury-field input:focus,
-.luxury-field select:focus {
-  border-color: var(--gold);
-  background: rgba(198, 161, 91, .035);
-}
-
-.luxury-field select option {
-  background: var(--black-light);
-  color: var(--white);
-}
-
-.luxury-consent {
-  margin-top: 2px;
-}
-
-.luxury-consent label {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.6;
   cursor: pointer;
 }
 
-.luxury-consent input {
-  width: 16px;
-  height: 16px;
+.luxury-field input:focus,
+.luxury-field select:focus,
+.luxury-field textarea:focus {
+  border-color: var(--gold);
+  background: rgba(198, 161, 91, .04);
+}
+
+.luxury-field input::placeholder,
+.luxury-field textarea::placeholder {
+  color: var(--muted);
+}
+
+.luxury-field select option {
+  background: var(--black-soft);
+  color: var(--white);
+}
+
+.luxury-checkbox {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.luxury-checkbox input {
   margin-top: 2px;
-  flex-shrink: 0;
   accent-color: var(--gold);
 }
 
+.luxury-submit {
+  border: 0;
+  cursor: pointer;
+}
+
 .luxury-register {
-  padding: 150px 0;
+  padding: 150px 30px;
   background: #080807;
   text-align: center;
 }
 
-.luxury-register p {
-  max-width: 650px;
-  margin: 28px auto 0;
+.luxury-register > p {
+  width: min(600px, 100%);
+  margin: 30px auto 0;
   color: var(--text);
-  font-size: 15px;
-  line-height: 1.9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 .luxury-register-buttons {
@@ -437,177 +437,161 @@ select {
 
 .luxury-register-buttons .luxury-button {
   min-width: 210px;
-  margin-top: 0;
 }
 
 .luxury-final {
-  padding: 160px 0;
+  padding: 160px 30px;
   background: var(--black);
   text-align: center;
 }
 
+.luxury-final h2 {
+  margin-bottom: 28px;
+}
+
 .luxury-final p {
-  margin-top: 28px;
+  margin-bottom: 35px;
   color: var(--text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
 }
 
-.luxury-text-link {
-  display: inline-block;
-  margin-top: 35px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--gold);
-  color: var(--gold-light);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition:
-    color .3s ease,
-    border-color .3s ease;
-}
-
-.luxury-text-link:hover {
-  color: var(--white);
-  border-color: var(--white);
-}
-
 .luxury-footer {
-  padding: 70px 0;
+  padding: 70px 30px 45px;
   background: #030303;
+  border-top: 1px solid var(--border-soft);
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, .06);
 }
 
-.luxury-footer-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.luxury-footer-brand img {
-  width: 48px;
-  height: 48px;
+.luxury-footer img {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 14px;
   object-fit: contain;
 }
 
-.luxury-footer-brand span {
-  font-family: Georgia, "Times New Roman", serif;
+.luxury-footer strong {
+  display: block;
+  margin-bottom: 18px;
   color: var(--white);
-  font-size: 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
-.luxury-footer > .luxury-container > p {
-  margin-top: 25px;
+.luxury-footer p {
+  margin-bottom: 15px;
   color: var(--muted);
   font-size: 11px;
 }
 
-.luxury-footer .luxury-footer-small {
-  max-width: 650px;
-  margin: 15px auto 0;
-  color: #55524d;
+.luxury-footer small {
+  display: block;
+  width: min(700px, 100%);
+  margin: auto;
+  color: #55514b;
   font-size: 10px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .luxury-whatsapp {
   position: fixed;
-  z-index: 900;
-  right: 25px;
-  bottom: 25px;
-  width: 56px;
-  height: 56px;
+  z-index: 999;
+  right: 24px;
+  bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 62px;
+  height: 62px;
   border: 1px solid var(--gold);
   border-radius: 50%;
-  background: rgba(5, 5, 5, .9);
-  color: var(--gold-light);
-  font-size: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
-  transition:
-    transform .3s ease,
-    background .3s ease;
+  background: rgba(5, 5, 5, .88);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform .3s ease, background .3s ease;
 }
 
 .luxury-whatsapp:hover {
-  transform: translateY(-4px);
   background: var(--gold);
+  transform: translateY(-3px);
+}
+
+.whatsapp-icon {
+  color: var(--gold-light);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.luxury-whatsapp:hover .whatsapp-icon {
   color: var(--black);
 }
 
-:focus-visible {
-  outline: 2px solid var(--gold-light);
-  outline-offset: 4px;
-}
-
 @media (max-width: 1000px) {
-  .luxury-points-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .luxury-point {
-    border-right: 0;
-    border-bottom: 1px solid var(--border-soft);
-  }
-
-  .luxury-point:last-child {
-    border-bottom: 0;
-  }
-
-  .luxury-form-wrapper {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .luxury-form-intro {
-    position: static;
-  }
-}
-
-@media (max-width: 800px) {
   .luxury-header {
-    width: calc(100% - 24px);
-    top: 10px;
-  }
-
-  .luxury-header-inner {
-    min-height: 62px;
-    padding: 6px 12px;
-    gap: 10px;
-  }
-
-  .luxury-brand img {
-    width: 44px;
-    height: 44px;
-  }
-
-  .luxury-brand span {
-    font-size: 14px;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
   }
 
   .luxury-nav {
     display: none;
   }
 
-  .luxury-header-whatsapp span:last-child {
-    display: none;
+  .luxury-form-section {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .luxury-form-intro {
+    max-width: 700px;
+  }
+
+  .luxury-points {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .luxury-header {
+    top: 10px;
+    width: calc(100% - 24px);
+    min-height: 62px;
+    padding: 7px 8px 7px 14px;
+    gap: 10px;
+  }
+
+  .luxury-brand {
+    gap: 8px;
+  }
+
+  .luxury-brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .luxury-brand span {
+    font-size: 10px;
+    letter-spacing: 1.3px;
   }
 
   .luxury-header-whatsapp {
-    margin-left: auto;
+    min-height: 38px;
+    padding: 0 13px;
+    font-size: 8px;
+    letter-spacing: 1px;
   }
 
   .luxury-hero-content {
-    width: calc(100% - 30px);
     padding-top: 70px;
   }
 
   .luxury-hero h1 {
-    font-size: clamp(42px, 12vw, 62px);
     letter-spacing: -2px;
   }
 
@@ -615,24 +599,36 @@ select {
     font-size: 19px;
   }
 
+  .luxury-intro,
+  .luxury-form-section,
+  .luxury-register,
+  .luxury-final {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
   .luxury-intro {
-    padding: 100px 0 90px;
-  }
-
-  .luxury-points {
-    padding-bottom: 90px;
-  }
-
-  .luxury-point {
-    padding: 42px 25px;
+    padding-top: 110px;
+    padding-bottom: 100px;
   }
 
   .luxury-form-section {
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .luxury-form {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-field-full,
+  .luxury-checkbox {
+    grid-column: auto;
   }
 
   .luxury-register {
-    padding: 100px 0;
+    padding-top: 110px;
+    padding-bottom: 110px;
   }
 
   .luxury-register-buttons {
@@ -646,38 +642,31 @@ select {
   }
 
   .luxury-final {
-    padding: 110px 0;
-  }
-
-  .luxury-footer {
-    padding: 55px 0;
-  }
-
-  .luxury-whatsapp {
-    right: 18px;
-    bottom: 18px;
-    width: 52px;
-    height: 52px;
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 
 @media (max-width: 430px) {
-  .luxury-container {
-    width: calc(100% - 28px);
+  .luxury-header {
+    width: calc(100% - 16px);
   }
 
   .luxury-brand span {
-    font-size: 13px;
+    display: none;
   }
 
-  .luxury-eyebrow,
-  .luxury-section-label {
-    font-size: 9px;
-    letter-spacing: 3px;
+  .luxury-header-whatsapp {
+    padding: 0 12px;
+    font-size: 7px;
+  }
+
+  .luxury-hero-content {
+    width: calc(100% - 30px);
   }
 
   .luxury-hero h1 {
-    font-size: 40px;
+    font-size: 43px;
   }
 
   .luxury-hero-content > p {
@@ -685,20 +674,21 @@ select {
   }
 
   .luxury-button {
-    width: 100%;
+    min-height: 50px;
+    padding: 0 22px;
   }
 
-  .luxury-intro h2,
-  .luxury-form-intro h2,
-  .luxury-register h2,
-  .luxury-final h2 {
-    font-size: 40px;
+  .luxury-whatsapp {
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
   }
+}
 
-  .luxury-field input,
-  .luxury-field select {
-    height: 50px;
-  }
+:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -710,6 +700,6 @@ select {
   *::before,
   *::after {
     transition: none !important;
+    animation: none !important;
   }
 }
-```
