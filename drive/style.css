@@ -1,73 +1,36 @@
 /* =========================================================
    MOMENTS DRIVER
-   STYLE.CSS
-   Layout fiel à estrutura da referência
+   REPRODUÇÃO VISUAL DA LP ORIGINAL
+   Escopo exclusivo: .drive-page
    ========================================================= */
 
 
 /* =========================================================
-   01 — VARIÁVEIS
+   01. RESET
    ========================================================= */
 
-:root {
-    --black: #000;
-    --bg: #050505;
-    --bg-2: #080808;
-    --bg-3: #0b0b0b;
-
-    --white: #fff;
-    --text: #f4f4f4;
-    --text-soft: #b9b9b9;
-    --text-muted: #858585;
-
-    --gold: #c5a05a;
-    --gold-light: #d9bb79;
-    --gold-dark: #9b7738;
-
-    --border: rgba(255, 255, 255, .09);
-    --border-gold: rgba(197, 160, 90, .35);
-
-    --container: 1180px;
-    --header-height: 78px;
-
-    --radius: 12px;
-    --radius-lg: 16px;
-
-    --transition: .3s ease;
-}
-
-
-/* =========================================================
-   02 — RESET
-   ========================================================= */
-
-*,
-*::before,
-*::after {
+.drive-page,
+.drive-page * {
     box-sizing: border-box;
 }
 
-html {
+.drive-page {
     margin: 0;
     padding: 0;
 
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
+    background: #ffffff;
+    color: #111111;
 
-body.drive-page {
-    margin: 0;
-    padding: 0;
-
-    background: var(--bg);
-    color: var(--text);
-
-    font-family: "Montserrat", sans-serif;
+    font-family:
+        "Montserrat",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
     font-size: 16px;
-    font-weight: 400;
-
-    line-height: 1.6;
+    line-height: 1.55;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -77,7 +40,6 @@ body.drive-page {
 
 .drive-page img {
     display: block;
-
     max-width: 100%;
     height: auto;
 }
@@ -97,22 +59,65 @@ body.drive-page {
     border: 0;
 }
 
+.drive-page h1,
+.drive-page h2,
+.drive-page h3,
+.drive-page p {
+    margin-top: 0;
+}
+
 .drive-page ul,
 .drive-page ol {
     margin: 0;
     padding: 0;
-
     list-style: none;
 }
 
 
 /* =========================================================
-   03 — CONTAINER
+   02. VARIABLES
+   ========================================================= */
+
+.drive-page {
+    --black: #111111;
+    --black-soft: #181818;
+    --dark: #202020;
+
+    --text: #171717;
+    --text-soft: #5d5d5d;
+    --text-muted: #777777;
+
+    --white: #ffffff;
+    --off-white: #fafafa;
+    --gray-bg: #f6f6f6;
+
+    --border: #e8e8e8;
+    --border-dark: #dcdcdc;
+
+    --gold: #b28a3a;
+    --gold-dark: #92702c;
+    --gold-light: #d3b36c;
+
+    --container: 1180px;
+
+    --section-space: 112px;
+
+    --radius: 3px;
+
+    --shadow:
+        0 10px 35px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   03. CONTAINER
    ========================================================= */
 
 .drive-page .container {
-    width: calc(100% - 48px);
-    max-width: var(--container);
+    width: min(
+        calc(100% - 48px),
+        var(--container)
+    );
 
     margin-left: auto;
     margin-right: auto;
@@ -120,200 +125,46 @@ body.drive-page {
 
 
 /* =========================================================
-   04 — TIPOGRAFIA
-   ========================================================= */
-
-.drive-page h1,
-.drive-page h2,
-.drive-page h3,
-.drive-page h4 {
-    margin: 0;
-
-    color: var(--white);
-
-    font-family: "Montserrat", sans-serif;
-
-    text-wrap: balance;
-}
-
-.drive-page h1 {
-    font-size: clamp(52px, 7vw, 92px);
-
-    font-weight: 800;
-
-    line-height: .96;
-
-    letter-spacing: -.055em;
-}
-
-.drive-page h2 {
-    font-size: clamp(40px, 5vw, 64px);
-
-    font-weight: 800;
-
-    line-height: 1.02;
-
-    letter-spacing: -.045em;
-}
-
-.drive-page h3 {
-    font-size: 18px;
-
-    font-weight: 700;
-
-    line-height: 1.25;
-
-    letter-spacing: -.02em;
-}
-
-.drive-page p {
-    margin: 0;
-
-    color: var(--text-soft);
-
-    font-size: 15px;
-
-    font-weight: 400;
-
-    line-height: 1.75;
-
-    letter-spacing: -.005em;
-}
-
-
-/* =========================================================
-   05 — LABELS DE SEÇÃO
-   ========================================================= */
-
-.drive-page .section-label {
-    display: inline-flex;
-    align-items: center;
-
-    gap: 10px;
-
-    margin-bottom: 18px;
-
-    color: var(--gold);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    line-height: 1;
-
-    letter-spacing: .18em;
-
-    text-transform: uppercase;
-}
-
-.drive-page .section-label::before {
-    content: "";
-
-    width: 24px;
-    height: 1px;
-
-    background: var(--gold);
-}
-
-.drive-page .section-header {
-    max-width: 760px;
-
-    margin-bottom: 58px;
-}
-
-.drive-page .section-header p {
-    max-width: 620px;
-
-    margin-top: 20px;
-}
-
-
-/* =========================================================
-   06 — ÍCONES SVG
-   ========================================================= */
-
-.drive-page .icon {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-}
-
-.drive-page .icon svg {
-    display: block;
-
-    width: 24px;
-    height: 24px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.7;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-
-/* =========================================================
-   07 — HEADER
+   04. HEADER
    ========================================================= */
 
 .drive-page .site-header {
-    position: sticky;
+    width: 100%;
+    background: #ffffff;
 
-    top: 0;
+    border-bottom: 1px solid #eeeeee;
 
-    z-index: 1000;
-
-    height: var(--header-height);
-
-    background: rgba(0, 0, 0, .94);
-
-    border-bottom: 1px solid rgba(255, 255, 255, .06);
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    position: relative;
+    z-index: 100;
 }
 
 .drive-page .header-inner {
-    width: calc(100% - 48px);
-    max-width: 1280px;
-
-    height: 100%;
-
-    margin-left: auto;
-    margin-right: auto;
+    min-height: 76px;
 
     display: flex;
-
     align-items: center;
+    justify-content: space-between;
 
     gap: 30px;
 }
 
 .drive-page .logo {
     display: flex;
-
     align-items: center;
 
     flex-shrink: 0;
 }
 
 .drive-page .logo img {
-    width: auto;
-    height: 39px;
-
+    width: 150px;
+    max-height: 48px;
     object-fit: contain;
 }
 
 .drive-page .main-nav {
     display: flex;
-
     align-items: center;
+    justify-content: center;
 
     gap: 28px;
 
@@ -323,77 +174,50 @@ body.drive-page {
 .drive-page .main-nav a {
     position: relative;
 
-    color: rgba(255, 255, 255, .68);
-
-    font-size: 11px;
-
+    font-size: 12px;
     font-weight: 600;
 
-    letter-spacing: .01em;
+    color: #333333;
 
     white-space: nowrap;
 
-    transition: color var(--transition);
+    transition:
+        color 0.2s ease;
 }
 
 .drive-page .main-nav a:hover {
-    color: var(--white);
-}
-
-.drive-page .main-nav a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -7px;
-
-    width: 0;
-    height: 1px;
-
-    background: var(--gold);
-
-    transition: width var(--transition);
-}
-
-.drive-page .main-nav a:hover::after {
-    width: 100%;
+    color: var(--gold-dark);
 }
 
 .drive-page .header-cta {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
     min-height: 43px;
 
-    padding: 0 19px;
+    padding: 0 22px;
 
-    border-radius: 3px;
+    background: var(--black);
+    color: #ffffff;
 
-    background: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
 
-    color: #050505;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: .06em;
-
+    letter-spacing: 0.02em;
     text-transform: uppercase;
+
+    border-radius: 2px;
 
     white-space: nowrap;
 
     transition:
-        background var(--transition),
-        transform var(--transition);
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .drive-page .header-cta:hover {
-    background: var(--gold-light);
-
+    background: #2c2c2c;
     transform: translateY(-1px);
 }
 
@@ -403,678 +227,689 @@ body.drive-page {
     width: 42px;
     height: 42px;
 
-    align-items: center;
-    justify-content: center;
-
-    margin-left: auto;
-
-    padding: 0;
-
     background: transparent;
-
-    color: var(--white);
 
     cursor: pointer;
 }
 
-.drive-page .menu-toggle svg {
-    width: 23px;
-    height: 23px;
+.drive-page .menu-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: var(--black);
 }
 
 
 /* =========================================================
-   08 — BOTÕES
-   ========================================================= */
-
-.drive-page .checkout-link {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 52px;
-
-    padding: 0 28px;
-
-    border-radius: 3px;
-
-    background: var(--gold);
-
-    color: #050505;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: .075em;
-
-    text-transform: uppercase;
-
-    transition:
-        background var(--transition),
-        transform var(--transition),
-        box-shadow var(--transition);
-}
-
-.drive-page .checkout-link:hover {
-    background: var(--gold-light);
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 12px 30px rgba(197, 160, 90, .16);
-}
-
-
-/* =========================================================
-   09 — HERO
+   05. HERO
    ========================================================= */
 
 .drive-page .hero {
     position: relative;
 
-    min-height: calc(100vh - var(--header-height));
+    min-height: 610px;
 
     display: flex;
-
     align-items: center;
-
-    overflow: hidden;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, .94) 0%,
-            rgba(0, 0, 0, .78) 42%,
-            rgba(0, 0, 0, .38) 75%,
-            rgba(0, 0, 0, .58) 100%
+            rgba(0, 0, 0, 0.82) 0%,
+            rgba(0, 0, 0, 0.66) 38%,
+            rgba(0, 0, 0, 0.18) 72%,
+            rgba(0, 0, 0, 0.02) 100%
         ),
-        url("./assets/display.webp");
+        url("assets/display.webp") center right / cover no-repeat;
 
-    background-size: cover;
-
-    background-position: center;
-}
-
-.drive-page .hero::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 150px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            var(--bg)
-        );
-
-    pointer-events: none;
+    color: #ffffff;
 }
 
 .drive-page .hero .container {
     position: relative;
-
     z-index: 2;
 }
 
 .drive-page .hero-content {
-    width: 100%;
-    max-width: 730px;
+    width: min(100%, 590px);
 
-    padding-top: 100px;
-    padding-bottom: 120px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .drive-page .hero-eyebrow {
-    display: flex;
+    margin-bottom: 17px;
 
-    align-items: center;
-
-    gap: 10px;
-
-    margin-bottom: 23px;
-
-    color: var(--gold-light);
-
-    font-size: 11px;
-
+    font-size: 13px;
     font-weight: 700;
 
-    letter-spacing: .19em;
-
-    line-height: 1;
-
+    letter-spacing: 0.11em;
     text-transform: uppercase;
-}
 
-.drive-page .hero-eyebrow::before {
-    content: "";
-
-    width: 27px;
-    height: 1px;
-
-    background: var(--gold);
+    color: #ffffff;
 }
 
 .drive-page .hero h1 {
-    max-width: 720px;
+    margin: 0;
+
+    font-size: clamp(44px, 5.2vw, 68px);
+    line-height: 0.98;
+
+    font-weight: 800;
+    letter-spacing: -0.045em;
+
+    color: #ffffff;
 }
 
-.drive-page .hero h1 .gold {
-    color: var(--gold-light);
+.drive-page .hero h1 + h1 {
+    margin-top: 8px;
 }
 
 .drive-page .hero-description {
-    max-width: 560px;
+    max-width: 510px;
 
-    margin-top: 28px;
+    margin: 27px 0 0;
 
-    color: rgba(255, 255, 255, .76);
+    font-size: 18px;
+    line-height: 1.55;
 
-    font-size: 17px;
+    font-weight: 400;
 
-    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.91);
 }
 
 .drive-page .hero-proof {
-    display: flex;
+    margin-top: 18px;
 
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 20px;
-
-    color: rgba(255, 255, 255, .62);
-
-    font-size: 12px;
-
+    font-size: 13px;
     line-height: 1.5;
 
-    font-weight: 500;
-}
-
-.drive-page .hero-proof::before {
-    content: "";
-
-    width: 6px;
-    height: 6px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background: var(--gold);
-
-    box-shadow:
-        0 0 0 4px rgba(197, 160, 90, .09);
+    color: rgba(255, 255, 255, 0.76);
 }
 
 .drive-page .hero-actions {
     display: flex;
-
     align-items: center;
 
-    gap: 15px;
+    margin-top: 31px;
+}
 
-    margin-top: 30px;
+.drive-page .hero-actions .checkout-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 29px;
+
+    background: #ffffff;
+    color: #111111;
+
+    border-radius: 2px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.drive-page .hero-actions .checkout-link:hover {
+    background: #f3f3f3;
+    transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   10 — BENEFÍCIOS
+   06. SECTION DEFAULT
+   ========================================================= */
+
+.drive-page section {
+    position: relative;
+}
+
+.drive-page .section-header {
+    margin-bottom: 52px;
+
+    text-align: center;
+}
+
+.drive-page .section-label {
+    margin-bottom: 12px;
+
+    font-size: 12px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: var(--gold-dark);
+}
+
+.drive-page .section-title {
+    margin: 0;
+
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -0.035em;
+
+    color: var(--black);
+}
+
+
+/* =========================================================
+   07. BENEFITS
    ========================================================= */
 
 .drive-page .benefits {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background: var(--bg);
+    background: #ffffff;
 }
 
 .drive-page .benefits-grid {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-    gap: 15px;
+    gap: 0;
 }
 
 .drive-page .benefit-card {
-    min-height: 245px;
+    position: relative;
 
-    padding: 30px 27px;
+    padding: 0 32px;
 
-    border: 1px solid var(--border);
+    min-height: 185px;
 
-    border-radius: var(--radius);
-
-    background: var(--bg-3);
-
-    transition:
-        border-color var(--transition),
-        transform var(--transition);
+    border-left: 1px solid var(--border);
 }
 
-.drive-page .benefit-card:hover {
-    border-color: var(--border-gold);
+.drive-page .benefit-card:first-child {
+    border-left: 0;
+    padding-left: 0;
+}
 
-    transform: translateY(-4px);
+.drive-page .benefit-card:last-child {
+    padding-right: 0;
+}
+
+.drive-page .benefit-number {
+    margin-bottom: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: var(--gold-dark);
+
+    letter-spacing: 0.08em;
 }
 
 .drive-page .benefit-icon {
-    width: 48px;
-    height: 48px;
+    width: 34px;
+    height: 34px;
 
-    margin-bottom: 27px;
+    margin-bottom: 17px;
 
-    border: 1px solid var(--border-gold);
-
-    border-radius: 50%;
-
-    color: var(--gold);
-
-    background: rgba(197, 160, 90, .045);
+    color: var(--black);
 }
 
 .drive-page .benefit-icon svg {
-    width: 22px;
-    height: 22px;
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .drive-page .benefit-card h3 {
-    margin-bottom: 11px;
+    margin: 0 0 9px;
+
+    font-size: 17px;
+    line-height: 1.25;
+
+    font-weight: 750;
+
+    color: var(--black);
 }
 
 .drive-page .benefit-card p {
-    color: var(--text-muted);
+    margin: 0;
 
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.65;
 
-    line-height: 1.7;
+    color: var(--text-soft);
 }
 
 
 /* =========================================================
-   11 — REALIDADE
+   08. REALITY
    ========================================================= */
 
 .drive-page .reality {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background: var(--bg-2);
+    background: var(--gray-bg);
 }
 
 .drive-page .reality-grid {
     display: grid;
 
-    grid-template-columns: .88fr 1.12fr;
+    grid-template-columns:
+        minmax(0, 0.92fr)
+        minmax(0, 1.08fr);
 
     gap: 80px;
 
     align-items: center;
 }
 
-.drive-page .reality-text h2 {
-    max-width: 600px;
+.drive-page .reality-text {
+    max-width: 520px;
 }
 
 .drive-page .reality-text > p {
-    max-width: 570px;
+    margin: 0 0 20px;
 
-    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.75;
+
+    color: var(--text-soft);
+}
+
+.drive-page .reality-text > p:first-of-type {
+    margin-top: 25px;
+}
+
+.drive-page .reality-text > p:last-child {
+    margin-bottom: 0;
+}
+
+.drive-page .reality-text h2 {
+    margin: 0;
+
+    font-size: clamp(35px, 4vw, 48px);
+    line-height: 1.04;
+
+    font-weight: 800;
+    letter-spacing: -0.04em;
 }
 
 .drive-page .reality-highlight {
-    max-width: 580px;
+    margin-top: 23px;
 
-    margin-top: 29px;
+    padding-left: 20px;
 
-    padding: 20px 25px;
+    border-left: 3px solid var(--gold);
 
-    border-left: 2px solid var(--gold);
+    font-size: 18px;
+    line-height: 1.55;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(197, 160, 90, .075),
-            transparent
-        );
-}
+    font-weight: 650;
 
-.drive-page .reality-highlight p {
-    color: var(--text-soft);
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-.drive-page .reality-highlight strong {
-    color: var(--gold-light);
-
-    font-weight: 700;
+    color: var(--black);
 }
 
 .drive-page .reality-image {
+    position: relative;
+
     overflow: hidden;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius-lg);
-
-    background: var(--bg-3);
 }
 
 .drive-page .reality-image img {
     width: 100%;
 
-    aspect-ratio: 1.12 / 1;
+    aspect-ratio: 1.16 / 1;
 
     object-fit: cover;
-
-    transition: transform .6s ease;
-}
-
-.drive-page .reality-image:hover img {
-    transform: scale(1.025);
 }
 
 .drive-page .image-caption {
-    padding: 17px 21px;
+    padding: 16px 18px;
+
+    background: #ffffff;
+
+    font-size: 13px;
+    line-height: 1.5;
 
     color: var(--text-soft);
-
-    background: #090909;
-
-    font-size: 12px;
-
-    font-weight: 500;
 }
 
 
 /* =========================================================
-   12 — COMO FUNCIONA
+   09. HOW IT WORKS
    ========================================================= */
 
 .drive-page .how-it-works {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background: var(--bg);
+    background: #ffffff;
 }
 
 .drive-page .steps {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
     gap: 0;
+
+    counter-reset: steps;
 }
 
 .drive-page .step {
     position: relative;
 
-    padding-right: 40px;
+    padding:
+        0 32px
+        0 32px;
+
+    min-height: 205px;
+
+    border-left: 1px solid var(--border);
 }
 
-.drive-page .step:not(:last-child)::after {
-    content: "";
-
-    position: absolute;
-
-    top: 24px;
-    right: 32px;
-
-    width: calc(100% - 82px);
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(197, 160, 90, .35),
-            rgba(197, 160, 90, .04)
-        );
+.drive-page .step:first-child {
+    border-left: 0;
+    padding-left: 0;
 }
 
-.drive-page .step-icon {
-    position: relative;
+.drive-page .step:last-child {
+    padding-right: 0;
+}
 
-    z-index: 2;
+.drive-page .step-number {
+    width: 39px;
+    height: 39px;
 
-    width: 48px;
-    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    margin-bottom: 24px;
+    margin-bottom: 23px;
 
-    border: 1px solid var(--border-gold);
+    border: 1px solid #d5d5d5;
 
     border-radius: 50%;
 
-    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
 
-    background: var(--bg);
+    color: var(--black);
+}
+
+.drive-page .step-icon {
+    width: 30px;
+    height: 30px;
+
+    margin-bottom: 15px;
+
+    color: var(--black);
 }
 
 .drive-page .step-icon svg {
-    width: 21px;
-    height: 21px;
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .drive-page .step h3 {
-    margin-bottom: 10px;
+    margin: 0 0 9px;
+
+    font-size: 17px;
+    line-height: 1.3;
+
+    font-weight: 750;
+
+    color: var(--black);
 }
 
 .drive-page .step p {
-    max-width: 240px;
+    margin: 0;
 
-    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.65;
 
-    font-size: 13px;
+    color: var(--text-soft);
 }
 
 
 /* =========================================================
-   13 — POR QUE FUNCIONA
+   10. WHY
    ========================================================= */
 
 .drive-page .why {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background: var(--bg-2);
+    background: var(--gray-bg);
 }
 
 .drive-page .why-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-    gap: 15px;
+    gap: 0;
 }
 
 .drive-page .why-card {
-    min-height: 275px;
+    padding: 0 31px 38px;
 
-    padding: 30px 27px;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    background: var(--bg-3);
-
-    transition:
-        border-color var(--transition),
-        transform var(--transition);
+    border-left: 1px solid var(--border);
 }
 
-.drive-page .why-card:hover {
-    border-color: var(--border-gold);
+.drive-page .why-card:nth-child(3n + 1) {
+    padding-left: 0;
+    border-left: 0;
+}
 
-    transform: translateY(-4px);
+.drive-page .why-number {
+    margin-bottom: 17px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    color: var(--gold-dark);
 }
 
 .drive-page .why-icon {
-    width: 47px;
-    height: 47px;
+    width: 32px;
+    height: 32px;
 
-    margin-bottom: 24px;
+    margin-bottom: 17px;
 
-    border: 1px solid var(--border-gold);
-
-    border-radius: 50%;
-
-    color: var(--gold);
-
-    background: rgba(197, 160, 90, .04);
+    color: var(--black);
 }
 
 .drive-page .why-icon svg {
-    width: 21px;
-    height: 21px;
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .drive-page .why-card h3 {
-    margin-bottom: 11px;
+    margin: 0 0 10px;
+
+    font-size: 18px;
+    line-height: 1.3;
+
+    font-weight: 750;
+
+    color: var(--black);
 }
 
 .drive-page .why-card p {
-    color: var(--text-muted);
+    margin: 0;
 
-    font-size: 13px;
-
+    font-size: 14px;
     line-height: 1.7;
+
+    color: var(--text-soft);
 }
 
 
 /* =========================================================
-   14 — DEPOIMENTOS
+   11. TESTIMONIALS
    ========================================================= */
 
 .drive-page .testimonials {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background: var(--bg);
+    background: #ffffff;
 }
 
 .drive-page .testimonials-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-    gap: 15px;
+    gap: 20px;
 }
 
 .drive-page .testimonial {
-    display: flex;
+    padding: 31px 30px;
 
-    flex-direction: column;
-
-    min-height: 300px;
-
-    padding: 29px 27px;
+    background: #ffffff;
 
     border: 1px solid var(--border);
 
     border-radius: var(--radius);
-
-    background: var(--bg-3);
 }
 
 .drive-page .testimonial-stars {
-    margin-bottom: 18px;
+    margin-bottom: 19px;
 
-    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 3px;
 
-    font-size: 12px;
+    color: var(--gold-dark);
+}
 
-    letter-spacing: .18em;
+.drive-page .testimonial p {
+    margin: 0 0 18px;
+
+    font-size: 14px;
+    line-height: 1.75;
+
+    color: var(--text-soft);
 }
 
 .drive-page .testimonial-highlight {
-    margin-bottom: 14px;
+    margin-top: 18px;
 
-    color: var(--white);
+    padding-top: 18px;
 
-    font-size: 15px;
+    border-top: 1px solid var(--border);
+
+    font-size: 14px;
+    line-height: 1.6;
 
     font-weight: 700;
 
-    line-height: 1.45;
-
-    letter-spacing: -.02em;
-}
-
-.drive-page .testimonial > p:not(.testimonial-highlight) {
-    color: var(--text-muted);
-
-    font-size: 13px;
-
-    line-height: 1.7;
+    color: var(--black);
 }
 
 .drive-page .testimonial-author {
-    margin-top: auto;
+    margin-top: 21px;
 
-    padding-top: 24px;
+    font-size: 12px;
+    line-height: 1.5;
 
-    color: var(--text-soft);
+    font-weight: 700;
 
-    font-size: 11px;
-
-    font-weight: 600;
-}
-
-.drive-page .testimonial-author span {
-    color: var(--text-muted);
-
-    font-weight: 400;
-}
-
-.drive-page .testimonials .hero-actions {
-    justify-content: center;
-
-    margin-top: 45px;
+    color: var(--black);
 }
 
 
 /* =========================================================
-   15 — SOBRE
+   12. TESTIMONIAL CTA
+   ========================================================= */
+
+.drive-page .testimonials .checkout-link {
+    display: flex;
+
+    width: max-content;
+
+    margin: 45px auto 0;
+
+    min-height: 49px;
+
+    padding: 0 28px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--black);
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   13. ABOUT
    ========================================================= */
 
 .drive-page .about {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background: var(--bg-2);
+    background: var(--gray-bg);
 }
 
 .drive-page .about-logos {
     display: flex;
-
     align-items: center;
 
-    gap: 20px;
+    gap: 24px;
 
-    margin-bottom: 32px;
+    margin-bottom: 39px;
 }
 
 .drive-page .about-logos img {
     width: auto;
-
-    max-width: 150px;
-    max-height: 48px;
+    height: 44px;
 
     object-fit: contain;
 }
@@ -1082,98 +917,92 @@ body.drive-page {
 .drive-page .about-grid {
     display: grid;
 
-    grid-template-columns: 1fr .72fr;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-    gap: 85px;
-
-    align-items: start;
+    gap: 80px;
 }
 
 .drive-page .about-copy h2 {
-    max-width: 650px;
-}
+    margin: 0 0 16px;
 
-.drive-page .about-copy > h3 {
-    margin-top: 38px;
+    font-size: 30px;
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -0.025em;
 }
 
 .drive-page .about-copy p {
-    max-width: 650px;
+    margin: 0 0 35px;
 
-    margin-top: 22px;
+    max-width: 540px;
 
-    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
 
-    font-size: 14px;
-}
-
-.drive-page .about-copy p + p {
-    margin-top: 14px;
+    color: var(--text-soft);
 }
 
 .drive-page .facts {
-    display: flex;
+    display: grid;
 
-    flex-direction: column;
-}
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-.drive-page .fact {
-    display: flex;
-
-    align-items: center;
-
-    gap: 16px;
-
-    padding: 18px 0;
+    gap: 0;
 
     border-top: 1px solid var(--border);
 }
 
-.drive-page .fact:last-child {
+.drive-page .fact {
+    padding: 23px 20px 23px 0;
+
     border-bottom: 1px solid var(--border);
 }
 
-.drive-page .fact-icon {
-    width: 44px;
-    height: 44px;
-
-    border: 1px solid var(--border-gold);
-
-    border-radius: 50%;
-
-    color: var(--gold);
+.drive-page .fact:nth-child(even) {
+    padding-left: 20px;
+    border-left: 1px solid var(--border);
 }
 
-.drive-page .fact-icon svg {
-    width: 19px;
-    height: 19px;
+.drive-page .fact-number {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    color: var(--black);
 }
 
 .drive-page .fact p {
-    color: var(--text-soft);
+    margin: 0;
 
     font-size: 12px;
+    line-height: 1.6;
 
-    line-height: 1.55;
+    color: var(--text-soft);
 }
 
 
 /* =========================================================
-   16 — FAQ
+   14. FAQ
    ========================================================= */
 
 .drive-page .faq {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background: var(--bg);
+    background: #ffffff;
 }
 
 .drive-page .faq-list {
-    max-width: 900px;
+    width: min(100%, 900px);
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 
     border-top: 1px solid var(--border);
 }
@@ -1185,70 +1014,58 @@ body.drive-page {
 .drive-page .faq-question {
     width: 100%;
 
-    display: flex;
+    min-height: 74px;
 
+    display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 20px;
+    gap: 25px;
 
-    padding: 25px 0;
+    padding: 20px 0;
 
     background: transparent;
-
-    color: var(--white);
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    line-height: 1.4;
 
     text-align: left;
 
     cursor: pointer;
 
-    transition: color var(--transition);
-}
+    font-size: 16px;
+    line-height: 1.4;
 
-.drive-page .faq-question:hover {
-    color: var(--gold-light);
+    font-weight: 700;
+
+    color: var(--black);
 }
 
 .drive-page .faq-icon {
-    width: 30px;
-    height: 30px;
+    flex: 0 0 auto;
+
+    width: 25px;
+    height: 25px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
-
-    border: 1px solid var(--border-gold);
-
-    border-radius: 50%;
-
-    color: var(--gold);
+    color: var(--black);
 
     transition:
-        background var(--transition),
-        transform var(--transition);
+        transform 0.25s ease;
 }
 
 .drive-page .faq-icon svg {
-    width: 14px;
-    height: 14px;
+    width: 17px;
+    height: 17px;
 
-    transition: transform .3s ease;
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.6;
+    stroke-linecap: round;
 }
 
 .drive-page .faq-item.active .faq-icon {
-    background: rgba(197, 160, 90, .08);
-}
-
-.drive-page .faq-item.active .faq-icon svg {
     transform: rotate(45deg);
 }
 
@@ -1258,7 +1075,7 @@ body.drive-page {
     grid-template-rows: 0fr;
 
     transition:
-        grid-template-rows .35s ease;
+        grid-template-rows 0.3s ease;
 }
 
 .drive-page .faq-item.active .faq-answer {
@@ -1266,603 +1083,944 @@ body.drive-page {
 }
 
 .drive-page .faq-answer-inner {
+    overflow: hidden;
+
     min-height: 0;
 
-    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.75;
+
+    color: var(--text-soft);
 }
 
-.drive-page .faq-answer-inner p {
-    max-width: 780px;
-
-    padding:
-        0
-        60px
-        25px
-        0;
-
-    color: var(--text-muted);
-
-    font-size: 13px;
-
-    line-height: 1.75;
+.drive-page .faq-item.active .faq-answer-inner {
+    padding-bottom: 24px;
 }
 
 
 /* =========================================================
-   17 — OFERTA
+   15. OFFER
    ========================================================= */
 
 .drive-page .offer {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background:
-        radial-gradient(
-            circle at 80% 50%,
-            rgba(197, 160, 90, .055),
-            transparent 35%
-        ),
-        var(--bg-2);
+    background: var(--black);
+    color: #ffffff;
 }
 
 .drive-page .offer-grid {
     display: grid;
 
-    grid-template-columns: .9fr 1.1fr;
+    grid-template-columns:
+        minmax(0, 0.92fr)
+        minmax(0, 1.08fr);
 
-    gap: 80px;
+    gap: 75px;
 
     align-items: center;
-}
-
-.drive-page .offer-image {
-    overflow: hidden;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius-lg);
-
-    background: var(--bg-3);
 }
 
 .drive-page .offer-image img {
     width: 100%;
 
-    transition: transform .6s ease;
+    max-height: 590px;
+
+    object-fit: contain;
 }
 
-.drive-page .offer-image:hover img {
-    transform: scale(1.025);
+.drive-page .offer-content {
+    max-width: 560px;
 }
 
-.drive-page .offer-content h2 {
-    max-width: 650px;
-}
-
-.drive-page .offer-content > p {
-    max-width: 590px;
-
-    margin-top: 21px;
-
-    color: var(--text-muted);
-
-    font-size: 14px;
-}
-
-.drive-page .offer-price {
-    margin-top: 30px;
-
-    padding: 24px;
-
-    border: 1px solid var(--border-gold);
-
-    border-radius: var(--radius);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(197, 160, 90, .09),
-            rgba(197, 160, 90, .015)
-        );
-}
-
-.drive-page .offer-installments {
-    color: var(--white);
-
-    font-size: clamp(35px, 4vw, 52px);
-
-    font-weight: 800;
-
-    line-height: 1;
-
-    letter-spacing: -.045em;
-}
-
-.drive-page .offer-installments span {
+.drive-page .offer .section-label {
     color: var(--gold-light);
 }
 
-.drive-page .offer-cash {
-    margin-top: 9px;
+.drive-page .offer .section-title {
+    color: #ffffff;
 
-    color: var(--text-muted);
-
-    font-size: 12px;
+    text-align: left;
 }
 
-.drive-page .offer-cash strong {
-    color: var(--text-soft);
+.drive-page .offer-content > p {
+    margin: 22px 0 0;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.drive-page .offer-price {
+    margin-top: 32px;
+}
+
+.drive-page .offer-installments {
+    font-size: 39px;
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -0.035em;
+
+    color: #ffffff;
+}
+
+.drive-page .offer-cash {
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.62);
 }
 
 .drive-page .offer-features {
+    margin-top: 29px;
+
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-    gap: 12px 22px;
+    gap: 0 30px;
 
-    margin-top: 26px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.drive-page .offer-features li,
-.drive-page .kit-details-content li {
-    display: flex;
+.drive-page .offer-features li {
+    position: relative;
 
-    align-items: flex-start;
+    padding: 14px 0 14px 24px;
 
-    gap: 9px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 
-    color: var(--text-soft);
+    font-size: 13px;
+    line-height: 1.5;
 
-    font-size: 12px;
-
-    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
 }
 
-.drive-page .feature-icon {
-    color: var(--gold);
+.drive-page .offer-features li svg {
+    position: absolute;
 
-    margin-top: 1px;
+    left: 0;
+    top: 17px;
+
+    width: 15px;
+    height: 15px;
+
+    fill: none;
+    stroke: var(--gold-light);
+
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-.drive-page .feature-icon svg {
-    width: 17px;
-    height: 17px;
+.drive-page .offer .checkout-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    margin-top: 32px;
+
+    padding: 0 30px;
+
+    background: #ffffff;
+    color: #111111;
+
+    border-radius: 2px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   18 — GARANTIA
+   16. GUARANTEE
    ========================================================= */
 
 .drive-page .guarantee {
-    padding-top: 78px;
-    padding-bottom: 78px;
+    padding: 85px 0;
 
-    background: var(--bg-3);
-
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background: #ffffff;
 }
 
 .drive-page .guarantee-grid {
     display: grid;
 
-    grid-template-columns: .42fr 1fr;
+    grid-template-columns:
+        280px
+        minmax(0, 1fr);
 
-    gap: 65px;
+    gap: 70px;
 
     align-items: center;
+
+    width: min(100%, 900px);
+
+    margin: 0 auto;
 }
 
 .drive-page .guarantee-image img {
     width: 100%;
-    max-width: 240px;
 
-    margin-left: auto;
-    margin-right: auto;
+    max-height: 230px;
+
+    object-fit: contain;
 }
 
 .drive-page .guarantee-copy h2 {
-    max-width: 670px;
+    margin: 0 0 16px;
 
-    font-size: clamp(36px, 4vw, 52px);
+    font-size: 29px;
+    line-height: 1.12;
+
+    font-weight: 800;
+
+    letter-spacing: -0.025em;
 }
 
 .drive-page .guarantee-copy p {
-    max-width: 690px;
+    margin: 0;
 
-    margin-top: 20px;
+    max-width: 580px;
 
-    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.75;
 
-    font-size: 14px;
+    color: var(--text-soft);
 }
 
 
 /* =========================================================
-   19 — KIT DETAILS
+   17. KIT DETAILS
    ========================================================= */
 
 .drive-page .kit-details {
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: var(--section-space) 0;
 
-    background: var(--bg);
+    background: var(--gray-bg);
 }
 
 .drive-page .kit-details-grid {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 80px;
 
     align-items: center;
 }
 
-.drive-page .kit-details-image {
-    overflow: hidden;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius-lg);
-
-    background: var(--bg-3);
-}
-
 .drive-page .kit-details-image img {
     width: 100%;
 
-    transition: transform .6s ease;
-}
-
-.drive-page .kit-details-image:hover img {
-    transform: scale(1.025);
-}
-
-.drive-page .kit-details-content h2 {
-    max-width: 600px;
-}
-
-.drive-page .kit-details-content > p {
-    max-width: 590px;
-
-    margin-top: 21px;
-
-    color: var(--text-muted);
-
-    font-size: 14px;
-}
-
-.drive-page .kit-details-content ul {
-    display: grid;
-
-    gap: 12px;
-
-    margin-top: 27px;
-}
-
-
-/* =========================================================
-   20 — CTA FINAL
-   ========================================================= */
-
-.drive-page .final-cta {
-    position: relative;
-
-    padding-top: 135px;
-    padding-bottom: 140px;
-
-    overflow: hidden;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, .92),
-            rgba(0, 0, 0, .67),
-            rgba(0, 0, 0, .92)
-        ),
-        url("./assets/display.webp");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-.drive-page .final-cta::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(197, 160, 90, .1),
-            transparent 45%
-        );
-}
-
-.drive-page .final-cta .container {
-    position: relative;
-
-    z-index: 2;
-}
-
-.drive-page .final-cta-content {
-    max-width: 850px;
-
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.drive-page .final-cta .section-label {
-    justify-content: center;
-}
-
-.drive-page .final-cta h2 {
-    font-size: clamp(44px, 6vw, 76px);
-}
-
-.drive-page .final-cta h2 span {
-    color: var(--gold-light);
-}
-
-.drive-page .final-cta p {
-    max-width: 600px;
-
-    margin: 22px auto 0;
-
-    color: rgba(255, 255, 255, .68);
-
-    font-size: 15px;
-}
-
-.drive-page .final-cta .checkout-link {
-    margin-top: 30px;
-}
-
-
-/* =========================================================
-   21 — FOOTER
-   ========================================================= */
-
-.drive-page .site-footer {
-    padding-top: 55px;
-    padding-bottom: 25px;
-
-    background: #000;
-
-    border-top: 1px solid var(--border);
-}
-
-.drive-page .footer-top {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 40px;
-
-    padding-bottom: 40px;
-}
-
-.drive-page .footer-logos {
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-}
-
-.drive-page .footer-logos img {
-    width: auto;
-
-    max-width: 140px;
-    max-height: 42px;
+    max-height: 560px;
 
     object-fit: contain;
 }
 
-.drive-page .footer-links {
-    display: flex;
+.drive-page .kit-details-content h2 {
+    margin: 0 0 18px;
 
-    align-items: center;
+    font-size: clamp(34px, 4vw, 45px);
+    line-height: 1.06;
 
-    gap: 25px;
+    font-weight: 800;
+
+    letter-spacing: -0.035em;
 }
 
-.drive-page .footer-links a {
-    color: #777;
+.drive-page .kit-details-content > p {
+    margin: 0 0 27px;
 
-    font-size: 10px;
-
-    font-weight: 600;
-
-    transition: color var(--transition);
-}
-
-.drive-page .footer-links a:hover {
-    color: var(--white);
-}
-
-.drive-page .footer-bottom {
-    padding-top: 20px;
-
-    border-top: 1px solid var(--border);
-
-    color: #555;
-
-    font-size: 9px;
-
+    font-size: 15px;
     line-height: 1.7;
+
+    color: var(--text-soft);
 }
 
+.drive-page .kit-details-content ul {
+    border-top: 1px solid var(--border);
+}
 
-/* =========================================================
-   22 — SELEÇÃO
-   ========================================================= */
+.drive-page .kit-details-content li {
+    position: relative;
 
-.drive-page ::selection {
-    color: #000;
+    padding: 14px 0 14px 24px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    color: var(--text);
+}
+
+.drive-page .kit-details-content li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 2px;
+    top: 20px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
 
     background: var(--gold);
 }
 
 
 /* =========================================================
-   23 — SCROLLBAR
+   18. FINAL CTA
    ========================================================= */
 
-.drive-page::-webkit-scrollbar {
-    width: 7px;
+.drive-page .final-cta {
+    position: relative;
+
+    padding: 130px 0;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.72)
+        ),
+        url("assets/display.webp") center / cover no-repeat;
+
+    color: #ffffff;
+
+    text-align: center;
 }
 
-.drive-page::-webkit-scrollbar-track {
-    background: #050505;
+.drive-page .final-cta-content {
+    width: min(100%, 720px);
+
+    margin: 0 auto;
 }
 
-.drive-page::-webkit-scrollbar-thumb {
-    background: #303030;
+.drive-page .final-cta .section-label {
+    color: var(--gold-light);
+}
 
-    border-radius: 10px;
+.drive-page .final-cta h2 {
+    margin: 0;
+
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.02;
+
+    font-weight: 800;
+
+    letter-spacing: -0.045em;
+
+    color: #ffffff;
+}
+
+.drive-page .final-cta p {
+    margin: 22px auto 0;
+
+    max-width: 590px;
+
+    font-size: 16px;
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.drive-page .final-cta .checkout-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 53px;
+
+    margin-top: 31px;
+
+    padding: 0 31px;
+
+    background: #ffffff;
+    color: #111111;
+
+    border-radius: 2px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.drive-page .final-cta .checkout-link:hover {
+    transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   24 — TABLET
+   19. FOOTER
    ========================================================= */
 
-@media (max-width: 1100px) {
+.drive-page .site-footer {
+    background: #111111;
+
+    color: #ffffff;
+}
+
+.drive-page .footer-top {
+    padding: 55px 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.drive-page .footer-logos {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.drive-page .footer-logos img {
+    width: auto;
+    height: 38px;
+
+    object-fit: contain;
+}
+
+.drive-page .footer-links {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.drive-page .footer-links a {
+    font-size: 11px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    transition:
+        color 0.2s ease;
+}
+
+.drive-page .footer-links a:hover {
+    color: #ffffff;
+}
+
+.drive-page .footer-bottom {
+    padding: 20px 0 28px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.42);
+}
+
+
+/* =========================================================
+   20. ICONS
+   ========================================================= */
+
+.drive-page svg {
+    overflow: visible;
+}
+
+.drive-page .benefit-icon,
+.drive-page .step-icon,
+.drive-page .why-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   21. TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
 
     .drive-page .main-nav {
-        gap: 18px;
+        gap: 17px;
     }
 
     .drive-page .main-nav a {
-        font-size: 10px;
+        font-size: 11px;
     }
 
-    .drive-page .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .drive-page .header-cta {
+        padding: 0 17px;
     }
 
-    .drive-page .why-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .drive-page .hero {
+        min-height: 570px;
     }
 
-    .drive-page .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .drive-page .reality-grid,
+    .drive-page .offer-grid,
+    .drive-page .kit-details-grid {
+        gap: 50px;
     }
 
-    .drive-page .steps {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 45px 30px;
+    .drive-page .about-grid {
+        gap: 50px;
     }
 
-    .drive-page .step:not(:last-child)::after {
-        display: none;
+    .drive-page .guarantee-grid {
+        gap: 50px;
+    }
+
+    .drive-page .benefit-card,
+    .drive-page .step {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .drive-page .why-card {
+        padding-left: 22px;
+        padding-right: 22px;
     }
 }
 
 
 /* =========================================================
-   25 — MENU MOBILE
+   22. TABLET / MOBILE MENU
    ========================================================= */
 
 @media (max-width: 850px) {
 
     .drive-page .header-inner {
-        width: calc(100% - 34px);
+        min-height: 70px;
     }
 
     .drive-page .main-nav {
-        position: absolute;
+        display: none;
 
-        top: var(--header-height);
+        position: absolute;
 
         left: 0;
         right: 0;
+        top: 70px;
 
-        display: flex;
+        padding: 20px 24px 25px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid var(--border);
+
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.06);
 
         flex-direction: column;
-
         align-items: stretch;
 
         gap: 0;
-
-        padding:
-            8px
-            24px
-            20px;
-
-        background: rgba(5, 5, 5, .98);
-
-        border-bottom: 1px solid var(--border);
-
-        backdrop-filter: blur(15px);
-
-        opacity: 0;
-        visibility: hidden;
-
-        transform: translateY(-8px);
-
-        transition:
-            opacity .25s ease,
-            visibility .25s ease,
-            transform .25s ease;
     }
 
     .drive-page .main-nav.active {
-        opacity: 1;
-
-        visibility: visible;
-
-        transform: translateY(0);
+        display: flex;
     }
 
     .drive-page .main-nav a {
-        padding: 15px 0;
+        padding: 14px 0;
 
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid #eeeeee;
 
-        font-size: 11px;
+        font-size: 13px;
     }
 
-    .drive-page .main-nav a::after {
-        display: none;
+    .drive-page .main-nav a:last-child {
+        border-bottom: 0;
+    }
+
+    .drive-page .menu-toggle {
+        display: block;
     }
 
     .drive-page .header-cta {
         display: none;
     }
 
-    .drive-page .menu-toggle {
-        display: flex;
+    .drive-page .benefits-grid,
+    .drive-page .steps {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
-    .drive-page .hero {
-        min-height: auto;
+    .drive-page .benefit-card:nth-child(3),
+    .drive-page .benefit-card:nth-child(4),
+    .drive-page .step:nth-child(3),
+    .drive-page .step:nth-child(4) {
+        margin-top: 45px;
     }
 
-    .drive-page .hero-content {
-        padding-top: 90px;
-        padding-bottom: 110px;
+    .drive-page .benefit-card:nth-child(3),
+    .drive-page .step:nth-child(3) {
+        border-left: 0;
+        padding-left: 0;
     }
 
-    .drive-page .reality-grid,
+    .drive-page .why-grid,
+    .drive-page .testimonials-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .drive-page .why-card:nth-child(3n + 1) {
+        padding-left: 22px;
+        border-left: 1px solid var(--border);
+    }
+
+    .drive-page .why-card:nth-child(2n + 1) {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .drive-page .why-card:nth-child(3),
+    .drive-page .why-card:nth-child(4),
+    .drive-page .why-card:nth-child(5) {
+        margin-top: 25px;
+    }
+
     .drive-page .about-grid,
+    .drive-page .reality-grid,
     .drive-page .offer-grid,
     .drive-page .kit-details-grid {
         grid-template-columns: 1fr;
+    }
 
+    .drive-page .about-grid,
+    .drive-page .reality-grid,
+    .drive-page .offer-grid,
+    .drive-page .kit-details-grid {
         gap: 55px;
+    }
+
+    .drive-page .guarantee-grid {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .drive-page .offer-content {
+        max-width: none;
+    }
+
+    .drive-page .offer .section-title {
+        text-align: left;
+    }
+}
+
+
+/* =========================================================
+   23. MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .drive-page {
+        font-size: 15px;
+
+        --section-space: 76px;
+    }
+
+    .drive-page .container {
+        width: min(
+            calc(100% - 36px),
+            var(--container)
+        );
+    }
+
+    /* HEADER */
+
+    .drive-page .logo img {
+        width: 125px;
+        max-height: 42px;
+    }
+
+    /* HERO */
+
+    .drive-page .hero {
+        min-height: 650px;
+
+        align-items: flex-end;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.12) 0%,
+                rgba(0, 0, 0, 0.50) 35%,
+                rgba(0, 0, 0, 0.86) 100%
+            ),
+            url("assets/display.webp") center / cover no-repeat;
+    }
+
+    .drive-page .hero-content {
+        width: 100%;
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .drive-page .hero-eyebrow {
+        margin-bottom: 13px;
+
+        font-size: 11px;
+    }
+
+    .drive-page .hero h1 {
+        font-size: clamp(39px, 11vw, 53px);
+
+        line-height: 0.98;
+
+        letter-spacing: -0.045em;
+    }
+
+    .drive-page .hero-description {
+        margin-top: 22px;
+
+        font-size: 16px;
+
+        line-height: 1.55;
+    }
+
+    .drive-page .hero-proof {
+        font-size: 12px;
+    }
+
+    .drive-page .hero-actions {
+        margin-top: 26px;
+    }
+
+    .drive-page .hero-actions .checkout-link {
+        width: 100%;
+
+        min-height: 51px;
+    }
+
+    /* SECTION HEADERS */
+
+    .drive-page .section-header {
+        margin-bottom: 38px;
+    }
+
+    .drive-page .section-label {
+        font-size: 10px;
+    }
+
+    .drive-page .section-title {
+        font-size: 33px;
+
+        line-height: 1.08;
+    }
+
+    /* BENEFITS */
+
+    .drive-page .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .benefit-card {
+        min-height: auto;
+
+        padding: 25px 0;
+
+        border-left: 0;
+
+        border-top: 1px solid var(--border);
+    }
+
+    .drive-page .benefit-card:first-child {
+        padding-top: 0;
+
+        border-top: 0;
+    }
+
+    .drive-page .benefit-card:last-child {
+        padding-right: 0;
+    }
+
+    .drive-page .benefit-card:nth-child(3),
+    .drive-page .benefit-card:nth-child(4) {
+        margin-top: 0;
+    }
+
+    .drive-page .benefit-number {
+        margin-bottom: 13px;
+    }
+
+    /* REALITY */
+
+    .drive-page .reality-text h2 {
+        font-size: 35px;
+    }
+
+    .drive-page .reality-highlight {
+        font-size: 16px;
+    }
+
+    /* STEPS */
+
+    .drive-page .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .step {
+        min-height: auto;
+
+        padding:
+            25px 0
+            25px 0;
+
+        border-left: 0;
+
+        border-top: 1px solid var(--border);
+    }
+
+    .drive-page .step:first-child {
+        padding-top: 0;
+
+        border-top: 0;
+    }
+
+    .drive-page .step:nth-child(3),
+    .drive-page .step:nth-child(4) {
+        margin-top: 0;
+    }
+
+    /* WHY */
+
+    .drive-page .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .why-card,
+    .drive-page .why-card:nth-child(3n + 1),
+    .drive-page .why-card:nth-child(2n + 1) {
+        padding:
+            25px 0;
+
+        border-left: 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .drive-page .why-card:first-child {
+        padding-top: 0;
+
+        border-top: 0;
+    }
+
+    .drive-page .why-card:nth-child(3),
+    .drive-page .why-card:nth-child(4),
+    .drive-page .why-card:nth-child(5) {
+        margin-top: 0;
+    }
+
+    /* TESTIMONIALS */
+
+    .drive-page .testimonials-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .drive-page .testimonial {
+        padding: 25px 22px;
+    }
+
+    .drive-page .testimonials .checkout-link {
+        width: 100%;
+    }
+
+    /* ABOUT */
+
+    .drive-page .about-logos {
+        gap: 17px;
+
+        margin-bottom: 30px;
+    }
+
+    .drive-page .about-logos img {
+        height: 34px;
+    }
+
+    .drive-page .about-grid {
+        gap: 45px;
+    }
+
+    .drive-page .about-copy h2 {
+        font-size: 28px;
+    }
+
+    .drive-page .facts {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .fact,
+    .drive-page .fact:nth-child(even) {
+        padding:
+            20px 0;
+
+        border-left: 0;
+    }
+
+    /* FAQ */
+
+    .drive-page .faq-question {
+        min-height: 68px;
+
+        padding: 18px 0;
+
+        font-size: 14px;
+    }
+
+    .drive-page .faq-answer-inner {
+        font-size: 13px;
+    }
+
+    /* OFFER */
+
+    .drive-page .offer-grid {
+        gap: 45px;
+    }
+
+    .drive-page .offer-installments {
+        font-size: 35px;
+    }
+
+    .drive-page .offer-features {
+        grid-template-columns: 1fr;
+    }
+
+    .drive-page .offer .checkout-link {
+        width: 100%;
+    }
+
+    /* GUARANTEE */
+
+    .drive-page .guarantee {
+        padding: 65px 0;
     }
 
     .drive-page .guarantee-grid {
@@ -1873,252 +2031,109 @@ body.drive-page {
         text-align: center;
     }
 
-    .drive-page .guarantee-copy .section-label {
-        justify-content: center;
+    .drive-page .guarantee-image {
+        width: 190px;
+
+        margin: 0 auto;
     }
 
-    .drive-page .guarantee-copy p {
-        margin-left: auto;
-        margin-right: auto;
+    .drive-page .guarantee-copy h2 {
+        font-size: 27px;
     }
 
-    .drive-page .footer-top {
-        align-items: flex-start;
+    /* KIT */
 
-        flex-direction: column;
+    .drive-page .kit-details-grid {
+        gap: 40px;
     }
 
-    .drive-page .footer-links {
-        flex-wrap: wrap;
-    }
-}
-
-
-/* =========================================================
-   26 — MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .drive-page .container {
-        width: calc(100% - 32px);
+    .drive-page .kit-details-content h2 {
+        font-size: 34px;
     }
 
-    .drive-page {
-        --header-height: 70px;
+    /* FINAL */
+
+    .drive-page .final-cta {
+        padding: 90px 0;
     }
 
-    .drive-page .site-header {
-        height: 70px;
+    .drive-page .final-cta h2 {
+        font-size: 39px;
     }
 
-    .drive-page .logo img {
-        height: 34px;
-    }
-
-    .drive-page h1 {
-        font-size: clamp(42px, 13vw, 62px);
-
-        line-height: .94;
-
-        letter-spacing: -.06em;
-    }
-
-    .drive-page h2 {
-        font-size: clamp(36px, 10vw, 50px);
-
-        letter-spacing: -.045em;
-    }
-
-    .drive-page .hero {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(0, 0, 0, .7),
-                rgba(0, 0, 0, .92) 72%,
-                rgba(0, 0, 0, .98)
-            ),
-            url("./assets/display.webp");
-
-        background-position: 62% center;
-    }
-
-    .drive-page .hero-content {
-        padding-top: 75px;
-        padding-bottom: 95px;
-    }
-
-    .drive-page .hero-eyebrow {
-        font-size: 9px;
-
-        letter-spacing: .15em;
-    }
-
-    .drive-page .hero-description {
-        margin-top: 22px;
-
+    .drive-page .final-cta p {
         font-size: 15px;
     }
 
-    .drive-page .hero-proof {
-        align-items: flex-start;
-
-        font-size: 10px;
-    }
-
-    .drive-page .hero-actions {
-        display: block;
-
-        margin-top: 27px;
-    }
-
-    .drive-page .hero-actions .checkout-link,
     .drive-page .final-cta .checkout-link {
         width: 100%;
     }
 
-    .drive-page .benefits,
-    .drive-page .reality,
-    .drive-page .how-it-works,
-    .drive-page .why,
-    .drive-page .testimonials,
-    .drive-page .about,
-    .drive-page .faq,
-    .drive-page .offer,
-    .drive-page .kit-details {
-        padding-top: 82px;
-        padding-bottom: 82px;
-    }
+    /* FOOTER */
 
-    .drive-page .section-header {
-        margin-bottom: 40px;
-    }
+    .drive-page .footer-top {
+        padding: 42px 0 32px;
 
-    .drive-page .section-label {
-        font-size: 9px;
+        flex-direction: column;
 
-        letter-spacing: .15em;
-    }
-
-    .drive-page .benefits-grid,
-    .drive-page .why-grid,
-    .drive-page .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .drive-page .benefit-card,
-    .drive-page .why-card {
-        min-height: auto;
-
-        padding: 27px;
-    }
-
-    .drive-page .steps {
-        grid-template-columns: 1fr;
-
-        gap: 38px;
-    }
-
-    .drive-page .step {
-        padding-right: 0;
-    }
-
-    .drive-page .step:not(:last-child)::after {
-        display: none;
-    }
-
-    .drive-page .step p {
-        max-width: none;
-    }
-
-    .drive-page .testimonial {
-        min-height: 270px;
-
-        padding: 27px;
-    }
-
-    .drive-page .about-logos {
-        margin-bottom: 27px;
-    }
-
-    .drive-page .about-logos img {
-        max-width: 125px;
-    }
-
-    .drive-page .offer-features {
-        grid-template-columns: 1fr;
-    }
-
-    .drive-page .offer-price {
-        padding: 22px;
-    }
-
-    .drive-page .offer-installments {
-        font-size: 38px;
-    }
-
-    .drive-page .faq-question {
-        padding: 22px 0;
-
-        font-size: 12px;
-    }
-
-    .drive-page .faq-answer-inner p {
-        padding-right: 35px;
-
-        font-size: 12px;
-    }
-
-    .drive-page .guarantee {
-        padding-top: 65px;
-        padding-bottom: 65px;
-    }
-
-    .drive-page .guarantee-copy h2 {
-        font-size: 36px;
-    }
-
-    .drive-page .final-cta {
-        padding-top: 95px;
-        padding-bottom: 100px;
-    }
-
-    .drive-page .final-cta h2 {
-        font-size: clamp(40px, 12vw, 58px);
+        align-items: flex-start;
     }
 
     .drive-page .footer-links {
-        gap: 14px;
+        flex-wrap: wrap;
+
+        gap: 13px 20px;
+    }
+
+    .drive-page .footer-bottom {
+        flex-direction: column;
+
+        gap: 8px;
     }
 }
 
 
 /* =========================================================
-   27 — MOBILE PEQUENO
+   24. VERY SMALL DEVICES
    ========================================================= */
 
 @media (max-width: 380px) {
 
     .drive-page .container {
-        width: calc(100% - 26px);
+        width: calc(100% - 30px);
     }
 
-    .drive-page h1 {
-        font-size: 40px;
+    .drive-page .hero h1 {
+        font-size: 36px;
     }
 
-    .drive-page h2 {
-        font-size: 34px;
+    .drive-page .section-title {
+        font-size: 30px;
     }
 
-    .drive-page .hero-content {
-        padding-top: 65px;
+    .drive-page .offer-installments {
+        font-size: 31px;
+    }
+
+    .drive-page .final-cta h2 {
+        font-size: 35px;
     }
 }
 
 
 /* =========================================================
-   28 — ACESSIBILIDADE / REDUCED MOTION
+   25. ACCESSIBILITY
+   ========================================================= */
+
+.drive-page a:focus-visible,
+.drive-page button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   26. REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2128,10 +2143,8 @@ body.drive-page {
     .drive-page *::after {
         scroll-behavior: auto !important;
 
-        animation-duration: .01ms !important;
-
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-
-        transition-duration: .01ms !important;
     }
 }
