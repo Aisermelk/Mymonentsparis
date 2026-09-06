@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -10,33 +8,23 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>My Moments Paris | Moments Paris</title>
+  <title>Oportunidade Moments Paris</title>
 
   <meta
     name="description"
-    content="Conheça a oportunidade Moments Paris, escolha seu kit inicial e desenvolva suas vendas no seu ritmo."
+    content="Conheça a oportunidade Moments Paris, escolha como começar e desenvolva suas vendas no seu ritmo."
   >
 
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <meta name="theme-color" content="#050505">
+  <meta name="theme-color" content="#070707">
 
   <meta
     property="og:title"
-    content="My Moments Paris | Oportunidade Moments Paris"
+    content="Comece sua jornada com a Moments Paris"
   >
 
   <meta
     property="og:description"
-    content="Conheça a oportunidade Moments Paris e descubra como começar."
-  >
-
-  <meta
-    property="og:type"
-    content="website"
+    content="Conheça os produtos, escolha como começar e desenvolva suas vendas no seu ritmo."
   >
 
   <meta
@@ -44,134 +32,114 @@
     content="../assets/images/divulgação.jpg"
   >
 
+  <meta property="og:type" content="website">
+
   <link
     rel="icon"
+    type="image/png"
     href="../assets/images/logo.png"
   >
 
-  <!-- V8 LOADER -->
-  <script
-    src="../js/v8-loader.js"
-    data-project-id="8ae3fee2-b4f4-487c-96c8-3833395b51c2"
-    data-api-url="https://v8adminuniversal.aisermelk.workers.dev">
-  </script>
-
-
   <style>
 
-    :root {
-
-      --black: #050505;
-      --black-soft: #0b0b0b;
-      --black-light: #11110f;
-
-      --gold: #c6a15b;
-      --gold-light: #e1c889;
-
-      --white: #f5f1e9;
-      --text: #b9b4aa;
-      --muted: #6f6b64;
-
-      --border: rgba(198, 161, 91, .28);
-      --border-soft: rgba(255, 255, 255, .10);
-
-      --container: 1180px;
-
-    }
-
+    /* =========================================================
+       RESET
+    ========================================================= */
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-
 
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
-
-      background: var(--black);
-
-      color: var(--text);
-
       font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
         Arial,
-        Helvetica,
         sans-serif;
+
+      background: #070707;
+      color: #eeeeee;
 
       line-height: 1.6;
 
+      overflow-x: hidden;
     }
-
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
-
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    :root {
+      --black: #070707;
+      --black-soft: #0d0d0d;
+      --black-card: #111111;
+      --black-light: #171717;
+
+      --gold: #c7a35b;
+      --gold-light: #e4c982;
+
+      --white: #ffffff;
+      --text: #eeeeee;
+      --muted: #a6a6a6;
+
+      --border:
+        rgba(199, 163, 91, .25);
+
+      --container: 1180px;
+    }
 
     .luxury-container {
-
       width: min(
         calc(100% - 40px),
         var(--container)
       );
 
       margin: 0 auto;
-
     }
 
 
-    /* =========================================
+    /* =========================================================
        HEADER
-    ========================================= */
+    ========================================================= */
 
     .luxury-header {
-
-      position: fixed;
-
+      position: sticky;
       top: 0;
-      left: 0;
-
-      width: 100%;
-
       z-index: 1000;
 
       background:
-        rgba(5, 5, 5, .94);
-
-      backdrop-filter:
-        blur(14px);
+        rgba(7, 7, 7, .96);
 
       border-bottom:
-        1px solid var(--border-soft);
+        1px solid rgba(199, 163, 91, .12);
 
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
-
-    /*
-      GRID COM 3 ÁREAS:
-
-      esquerda  = logo
-      centro    = menu
-      direita   = CADASTRE-SE
-
-      Isso mantém o menu realmente
-      centralizado na tela.
-    */
-
     .luxury-header-inner {
-
       min-height: 78px;
 
       display: grid;
@@ -184,89 +152,90 @@
       align-items: center;
 
       gap: 30px;
-
     }
-
 
     .luxury-brand {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 12px;
-
-      font-size: 15px;
-
-      font-weight: 700;
-
-      letter-spacing: 1.5px;
-
-      color: var(--white);
-
-      white-space: nowrap;
-
       justify-self: start;
-
-    }
-
-
-    .luxury-brand img {
-
-      width: 44px;
-      height: 44px;
-
-      object-fit: contain;
-
-    }
-
-
-    .luxury-nav {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 28px;
-
-      white-space: nowrap;
-
-    }
-
-
-    .luxury-nav a {
-
-      font-size: 13px;
-
-      color: var(--text);
-
-      transition:
-        color .25s ease;
-
-    }
-
-
-    .luxury-nav a:hover {
-
-      color: var(--gold-light);
-
-    }
-
-
-    /*
-      ÚNICO BOTÃO DO LADO DIREITO
-    */
-
-    .luxury-header-whatsapp {
-
-      justify-self: end;
 
       display: inline-flex;
 
       align-items: center;
 
+      gap: 12px;
+
+      white-space: nowrap;
+    }
+
+    .luxury-brand img {
+      width: 42px;
+      height: 42px;
+
+      object-fit: contain;
+    }
+
+    .luxury-brand span {
+      color: var(--gold-light);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+    }
+
+    .luxury-nav {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 28px;
+
+      white-space: nowrap;
+    }
+
+    .luxury-nav a {
+      position: relative;
+
+      color: #d5d5d5;
+
+      font-size: 12px;
+      font-weight: 500;
+
+      letter-spacing: .8px;
+
+      transition: .25s ease;
+    }
+
+    .luxury-nav a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--gold);
+
+      transition: .25s ease;
+    }
+
+    .luxury-nav a:hover {
+      color: var(--gold-light);
+    }
+
+    .luxury-nav a:hover::after {
+      width: 100%;
+    }
+
+    .luxury-header-whatsapp {
+      justify-self: end;
+
+      display: inline-flex;
+
+      align-items: center;
       justify-content: center;
 
       border:
@@ -275,77 +244,70 @@
       padding:
         10px 18px;
 
-      color:
-        var(--gold-light) !important;
+      color: var(--gold-light) !important;
 
       border-radius: 3px;
 
       font-size: 12px;
-
       font-weight: 700;
 
       letter-spacing: 1px;
 
       white-space: nowrap;
 
-      transition:
-        .25s ease;
-
+      transition: .25s ease;
     }
-
 
     .luxury-header-whatsapp:hover {
+      background: var(--gold);
 
-      background:
-        rgba(198,161,91,.08);
+      color: #080808 !important;
 
-      border-color:
-        var(--gold);
-
-      transform:
-        translateY(-1px);
-
+      border-color: var(--gold);
     }
 
 
-    /* =========================================
+    /* =========================================================
        HERO
-    ========================================= */
+    ========================================================= */
 
     .luxury-hero {
-
-      min-height: 760px;
-
       position: relative;
+
+      min-height:
+        calc(100vh - 78px);
 
       display: flex;
 
       align-items: center;
 
+      padding: 100px 0;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(199, 163, 91, .12),
+          transparent 35%
+        ),
+
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(255, 255, 255, .03),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          135deg,
+          #080808 0%,
+          #101010 50%,
+          #070707 100%
+        );
+
       overflow: hidden;
-
-      padding-top: 78px;
-
     }
 
-
-    .luxury-hero-image {
-
-      position: absolute;
-
-      inset: 0;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      object-position: center;
-
-    }
-
-
-    .luxury-hero-overlay {
+    .luxury-hero::before {
+      content: "";
 
       position: absolute;
 
@@ -354,30 +316,21 @@
       background:
         linear-gradient(
           90deg,
-          rgba(5,5,5,.97) 0%,
-          rgba(5,5,5,.82) 42%,
-          rgba(5,5,5,.30) 100%
+          rgba(0, 0, 0, .55),
+          transparent 70%
         );
 
+      pointer-events: none;
     }
-
 
     .luxury-hero-content {
-
       position: relative;
-
       z-index: 2;
 
-      max-width: 680px;
-
-      padding:
-        100px 0;
-
+      max-width: 780px;
     }
 
-
     .luxury-eyebrow {
-
       display: inline-block;
 
       margin-bottom: 22px;
@@ -385,963 +338,1067 @@
       color: var(--gold-light);
 
       font-size: 12px;
-
       font-weight: 700;
 
       letter-spacing: 3px;
 
       text-transform: uppercase;
-
     }
 
-
     .luxury-hero h1 {
+      max-width: 800px;
+
+      margin-bottom: 25px;
 
       color: var(--white);
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
 
       font-size:
         clamp(42px, 6vw, 76px);
 
-      line-height: 1.02;
+      line-height: 1.04;
 
-      font-weight: 500;
+      font-weight: 700;
 
-      margin-bottom: 25px;
-
+      letter-spacing: -2px;
     }
-
 
     .luxury-hero h1 span {
-
       color: var(--gold-light);
-
     }
 
-
     .luxury-hero p {
+      max-width: 650px;
 
-      max-width: 600px;
+      margin-bottom: 35px;
+
+      color: var(--muted);
 
       font-size: 18px;
 
-      color: #d2cdc3;
-
-      margin-bottom: 34px;
-
+      line-height: 1.8;
     }
 
 
-    .luxury-button {
+    /* =========================================================
+       BUTTON
+    ========================================================= */
 
+    .luxury-button {
       display: inline-flex;
 
       align-items: center;
-
       justify-content: center;
 
-      min-height: 52px;
+      min-height: 50px;
 
       padding:
-        0 28px;
-
-      background: var(--gold);
-
-      color: #090909;
-
-      font-size: 13px;
-
-      font-weight: 800;
-
-      letter-spacing: 1px;
-
-      text-transform: uppercase;
+        0 27px;
 
       border:
         1px solid var(--gold);
 
-      border-radius: 2px;
+      border-radius: 3px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold)
+        );
+
+      color: #080808;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1.3px;
+
+      text-transform: uppercase;
 
       cursor: pointer;
 
       transition:
-        .25s ease;
-
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
     }
-
 
     .luxury-button:hover {
+      transform: translateY(-2px);
 
-      background: var(--gold-light);
+      box-shadow:
+        0 12px 30px
+        rgba(199, 163, 91, .22);
+    }
 
-      border-color: var(--gold-light);
+    .luxury-button-outline {
+      background: transparent;
 
-      transform:
-        translateY(-2px);
+      color: var(--gold-light);
+    }
 
+    .luxury-button-outline:hover {
+      background: var(--gold);
+
+      color: #080808;
     }
 
 
-    /* =========================================
+    /* =========================================================
        SECTIONS
-    ========================================= */
+    ========================================================= */
 
     .luxury-section {
-
-      padding:
-        100px 0;
-
+      padding: 100px 0;
     }
-
 
     .luxury-section-dark {
-
-      background:
-        var(--black-soft);
-
+      background: var(--black-soft);
     }
 
-
     .luxury-section-title {
-
-      max-width: 760px;
+      max-width: 750px;
 
       margin:
         0 auto 55px;
 
       text-align: center;
-
     }
 
-
-    .luxury-section-title small {
-
+    .luxury-section-label {
       display: block;
-
-      color: var(--gold-light);
-
-      text-transform: uppercase;
-
-      letter-spacing: 3px;
-
-      font-size: 11px;
 
       margin-bottom: 14px;
 
+      color: var(--gold-light);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
     }
 
-
     .luxury-section-title h2 {
+      margin-bottom: 17px;
 
       color: var(--white);
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
       font-size:
-        clamp(32px, 4vw, 48px);
+        clamp(32px, 4vw, 50px);
 
       line-height: 1.1;
 
-      font-weight: 500;
-
-      margin-bottom: 18px;
-
+      letter-spacing: -1px;
     }
-
 
     .luxury-section-title p {
-
-      color: var(--text);
+      color: var(--muted);
 
       font-size: 16px;
-
     }
 
 
-    /* =========================================
-       CARDS
-    ========================================= */
+    /* =========================================================
+       OPORTUNIDADE
+    ========================================================= */
 
-    .luxury-points {
-
+    .luxury-opportunity-grid {
       display: grid;
 
       grid-template-columns:
         repeat(3, 1fr);
 
-      gap: 20px;
-
+      gap: 22px;
     }
 
+    .luxury-card {
+      position: relative;
 
-    .luxury-points article {
+      padding: 36px 30px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,.045),
-          rgba(255,255,255,.015)
+          #121212,
+          #0d0d0d
+        );
+
+      border:
+        1px solid
+        rgba(199, 163, 91, .16);
+
+      border-radius: 4px;
+
+      box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, .35);
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+    .luxury-card:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(199, 163, 91, .48);
+    }
+
+    .luxury-card-number {
+      margin-bottom: 22px;
+
+      color: var(--gold);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+    }
+
+    .luxury-card h3 {
+      margin-bottom: 14px;
+
+      color: var(--white);
+
+      font-size: 21px;
+    }
+
+    .luxury-card p {
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       KITS
+    ========================================================= */
+
+    .luxury-kits-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 24px;
+    }
+
+    .luxury-kit {
+      position: relative;
+
+      padding: 40px 32px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #141414,
+          #0c0c0c
+        );
+
+      border:
+        1px solid
+        rgba(199, 163, 91, .18);
+
+      border-radius: 4px;
+
+      text-align: center;
+
+      overflow: hidden;
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+    .luxury-kit::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 2px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+    }
+
+    .luxury-kit:hover {
+      transform: translateY(-8px);
+
+      border-color:
+        rgba(199, 163, 91, .45);
+    }
+
+    .luxury-kit-label {
+      display: block;
+
+      margin-bottom: 13px;
+
+      color: var(--gold-light);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .luxury-kit h3 {
+      margin-bottom: 18px;
+
+      color: var(--white);
+
+      font-size: 25px;
+    }
+
+    .luxury-kit-price {
+      margin-bottom: 28px;
+
+      color: var(--gold-light);
+
+      font-size: 38px;
+      font-weight: 800;
+
+      line-height: 1;
+    }
+
+    .luxury-kit-price small {
+      font-size: 15px;
+
+      font-weight: 500;
+    }
+
+    .luxury-kit-description {
+      min-height: 70px;
+
+      margin-bottom: 28px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .luxury-kit-link {
+      display: inline-block;
+
+      color: var(--gold-light);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1.3px;
+
+      text-transform: uppercase;
+    }
+
+    .luxury-kit-link:hover {
+      color: var(--white);
+    }
+
+
+    /* =========================================================
+       NOVO BOTÃO WHATSAPP ABAIXO DOS KITS
+    ========================================================= */
+
+    .luxury-kits-whatsapp {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 45px;
+
+      text-align: center;
+    }
+
+
+    /* =========================================================
+       COMO FUNCIONA
+    ========================================================= */
+
+    .luxury-steps {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .luxury-step {
+      position: relative;
+
+      padding: 32px;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+    .luxury-step-number {
+      margin-bottom: 20px;
+
+      color: var(--gold);
+
+      font-size: 38px;
+      font-weight: 800;
+
+      line-height: 1;
+    }
+
+    .luxury-step h3 {
+      margin-bottom: 12px;
+
+      color: var(--white);
+
+      font-size: 20px;
+    }
+
+    .luxury-step p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       CARREIRA
+    ========================================================= */
+
+    .luxury-career-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 15px;
+    }
+
+    .luxury-career-card {
+      padding: 25px 20px;
+
+      background: #101010;
+
+      border:
+        1px solid
+        rgba(199, 163, 91, .15);
+
+      text-align: center;
+
+      border-radius: 3px;
+
+      transition: .25s ease;
+    }
+
+    .luxury-career-card:hover {
+      border-color:
+        rgba(199, 163, 91, .45);
+
+      transform: translateY(-4px);
+    }
+
+    .luxury-career-card strong {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--gold-light);
+
+      font-size: 18px;
+    }
+
+    .luxury-career-card span {
+      color: var(--muted);
+
+      font-size: 12px;
+
+      letter-spacing: .5px;
+    }
+
+
+    /* =========================================================
+       FORMULÁRIO
+    ========================================================= */
+
+    .luxury-form-wrapper {
+      max-width: 780px;
+
+      margin: 0 auto;
+
+      padding: 42px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #141414,
+          #0b0b0b
         );
 
       border:
         1px solid var(--border);
 
-      padding:
-        34px 30px;
+      border-radius: 4px;
 
-      min-height: 220px;
-
-      transition:
-        transform .25s ease,
-        border-color .25s ease;
-
+      box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, .45);
     }
-
-
-    .luxury-points article:hover {
-
-      transform:
-        translateY(-5px);
-
-      border-color:
-        rgba(225, 200, 137, .6);
-
-    }
-
-
-    .luxury-points h3 {
-
-      color: var(--white);
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 24px;
-
-      font-weight: 500;
-
-      margin-bottom: 13px;
-
-    }
-
-
-    .luxury-points p {
-
-      color: var(--text);
-
-      font-size: 15px;
-
-    }
-
-
-    .luxury-number {
-
-      display: block;
-
-      color: var(--gold);
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 20px;
-
-    }
-
-
-    /* =========================================
-       KITS
-    ========================================= */
-
-    .luxury-kit-price {
-
-      color: var(--gold-light);
-
-      font-size: 32px;
-
-      font-weight: 700;
-
-      margin:
-        18px 0;
-
-    }
-
-
-    .luxury-kit-price small {
-
-      font-size: 13px;
-
-      color: var(--muted);
-
-      font-weight: 400;
-
-    }
-
-
-    .luxury-card-button {
-
-      display: inline-block;
-
-      margin-top: 22px;
-
-      color: var(--gold-light);
-
-      border-bottom:
-        1px solid var(--gold);
-
-      padding-bottom: 5px;
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-      letter-spacing: 1px;
-
-      text-transform: uppercase;
-
-    }
-
-
-    /* =========================================
-       FORM
-    ========================================= */
-
-    .luxury-form-section {
-
-      background:
-        linear-gradient(
-          180deg,
-          var(--black),
-          var(--black-light)
-        );
-
-    }
-
-
-    .luxury-form-wrapper {
-
-      max-width: 820px;
-
-      margin: auto;
-
-    }
-
 
     .luxury-form {
-
       display: grid;
 
       grid-template-columns:
         repeat(2, 1fr);
 
       gap: 18px;
-
-      padding: 35px;
-
-      border:
-        1px solid var(--border);
-
-      background:
-        rgba(255,255,255,.025);
-
     }
 
-
     .luxury-field {
-
       display: flex;
 
       flex-direction: column;
 
-      gap: 7px;
-
+      gap: 8px;
     }
-
 
     .luxury-field-full {
-
-      grid-column:
-        1 / -1;
-
+      grid-column: 1 / -1;
     }
-
 
     .luxury-field label {
-
-      color: var(--white);
+      color: #d7d7d7;
 
       font-size: 12px;
-
-      font-weight: 700;
+      font-weight: 600;
 
       letter-spacing: .5px;
-
     }
-
 
     .luxury-field input,
     .luxury-field select,
     .luxury-field textarea {
-
       width: 100%;
 
-      background:
-        rgba(0,0,0,.55);
-
-      border:
-        1px solid var(--border-soft);
-
-      color: var(--white);
+      min-height: 48px;
 
       padding:
-        14px 15px;
+        12px 14px;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, .1);
+
+      border-radius: 3px;
 
       outline: none;
 
-      border-radius: 2px;
+      background: #090909;
 
-      font: inherit;
+      color: var(--white);
 
+      transition:
+        border-color .2s ease;
     }
 
-
     .luxury-field textarea {
-
       min-height: 110px;
 
       resize: vertical;
-
     }
-
 
     .luxury-field input:focus,
     .luxury-field select:focus,
     .luxury-field textarea:focus {
-
-      border-color:
-        var(--gold);
-
+      border-color: var(--gold);
     }
 
+    .luxury-field input::placeholder,
+    .luxury-field textarea::placeholder {
+      color: #666;
+    }
 
     .luxury-checkbox {
-
-      grid-column:
-        1 / -1;
+      grid-column: 1 / -1;
 
       display: flex;
-
-      gap: 10px;
 
       align-items: flex-start;
 
+      gap: 10px;
+
+      color: #999;
+
       font-size: 12px;
-
-      color: var(--muted);
-
     }
-
 
     .luxury-checkbox input {
+      width: 16px;
+      height: 16px;
 
-      margin-top: 4px;
+      margin-top: 2px;
 
-      accent-color:
-        var(--gold);
-
+      accent-color: var(--gold);
     }
 
-
-    .luxury-submit {
-
-      grid-column:
-        1 / -1;
+    .luxury-form-button {
+      grid-column: 1 / -1;
 
       width: 100%;
-
     }
 
 
-    /* =========================================
-       REGISTER
-    ========================================= */
+    /* =========================================================
+       CADASTRO
+    ========================================================= */
 
-    .luxury-register {
+    .luxury-register-grid {
+      display: grid;
 
-      text-align: center;
+      grid-template-columns:
+        repeat(3, 1fr);
 
+      gap: 20px;
     }
 
+    .luxury-register-card {
+      padding: 32px;
 
-    .luxury-register-buttons {
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 14px;
-
-      margin-top: 30px;
-
-    }
-
-
-    .luxury-register-buttons a {
-
-      min-height: 50px;
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding:
-        0 25px;
+      background: #101010;
 
       border:
         1px solid var(--border);
 
-      color: var(--gold-light);
+      border-radius: 3px;
 
-      font-size: 12px;
+      text-align: center;
+    }
 
-      font-weight: 700;
+    .luxury-register-card h3 {
+      margin-bottom: 12px;
 
-      letter-spacing: 1px;
+      color: var(--white);
 
-      text-transform: uppercase;
+      font-size: 20px;
+    }
 
+    .luxury-register-card p {
+      margin-bottom: 22px;
+
+      color: var(--muted);
+
+      font-size: 14px;
     }
 
 
-    .luxury-register-buttons a:hover {
-
-      background:
-        rgba(198,161,91,.08);
-
-      border-color:
-        var(--gold);
-
-    }
-
-
-    /* =========================================
+    /* =========================================================
        FAQ
-    ========================================= */
+    ========================================================= */
 
     .luxury-faq {
-
       max-width: 850px;
 
-      margin: auto;
-
+      margin: 0 auto;
     }
-
 
     .luxury-faq details {
-
       border-bottom:
-        1px solid var(--border-soft);
+        1px solid
+        rgba(199, 163, 91, .16);
 
-      padding:
-        22px 0;
-
+      padding: 22px 0;
     }
 
-
     .luxury-faq summary {
-
       cursor: pointer;
 
       color: var(--white);
 
       font-size: 16px;
+      font-weight: 600;
 
-      font-weight: 700;
-
+      list-style: none;
     }
 
+    .luxury-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .luxury-faq summary::after {
+      content: "+";
+
+      float: right;
+
+      color: var(--gold-light);
+
+      font-size: 22px;
+
+      font-weight: 300;
+    }
+
+    .luxury-faq details[open] summary::after {
+      content: "−";
+    }
 
     .luxury-faq p {
+      max-width: 760px;
 
-      margin-top: 13px;
+      padding-top: 14px;
 
-      color: var(--text);
+      color: var(--muted);
 
       font-size: 14px;
 
-      max-width: 760px;
-
+      line-height: 1.7;
     }
 
 
-    /* =========================================
-       FINAL CTA
-    ========================================= */
+    /* =========================================================
+       CTA FINAL
+    ========================================================= */
 
-    .luxury-final {
+    .luxury-final-cta {
+      padding: 110px 0;
 
       text-align: center;
-
-      padding:
-        110px 20px;
 
       background:
         radial-gradient(
           circle at center,
-          rgba(198,161,91,.10),
-          transparent 55%
-        );
+          rgba(199, 163, 91, .13),
+          transparent 45%
+        ),
 
+        #090909;
     }
 
+    .luxury-final-cta h2 {
+      max-width: 800px;
 
-    .luxury-final h2 {
+      margin:
+        0 auto 18px;
 
       color: var(--white);
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
       font-size:
-        clamp(34px, 5vw, 55px);
+        clamp(32px, 5vw, 56px);
 
-      font-weight: 500;
-
-      margin-bottom: 18px;
-
+      line-height: 1.1;
     }
 
-
-    .luxury-final p {
-
-      max-width: 650px;
+    .luxury-final-cta p {
+      max-width: 620px;
 
       margin:
         0 auto 30px;
 
-      color: var(--text);
-
-    }
-
-
-    /* =========================================
-       FOOTER
-    ========================================= */
-
-    .luxury-footer {
-
-      border-top:
-        1px solid var(--border-soft);
-
-      padding:
-        30px 0;
-
-      text-align: center;
-
       color: var(--muted);
 
-      font-size: 12px;
-
+      font-size: 16px;
     }
 
 
-    /* =========================================
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .luxury-footer {
+      padding: 35px 0;
+
+      border-top:
+        1px solid
+        rgba(199, 163, 91, .12);
+
+      background: #050505;
+    }
+
+    .luxury-footer-inner {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .luxury-footer-brand {
+      color: var(--gold-light);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+    }
+
+    .luxury-footer-copy {
+      color: #666;
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
        WHATSAPP FLUTUANTE
-    ========================================= */
+    ========================================================= */
 
-    .luxury-whatsapp {
-
+    .luxury-whatsapp-float {
       position: fixed;
 
       right: 22px;
-
       bottom: 22px;
 
-      width: 58px;
+      z-index: 2000;
 
+      width: 58px;
       height: 58px;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
-
-      background: #25D366;
-
-      color: white;
 
       border-radius: 50%;
 
-      z-index: 999;
+      background:
+        #25D366;
+
+      color: #ffffff;
+
+      font-size: 25px;
 
       box-shadow:
-        0 10px 30px rgba(0,0,0,.4);
+        0 8px 30px
+        rgba(0, 0, 0, .45);
 
-      font-size: 24px;
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
 
+    .luxury-whatsapp-float:hover {
+      transform:
+        translateY(-4px)
+        scale(1.04);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, .55);
     }
 
 
-    .whatsapp-icon {
+    /* =========================================================
+       ANIMAÇÃO
+    ========================================================= */
 
-      font-weight: 700;
+    .luxury-reveal {
+      opacity: 0;
 
+      transform:
+        translateY(20px);
+
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .luxury-reveal.visible {
+      opacity: 1;
+
+      transform:
+        translateY(0);
     }
 
 
-    /* =========================================
-       RESPONSIVE
-    ========================================= */
+    /* =========================================================
+       RESPONSIVO
+    ========================================================= */
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1000px) {
 
       .luxury-nav {
-
-        gap: 18px;
-
+        gap: 17px;
       }
 
-      .luxury-nav a {
-
-        font-size: 12px;
-
+      .luxury-header-inner {
+        gap: 15px;
       }
 
-      .luxury-brand {
-
-        font-size: 13px;
-
+      .luxury-opportunity-grid,
+      .luxury-kits-grid,
+      .luxury-steps {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .luxury-header-whatsapp {
-
-        padding:
-          9px 13px;
-
-        font-size: 11px;
-
+      .luxury-career-grid {
+        grid-template-columns:
+          repeat(3, 1fr);
       }
 
+      .luxury-register-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
     }
 
 
     @media (max-width: 900px) {
 
       .luxury-header-inner {
-
         grid-template-columns:
-          1fr
-          auto;
-
+          1fr auto;
       }
 
       .luxury-nav {
-
         display: none;
+      }
 
+      .luxury-brand {
+        justify-self: start;
       }
 
       .luxury-header-whatsapp {
-
         justify-self: end;
-
       }
 
       .luxury-hero {
+        min-height:
+          calc(100vh - 78px);
 
-        min-height: 680px;
+        padding:
+          80px 0;
+      }
+    }
 
+
+    @media (max-width: 700px) {
+
+      .luxury-container {
+        width:
+          calc(100% - 30px);
       }
 
-      .luxury-hero-overlay {
-
-        background:
-          linear-gradient(
-            90deg,
-            rgba(5,5,5,.94),
-            rgba(5,5,5,.65)
-          );
-
+      .luxury-section {
+        padding:
+          75px 0;
       }
 
-      .luxury-points {
-
-        grid-template-columns:
-          1fr;
-
+      .luxury-opportunity-grid,
+      .luxury-kits-grid,
+      .luxury-steps,
+      .luxury-register-grid,
+      .luxury-career-grid {
+        grid-template-columns: 1fr;
       }
 
       .luxury-form {
-
-        grid-template-columns:
-          1fr;
-
-        padding: 24px;
-
+        grid-template-columns: 1fr;
       }
 
       .luxury-field-full,
       .luxury-checkbox,
-      .luxury-submit {
-
-        grid-column:
-          auto;
-
+      .luxury-form-button {
+        grid-column: 1;
       }
 
+      .luxury-form-wrapper {
+        padding: 28px 20px;
+      }
+
+      .luxury-hero h1 {
+        font-size:
+          clamp(40px, 12vw, 58px);
+
+        letter-spacing: -1.5px;
+      }
+
+      .luxury-hero p {
+        font-size: 16px;
+      }
+
+      .luxury-footer-inner {
+        flex-direction: column;
+
+        text-align: center;
+      }
     }
 
 
     @media (max-width: 430px) {
 
-      .luxury-container {
-
-        width:
-          min(
-            calc(100% - 28px),
-            var(--container)
-          );
-
-      }
-
-      .luxury-header-inner {
-
-        min-height: 70px;
-
-      }
-
       .luxury-brand span {
-
         display: none;
-
-      }
-
-      .luxury-brand img {
-
-        width: 42px;
-        height: 42px;
-
       }
 
       .luxury-header-whatsapp {
-
         padding:
-          9px 13px;
+          9px 12px;
 
         font-size: 10px;
 
+        letter-spacing: .8px;
       }
 
-      .luxury-section {
-
-        padding:
-          75px 0;
-
+      .luxury-brand img {
+        width: 38px;
+        height: 38px;
       }
 
       .luxury-hero {
-
-        padding-top: 70px;
-
-      }
-
-      .luxury-hero-content {
-
         padding:
-          80px 0;
-
+          65px 0;
       }
 
-      .luxury-hero h1 {
-
-        font-size: 43px;
-
-      }
-
-      .luxury-hero p {
-
-        font-size: 16px;
-
-      }
-
-      .luxury-register-buttons {
-
-        flex-direction: column;
-
-      }
-
-      .luxury-register-buttons a {
-
+      .luxury-button {
         width: 100%;
 
+        padding:
+          0 18px;
       }
 
-      .luxury-whatsapp {
+      .luxury-kits-whatsapp {
+        margin-top: 32px;
+      }
 
+      .luxury-whatsapp-float {
         right: 16px;
-
         bottom: 16px;
 
+        width: 54px;
+        height: 54px;
       }
-
-    }
-
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      * {
-        transition:
-          none !important;
-      }
-
     }
 
   </style>
-
 </head>
 
 
 <body>
 
-
-  <!-- =========================================
+  <!-- =======================================================
        HEADER
-  ========================================= -->
+  ======================================================== -->
 
   <header class="luxury-header">
 
     <div class="luxury-container luxury-header-inner">
 
-
-      <!-- LOGO -->
-
       <a
         href="#inicio"
         class="luxury-brand"
       >
-
         <img
           src="../assets/images/logo.png"
           alt="My Moments Paris"
@@ -1350,11 +1407,8 @@
         <span>
           MY MOMENTS PARIS
         </span>
-
       </a>
 
-
-      <!-- MENU CENTRAL -->
 
       <nav class="luxury-nav">
 
@@ -1387,8 +1441,6 @@
       </nav>
 
 
-      <!-- ÚNICO BOTÃO NO CANTO SUPERIOR DIREITO -->
-
       <a
         href="https://office.momentsparis.com.br/#/register/arianeoliveira87"
         class="luxury-header-whatsapp"
@@ -1396,57 +1448,48 @@
         CADASTRE-SE
       </a>
 
-
     </div>
 
   </header>
 
 
-  <!-- =========================================
+  <!-- =======================================================
        HERO
-  ========================================= -->
+  ======================================================== -->
 
-  <main id="inicio">
+  <main>
 
-    <section class="luxury-hero">
-
-      <img
-        src="../assets/images/divulgação.jpg"
-        alt="Moments Paris"
-        class="luxury-hero-image"
-      >
-
-      <div class="luxury-hero-overlay"></div>
-
+    <section
+      id="inicio"
+      class="luxury-hero"
+    >
 
       <div class="luxury-container">
 
-        <div class="luxury-hero-content">
+        <div class="luxury-hero-content luxury-reveal">
 
           <span class="luxury-eyebrow">
             Oportunidade Moments Paris
           </span>
 
-
           <h1>
             Comece sua jornada
+            com a
             <span>
-              com a Moments Paris.
+              Moments Paris.
             </span>
           </h1>
-
 
           <p>
             Conheça os produtos, escolha como começar
             e desenvolva suas vendas no seu ritmo.
           </p>
 
-
           <a
             href="#formulario"
             class="luxury-button"
           >
-            Quero conhecer a oportunidade
+            QUERO CONHECER A OPORTUNIDADE
           </a>
 
         </div>
@@ -1456,90 +1499,87 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          OPORTUNIDADE
-    ========================================= -->
+    ====================================================== -->
 
     <section
       id="oportunidade"
-      class="luxury-section"
+      class="luxury-section luxury-section-dark"
     >
 
       <div class="luxury-container">
 
-        <div class="luxury-section-title">
+        <div class="luxury-section-title luxury-reveal">
 
-          <small>
-            Uma nova possibilidade
-          </small>
+          <span class="luxury-section-label">
+            A oportunidade
+          </span>
 
           <h2>
             Desenvolva seu próprio caminho.
           </h2>
 
           <p>
-            A oportunidade Moments Paris permite que você
-            conheça os produtos e desenvolva sua atividade
-            de acordo com sua disponibilidade e seus objetivos.
+            Tenha acesso a produtos para apresentar,
+            ferramentas para desenvolver seu trabalho
+            e uma oportunidade para crescer no seu ritmo.
           </p>
 
         </div>
 
 
-        <div class="luxury-points">
+        <div class="luxury-opportunity-grid">
 
-          <article>
+          <article class="luxury-card luxury-reveal">
 
-            <span class="luxury-number">
+            <div class="luxury-card-number">
               01
-            </span>
+            </div>
 
             <h3>
               Comece do seu jeito
             </h3>
 
             <p>
-              Escolha uma das opções de kit disponíveis
-              e dê o primeiro passo de acordo com o
-              momento que você está vivendo.
+              Escolha a melhor forma de começar
+              de acordo com seus objetivos e momento.
             </p>
 
           </article>
 
 
-          <article>
+          <article class="luxury-card luxury-reveal">
 
-            <span class="luxury-number">
+            <div class="luxury-card-number">
               02
-            </span>
+            </div>
 
             <h3>
               Produtos para apresentar
             </h3>
 
             <p>
-              Tenha produtos para conhecer, apresentar
-              e desenvolver suas vendas dentro da proposta
-              da Moments Paris.
+              Conheça diferentes opções de produtos
+              para apresentar aos seus clientes.
             </p>
 
           </article>
 
 
-          <article>
+          <article class="luxury-card luxury-reveal">
 
-            <span class="luxury-number">
+            <div class="luxury-card-number">
               03
-            </span>
+            </div>
 
             <h3>
               Desenvolva no seu ritmo
             </h3>
 
             <p>
-              Organize sua atividade de acordo com sua
-              disponibilidade, objetivos e estratégia
-              de desenvolvimento.
+              Construa sua rotina de vendas e
+              desenvolva seu negócio gradualmente.
             </p>
 
           </article>
@@ -1551,41 +1591,44 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          KITS
-    ========================================= -->
+    ====================================================== -->
 
     <section
       id="kits"
-      class="luxury-section luxury-section-dark"
+      class="luxury-section"
     >
 
       <div class="luxury-container">
 
-        <div class="luxury-section-title">
+        <div class="luxury-section-title luxury-reveal">
 
-          <small>
+          <span class="luxury-section-label">
             Escolha como começar
-          </small>
+          </span>
 
           <h2>
-            Conheça os kits disponíveis.
+            Kits para diferentes momentos.
           </h2>
 
           <p>
-            Existem diferentes opções de investimento
-            inicial para ativação.
+            Encontre uma opção que combine com
+            o seu objetivo inicial.
           </p>
 
         </div>
 
 
-        <div class="luxury-points">
+        <div class="luxury-kits-grid">
 
-          <article>
 
-            <span class="luxury-number">
-              KIT 01
+          <!-- KIT INICIANTE -->
+
+          <article class="luxury-kit luxury-reveal">
+
+            <span class="luxury-kit-label">
+              Para começar
             </span>
 
             <h3>
@@ -1593,17 +1636,17 @@
             </h3>
 
             <div class="luxury-kit-price">
-              R$ 150
+              <small>R$</small> 150
             </div>
 
-            <p>
-              Uma opção de entrada para quem deseja
-              conhecer a oportunidade e começar.
+            <p class="luxury-kit-description">
+              Uma opção para conhecer a oportunidade
+              e começar de forma simples.
             </p>
 
             <a
               href="#formulario"
-              class="luxury-card-button"
+              class="luxury-kit-link"
             >
               Quero saber mais →
             </a>
@@ -1611,10 +1654,12 @@
           </article>
 
 
-          <article>
+          <!-- KIT PROFISSIONAL -->
 
-            <span class="luxury-number">
-              KIT 02
+          <article class="luxury-kit luxury-reveal">
+
+            <span class="luxury-kit-label">
+              Para desenvolver
             </span>
 
             <h3>
@@ -1622,17 +1667,17 @@
             </h3>
 
             <div class="luxury-kit-price">
-              R$ 500
+              <small>R$</small> 500
             </div>
 
-            <p>
-              Uma opção intermediária para quem deseja
-              começar com uma estrutura maior.
+            <p class="luxury-kit-description">
+              Uma opção para quem deseja
+              desenvolver sua apresentação de produtos.
             </p>
 
             <a
               href="#formulario"
-              class="luxury-card-button"
+              class="luxury-kit-link"
             >
               Quero saber mais →
             </a>
@@ -1640,10 +1685,12 @@
           </article>
 
 
-          <article>
+          <!-- KIT TOP -->
 
-            <span class="luxury-number">
-              KIT 03
+          <article class="luxury-kit luxury-reveal">
+
+            <span class="luxury-kit-label">
+              Para avançar
             </span>
 
             <h3>
@@ -1651,17 +1698,17 @@
             </h3>
 
             <div class="luxury-kit-price">
-              R$ 1.000
+              <small>R$</small> 1.000
             </div>
 
-            <p>
-              Uma opção para quem deseja iniciar
-              com uma estrutura mais completa.
+            <p class="luxury-kit-description">
+              Uma opção para quem deseja começar
+              com uma estrutura maior de produtos.
             </p>
 
             <a
               href="#formulario"
-              class="luxury-card-button"
+              class="luxury-kit-link"
             >
               Quero saber mais →
             </a>
@@ -1670,24 +1717,43 @@
 
         </div>
 
+
+        <!-- =================================================
+             NOVO BOTÃO WHATSAPP CENTRALIZADO
+        ================================================== -->
+
+        <div class="luxury-kits-whatsapp">
+
+          <a
+            href="#"
+            data-v8="contact.whatsapp"
+            class="luxury-button"
+          >
+            FALAR NO WHATSAPP
+          </a>
+
+        </div>
+
       </div>
 
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          COMO FUNCIONA
-    ========================================= -->
+    ====================================================== -->
 
-    <section class="luxury-section">
+    <section
+      class="luxury-section luxury-section-dark"
+    >
 
       <div class="luxury-container">
 
-        <div class="luxury-section-title">
+        <div class="luxury-section-title luxury-reveal">
 
-          <small>
+          <span class="luxury-section-label">
             Como funciona
-          </small>
+          </span>
 
           <h2>
             Três passos para começar.
@@ -1696,57 +1762,58 @@
         </div>
 
 
-        <div class="luxury-points">
+        <div class="luxury-steps">
 
-          <article>
 
-            <span class="luxury-number">
+          <article class="luxury-step luxury-reveal">
+
+            <div class="luxury-step-number">
               01
-            </span>
+            </div>
 
             <h3>
               Cadastre-se
             </h3>
 
             <p>
-              Preencha seus dados para receber informações
-              sobre a oportunidade.
+              Faça seu cadastro para conhecer
+              a oportunidade e receber orientações.
             </p>
 
           </article>
 
 
-          <article>
+          <article class="luxury-step luxury-reveal">
 
-            <span class="luxury-number">
+            <div class="luxury-step-number">
               02
-            </span>
+            </div>
 
             <h3>
               Ative seu cadastro
             </h3>
 
             <p>
-              Escolha a opção de kit adequada e siga
-              as orientações para ativação.
+              Escolha como começar e ative
+              seu cadastro conforme a opção desejada.
             </p>
 
           </article>
 
 
-          <article>
+          <article class="luxury-step luxury-reveal">
 
-            <span class="luxury-number">
+            <div class="luxury-step-number">
               03
-            </span>
+            </div>
 
             <h3>
               Comece a desenvolver
             </h3>
 
             <p>
-              Conheça os produtos e desenvolva sua
-              atividade de acordo com seus objetivos.
+              Apresente os produtos, desenvolva
+              suas vendas e avance no seu ritmo.
             </p>
 
           </article>
@@ -1758,232 +1825,135 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          CARREIRA
-    ========================================= -->
+    ====================================================== -->
 
     <section
       id="carreira"
+      class="luxury-section"
+    >
+
+      <div class="luxury-container">
+
+        <div class="luxury-section-title luxury-reveal">
+
+          <span class="luxury-section-label">
+            Plano de carreira
+          </span>
+
+          <h2>
+            Evolua conforme desenvolve seu trabalho.
+          </h2>
+
+          <p>
+            Conheça os níveis de desenvolvimento
+            dentro da carreira Moments Paris.
+          </p>
+
+        </div>
+
+
+        <div class="luxury-career-grid">
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>2K</strong>
+            <span>2.000 pontos</span>
+          </div>
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>5K</strong>
+            <span>5.000 pontos</span>
+          </div>
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>15K</strong>
+            <span>15.000 pontos</span>
+          </div>
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>Diamante</strong>
+            <span>30.000 pontos</span>
+          </div>
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>Duplo Diamante</strong>
+            <span>60.000 pontos</span>
+          </div>
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>Triplo Diamante</strong>
+            <span>120.000 pontos</span>
+          </div>
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>Blue Diamond</strong>
+            <span>350.000 pontos</span>
+          </div>
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>Black Diamond</strong>
+            <span>650.000 pontos</span>
+          </div>
+
+
+          <div class="luxury-career-card luxury-reveal">
+            <strong>Imperial Diamond</strong>
+            <span>1.000.000 pontos</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FORMULÁRIO
+    ====================================================== -->
+
+    <section
+      id="formulario"
       class="luxury-section luxury-section-dark"
     >
 
       <div class="luxury-container">
 
-        <div class="luxury-section-title">
+        <div class="luxury-section-title luxury-reveal">
 
-          <small>
-            Plano de carreira
-          </small>
+          <span class="luxury-section-label">
+            Cadastro
+          </span>
 
           <h2>
-            Desenvolva seu negócio ao longo do caminho.
+            Quero receber informações.
           </h2>
 
           <p>
-            O plano de carreira possui diferentes níveis
-            de desenvolvimento e qualificação.
+            Preencha seus dados e entraremos
+            em contato para apresentar a oportunidade.
           </p>
 
         </div>
 
 
-        <div class="luxury-points">
-
-          <article>
-
-            <span class="luxury-number">
-              2K
-            </span>
-
-            <h3>
-              2.000 pontos
-            </h3>
-
-            <p>
-              Primeiro nível de desenvolvimento.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span class="luxury-number">
-              5K
-            </span>
-
-            <h3>
-              5.000 pontos
-            </h3>
-
-            <p>
-              Próximo nível de qualificação.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span class="luxury-number">
-              15K
-            </span>
-
-            <h3>
-              15.000 pontos
-            </h3>
-
-            <p>
-              Avanço dentro do plano de carreira.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span class="luxury-number">
-              DIAMANTE
-            </span>
-
-            <h3>
-              30.000 pontos
-            </h3>
-
-            <p>
-              Nível Diamante.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span class="luxury-number">
-              DUPLO
-            </span>
-
-            <h3>
-              60.000 pontos
-            </h3>
-
-            <p>
-              Nível Duplo Diamante.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span class="luxury-number">
-              TRIPLO
-            </span>
-
-            <h3>
-              120.000 pontos
-            </h3>
-
-            <p>
-              Nível Triplo Diamante.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span class="luxury-number">
-              BLUE
-            </span>
-
-            <h3>
-              350.000 pontos
-            </h3>
-
-            <p>
-              Nível Blue Diamond.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span class="luxury-number">
-              BLACK
-            </span>
-
-            <h3>
-              650.000 pontos
-            </h3>
-
-            <p>
-              Nível Black Diamond.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span class="luxury-number">
-              IMPERIAL
-            </span>
-
-            <h3>
-              1.000.000 pontos
-            </h3>
-
-            <p>
-              Nível Imperial Diamond.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         FORMULÁRIO
-    ========================================= -->
-
-    <section
-      id="formulario"
-      class="luxury-section luxury-form-section"
-    >
-
-      <div class="luxury-container">
-
-        <div class="luxury-section-title">
-
-          <small>
-            Próximo passo
-          </small>
-
-          <h2>
-            Quero conhecer a oportunidade.
-          </h2>
-
-          <p>
-            Deixe seus dados e entraremos em contato
-            para apresentar as informações.
-          </p>
-
-        </div>
-
-
-        <div class="luxury-form-wrapper">
+        <div class="luxury-form-wrapper luxury-reveal">
 
           <form
-            method="POST"
             class="luxury-form"
             data-v8-form
+            method="POST"
           >
+
 
             <div class="luxury-field">
 
@@ -1992,9 +1962,9 @@
               </label>
 
               <input
-                type="text"
                 id="nome"
                 name="nome"
+                type="text"
                 placeholder="Seu nome"
                 required
               >
@@ -2009,11 +1979,10 @@
               </label>
 
               <input
-                type="tel"
                 id="whatsapp"
                 name="whatsapp"
+                type="tel"
                 placeholder="(00) 00000-0000"
-                autocomplete="tel"
                 required
               >
 
@@ -2027,10 +1996,10 @@
               </label>
 
               <input
-                type="email"
                 id="email"
                 name="email"
-                placeholder="seu@email.com"
+                type="email"
+                placeholder="seuemail@email.com"
                 required
               >
 
@@ -2044,9 +2013,9 @@
               </label>
 
               <input
-                type="text"
                 id="cidade"
                 name="cidade"
+                type="text"
                 placeholder="Sua cidade"
                 required
               >
@@ -2057,7 +2026,7 @@
             <div class="luxury-field luxury-field-full">
 
               <label for="objetivo">
-                O que você busca?
+                Qual seu objetivo?
               </label>
 
               <select
@@ -2066,7 +2035,11 @@
                 required
               >
 
-                <option value="">
+                <option
+                  value=""
+                  selected
+                  disabled
+                >
                   Selecione uma opção
                 </option>
 
@@ -2075,11 +2048,15 @@
                 </option>
 
                 <option value="renda-extra">
-                  Busco uma possibilidade de renda extra
+                  Quero desenvolver uma renda extra
                 </option>
 
                 <option value="negocio">
-                  Quero desenvolver um negócio
+                  Quero desenvolver meu próprio negócio
+                </option>
+
+                <option value="produtos">
+                  Quero conhecer os produtos
                 </option>
 
               </select>
@@ -2105,7 +2082,7 @@
 
             <button
               type="submit"
-              class="luxury-button luxury-submit"
+              class="luxury-button luxury-form-button"
             >
               QUERO RECEBER INFORMAÇÕES
             </button>
@@ -2119,61 +2096,100 @@
     </section>
 
 
-    <!-- =========================================
-         CADASTRO
-    ========================================= -->
+    <!-- =====================================================
+         CADASTRO DIRETO
+    ====================================================== -->
 
     <section
-      class="luxury-section luxury-register"
+      class="luxury-section"
     >
 
       <div class="luxury-container">
 
-        <div class="luxury-section-title">
+        <div class="luxury-section-title luxury-reveal">
 
-          <small>
-            Cadastro direto
-          </small>
+          <span class="luxury-section-label">
+            Próximo passo
+          </span>
 
           <h2>
-            Pronto para começar?
+            Escolha como continuar.
           </h2>
 
           <p>
             Você também pode acessar diretamente
-            o cadastro oficial.
+            as opções abaixo.
           </p>
 
         </div>
 
 
-        <div class="luxury-register-buttons">
-
-          <a
-            href="https://office.momentsparis.com.br/#/register/arianeoliveira87"
-            target="_blank"
-            rel="noopener"
-          >
-            CADASTRE-SE AGORA
-          </a>
+        <div class="luxury-register-grid">
 
 
-          <a
-            href="https://mymonentsparis.pages.dev/drive/"
-            target="_blank"
-            rel="noopener"
-          >
-            CADASTRO MOMENTS DRIVE
-          </a>
+          <article class="luxury-register-card luxury-reveal">
+
+            <h3>
+              Quero me cadastrar
+            </h3>
+
+            <p>
+              Acesse o cadastro oficial Moments Paris.
+            </p>
+
+            <a
+              href="https://office.momentsparis.com.br/#/register/arianeoliveira87"
+              class="luxury-button"
+              target="_blank"
+              rel="noopener"
+            >
+              CADASTRAR
+            </a>
+
+          </article>
 
 
-          <a
-            href="#"
-            data-v8="contact.whatsapp"
-            class="luxury-register-whatsapp"
-          >
-            FALAR NO WHATSAPP
-          </a>
+          <article class="luxury-register-card luxury-reveal">
+
+            <h3>
+              Quero conhecer
+            </h3>
+
+            <p>
+              Acesse materiais e informações
+              para conhecer melhor a oportunidade.
+            </p>
+
+            <a
+              href="https://mymonentsparis.pages.dev/drive/"
+              class="luxury-button luxury-button-outline"
+            >
+              ACESSAR
+            </a>
+
+          </article>
+
+
+          <article class="luxury-register-card luxury-reveal">
+
+            <h3>
+              Quero falar
+            </h3>
+
+            <p>
+              Converse diretamente pelo WhatsApp
+              para tirar suas dúvidas.
+            </p>
+
+            <a
+              href="#"
+              data-v8="contact.whatsapp"
+              class="luxury-button luxury-button-outline"
+            >
+              WHATSAPP
+            </a>
+
+          </article>
 
         </div>
 
@@ -2182,9 +2198,9 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          FAQ
-    ========================================= -->
+    ====================================================== -->
 
     <section
       class="luxury-section luxury-section-dark"
@@ -2192,14 +2208,14 @@
 
       <div class="luxury-container">
 
-        <div class="luxury-section-title">
+        <div class="luxury-section-title luxury-reveal">
 
-          <small>
-            Dúvidas frequentes
-          </small>
+          <span class="luxury-section-label">
+            Dúvidas
+          </span>
 
           <h2>
-            Antes de começar.
+            Perguntas frequentes.
           </h2>
 
         </div>
@@ -2207,91 +2223,78 @@
 
         <div class="luxury-faq">
 
-          <details>
+
+          <details class="luxury-reveal">
 
             <summary>
-              Preciso adquirir um kit para começar?
+              Preciso ter experiência com vendas?
             </summary>
 
             <p>
-              A ativação do cadastro está vinculada à
-              aquisição de um dos kits disponíveis,
-              conforme as condições vigentes.
+              Não necessariamente. A proposta é conhecer
+              a oportunidade, os produtos e desenvolver
+              suas atividades de acordo com seu momento
+              e seus objetivos.
             </p>
 
           </details>
 
 
-          <details>
+          <details class="luxury-reveal">
 
             <summary>
-              Quanto preciso investir?
+              Posso começar mesmo tendo outra atividade?
             </summary>
 
             <p>
-              Existem diferentes opções de kits,
-              atualmente a partir de R$ 150.
+              A oportunidade pode ser desenvolvida
+              conforme sua disponibilidade e organização
+              pessoal.
             </p>
 
           </details>
 
 
-          <details>
+          <details class="luxury-reveal">
 
             <summary>
-              Quanto posso ganhar?
+              Existe garantia de renda?
             </summary>
 
             <p>
-              Não existe garantia de ganhos. Os resultados
-              dependem de diversos fatores, como dedicação,
-              vendas, desenvolvimento da equipe e condições
-              comerciais vigentes.
+              Não. Os resultados dependem de diversos
+              fatores, incluindo dedicação, estratégia,
+              vendas e desenvolvimento da atividade.
             </p>
 
           </details>
 
 
-          <details>
+          <details class="luxury-reveal">
 
             <summary>
-              Preciso trabalhar em horário fixo?
+              Como posso saber qual kit escolher?
             </summary>
 
             <p>
-              A atividade pode ser desenvolvida de acordo
-              com sua disponibilidade e organização.
+              Fale conosco pelo WhatsApp ou preencha
+              o formulário para receber orientação
+              sobre as opções disponíveis.
             </p>
 
           </details>
 
 
-          <details>
+          <details class="luxury-reveal">
 
             <summary>
-              Preciso ter experiência?
+              Posso falar com alguém antes de me cadastrar?
             </summary>
 
             <p>
-              Não é necessário ter experiência anterior.
-              Você pode conhecer a proposta, os produtos
-              e aprender ao longo do desenvolvimento.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              Como saber se essa oportunidade é para mim?
-            </summary>
-
-            <p>
-              O melhor caminho é conhecer os produtos,
-              as condições, o investimento inicial e o
-              funcionamento da oportunidade antes de tomar
-              sua decisão.
+              Sim. Utilize o botão do WhatsApp para
+              conversar e tirar suas dúvidas antes
+              de tomar qualquer decisão.
             </p>
 
           </details>
@@ -2303,24 +2306,23 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          CTA FINAL
-    ========================================= -->
+    ====================================================== -->
 
     <section
-      class="luxury-final"
+      class="luxury-final-cta"
     >
 
-      <div class="luxury-container">
+      <div class="luxury-container luxury-reveal">
 
         <h2>
-          Seu próximo passo começa aqui.
+          Pronta para começar sua jornada?
         </h2>
 
         <p>
-          Conheça a oportunidade Moments Paris,
-          tire suas dúvidas e descubra se esse modelo
-          combina com seus objetivos.
+          Fale conosco e conheça melhor a oportunidade
+          Moments Paris.
         </p>
 
         <a
@@ -2338,333 +2340,239 @@
   </main>
 
 
-  <!-- =========================================
+  <!-- =======================================================
        FOOTER
-  ========================================= -->
+  ======================================================== -->
 
   <footer class="luxury-footer">
 
-    <div class="luxury-container">
+    <div class="luxury-container luxury-footer-inner">
 
-      ©
-      <span id="ano"></span>
-      My Moments Paris.
-      Todos os direitos reservados.
+      <div class="luxury-footer-brand">
+        MY MOMENTS PARIS
+      </div>
+
+      <div class="luxury-footer-copy">
+        © <span id="luxury-year"></span>
+        My Moments Paris. Todos os direitos reservados.
+      </div>
 
     </div>
 
   </footer>
 
 
-  <!-- =========================================
+  <!-- =======================================================
        WHATSAPP FLUTUANTE
-  ========================================= -->
+       MANTIDO
+  ======================================================== -->
 
   <a
     href="#"
     data-v8="contact.whatsapp"
-    class="luxury-whatsapp"
-    aria-label="Falar pelo WhatsApp"
+    class="luxury-whatsapp-float"
+    aria-label="Falar no WhatsApp"
+    title="Falar no WhatsApp"
   >
-
-    <span class="whatsapp-icon">
-      ☎
-    </span>
-
+    ☎
   </a>
 
 
-  <!-- =========================================
-       JS DA PÁGINA
-  ========================================= -->
+  <!-- =======================================================
+       V8 LOADER
+       NÃO ALTERAR
+  ======================================================== -->
+
+  <script
+    src="../js/v8-loader.js"
+    data-project-id="8ae3fee2-b4f4-487c-96c8-3833395b51c2"
+    data-api-url="https://v8adminuniversal.aisermelk.workers.dev"
+  ></script>
+
+
+  <!-- =======================================================
+       SCRIPTS DA PÁGINA
+  ======================================================== -->
 
   <script>
 
-    document.addEventListener(
-      "DOMContentLoaded",
-      () => {
+    /* =====================================================
+       ANO
+    ===================================================== */
 
+    const yearElement =
+      document.getElementById("luxury-year");
 
-        /* ANO */
+    if (yearElement) {
+      yearElement.textContent =
+        new Date().getFullYear();
+    }
 
-        const ano =
-          document.getElementById("ano");
 
-        if (ano) {
+    /* =====================================================
+       MÁSCARA WHATSAPP
+    ===================================================== */
 
-          ano.textContent =
-            new Date().getFullYear();
+    const whatsappInput =
+      document.getElementById("whatsapp");
 
-        }
+    if (whatsappInput) {
 
+      whatsappInput.addEventListener(
+        "input",
+        function () {
 
-        /* ROLAGEM SUAVE */
+          let value =
+            this.value.replace(/\D/g, "");
 
-        const header =
-          document.querySelector(
-            ".luxury-header"
-          );
+          if (value.length > 11) {
+            value =
+              value.substring(0, 11);
+          }
 
+          if (value.length <= 10) {
 
-        document
-          .querySelectorAll(
-            'a[href^="#"]'
-          )
-          .forEach(link => {
-
-            link.addEventListener(
-              "click",
-              event => {
-
-                const targetId =
-                  link.getAttribute("href");
-
-
-                if (
-                  !targetId ||
-                  targetId === "#"
-                ) {
-                  return;
-                }
-
-
-                const target =
-                  document.querySelector(
-                    targetId
-                  );
-
-
-                if (!target) {
-                  return;
-                }
-
-
-                event.preventDefault();
-
-
-                const headerHeight =
-                  header
-                    ? header.offsetHeight
-                    : 0;
-
-
-                const offset =
-                  headerHeight + 20;
-
-
-                const top =
-                  target
-                    .getBoundingClientRect()
-                    .top
-                  +
-                  window.scrollY
-                  -
-                  offset;
-
-
-                window.scrollTo({
-
-                  top:
-                    Math.max(0, top),
-
-                  behavior:
-                    "smooth"
-
-                });
-
-              }
-
-            );
-
-          });
-
-
-        /* MÁSCARA WHATSAPP */
-
-        const whatsapp =
-          document.getElementById(
-            "whatsapp"
-          );
-
-
-        if (whatsapp) {
-
-          whatsapp.addEventListener(
-            "input",
-            event => {
-
-              let value =
-                event.target.value
-                  .replace(/\D/g, "")
-                  .slice(0, 11);
-
-
-              if (value.length <= 2) {
-
-                event.target.value =
-                  value
-                    ? `(${value}`
-                    : "";
-
-                return;
-
-              }
-
-
-              if (value.length <= 6) {
-
-                event.target.value =
-                  value.replace(
-                    /^(\d{2})(\d{0,4})$/,
-                    "($1) $2"
-                  );
-
-                return;
-
-              }
-
-
-              if (value.length <= 10) {
-
-                event.target.value =
-                  value.replace(
-                    /^(\d{2})(\d{4})(\d{0,4})$/,
-                    "($1) $2-$3"
-                  );
-
-                return;
-
-              }
-
-
-              event.target.value =
-                value.replace(
-                  /^(\d{2})(\d{5})(\d{0,4})$/,
-                  "($1) $2-$3"
-                );
-
-            }
-
-          );
-
-        }
-
-
-        /* ANIMAÇÃO DOS CARDS */
-
-        const elements =
-          document.querySelectorAll(
-            ".luxury-points article"
-          );
-
-
-        if (
-          "IntersectionObserver"
-          in window
-          &&
-          elements.length
-        ) {
-
-          const observer =
-            new IntersectionObserver(
-              entries => {
-
-                entries.forEach(
-                  entry => {
-
-                    if (
-                      entry.isIntersecting
-                    ) {
-
-                      entry.target.style.opacity =
-                        "1";
-
-                      entry.target.style.transform =
-                        "translateY(0)";
-
-                      observer.unobserve(
-                        entry.target
-                      );
-
-                    }
-
-                  }
-
-                );
-
-              },
-              {
-                threshold: 0.08
-              }
-            );
-
-
-          elements.forEach(
-            element => {
-
-              element.style.opacity =
-                "0";
-
-              element.style.transform =
-                "translateY(18px)";
-
-              element.style.transition =
-                "opacity .6s ease, transform .6s ease";
-
-              observer.observe(
-                element
+            value =
+              value.replace(
+                /^(\d{2})(\d)/,
+                "($1) $2"
               );
 
-            }
-          );
+            value =
+              value.replace(
+                /(\d{4})(\d)/,
+                "$1-$2"
+              );
+
+          } else {
+
+            value =
+              value.replace(
+                /^(\d{2})(\d)/,
+                "($1) $2"
+              );
+
+            value =
+              value.replace(
+                /(\d{5})(\d)/,
+                "$1-$2"
+              );
+          }
+
+          this.value = value;
 
         }
+      );
+
+    }
 
 
-        /* FORMULÁRIO */
+    /* =====================================================
+       REVEAL ANIMATION
+    ===================================================== */
 
-        const form =
-          document.querySelector(
-            "[data-v8-form]"
-          );
+    const revealElements =
+      document.querySelectorAll(
+        ".luxury-reveal"
+      );
 
+    const revealObserver =
+      new IntersectionObserver(
+        function (entries) {
 
-        if (form) {
+          entries.forEach(
+            function (entry) {
 
-          form.addEventListener(
-            "submit",
-            () => {
+              if (entry.isIntersecting) {
 
-              const button =
-                form.querySelector(
-                  'button[type="submit"]'
+                entry.target.classList.add(
+                  "visible"
                 );
 
+                revealObserver.unobserve(
+                  entry.target
+                );
 
-              if (!button) {
-                return;
               }
 
-
-              button.disabled =
-                true;
-
-
-              button.textContent =
-                "ENVIANDO...";
-
             }
-
           );
 
+        },
+        {
+          threshold: .12
         }
+      );
+
+
+    revealElements.forEach(
+      function (element) {
+
+        revealObserver.observe(
+          element
+        );
 
       }
     );
 
+
+    /* =====================================================
+       BOTÃO DO FORMULÁRIO
+       NÃO INTERCEPTA O SUBMIT DO V8/FORM
+    ===================================================== */
+
+    const form =
+      document.querySelector(
+        "[data-v8-form]"
+      );
+
+    if (form) {
+
+      form.addEventListener(
+        "submit",
+        function () {
+
+          const button =
+            form.querySelector(
+              "button[type='submit']"
+            );
+
+          if (!button) {
+            return;
+          }
+
+          button.dataset.originalText =
+            button.textContent;
+
+          button.textContent =
+            "ENVIANDO...";
+
+          button.disabled = true;
+
+          setTimeout(
+            function () {
+
+              button.disabled = false;
+
+              if (
+                button.dataset.originalText
+              ) {
+
+                button.textContent =
+                  button.dataset.originalText;
+
+              }
+
+            },
+            5000
+          );
+
+        }
+      );
+
+    }
+
   </script>
 
-
 </body>
-
 </html>
