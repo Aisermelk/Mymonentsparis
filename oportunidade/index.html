@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>My Moments Paris | Oportunidade Moments Paris</title>
 
   <meta
     name="description"
-    content="Conheça a oportunidade Moments Paris, os kits para começar, o plano de carreira e dê o primeiro passo para se tornar uma consultora."
+    content="Conheça a oportunidade Moments Paris, escolha seu kit inicial e desenvolva suas vendas no seu ritmo."
   >
 
   <meta
@@ -15,14 +22,16 @@
     content="index, follow"
   >
 
+  <meta name="theme-color" content="#050505">
+
   <meta
     property="og:title"
-    content="My Moments Paris | Comece sua jornada"
+    content="My Moments Paris | Oportunidade Moments Paris"
   >
 
   <meta
     property="og:description"
-    content="Conheça a oportunidade Moments Paris, os kits para começar e o plano de carreira."
+    content="Conheça a oportunidade Moments Paris e descubra como começar."
   >
 
   <meta
@@ -32,131 +41,1948 @@
 
   <meta
     property="og:image"
-    content="assets/images/divulgação.jpg"
+    content="../assets/images/divulgação.jpg"
   >
-
-  <meta name="theme-color" content="#050505">
-
-  <title>My Moments Paris | Oportunidade Moments Paris</title>
 
   <link
     rel="icon"
-    type="image/png"
-    href="assets/images/logo.png"
+    href="../assets/images/logo.png"
   >
 
-  <link
-    rel="stylesheet"
-    href="css/oportunidade.css"
-  >
-
-  <!-- V8 ADMIN — NÃO REMOVER -->
+  <!-- V8 LOADER -->
   <script
-    src="js/v8-loader.js"
+    src="../js/v8-loader.js"
     data-project-id="8ae3fee2-b4f4-487c-96c8-3833395b51c2"
-    data-api-url="https://v8adminuniversal.aisermelk.workers.dev"
-  ></script>
+    data-api-url="https://v8adminuniversal.aisermelk.workers.dev">
+  </script>
+
+
+  <style>
+
+    :root {
+
+      --black: #050505;
+      --black-soft: #0b0b0b;
+      --black-light: #11110f;
+
+      --gold: #c6a15b;
+      --gold-light: #e1c889;
+
+      --white: #f5f1e9;
+      --text: #b9b4aa;
+      --muted: #6f6b64;
+
+      --border: rgba(198, 161, 91, .28);
+      --border-soft: rgba(255, 255, 255, .10);
+
+      --container: 1180px;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      background: var(--black);
+
+      color: var(--text);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      line-height: 1.6;
+
+    }
+
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    .luxury-container {
+
+      width: min(
+        calc(100% - 40px),
+        var(--container)
+      );
+
+      margin: 0 auto;
+
+    }
+
+
+    /* HEADER */
+
+    .luxury-header {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      background:
+        rgba(5, 5, 5, .94);
+
+      backdrop-filter:
+        blur(14px);
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+    }
+
+
+    .luxury-header-inner {
+
+      min-height: 78px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+    }
+
+
+    .luxury-brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      color: var(--white);
+
+      white-space: nowrap;
+
+    }
+
+
+    .luxury-brand img {
+
+      width: 44px;
+      height: 44px;
+
+      object-fit: contain;
+
+    }
+
+
+    .luxury-nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 24px;
+
+    }
+
+
+    .luxury-nav a {
+
+      font-size: 13px;
+
+      color: var(--text);
+
+      transition:
+        color .25s ease;
+
+    }
+
+
+    .luxury-nav a:hover {
+
+      color: var(--gold-light);
+
+    }
+
+
+    .luxury-header-whatsapp {
+
+      border:
+        1px solid var(--border);
+
+      padding:
+        10px 16px;
+
+      color: var(--gold-light) !important;
+
+      border-radius: 3px;
+
+    }
+
+
+    /* HERO */
+
+    .luxury-hero {
+
+      min-height: 760px;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      padding-top: 78px;
+
+    }
+
+
+    .luxury-hero-image {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+
+    }
+
+
+    .luxury-hero-overlay {
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5,5,5,.97) 0%,
+          rgba(5,5,5,.82) 42%,
+          rgba(5,5,5,.30) 100%
+        );
+
+    }
+
+
+    .luxury-hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 680px;
+
+      padding:
+        100px 0;
+
+    }
+
+
+    .luxury-eyebrow {
+
+      display: inline-block;
+
+      margin-bottom: 22px;
+
+      color: var(--gold-light);
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .luxury-hero h1 {
+
+      color: var(--white);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(42px, 6vw, 76px);
+
+      line-height: 1.02;
+
+      font-weight: 500;
+
+      margin-bottom: 25px;
+
+    }
+
+
+    .luxury-hero h1 span {
+
+      color: var(--gold-light);
+
+    }
+
+
+    .luxury-hero p {
+
+      max-width: 600px;
+
+      font-size: 18px;
+
+      color: #d2cdc3;
+
+      margin-bottom: 34px;
+
+    }
+
+
+    .luxury-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding:
+        0 28px;
+
+      background: var(--gold);
+
+      color: #090909;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      border: 1px solid var(--gold);
+
+      border-radius: 2px;
+
+      cursor: pointer;
+
+      transition:
+        .25s ease;
+
+    }
+
+
+    .luxury-button:hover {
+
+      background: var(--gold-light);
+
+      border-color: var(--gold-light);
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    /* SECTIONS */
+
+    .luxury-section {
+
+      padding:
+        100px 0;
+
+    }
+
+
+    .luxury-section-dark {
+
+      background:
+        var(--black-soft);
+
+    }
+
+
+    .luxury-section-title {
+
+      max-width: 760px;
+
+      margin:
+        0 auto 55px;
+
+      text-align: center;
+
+    }
+
+
+    .luxury-section-title small {
+
+      display: block;
+
+      color: var(--gold-light);
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-size: 11px;
+
+      margin-bottom: 14px;
+
+    }
+
+
+    .luxury-section-title h2 {
+
+      color: var(--white);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(32px, 4vw, 48px);
+
+      line-height: 1.1;
+
+      font-weight: 500;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .luxury-section-title p {
+
+      color: var(--text);
+
+      font-size: 16px;
+
+    }
+
+
+    /* CARDS */
+
+    .luxury-points {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+
+    }
+
+
+    .luxury-points article {
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.015)
+        );
+
+      border:
+        1px solid var(--border);
+
+      padding: 34px 30px;
+
+      min-height: 220px;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease;
+
+    }
+
+
+    .luxury-points article:hover {
+
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(225, 200, 137, .6);
+
+    }
+
+
+    .luxury-points h3 {
+
+      color: var(--white);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 24px;
+
+      font-weight: 500;
+
+      margin-bottom: 13px;
+
+    }
+
+
+    .luxury-points p {
+
+      color: var(--text);
+
+      font-size: 15px;
+
+    }
+
+
+    .luxury-number {
+
+      display: block;
+
+      color: var(--gold);
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    /* KITS */
+
+    .luxury-kit-price {
+
+      color: var(--gold-light);
+
+      font-size: 32px;
+
+      font-weight: 700;
+
+      margin:
+        18px 0;
+
+    }
+
+
+    .luxury-kit-price small {
+
+      font-size: 13px;
+
+      color: var(--muted);
+
+      font-weight: 400;
+
+    }
+
+
+    .luxury-card-button {
+
+      display: inline-block;
+
+      margin-top: 22px;
+
+      color: var(--gold-light);
+
+      border-bottom:
+        1px solid var(--gold);
+
+      padding-bottom: 5px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* FORM */
+
+    .luxury-form-section {
+
+      background:
+        linear-gradient(
+          180deg,
+          var(--black),
+          var(--black-light)
+        );
+
+    }
+
+
+    .luxury-form-wrapper {
+
+      max-width: 820px;
+
+      margin: auto;
+
+    }
+
+
+    .luxury-form {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+
+      padding: 35px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        rgba(255,255,255,.025);
+
+    }
+
+
+    .luxury-field {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 7px;
+
+    }
+
+
+    .luxury-field-full {
+
+      grid-column:
+        1 / -1;
+
+    }
+
+
+    .luxury-field label {
+
+      color: var(--white);
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: .5px;
+
+    }
+
+
+    .luxury-field input,
+    .luxury-field select,
+    .luxury-field textarea {
+
+      width: 100%;
+
+      background:
+        rgba(0,0,0,.55);
+
+      border:
+        1px solid var(--border-soft);
+
+      color: var(--white);
+
+      padding:
+        14px 15px;
+
+      outline: none;
+
+      border-radius: 2px;
+
+      font: inherit;
+
+    }
+
+
+    .luxury-field textarea {
+
+      min-height: 110px;
+
+      resize: vertical;
+
+    }
+
+
+    .luxury-field input:focus,
+    .luxury-field select:focus,
+    .luxury-field textarea:focus {
+
+      border-color:
+        var(--gold);
+
+    }
+
+
+    .luxury-checkbox {
+
+      grid-column:
+        1 / -1;
+
+      display: flex;
+
+      gap: 10px;
+
+      align-items: flex-start;
+
+      font-size: 12px;
+
+      color: var(--muted);
+
+    }
+
+
+    .luxury-checkbox input {
+
+      margin-top: 4px;
+
+      accent-color:
+        var(--gold);
+
+    }
+
+
+    .luxury-submit {
+
+      grid-column:
+        1 / -1;
+
+      width: 100%;
+
+    }
+
+
+    /* REGISTER */
+
+    .luxury-register {
+
+      text-align: center;
+
+    }
+
+
+    .luxury-register-buttons {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 30px;
+
+    }
+
+
+    .luxury-register-buttons a {
+
+      min-height: 50px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        0 25px;
+
+      border:
+        1px solid var(--border);
+
+      color: var(--gold-light);
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .luxury-register-buttons a:hover {
+
+      background:
+        rgba(198,161,91,.08);
+
+      border-color:
+        var(--gold);
+
+    }
+
+
+    /* FAQ */
+
+    .luxury-faq {
+
+      max-width: 850px;
+
+      margin: auto;
+
+    }
+
+
+    .luxury-faq details {
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      padding:
+        22px 0;
+
+    }
+
+
+    .luxury-faq summary {
+
+      cursor: pointer;
+
+      color: var(--white);
+
+      font-size: 16px;
+
+      font-weight: 700;
+
+    }
+
+
+    .luxury-faq p {
+
+      margin-top: 13px;
+
+      color: var(--text);
+
+      font-size: 14px;
+
+      max-width: 760px;
+
+    }
+
+
+    /* FINAL CTA */
+
+    .luxury-final {
+
+      text-align: center;
+
+      padding:
+        110px 20px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(198,161,91,.10),
+          transparent 55%
+        );
+
+    }
+
+
+    .luxury-final h2 {
+
+      color: var(--white);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(34px, 5vw, 55px);
+
+      font-weight: 500;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .luxury-final p {
+
+      max-width: 650px;
+
+      margin:
+        0 auto 30px;
+
+      color: var(--text);
+
+    }
+
+
+    /* FOOTER */
+
+    .luxury-footer {
+
+      border-top:
+        1px solid var(--border-soft);
+
+      padding:
+        30px 0;
+
+      text-align: center;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+    }
+
+
+    /* WHATSAPP */
+
+    .luxury-whatsapp {
+
+      position: fixed;
+
+      right: 22px;
+
+      bottom: 22px;
+
+      width: 58px;
+
+      height: 58px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: #25D366;
+
+      color: white;
+
+      border-radius: 50%;
+
+      z-index: 999;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.4);
+
+      font-size: 24px;
+
+    }
+
+
+    .whatsapp-icon {
+
+      font-weight: 700;
+
+    }
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1000px) {
+
+      .luxury-nav {
+
+        gap: 12px;
+
+      }
+
+      .luxury-nav a {
+
+        font-size: 12px;
+
+      }
+
+    }
+
+
+    @media (max-width: 800px) {
+
+      .luxury-header-inner {
+
+        min-height: 70px;
+
+      }
+
+      .luxury-nav {
+
+        display: none;
+
+      }
+
+      .luxury-hero {
+
+        min-height: 680px;
+
+      }
+
+      .luxury-hero-overlay {
+
+        background:
+          linear-gradient(
+            90deg,
+            rgba(5,5,5,.94),
+            rgba(5,5,5,.65)
+          );
+
+      }
+
+      .luxury-points {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .luxury-form {
+
+        grid-template-columns: 1fr;
+
+        padding: 24px;
+
+      }
+
+      .luxury-field-full,
+      .luxury-checkbox,
+      .luxury-submit {
+
+        grid-column:
+          auto;
+
+      }
+
+    }
+
+
+    @media (max-width: 430px) {
+
+      .luxury-container {
+
+        width:
+          min(
+            calc(100% - 28px),
+            var(--container)
+          );
+
+      }
+
+      .luxury-section {
+
+        padding:
+          75px 0;
+
+      }
+
+      .luxury-hero-content {
+
+        padding:
+          80px 0;
+
+      }
+
+      .luxury-hero h1 {
+
+        font-size: 43px;
+
+      }
+
+      .luxury-hero p {
+
+        font-size: 16px;
+
+      }
+
+      .luxury-register-buttons {
+
+        flex-direction: column;
+
+      }
+
+      .luxury-register-buttons a {
+
+        width: 100%;
+
+      }
+
+      .luxury-whatsapp {
+
+        right: 16px;
+
+        bottom: 16px;
+
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+
+    }
+
+  </style>
+
 </head>
 
-<body class="luxury-capture">
 
-  <!-- =========================================================
-       HEADER
-  ========================================================== -->
+<body>
+
+
+  <!-- HEADER -->
 
   <header class="luxury-header">
 
-    <a href="#inicio" class="luxury-brand" aria-label="My Moments Paris - Início">
-      <img
-        src="assets/images/logo.png"
-        alt="My Moments Paris"
-      >
-
-      <span>MY MOMENTS PARIS</span>
-    </a>
-
-    <nav class="luxury-nav" aria-label="Navegação principal">
-
-      <a href="#inicio">
-        Início
-      </a>
-
-      <a href="#oportunidade">
-        Oportunidade
-      </a>
-
-      <a href="#kits">
-        Kits
-      </a>
-
-      <a href="#carreira">
-        Carreira
-      </a>
-
-      <a href="#formulario">
-        Primeiro passo
-      </a>
+    <div class="luxury-container luxury-header-inner">
 
       <a
-        href="https://mymonentsparis.pages.dev/"
-        target="_blank"
-        rel="noopener"
+        href="#inicio"
+        class="luxury-brand"
       >
-        Site Principal
+
+        <img
+          src="../assets/images/logo.png"
+          alt="My Moments Paris"
+        >
+
+        <span>MY MOMENTS PARIS</span>
+
       </a>
 
-    </nav>
 
-    <a
-      href="https://office.momentsparis.com.br/#/register/arianeoliveira87"
-      class="luxury-header-whatsapp"
-      target="_blank"
-      rel="noopener"
-    >
-      QUERO ME CADASTRAR
-    </a>
+      <nav class="luxury-nav">
+
+        <a href="#inicio">Início</a>
+
+        <a href="#oportunidade">Oportunidade</a>
+
+        <a href="#kits">Kits</a>
+
+        <a href="#carreira">Carreira</a>
+
+        <a href="#formulario">Cadastro</a>
+
+        <a href="https://mymonentsparis.pages.dev/">
+          Site Principal
+        </a>
+
+        <a
+          href="https://office.momentsparis.com.br/#/register/arianeoliveira87"
+          class="luxury-header-whatsapp"
+        >
+          COMEÇAR
+        </a>
+
+      </nav>
+
+    </div>
 
   </header>
 
 
-  <main>
+  <!-- HERO -->
 
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
+  <main id="inicio">
 
-    <section
-      class="luxury-hero"
-      id="inicio"
-      aria-label="Oportunidade Moments Paris"
-    >
+    <section class="luxury-hero">
 
-      <div class="luxury-hero-image">
-
-        <img
-          src="assets/images/divulgação.jpg"
-          alt="Produtos Moments Paris"
-          fetchpriority="high"
-        >
-
-      </div>
+      <img
+        src="../assets/images/divulgação.jpg"
+        alt="Moments Paris"
+        class="luxury-hero-image"
+      >
 
       <div class="luxury-hero-overlay"></div>
 
-      <div class="luxury-hero-content">
 
-        <span class="luxury-eyebrow">
-          MOMENTS PARIS
-        </span>
+      <div class="luxury-container">
 
-        <h1>
-          Comece sua jornada
-          <strong>com a Moments Paris.</strong>
-        </h1>
+        <div class="luxury-hero-content">
+
+          <span class="luxury-eyebrow">
+            Oportunidade Moments Paris
+          </span>
+
+
+          <h1>
+            Comece sua jornada
+            <span>com a Moments Paris.</span>
+          </h1>
+
+
+          <p>
+            Conheça os produtos, escolha como começar
+            e desenvolva suas vendas no seu ritmo.
+          </p>
+
+
+          <a
+            href="#formulario"
+            class="luxury-button"
+          >
+            Quero conhecer a oportunidade
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- OPORTUNIDADE -->
+
+    <section
+      id="oportunidade"
+      class="luxury-section"
+    >
+
+      <div class="luxury-container">
+
+        <div class="luxury-section-title">
+
+          <small>Uma nova possibilidade</small>
+
+          <h2>
+            Desenvolva seu próprio caminho.
+          </h2>
+
+          <p>
+            A oportunidade Moments Paris permite que você
+            conheça os produtos e desenvolva sua atividade
+            de acordo com sua disponibilidade e seus objetivos.
+          </p>
+
+        </div>
+
+
+        <div class="luxury-points">
+
+          <article>
+
+            <span class="luxury-number">01</span>
+
+            <h3>Comece do seu jeito</h3>
+
+            <p>
+              Escolha uma das opções de kit disponíveis
+              e dê o primeiro passo de acordo com o
+              momento que você está vivendo.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span class="luxury-number">02</span>
+
+            <h3>Produtos para apresentar</h3>
+
+            <p>
+              Tenha produtos para conhecer, apresentar
+              e desenvolver suas vendas dentro da proposta
+              da Moments Paris.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span class="luxury-number">03</span>
+
+            <h3>Desenvolva no seu ritmo</h3>
+
+            <p>
+              Organize sua atividade de acordo com sua
+              disponibilidade, objetivos e estratégia
+              de desenvolvimento.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- KITS -->
+
+    <section
+      id="kits"
+      class="luxury-section luxury-section-dark"
+    >
+
+      <div class="luxury-container">
+
+        <div class="luxury-section-title">
+
+          <small>Escolha como começar</small>
+
+          <h2>
+            Conheça os kits disponíveis.
+          </h2>
+
+          <p>
+            Existem diferentes opções de investimento
+            inicial para ativação.
+          </p>
+
+        </div>
+
+
+        <div class="luxury-points">
+
+          <article>
+
+            <span class="luxury-number">
+              KIT 01
+            </span>
+
+            <h3>Kit Iniciante</h3>
+
+            <div class="luxury-kit-price">
+              R$ 150
+            </div>
+
+            <p>
+              Uma opção de entrada para quem deseja
+              conhecer a oportunidade e começar.
+            </p>
+
+            <a
+              href="#formulario"
+              class="luxury-card-button"
+            >
+              Quero saber mais →
+            </a>
+
+          </article>
+
+
+          <article>
+
+            <span class="luxury-number">
+              KIT 02
+            </span>
+
+            <h3>Kit Profissional</h3>
+
+            <div class="luxury-kit-price">
+              R$ 500
+            </div>
+
+            <p>
+              Uma opção intermediária para quem deseja
+              começar com uma estrutura maior.
+            </p>
+
+            <a
+              href="#formulario"
+              class="luxury-card-button"
+            >
+              Quero saber mais →
+            </a>
+
+          </article>
+
+
+          <article>
+
+            <span class="luxury-number">
+              KIT 03
+            </span>
+
+            <h3>Kit Top</h3>
+
+            <div class="luxury-kit-price">
+              R$ 1.000
+            </div>
+
+            <p>
+              Uma opção para quem deseja iniciar
+              com uma estrutura mais completa.
+            </p>
+
+            <a
+              href="#formulario"
+              class="luxury-card-button"
+            >
+              Quero saber mais →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMO FUNCIONA -->
+
+    <section class="luxury-section">
+
+      <div class="luxury-container">
+
+        <div class="luxury-section-title">
+
+          <small>Como funciona</small>
+
+          <h2>
+            Três passos para começar.
+          </h2>
+
+        </div>
+
+
+        <div class="luxury-points">
+
+          <article>
+
+            <span class="luxury-number">01</span>
+
+            <h3>Cadastre-se</h3>
+
+            <p>
+              Preencha seus dados para receber informações
+              sobre a oportunidade.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span class="luxury-number">02</span>
+
+            <h3>Ative seu cadastro</h3>
+
+            <p>
+              Escolha a opção de kit adequada e siga
+              as orientações para ativação.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span class="luxury-number">03</span>
+
+            <h3>Comece a desenvolver</h3>
+
+            <p>
+              Conheça os produtos e desenvolva sua
+              atividade de acordo com seus objetivos.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CARREIRA -->
+
+    <section
+      id="carreira"
+      class="luxury-section luxury-section-dark"
+    >
+
+      <div class="luxury-container">
+
+        <div class="luxury-section-title">
+
+          <small>Plano de carreira</small>
+
+          <h2>
+            Desenvolva seu negócio ao longo do caminho.
+          </h2>
+
+          <p>
+            O plano de carreira possui diferentes níveis
+            de desenvolvimento e qualificação.
+          </p>
+
+        </div>
+
+
+        <div class="luxury-points">
+
+          <article>
+            <span class="luxury-number">2K</span>
+            <h3>2.000 pontos</h3>
+            <p>Primeiro nível de desenvolvimento.</p>
+          </article>
+
+          <article>
+            <span class="luxury-number">5K</span>
+            <h3>5.000 pontos</h3>
+            <p>Próximo nível de qualificação.</p>
+          </article>
+
+          <article>
+            <span class="luxury-number">15K</span>
+            <h3>15.000 pontos</h3>
+            <p>Avanço dentro do plano de carreira.</p>
+          </article>
+
+          <article>
+            <span class="luxury-number">DIAMANTE</span>
+            <h3>30.000 pontos</h3>
+            <p>Nível Diamante.</p>
+          </article>
+
+          <article>
+            <span class="luxury-number">DUPLO</span>
+            <h3>60.000 pontos</h3>
+            <p>Nível Duplo Diamante.</p>
+          </article>
+
+          <article>
+            <span class="luxury-number">TRIPLO</span>
+            <h3>120.000 pontos</h3>
+            <p>Nível Triplo Diamante.</p>
+          </article>
+
+          <article>
+            <span class="luxury-number">BLUE</span>
+            <h3>350.000 pontos</h3>
+            <p>Nível Blue Diamond.</p>
+          </article>
+
+          <article>
+            <span class="luxury-number">BLACK</span>
+            <h3>650.000 pontos</h3>
+            <p>Nível Black Diamond.</p>
+          </article>
+
+          <article>
+            <span class="luxury-number">IMPERIAL</span>
+            <h3>1.000.000 pontos</h3>
+            <p>Nível Imperial Diamond.</p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FORM -->
+
+    <section
+      id="formulario"
+      class="luxury-section luxury-form-section"
+    >
+
+      <div class="luxury-container">
+
+        <div class="luxury-section-title">
+
+          <small>Próximo passo</small>
+
+          <h2>
+            Quero conhecer a oportunidade.
+          </h2>
+
+          <p>
+            Deixe seus dados e entraremos em contato
+            para apresentar as informações.
+          </p>
+
+        </div>
+
+
+        <div class="luxury-form-wrapper">
+
+          <form
+            method="POST"
+            class="luxury-form"
+            data-v8-form
+          >
+
+            <div class="luxury-field">
+
+              <label for="nome">
+                Nome
+              </label>
+
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Seu nome"
+                required
+              >
+
+            </div>
+
+
+            <div class="luxury-field">
+
+              <label for="whatsapp">
+                WhatsApp
+              </label>
+
+              <input
+                type="tel"
+                id="whatsapp"
+                name="whatsapp"
+                placeholder="(00) 00000-0000"
+                autocomplete="tel"
+                required
+              >
+
+            </div>
+
+
+            <div class="luxury-field">
+
+              <label for="email">
+                E-mail
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="seu@email.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="luxury-field">
+
+              <label for="cidade">
+                Cidade
+              </label>
+
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
+                placeholder="Sua cidade"
+                required
+              >
+
+            </div>
+
+
+            <div class="luxury-field luxury-field-full">
+
+              <label for="objetivo">
+                O que você busca?
+              </label>
+
+              <select
+                id="objetivo"
+                name="objetivo"
+                required
+              >
+
+                <option value="">
+                  Selecione uma opção
+                </option>
+
+                <option value="conhecer">
+                  Quero conhecer a oportunidade
+                </option>
+
+                <option value="renda-extra">
+                  Busco uma possibilidade de renda extra
+                </option>
+
+                <option value="negocio">
+                  Quero desenvolver um negócio
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <label class="luxury-checkbox">
+
+              <input
+                type="checkbox"
+                required
+              >
+
+              <span>
+                Autorizo o contato para receber informações
+                sobre a oportunidade Moments Paris.
+              </span>
+
+            </label>
+
+
+            <button
+              type="submit"
+              class="luxury-button luxury-submit"
+            >
+              QUERO RECEBER INFORMAÇÕES
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CADASTRO -->
+
+    <section class="luxury-section luxury-register">
+
+      <div class="luxury-container">
+
+        <div class="luxury-section-title">
+
+          <small>Cadastro direto</small>
+
+          <h2>
+            Pronto para começar?
+          </h2>
+
+          <p>
+            Você também pode acessar diretamente
+            o cadastro oficial.
+          </p>
+
+        </div>
+
+
+        <div class="luxury-register-buttons">
+
+          <a
+            href="https://office.momentsparis.com.br/#/register/arianeoliveira87"
+            target="_blank"
+            rel="noopener"
+          >
+            CADASTRO OFICIAL
+          </a>
+
+
+          <a
+            href="https://office.momentsparis.com.br/lp/lp_999.html?reference=arianeoliveira87"
+            target="_blank"
+            rel="noopener"
+          >
+            CONHECER A OPORTUNIDADE
+          </a>
+
+
+          <a
+            href="#"
+            data-v8="contact.whatsapp"
+            class="luxury-register-whatsapp"
+          >
+            FALAR NO WHATSAPP
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="luxury-section luxury-section-dark">
+
+      <div class="luxury-container">
+
+        <div class="luxury-section-title">
+
+          <small>Dúvidas frequentes</small>
+
+          <h2>
+            Antes de começar.
+          </h2>
+
+        </div>
+
+
+        <div class="luxury-faq">
+
+          <details>
+
+            <summary>
+              Preciso adquirir um kit para começar?
+            </summary>
+
+            <p>
+              A ativação do cadastro está vinculada à
+              aquisição de um dos kits disponíveis,
+              conforme as condições vigentes.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Quanto preciso investir?
+            </summary>
+
+            <p>
+              Existem diferentes opções de kits,
+              atualmente a partir de R$ 150.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Quanto posso ganhar?
+            </summary>
+
+            <p>
+              Não existe garantia de ganhos. Os resultados
+              dependem de diversos fatores, como dedicação,
+              vendas, desenvolvimento da equipe e condições
+              comerciais vigentes.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Preciso trabalhar em horário fixo?
+            </summary>
+
+            <p>
+              A atividade pode ser desenvolvida de acordo
+              com sua disponibilidade e organização.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Preciso ter experiência?
+            </summary>
+
+            <p>
+              Não é necessário ter experiência anterior.
+              Você pode conhecer a proposta, os produtos
+              e aprender ao longo do desenvolvimento.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Como saber se essa oportunidade é para mim?
+            </summary>
+
+            <p>
+              O melhor caminho é conhecer os produtos,
+              as condições, o investimento inicial e o
+              funcionamento da oportunidade antes de tomar
+              sua decisão.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+
+    <section class="luxury-final">
+
+      <div class="luxury-container">
+
+        <h2>
+          Seu próximo passo começa aqui.
+        </h2>
 
         <p>
-          Conheça os produtos, escolha como começar
-          e desenvolva suas vendas no seu ritmo.
+          Conheça a oportunidade Moments Paris,
+          tire suas dúvidas e descubra se esse modelo
+          combina com seus objetivos.
         </p>
 
         <a
@@ -170,876 +1996,25 @@
 
     </section>
 
-
-    <!-- =========================================================
-         OPORTUNIDADE
-    ========================================================== -->
-
-    <section
-      class="luxury-intro"
-      id="oportunidade"
-    >
-
-      <span class="luxury-eyebrow">
-        UMA NOVA POSSIBILIDADE
-      </span>
-
-      <h2>
-        Produtos.<br>
-        Negócios.<br>
-        Novos caminhos.
-      </h2>
-
-      <p>
-        A Moments Paris oferece uma oportunidade comercial
-        para quem deseja conhecer os produtos, apresentar,
-        vender e desenvolver seu negócio de acordo com
-        seus objetivos e disponibilidade.
-      </p>
-
-
-      <div class="luxury-points">
-
-        <article>
-
-          <span>01</span>
-
-          <h3>
-            Comece do seu jeito
-          </h3>
-
-          <p>
-            Existem diferentes opções de kit para iniciar.
-            Escolha aquela que melhor combina com o momento
-            e os objetivos do seu negócio.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>02</span>
-
-          <h3>
-            Produtos para apresentar
-          </h3>
-
-          <p>
-            Conheça os produtos Moments Paris e tenha
-            uma base para apresentar a marca e desenvolver
-            suas vendas.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>03</span>
-
-          <h3>
-            Desenvolva no seu ritmo
-          </h3>
-
-          <p>
-            Você pode construir sua atividade comercial
-            de forma gradual, conforme sua dedicação,
-            estratégia e disponibilidade.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         KITS
-    ========================================================== -->
-
-    <section
-      class="luxury-intro"
-      id="kits"
-    >
-
-      <span class="luxury-eyebrow">
-        ESCOLHA COMO COMEÇAR
-      </span>
-
-      <h2>
-        Kits para<br>
-        diferentes momentos.
-      </h2>
-
-      <p>
-        A Moments Paris disponibiliza diferentes opções
-        para ativação do consultor. Conheça as alternativas
-        e escolha aquela que faz sentido para você.
-      </p>
-
-
-      <div class="luxury-points">
-
-        <article>
-
-          <span>R$ 150</span>
-
-          <h3>
-            Kit Iniciante
-          </h3>
-
-          <p>
-            Uma opção para quem deseja dar os primeiros
-            passos e conhecer a oportunidade começando
-            de forma mais enxuta.
-          </p>
-
-          <a
-            href="#formulario"
-            class="luxury-button"
-            style="margin-top:24px;"
-          >
-            QUERO SABER MAIS
-          </a>
-
-        </article>
-
-
-        <article>
-
-          <span>R$ 500</span>
-
-          <h3>
-            Kit Profissional
-          </h3>
-
-          <p>
-            Uma alternativa para quem deseja começar
-            com uma estrutura maior para desenvolver
-            sua atividade comercial.
-          </p>
-
-          <a
-            href="#formulario"
-            class="luxury-button"
-            style="margin-top:24px;"
-          >
-            QUERO SABER MAIS
-          </a>
-
-        </article>
-
-
-        <article>
-
-          <span>R$ 1.000</span>
-
-          <h3>
-            Kit Top
-          </h3>
-
-          <p>
-            Uma opção de entrada para quem deseja
-            iniciar com uma estrutura ainda mais completa,
-            conforme as condições vigentes da empresa.
-          </p>
-
-          <a
-            href="#formulario"
-            class="luxury-button"
-            style="margin-top:24px;"
-          >
-            QUERO SABER MAIS
-          </a>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         COMO FUNCIONA
-    ========================================================== -->
-
-    <section
-      class="luxury-intro"
-      id="como-funciona"
-    >
-
-      <span class="luxury-eyebrow">
-        COMO FUNCIONA
-      </span>
-
-      <h2>
-        Um primeiro passo<br>
-        de cada vez.
-      </h2>
-
-      <p>
-        Conheça a oportunidade, entenda as condições,
-        escolha sua forma de começar e desenvolva
-        sua atividade comercial.
-      </p>
-
-
-      <div class="luxury-points">
-
-        <article>
-
-          <span>01</span>
-
-          <h3>
-            Cadastre-se
-          </h3>
-
-          <p>
-            Faça seu cadastro através do canal oficial
-            indicado nesta página.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>02</span>
-
-          <h3>
-            Ative seu cadastro
-          </h3>
-
-          <p>
-            A ativação está relacionada à aquisição
-            do kit correspondente às condições da empresa.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>03</span>
-
-          <h3>
-            Comece a desenvolver
-          </h3>
-
-          <p>
-            Conheça os produtos, apresente a oportunidade
-            e desenvolva suas vendas conforme sua estratégia.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         PLANO DE CARREIRA
-    ========================================================== -->
-
-    <section
-      class="luxury-intro"
-      id="carreira"
-    >
-
-      <span class="luxury-eyebrow">
-        PLANO DE CARREIRA
-      </span>
-
-      <h2>
-        Crescimento<br>
-        com objetivos.
-      </h2>
-
-      <p>
-        O plano de carreira Moments Paris possui diferentes
-        níveis de desenvolvimento. Os resultados e a evolução
-        dependem de fatores como volume, atividade, estratégia
-        e dedicação.
-      </p>
-
-
-      <div class="luxury-points">
-
-        <article>
-
-          <span>2K</span>
-
-          <h3>
-            2K
-          </h3>
-
-          <p>
-            Nível de desenvolvimento com
-            volume de qualificação de 2.000 pontos.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>5K</span>
-
-          <h3>
-            5K
-          </h3>
-
-          <p>
-            Nível de desenvolvimento com
-            volume de qualificação de 5.000 pontos.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>15K</span>
-
-          <h3>
-            15K
-          </h3>
-
-          <p>
-            Nível de desenvolvimento com
-            volume de qualificação de 15.000 pontos.
-          </p>
-
-        </article>
-
-      </div>
-
-
-      <div class="luxury-points">
-
-        <article>
-
-          <span>30K</span>
-
-          <h3>
-            Diamante
-          </h3>
-
-          <p>
-            Nível Diamante associado a
-            30.000 pontos de qualificação.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>60K</span>
-
-          <h3>
-            Duplo Diamante
-          </h3>
-
-          <p>
-            Nível associado a
-            60.000 pontos de qualificação.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>120K</span>
-
-          <h3>
-            Triplo Diamante
-          </h3>
-
-          <p>
-            Nível associado a
-            120.000 pontos de qualificação.
-          </p>
-
-        </article>
-
-      </div>
-
-
-      <div class="luxury-points">
-
-        <article>
-
-          <span>350K</span>
-
-          <h3>
-            Blue Diamond
-          </h3>
-
-          <p>
-            Nível associado a
-            350.000 pontos de qualificação.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>650K</span>
-
-          <h3>
-            Black Diamond
-          </h3>
-
-          <p>
-            Nível associado a
-            650.000 pontos de qualificação.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>1M</span>
-
-          <h3>
-            Imperial Diamond
-          </h3>
-
-          <p>
-            Nível associado a
-            1.000.000 de pontos de qualificação.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         FORMULÁRIO
-    ========================================================== -->
-
-    <section
-      class="luxury-form-section"
-      id="formulario"
-    >
-
-      <div class="luxury-form-intro">
-
-        <span class="luxury-eyebrow">
-          PRIMEIRO PASSO
-        </span>
-
-        <h2>
-          Quer entender<br>
-          como funciona?
-        </h2>
-
-        <p>
-          Preencha seus dados e receba mais informações
-          sobre a oportunidade Moments Paris.
-        </p>
-
-      </div>
-
-
-      <form
-        method="POST"
-        class="luxury-form"
-        data-v8-form
-      >
-
-        <div class="luxury-field">
-
-          <label for="nome">
-            Nome
-          </label>
-
-          <input
-            type="text"
-            id="nome"
-            name="nome"
-            placeholder="Seu nome"
-            autocomplete="name"
-            required
-          >
-
-        </div>
-
-
-        <div class="luxury-field">
-
-          <label for="whatsapp">
-            WhatsApp
-          </label>
-
-          <input
-            type="tel"
-            id="whatsapp"
-            name="whatsapp"
-            placeholder="(00) 00000-0000"
-            autocomplete="tel"
-            required
-          >
-
-        </div>
-
-
-        <div class="luxury-field">
-
-          <label for="email">
-            E-mail
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="seu@email.com"
-            autocomplete="email"
-            required
-          >
-
-        </div>
-
-
-        <div class="luxury-field">
-
-          <label for="cidade">
-            Cidade
-          </label>
-
-          <input
-            type="text"
-            id="cidade"
-            name="cidade"
-            placeholder="Sua cidade"
-            autocomplete="address-level2"
-            required
-          >
-
-        </div>
-
-
-        <div class="luxury-field luxury-field-full">
-
-          <label for="objetivo">
-            O que você busca?
-          </label>
-
-          <select
-            id="objetivo"
-            name="objetivo"
-            required
-          >
-
-            <option
-              value=""
-              selected
-              disabled
-            >
-              Selecione uma opção
-            </option>
-
-            <option value="conhecer">
-              Quero conhecer
-            </option>
-
-            <option value="renda-extra">
-              Quero uma renda extra
-            </option>
-
-            <option value="negocio">
-              Quero construir um negócio
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <label class="luxury-checkbox">
-
-          <input
-            type="checkbox"
-            id="privacidade"
-            name="privacidade"
-            value="sim"
-            required
-          >
-
-          <span>
-            Concordo em receber informações sobre a oportunidade
-            através dos dados informados.
-          </span>
-
-        </label>
-
-
-        <button
-          type="submit"
-          class="luxury-button luxury-submit"
-        >
-          QUERO CONHECER
-        </button>
-
-      </form>
-
-    </section>
-
-
-    <!-- =========================================================
-         CADASTRO
-    ========================================================== -->
-
-    <section class="luxury-register">
-
-      <span class="luxury-eyebrow">
-        PRÓXIMO PASSO
-      </span>
-
-      <h2>
-        Pronta para<br>
-        começar?
-      </h2>
-
-      <p>
-        Se você já decidiu conhecer mais de perto,
-        escolha uma das opções abaixo.
-      </p>
-
-
-      <div class="luxury-register-buttons">
-
-        <a
-          href="https://office.momentsparis.com.br/#/register/arianeoliveira87"
-          class="luxury-button"
-          target="_blank"
-          rel="noopener"
-        >
-          QUERO ME CADASTRAR
-        </a>
-
-        <a
-          href="https://office.momentsparis.com.br/lp/lp_999.html?reference=arianeoliveira87"
-          class="luxury-button"
-          target="_blank"
-          rel="noopener"
-        >
-          CADASTRAR MOMENTS DRIVE
-        </a>
-
-      </div>
-
-
-      <a
-        href="#"
-        data-v8="contact.whatsapp"
-        class="luxury-register-whatsapp"
-      >
-        FALAR NO WHATSAPP
-      </a>
-
-    </section>
-
-
-    <!-- =========================================================
-         FAQ
-    ========================================================== -->
-
-    <section
-      class="luxury-intro"
-      id="faq"
-    >
-
-      <span class="luxury-eyebrow">
-        DÚVIDAS FREQUENTES
-      </span>
-
-      <h2>
-        Antes de<br>
-        começar.
-      </h2>
-
-
-      <div class="luxury-points">
-
-        <article>
-
-          <span>01</span>
-
-          <h3>
-            Preciso comprar um kit?
-          </h3>
-
-          <p>
-            A ativação do cadastro está vinculada à aquisição
-            de um kit, conforme as condições vigentes da Moments Paris.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>02</span>
-
-          <h3>
-            Quanto preciso investir?
-          </h3>
-
-          <p>
-            Existem opções de kits com valores diferentes.
-            Consulte as condições atuais antes de realizar sua escolha.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>03</span>
-
-          <h3>
-            Quanto posso ganhar?
-          </h3>
-
-          <p>
-            Não existe garantia de renda. Os resultados podem variar
-            conforme dedicação, vendas, estratégia, volume e outros fatores.
-          </p>
-
-        </article>
-
-      </div>
-
-
-      <div class="luxury-points">
-
-        <article>
-
-          <span>04</span>
-
-          <h3>
-            Preciso trabalhar em horário fixo?
-          </h3>
-
-          <p>
-            A atividade pode ser desenvolvida de acordo com sua
-            disponibilidade e estratégia comercial.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>05</span>
-
-          <h3>
-            Posso começar mesmo sem experiência?
-          </h3>
-
-          <p>
-            Você pode conhecer a oportunidade e receber orientações
-            para entender como funciona antes de decidir.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>06</span>
-
-          <h3>
-            Como saber se é para mim?
-          </h3>
-
-          <p>
-            O melhor primeiro passo é conhecer as condições,
-            os produtos e o funcionamento da oportunidade.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         CTA FINAL
-    ========================================================== -->
-
-    <section class="luxury-final">
-
-      <span class="luxury-eyebrow">
-        MOMENTS PARIS
-      </span>
-
-      <h2>
-        Seu próximo passo<br>
-        começa aqui.
-      </h2>
-
-      <p>
-        Conheça. Avalie. Decida no seu tempo.
-      </p>
-
-      <a
-        href="#formulario"
-        class="luxury-button"
-      >
-        QUERO CONHECER
-      </a>
-
-    </section>
-
   </main>
 
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
+  <!-- FOOTER -->
 
   <footer class="luxury-footer">
 
-    <img
-      src="assets/images/logo.png"
-      alt="My Moments Paris"
-    >
+    <div class="luxury-container">
 
-    <strong>
-      MY MOMENTS PARIS
-    </strong>
+      © <span id="ano"></span>
+      My Moments Paris.
+      Todos os direitos reservados.
 
-    <p>
-      © 2026 My Moments Paris. Todos os direitos reservados.
-    </p>
-
-    <small>
-      Esta página apresenta informações sobre uma oportunidade comercial.
-      Os resultados podem variar de acordo com dedicação, estratégia,
-      volume de vendas e outros fatores. Consulte as condições oficiais
-      da Moments Paris antes de tomar sua decisão.
-    </small>
+    </div>
 
   </footer>
 
 
-  <!-- =========================================================
-       WHATSAPP V8
-  ========================================================== -->
+  <!-- WHATSAPP -->
 
   <a
     href="#"
@@ -1047,14 +2022,303 @@
     class="luxury-whatsapp"
     aria-label="Falar pelo WhatsApp"
   >
+
     <span class="whatsapp-icon">
-      WhatsApp
+      ☎
     </span>
+
   </a>
 
 
-  <!-- JS DO SITE -->
-  <script src="js/script.js"></script>
+  <!-- JS DA PÁGINA -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+
+        /* ANO */
+
+        const ano =
+          document.getElementById("ano");
+
+        if (ano) {
+
+          ano.textContent =
+            new Date().getFullYear();
+
+        }
+
+
+        /* ROLAGEM SUAVE */
+
+        const header =
+          document.querySelector(
+            ".luxury-header"
+          );
+
+
+        document
+          .querySelectorAll(
+            'a[href^="#"]'
+          )
+          .forEach(link => {
+
+            link.addEventListener(
+              "click",
+              event => {
+
+                const targetId =
+                  link.getAttribute("href");
+
+
+                if (
+                  !targetId ||
+                  targetId === "#"
+                ) {
+                  return;
+                }
+
+
+                const target =
+                  document.querySelector(
+                    targetId
+                  );
+
+
+                if (!target) {
+                  return;
+                }
+
+
+                event.preventDefault();
+
+
+                const headerHeight =
+                  header
+                    ? header.offsetHeight
+                    : 0;
+
+
+                const offset =
+                  headerHeight + 20;
+
+
+                const top =
+                  target
+                    .getBoundingClientRect()
+                    .top
+                  +
+                  window.scrollY
+                  -
+                  offset;
+
+
+                window.scrollTo({
+
+                  top:
+                    Math.max(0, top),
+
+                  behavior:
+                    "smooth"
+
+                });
+
+              }
+
+            );
+
+          });
+
+
+        /* MÁSCARA WHATSAPP */
+
+        const whatsapp =
+          document.getElementById(
+            "whatsapp"
+          );
+
+
+        if (whatsapp) {
+
+          whatsapp.addEventListener(
+            "input",
+            event => {
+
+              let value =
+                event.target.value
+                  .replace(/\D/g, "")
+                  .slice(0, 11);
+
+
+              if (value.length <= 2) {
+
+                event.target.value =
+                  value
+                    ? `(${value}`
+                    : "";
+
+                return;
+
+              }
+
+
+              if (value.length <= 6) {
+
+                event.target.value =
+                  value.replace(
+                    /^(\d{2})(\d{0,4})$/,
+                    "($1) $2"
+                  );
+
+                return;
+
+              }
+
+
+              if (value.length <= 10) {
+
+                event.target.value =
+                  value.replace(
+                    /^(\d{2})(\d{4})(\d{0,4})$/,
+                    "($1) $2-$3"
+                  );
+
+                return;
+
+              }
+
+
+              event.target.value =
+                value.replace(
+                  /^(\d{2})(\d{5})(\d{0,4})$/,
+                  "($1) $2-$3"
+                );
+
+            }
+
+          );
+
+        }
+
+
+        /* ANIMAÇÃO DOS CARDS */
+
+        const elements =
+          document.querySelectorAll(
+            ".luxury-points article"
+          );
+
+
+        if (
+          "IntersectionObserver"
+          in window
+          &&
+          elements.length
+        ) {
+
+          const observer =
+            new IntersectionObserver(
+              entries => {
+
+                entries.forEach(
+                  entry => {
+
+                    if (
+                      entry.isIntersecting
+                    ) {
+
+                      entry.target.style.opacity =
+                        "1";
+
+                      entry.target.style.transform =
+                        "translateY(0)";
+
+                      observer.unobserve(
+                        entry.target
+                      );
+
+                    }
+
+                  }
+
+                );
+
+              },
+              {
+                threshold: 0.08
+              }
+            );
+
+
+          elements.forEach(
+            element => {
+
+              element.style.opacity =
+                "0";
+
+              element.style.transform =
+                "translateY(18px)";
+
+              element.style.transition =
+                "opacity .6s ease, transform .6s ease";
+
+              observer.observe(
+                element
+              );
+
+            }
+          );
+
+        }
+
+
+        /* FORMULÁRIO */
+
+        const form =
+          document.querySelector(
+            "[data-v8-form]"
+          );
+
+
+        if (form) {
+
+          form.addEventListener(
+            "submit",
+            () => {
+
+              const button =
+                form.querySelector(
+                  'button[type="submit"]'
+                );
+
+
+              if (!button) {
+                return;
+              }
+
+
+              button.disabled =
+                true;
+
+
+              button.textContent =
+                "ENVIANDO...";
+
+            }
+
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
 
 </body>
+
 </html>
